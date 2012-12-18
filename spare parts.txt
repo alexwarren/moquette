@@ -1,0 +1,6 @@
+    <firstenter type="script">
+      //SetTurnTimeout (5) {
+      //  msg ("A rush of air and a familiar metallic swishy rattle signal the arrival of a Piccadilly line train.")
+      //  MoveObject (train, GreenPark_Platform)
+      //}
+    </firstenter>
