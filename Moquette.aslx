@@ -23,7 +23,7 @@
         MoveObject (player, train)
       </board>
       <enter type="script">
-        msg ("Type NEXT to go to next station.")
+        msg ("Type " + CommandLink("next", "NEXT") + " to go to next station.")
       </enter>
       <location type="object">Chancery Lane</location>
       <line type="object">Central</line>
@@ -31,6 +31,7 @@
       <command>
         <pattern>next</pattern>
         <script>
+          <![CDATA[
           next = GetNextStation()
           if (next = null) {
             msg ("End of the line")
@@ -38,7 +39,13 @@
           else {
             train.location = next
             msg ("We are now at " + GetDisplayAlias(train.location))
+            foreach (line, GetDirectChildren(linedata)) {
+              if (line <> train.line and HasInt(train.location, line.code)) {
+                msg ("Can interchange to " + GetDisplayAlias(line))
+              }
+            }
           }
+          ]]>
         </script>
       </command>
     </object>
