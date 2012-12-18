@@ -1,0 +1,315 @@
+<library>
+  <object name="linedata">
+    <object name="Bakerloo">
+      <code>bakerloo</code>
+    </object>
+    <object name="Central">
+      <code>central</code>
+    </object>
+    <object name="Circle">
+      <code>circle</code>
+    </object>
+    <object name="District1">
+      <code>district1</code>
+    </object>
+    <object name="District2">
+      <code>district2</code>
+    </object>
+    <object name="Hammersmith City">
+      <alias>Hammersmith &amp; City</alias>
+      <code>hc</code>
+    </object>
+    <object name="Jubilee">
+      <code>jubilee</code>
+    </object>
+    <object name="Metropolitan">
+      <code>metropolitan</code>
+    </object>
+    <object name="Northern1">
+      <alias>Northern Line (Bank Branch)</alias>
+      <code>northern1</code>
+    </object>
+    <object name="Northern2">
+      <alias>Northern Line (Charing Cross Branch)</alias>
+      <code>northern2</code>
+    </object>
+    <object name="Piccadilly">
+      <code>piccadilly</code>
+    </object>
+    <object name="Victoria">
+      <code>victoria</code>
+    </object>
+    <object name="Waterloo City">
+      <alias>Waterloo &amp; City</alias>
+      <code>wc</code>
+    </object>
+  </object>
+  <object name="stationdata">
+    <object name="Aldgate">
+      <circle type="int">110</circle>
+      <metropolitan type="int">108</metropolitan>
+    </object>
+    <object name="Aldgate East">
+      <district2 type="int">113</district2>
+      <hc type="int">110</hc>
+    </object>
+    <object name="Angel">
+      <northern1 type="int">102</northern1>
+    </object>
+    <object name="Baker Street">
+      <bakerloo type="int">103</bakerloo>
+      <circle type="int">102</circle>
+      <hc type="int">102</hc>
+      <jubilee type="int">100</jubilee>
+      <metropolitan type="int">100</metropolitan>
+    </object>
+    <object name="Bank">
+      <central type="int">110</central>
+      <northern1 type="int">105</northern1>
+      <wc type="int">101</wc>
+    </object>
+    <object name="Barbican">
+      <circle type="int">107</circle>
+      <hc type="int">107</hc>
+      <metropolitan type="int">105</metropolitan>
+    </object>
+    <object name="Bayswater">
+      <circle type="int">126</circle>
+      <district1 type="int">103</district1>
+    </object>
+    <object name="Blackfriars">
+      <circle type="int">115</circle>
+      <district2 type="int">108</district2>
+    </object>
+    <object name="Bond Street">
+      <central type="int">104</central>
+      <jubilee type="int">101</jubilee>
+    </object>
+    <object name="Borough">
+      <northern1 type="int">107</northern1>
+    </object>
+    <object name="Cannon Street">
+      <circle type="int">113</circle>
+      <district2 type="int">110</district2>
+    </object>
+    <object name="Chancery Lane">
+      <central type="int">108</central>
+    </object>
+    <object name="Charing Cross">
+      <bakerloo type="int">107</bakerloo>
+      <northern2 type="int">105</northern2>
+    </object>
+    <object name="Covent Garden">
+      <piccadilly type="int">108</piccadilly>
+    </object>
+    <object name="Earls Court">
+      <alias>Earl's Court</alias>
+      <district1 type="int">100</district1>
+      <district2 type="int">100</district2>
+      <piccadilly type="int">100</piccadilly>
+    </object>
+    <object name="Edgware Road">
+      <bakerloo type="int">101</bakerloo>
+      <circle type="int">127</circle>
+      <district1 type="int">104</district1>
+      <hc type="int">101</hc>
+    </object>
+    <object name="Elephant Castle">
+      <alias><![CDATA[Elephant & Castle]]></alias>
+      <bakerloo type="int">111</bakerloo>
+      <northern1 type="int">108</northern1>
+    </object>
+    <object name="Embankment">
+      <bakerloo type="int">108</bakerloo>
+      <circle type="int">117</circle>
+      <northern2 type="int">106</northern2>
+    </object>
+    <object name="Euston">
+      <northern1 type="int">100</northern1>
+      <northern2 type="int">100</northern2>
+      <victoria type="int">101</victoria>
+    </object>
+    <object name="Euston Square">
+      <circle type="int">104</circle>
+      <hc type="int">104</hc>
+      <metropolitan type="int">102</metropolitan>
+    </object>
+    <object name="Farringdon">
+      <circle type="int">106</circle>
+      <hc type="int">106</hc>
+      <metropolitan type="int">104</metropolitan>
+    </object>
+    <object name="Gloucester Road">
+      <circle type="int">123</circle>
+      <district2 type="int">101</district2>
+      <piccadilly type="int">101</piccadilly>
+    </object>
+    <object name="Goodge Street">
+      <northern2 type="int">102</northern2>
+    </object>
+    <object name="Great Portland Street">
+      <circle type="int">103</circle>
+      <hc type="int">103</hc>
+      <metropolitan type="int">101</metropolitan>
+    </object>
+    <object name="Green Park">
+      <jubilee type="int">102</jubilee>
+      <piccadilly type="int">105</piccadilly>
+      <victoria type="int">104</victoria>
+    </object>
+    <object name="High Street Kensington">
+      <circle type="int">124</circle>
+      <district1 type="int">101</district1>
+    </object>
+    <object name="Holborn">
+      <central type="int">107</central>
+      <piccadilly type="int">109</piccadilly>
+    </object>
+    <object name="Hyde Park Corner">
+      <piccadilly type="int">104</piccadilly>
+    </object>
+    <object name="Kings Cross St Pancras">
+      <alias>King's Cross St. Pancras</alias>
+      <circle type="int">105</circle>
+      <hc type="int">105</hc>
+      <metropolitan type="int">103</metropolitan>
+      <northern1 type="int">101</northern1>
+      <piccadilly type="int">111</piccadilly>
+      <victoria type="int">100</victoria>
+    </object>
+    <object name="Knightsbridge">
+      <piccadilly type="int">103</piccadilly>
+    </object>
+    <object name="Lambeth North">
+      <bakerloo type="int">110</bakerloo>
+    </object>
+    <object name="Lancaster Gate">
+      <central type="int">102</central>
+    </object>
+    <object name="Leicester Square">
+      <northern2 type="int">104</northern2>
+      <piccadilly type="int">107</piccadilly>
+    </object>
+    <object name="Liverpool Street">
+      <central type="int">111</central>
+      <circle type="int">109</circle>
+      <hc type="int">109</hc>
+      <metropolitan type="int">107</metropolitan>
+    </object>
+    <object name="London Bridge">
+      <jubilee type="int">106</jubilee>
+      <northern1 type="int">106</northern1>
+    </object>
+    <object name="Mansion House">
+      <circle type="int">114</circle>
+      <district2 type="int">109</district2>
+    </object>
+    <object name="Marble Arch">
+      <central type="int">103</central>
+    </object>
+    <object name="Marylebone">
+      <bakerloo type="int">102</bakerloo>
+    </object>
+    <object name="Monument">
+      <circle type="int">112</circle>
+      <district2 type="int">111</district2>
+    </object>
+    <object name="Moorgate">
+      <circle type="int">108</circle>
+      <hc type="int">108</hc>
+      <metropolitan type="int">106</metropolitan>
+      <northern1 type="int">104</northern1>
+    </object>
+    <object name="Notting Hill Gate">
+      <central type="int">100</central>
+      <circle type="int">125</circle>
+      <district1 type="int">102</district1>
+    </object>
+    <object name="Old Street">
+      <northern1 type="int">103</northern1>
+    </object>
+    <object name="Oxford Circus">
+      <bakerloo type="int">105</bakerloo>
+      <central type="int">105</central>
+      <victoria type="int">103</victoria>
+    </object>
+    <object name="Paddington">
+      <bakerloo type="int">100</bakerloo>
+      <circle type="int">100</circle>
+      <hc type="int">100</hc>
+    </object>
+    <object name="Piccadilly Circus">
+      <bakerloo type="int">106</bakerloo>
+      <piccadilly type="int">106</piccadilly>
+    </object>
+    <object name="Pimlico">
+      <victoria type="int">106</victoria>
+    </object>
+    <object name="Queensway">
+      <central type="int">101</central>
+    </object>
+    <object name="Regents Park">
+      <alias>Regent's Park</alias>
+      <bakerloo type="int">104</bakerloo>
+    </object>
+    <object name="Russell Square">
+      <piccadilly type="int">110</piccadilly>
+    </object>
+    <object name="Sloane Square">
+      <circle type="int">121</circle>
+      <district2 type="int">103</district2>
+    </object>
+    <object name="South Kensington">
+      <circle type="int">122</circle>
+      <district2 type="int">102</district2>
+      <piccadilly type="int">102</piccadilly>
+    </object>
+    <object name="Southwark">
+      <jubilee type="int">105</jubilee>
+    </object>
+    <object name="St Jamess Park">
+      <alias>St. James's Park</alias>
+      <circle type="int">119</circle>
+      <district2 type="int">105</district2>
+    </object>
+    <object name="St Pauls">
+      <alias>St. Paul's</alias>
+      <central type="int">109</central>
+    </object>
+    <object name="Temple">
+      <circle type="int">116</circle>
+      <district2 type="int">107</district2>
+    </object>
+    <object name="Tottenham Court Road">
+      <central type="int">106</central>
+      <northern2 type="int">103</northern2>
+    </object>
+    <object name="Tower Hill">
+      <circle type="int">111</circle>
+      <district2 type="int">112</district2>
+    </object>
+    <object name="Vauxhall">
+      <victoria type="int">107</victoria>
+    </object>
+    <object name="Victoria">
+      <circle type="int">120</circle>
+      <district2 type="int">104</district2>
+      <victoria type="int">105</victoria>
+    </object>
+    <object name="Warren Street">
+      <northern2 type="int">101</northern2>
+      <victoria type="int">102</victoria>
+    </object>
+    <object name="Waterloo">
+      <bakerloo type="int">109</bakerloo>
+      <jubilee type="int">104</jubilee>
+      <northern2 type="int">107</northern2>
+      <wc type="int">100</wc>
+    </object>
+    <object name="Westminster">
+      <circle type="int">118</circle>
+      <district2 type="int">106</district2>
+      <jubilee type="int">103</jubilee>
+    </object>
+  </object>
+</library>
