@@ -31,6 +31,7 @@
       <command>
         <pattern>next</pattern>
         <script>
+          <![CDATA[
           next = GetNextStation()
           if (next = null) {
             msg ("End of the line")
@@ -39,9 +40,10 @@
             train.location = next
             msg ("We are now at " + GetDisplayAlias(train.location))
             foreach (line, GetInterchanges()) {
-              msg ("Can interchange to " + SafeXML(GetDisplayAlias(line)) + " (" + line.name + ")")
+              msg ("Can interchange to <command input=\"change " + line.name + "\">" + SafeXML(GetDisplayAlias(line)) + "</command>")
             }
           }
+          ]]>
         </script>
       </command>
       <command>

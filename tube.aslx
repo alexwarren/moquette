@@ -36,7 +36,8 @@
     <object name="Piccadilly">
       <code>piccadilly</code>
     </object>
-    <object name="Victoria">
+    <object name="VictoriaLine">
+      <alias>Victoria</alias>
       <code>victoria</code>
     </object>
     <object name="Waterloo City">
