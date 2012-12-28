@@ -31,7 +31,6 @@
       <command>
         <pattern>next</pattern>
         <script>
-          <![CDATA[
           next = GetNextStation()
           if (next = null) {
             msg ("End of the line")
@@ -39,13 +38,28 @@
           else {
             train.location = next
             msg ("We are now at " + GetDisplayAlias(train.location))
-            foreach (line, GetDirectChildren(linedata)) {
-              if (line <> train.line and HasInt(train.location, line.code)) {
-                msg ("Can interchange to " + GetDisplayAlias(line))
-              }
+            foreach (line, GetInterchanges()) {
+              msg ("Can interchange to " + GetDisplayAlias(line) + " (" + line.name + ")")
             }
           }
-          ]]>
+        </script>
+      </command>
+      <command>
+        <pattern>change #text_line#</pattern>
+        <script>
+          newline = null
+          foreach (line, GetInterchanges()) {
+            if (line.name = text_line) {
+              newline = line
+            }
+          }
+          if (newline = null) {
+            msg ("Not a valid interchange")
+          }
+          else {
+            msg ("ok")
+            train.line = newline
+          }
         </script>
       </command>
     </object>
@@ -68,4 +82,13 @@
     }
     return (result)
   </function>
+  <function name="GetInterchanges" type="objectlist"><![CDATA[
+    result = NewObjectList()
+    foreach (line, GetDirectChildren(linedata)) {
+      if (line <> train.line and HasInt(train.location, line.code)) {
+        list add (result, line)
+      }
+    }
+    return (result)
+  ]]></function>
 </asl>
