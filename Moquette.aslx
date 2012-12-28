@@ -39,7 +39,7 @@
             train.location = next
             msg ("We are now at " + GetDisplayAlias(train.location))
             foreach (line, GetInterchanges()) {
-              msg ("Can interchange to " + GetDisplayAlias(line) + " (" + line.name + ")")
+              msg ("Can interchange to " + SafeXML(GetDisplayAlias(line)) + " (" + line.name + ")")
             }
           }
         </script>
@@ -60,6 +60,13 @@
             msg ("ok")
             train.line = newline
           }
+        </script>
+      </command>
+      <command>
+        <pattern>reverse</pattern>
+        <script>
+          train.direction = -train.direction
+          msg ("ok")
         </script>
       </command>
     </object>
