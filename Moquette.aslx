@@ -1,10 +1,14 @@
-<!--Saved by Quest 5.3.4730.28539-->
-<asl version="530">
+<!--Saved by Quest 5.4.4767.40982-->
+<asl version="540">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
   <include ref="tube.aslx" />
   <game name="Moquette">
     <gameid>ff2da758-286e-4c47-b6f2-eb26ba2f7591</gameid>
+    <showpanes type="boolean">false</showpanes>
+    <showcommandbar type="boolean">false</showcommandbar>
+    <echocommand type="boolean">false</echocommand>
+    <enablehyperlinks />
   </game>
   <object name="onplatform">
     <inherit name="editor_room" />
@@ -18,6 +22,9 @@
       <look>There is nothing interesting about the platform.</look>
     </object>
     <object name="train">
+      <direction type="int">-1</direction>
+      <location type="object">Chancery Lane</location>
+      <line type="object">Central</line>
       <board type="script">
         msg ("You get onto the train.")
         MoveObject (player, train)
@@ -25,13 +32,9 @@
       <enter type="script">
         msg ("Type " + CommandLink("next", "NEXT") + " to go to next station.")
       </enter>
-      <location type="object">Chancery Lane</location>
-      <line type="object">Central</line>
-      <direction type="int">-1</direction>
       <command>
         <pattern>next</pattern>
-        <script>
-          <![CDATA[
+        <script><![CDATA[
           next = GetNextStation()
           if (next = null) {
             msg ("End of the line")
@@ -43,8 +46,7 @@
               msg ("Can interchange to <command input=\"change " + line.name + "\">" + SafeXML(GetDisplayAlias(line)) + "</command>")
             }
           }
-          ]]>
-        </script>
+        ]]></script>
       </command>
       <command>
         <pattern>change #text_line#</pattern>
@@ -82,7 +84,7 @@
     nextlocationcode = GetInt(train.location, train.line.code) + train.direction
     return (GetStation(train.line.code, nextlocationcode))
   </function>
-  <function name="GetStation" type="object" parameters="line, code">
+  <function name="GetStation" parameters="line, code" type="object">
     result = null
     foreach (station, GetDirectChildren(stationdata)) {
       if (GetInt(station, line) = code) {
