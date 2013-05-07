@@ -69,7 +69,87 @@
     </object>
     <object name="Act 0 Stockwell">
       <inherit name="editor_room" />
-      <description>Stockwell</description>
+      <description>I could {command:1:stay on this train} or {command:2:get on the Victoria line}.</description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 0 Oval)
+        </script>
+      </command>
+      <command>
+        <pattern>2</pattern>
+        <script>
+          MoveObject (player, Act 0 Stockwell Escape)
+        </script>
+      </command>
+    </object>
+    <object name="Act 0 Oval">
+      <inherit name="editor_room" />
+      <description><![CDATA[Stayed on train, now at Oval<br/><br/>{command:1:Continue to Kennington}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 0 Kennington)
+        </script>
+      </command>
+    </object>
+    <object name="Act 0 Kennington">
+      <inherit name="editor_room" />
+      <description>I could {command:1:stay on the train} or {command:2:change to the Charing Cross branch}.</description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 0 Elephant)
+        </script>
+      </command>
+      <command>
+        <pattern>2</pattern>
+        <script>
+          MoveObject (player, Act 0 Kennington Escape)
+        </script>
+      </command>
+    </object>
+    <object name="Act 0 Elephant">
+      <inherit name="editor_room" />
+      <description>I could {command:1:stay on the train} or {command:2:change to the Bakerloo line}.</description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 0 Borough)
+        </script>
+      </command>
+      <command>
+        <pattern>2</pattern>
+        <script>
+          MoveObject (player, Act 0 Elephant Escape)
+        </script>
+      </command>
+    </object>
+    <object name="Act 0 Borough">
+      <inherit name="editor_room" />
+      <description>Continue to {command:1:London Bridge}</description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 0 London Bridge)
+        </script>
+      </command>
+    </object>
+    <object name="Act 0 London Bridge">
+      <inherit name="editor_room" />
+      <description>At London Bridge</description>
+    </object>
+    <object name="Act 0 Stockwell Escape">
+      <inherit name="editor_room" />
+      <description>Escape towards Vauxhall</description>
+    </object>
+    <object name="Act 0 Kennington Escape">
+      <inherit name="editor_room" />
+      <description>Escape on Charing Cross branch</description>
+    </object>
+    <object name="Act 0 Elephant Escape">
+      <inherit name="editor_room" />
+      <description>Escape up Bakerloo line</description>
     </object>
   </object>
   <verb>
