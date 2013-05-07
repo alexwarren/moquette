@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.4.4767.40982-->
+<!--Saved by Quest 5.4.4873.16527-->
 <asl version="540">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -9,13 +9,36 @@
     <showcommandbar type="boolean">false</showcommandbar>
     <echocommand type="boolean">false</echocommand>
     <enablehyperlinks />
+    <autodescription type="boolean">false</autodescription>
   </game>
+  <object name="Act 0">
+    <inherit name="editor_room" />
+    <object name="Act 0 Balham">
+      <inherit name="editor_room" />
+      <description><![CDATA["Become who you want to be". Yes, I suppose I could jack in my job tomorrow and upload my CV. Where would that get me? I don't know who I want to be.<br/><br/>"London to Bournemouth from £9". You'll never get it that cheap. And who wants to go to Bournemouth?<br/><br/>"Why pay more for your car insurance?" Because I don't want to give you bastards your precious commission, you annoying attention-seeking twats.<br/><br/>"Malaria kills a child every 45 seconds". Texting you costs £3, and will that really help anything?<br/><br/>The {command:1:train now approaching}  is for all stations to Edgware.]]></description>
+      <object name="player">
+        <inherit name="editor_object" />
+        <inherit name="editor_player" />
+      </object>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 0 Balham Train)
+        </script>
+      </command>
+    </object>
+    <object name="Act 0 Balham Train">
+      <inherit name="editor_room" />
+      <description>With a rush of cold air and a familiarly ear-shattering clatter, a train arrives.</description>
+    </object>
+  </object>
+  <verb>
+    <property>board</property>
+    <pattern>board; get in</pattern>
+    <defaultexpression>"You can't board " + object.article + "."</defaultexpression>
+  </verb>
   <object name="onplatform">
     <inherit name="editor_room" />
-    <object name="player">
-      <inherit name="editor_object" />
-      <inherit name="editor_player" />
-    </object>
     <object name="platform">
       <inherit name="editor_object" />
       <scenery />
@@ -75,11 +98,6 @@
       </command>
     </object>
   </object>
-  <verb>
-    <property>board</property>
-    <pattern>board; get in</pattern>
-    <defaultexpression>"You can't board " + object.article + "."</defaultexpression>
-  </verb>
   <function name="GetNextStation" type="object">
     nextlocationcode = GetInt(train.location, train.line.code) + train.direction
     return (GetStation(train.line.code, nextlocationcode))
