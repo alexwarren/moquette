@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.4.4873.16527-->
+<!--Saved by Quest 5.4.4875.23618-->
 <asl version="540">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -29,7 +29,27 @@
     </object>
     <object name="Act 0 Balham Train">
       <inherit name="editor_room" />
-      <description>With a rush of cold air and a familiarly ear-shattering clatter, a train arrives.</description>
+      <description><![CDATA[With a rush of cold air and a familiarly ear-shattering clatter, a train arrives.<br/><br/>{command:1:Get on}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 0 Balham Train Boarded)
+        </script>
+      </command>
+    </object>
+    <object name="Act 0 Balham Train Boarded">
+      <inherit name="editor_room" />
+      <description><![CDATA[It's not too busy at this time of day. Nowhere to sit, but plenty of standing space. It presents no challenges. Nothing to engage my conscious brain with. I just glide automatically to a pole and grab hold of it without a moment's thought. No decisions, no effort, no choice, no problem. Almost an unconscious twitch, the act of getting on a tube to work. I will change at Bank, travel one stop to Liverpool Street, arrive at the office, and barely notice the whole thing. And then I will sit at my desk, go home at the end of the day, eat a ready meal and go to bed, having hardly troubled my synapses.<br/><br/>The doors open.<br/><br/>This station is {command:1:Clapham South}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 0 Clapham South)
+        </script>
+      </command>
+    </object>
+    <object name="Act 0 Clapham South">
+      <inherit name="editor_room" />
+      <description>The doors close. The train lurches onward. {There is only one way ahead for the train, as for Z, it seems.}</description>
     </object>
   </object>
   <verb>
