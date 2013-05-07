@@ -49,7 +49,27 @@
     </object>
     <object name="Act 0 Clapham South">
       <inherit name="editor_room" />
-      <description>The doors close. The train lurches onward. {There is only one way ahead for the train, as for Z, it seems.}</description>
+      <description><![CDATA[The doors close. The train lurches onward. {There is only one way ahead for the train, as for Z, it seems.}<br/><br/>{command:1:Clapham Common}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 0 Clapham Common)
+        </script>
+      </command>
+    </object>
+    <object name="Act 0 Clapham Common">
+      <inherit name="editor_room" />
+      <description>{command:1:Stockwell}</description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 0 Stockwell)
+        </script>
+      </command>
+    </object>
+    <object name="Act 0 Stockwell">
+      <inherit name="editor_room" />
+      <description>Stockwell</description>
     </object>
   </object>
   <verb>
