@@ -13,10 +13,14 @@
     <showlocation type="boolean">false</showlocation>
     <setcustomwidth />
     <customwidth type="int">650</customwidth>
-    <underlinehyperlinks type="boolean">false</underlinehyperlinks>
+    <underlinehyperlinks />
     <showborder type="boolean">false</showborder>
     <setcustompadding />
     <custompaddingtop type="int">60</custompaddingtop>
+    <custompaddingbottom type="int">60</custompaddingbottom>
+    <author>Alex Warren</author>
+    <subtitle type="string"></subtitle>
+    <showtitle />
   </game>
   <object name="Act 0">
     <inherit name="editor_room" />
