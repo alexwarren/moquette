@@ -1,5 +1,5 @@
-<!--Saved by Quest 5.4.4875.23618-->
-<asl version="540">
+<!--Saved by Quest 5.5.4875.32769-->
+<asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
   <include ref="tube.aslx" />
@@ -10,6 +10,13 @@
     <echocommand type="boolean">false</echocommand>
     <enablehyperlinks />
     <autodescription type="boolean">false</autodescription>
+    <showlocation type="boolean">false</showlocation>
+    <setcustomwidth />
+    <customwidth type="int">650</customwidth>
+    <underlinehyperlinks type="boolean">false</underlinehyperlinks>
+    <showborder type="boolean">false</showborder>
+    <setcustompadding />
+    <custompaddingtop type="int">60</custompaddingtop>
   </game>
   <object name="Act 0">
     <inherit name="editor_room" />
