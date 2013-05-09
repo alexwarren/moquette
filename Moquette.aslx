@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4875.32769-->
+<!--Saved by Quest 5.5.4877.37023-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -27,6 +27,9 @@
     <object name="Act 0 Balham">
       <inherit name="editor_room" />
       <description><![CDATA["Become who you want to be". Yes, I suppose I could jack in my job tomorrow and upload my CV. Where would that get me? I don't know who I want to be.<br/><br/>"London to Bournemouth from £9". You'll never get it that cheap. And who wants to go to Bournemouth?<br/><br/>"Why pay more for your car insurance?" Because I don't want to give you bastards your precious commission, you annoying attention-seeking twats.<br/><br/>"Malaria kills a child every 45 seconds". Texting you costs £3, and will that really help anything?<br/><br/>The {command:1:train now approaching}  is for all stations to Edgware.]]></description>
+      <beforeenter type="script">
+        JS.StartOutputSection ("intro")
+      </beforeenter>
       <object name="player">
         <inherit name="editor_object" />
         <inherit name="editor_player" />
@@ -51,6 +54,11 @@
     <object name="Act 0 Balham Train Boarded">
       <inherit name="editor_room" />
       <description><![CDATA[It's not too busy at this time of day. Nowhere to sit, but plenty of standing space. It presents no challenges. Nothing to engage my conscious brain with. I just glide automatically to a pole and grab hold of it without a moment's thought. No decisions, no effort, no choice, no problem. Almost an unconscious twitch, the act of getting on a tube to work. I will change at Bank, travel one stop to Liverpool Street, arrive at the office, and barely notice the whole thing. And then I will sit at my desk, go home at the end of the day, eat a ready meal and go to bed, having hardly troubled my synapses.<br/><br/>The doors open.<br/><br/>This station is {command:1:Clapham South}]]></description>
+      <beforeenter type="script">
+        JS.EndOutputSection ("intro")
+        JS.HideOutputSection ("intro")
+        JS.HideOutputSection ("title")
+      </beforeenter>
       <command>
         <pattern>1</pattern>
         <script>
