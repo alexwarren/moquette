@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4877.37023-->
+﻿<!--Saved by Quest 5.5.4877.37023-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -207,7 +207,7 @@
     <command>
       <pattern>next</pattern>
       <script>
-        next = GetNextStation()
+        next = GetNextStation(train.direction, train.line.code)
         if (next = null) {
           msg ("End of the line")
         }
@@ -215,9 +215,19 @@
           train.location = next
           msg ("We are now at " + GetDisplayAlias(train.location))
           foreach (line, GetInterchanges()) {
-            msg ("Can interchange to {command:change " + line.name + ":" + SafeXML(GetDisplayAlias(line)) + "}")
+            nextup = GetNextStation(1, line.code)
+            nextdown = GetNextStation(-1, line.code)
+            if (nextup = null) {
+              msg ("Can interchange to {command:change " + line.name + ",-1:" + SafeXML(GetDisplayAlias(line)) + "}")
+            }
+            else if (nextdown = null) {
+              msg ("Can interchange to {command:change " + line.name + ",1:" + SafeXML(GetDisplayAlias(line)) + "}")
+            }
+            else {
+              msg ("Can interchange to {command:change " + line.name + ",1:" + SafeXML(GetDisplayAlias(line)) + " (up)} or {command:change " + line.name + ",-1:" + SafeXML(GetDisplayAlias(line)) + " (down)}")
+            }
           }
-          next = GetNextStation()
+          next = GetNextStation(train.direction, train.line.code)
           if (next = null) {
             msg ("End of the line. {command:reverse:Go the other way}")
           }
@@ -228,7 +238,7 @@
       </script>
     </command>
     <command>
-      <pattern>change #text_line#</pattern>
+      <pattern>change #text_line#,#text_direction#</pattern>
       <script>
         newline = null
         foreach (line, GetInterchanges()) {
@@ -240,6 +250,16 @@
           msg ("Not a valid interchange")
         }
         else {
+          if (text_direction = "-1") {
+            train.direction = -1
+          }
+          else if (text_direction = "1") {
+            train.direction = 1
+          }
+          else {
+            msg ("Not a valid direction")
+          }
+          msg ("Direction " + train.direction)
           train.line = newline
           msg ("We are now at " + GetDisplayAlias(train.location))
           msg ("{command:next:Go to next station}")
@@ -255,9 +275,9 @@
       </script>
     </command>
   </object>
-  <function name="GetNextStation" type="object">
-    nextlocationcode = GetInt(train.location, train.line.code) + train.direction
-    return (GetStation(train.line.code, nextlocationcode))
+  <function name="GetNextStation" parameters="direction, linecode" type="object">
+    nextlocationcode = GetInt(train.location, linecode) + direction
+    return (GetStation(linecode, nextlocationcode))
   </function>
   <function name="GetStation" parameters="line, code" type="object">
     result = null
