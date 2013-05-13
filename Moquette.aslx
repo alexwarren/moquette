@@ -316,7 +316,32 @@
       <pattern>unboard</pattern>
       <script>
         platform = GetPlatform(train.location, train.line, train.direction)
-        MoveToPlatform(train.location, platform)
+        if (platform = null) {
+          // we're at the end of the line
+          availablelist = ""
+          foreach (availableplatform, train.location.platforms) {
+            platformdata = DictionaryItem(train.location.platforms, availableplatform)
+            if (LengthOf(availablelist) > 0) {
+              availablelist = availablelist + ", "
+            }
+            availablelist = availablelist + ("{command:change " + availableplatform + ":" + availableplatform + "}")
+          }
+          msg ("Changes: " + availablelist)
+        }
+        else {
+          MoveToPlatform(train.location, platform)
+        }
+      </script>
+    </command>
+    <command>
+      <pattern>change #text_platform#</pattern>
+      <script>
+        // this version is only used for the end of the line
+        foreach (availableplatform, train.location.platforms) {
+          if (availableplatform = text_platform) {
+            MoveToPlatform (train.location, DictionaryItem(train.location.platforms, availableplatform))
+          }
+        }
       </script>
     </command>
   </object>
