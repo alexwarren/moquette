@@ -38,7 +38,9 @@
 	              directions = NewStringDictionary()
 	              dictionary add (directions, line.code, ToString(direction))
 	              dictionary add (platformdata, "directions", directions)
-	              dictionary add (station.platforms, GetPlatformName(line, direction), platformdata)
+	              name = GetPlatformName(line, direction)
+	              dictionary add (platformdata, "name", name)
+	              dictionary add (station.platforms, name, platformdata)
 	            }
 	          }
             }
@@ -223,6 +225,7 @@
   </object>
   <object name="platform">
   	<location type="object">Chancery Lane</location>
+  	<platformname>Central (westbound)</platformname>
     <lines type="objectlist">Central</lines>
     <directions type="stringdictionary">
       <item>
@@ -231,8 +234,17 @@
       </item>
     </directions>
     <enter type="script">
+    <![CDATA[
 	  msg ("We are now on the platform at " + GetDisplayAlias(platform.location))
       msg ("{command:next:Summon a train}")
+      foreach (availableplatform, platform.location.platforms) {
+        platformdata = DictionaryItem(platform.location.platforms, availableplatform)
+        platformname = DictionaryItem(platformdata, "name")
+        if (platformname <> platform.platformname) {
+          msg ("A platform: " + availableplatform)
+        }
+      }
+    ]]>
 	</enter>
     <command>
       <pattern>board</pattern>
@@ -279,37 +291,6 @@
       </script>
     </command>
     <command>
-      <pattern>change #text_line#,#text_direction#</pattern>
-      <script>
-        newline = null
-        foreach (line, GetInterchanges()) {
-          if (line.name = text_line) {
-            newline = line
-          }
-        }
-        if (newline = null) {
-          msg ("Not a valid interchange")
-        }
-        else {
-          if (text_direction = "-1") {
-            direction = -1
-          }
-          else if (text_direction = "1") {
-            direction = 1
-          }
-          else {
-            msg ("Not a valid direction")
-          }
-          platform.location = train.location
-		  platform.lines = NewObjectList()
-		  list add (platform.lines, newline)
-		  platform.directions = NewStringDictionary()
-		  dictionary add (platform.directions, newline.code, ToString(direction))
-          player.parent = platform
-        }
-      </script>
-    </command>
-    <command>
       <pattern>unboard</pattern>
       <script>
         platform = GetPlatform(train.location, train.line, train.direction)
@@ -321,6 +302,7 @@
     platform.location = location
     platform.lines = DictionaryItem(platformdata, "lines")
     platform.directions = DictionaryItem(platformdata, "directions")
+    platform.platformname = DictionaryItem(platformdata, "name")
     player.parent = platform
   </function>
   <function name="GetPlatform" parameters="location, line, direction" type="dictionary">
@@ -361,24 +343,6 @@
     }
     return (result)
   ]]></function>
-  <function name="GetInterchangeLabel" parameters="line, direction" type="string">
-    if (line = Circle) {
-      // TO DO: Add "via"
-      up = "anticlockwise"
-      down = "clockwise"
-    }
-    else {
-      up = line.up
-      down = line.down
-    }
-    if (direction = -1) {
-      bound = down
-    }
-    else {
-      bound = up
-    }
-  	return ("{command:change " + line.name + "," + direction + ":" + SafeXML(GetDisplayAlias(line)) + " (" + bound + ")}")
-  </function>
   <function name="GetPlatformName" parameters="line, direction" type="string">
     if (line = Circle) {
       // TO DO: Add "via"

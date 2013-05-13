@@ -287,6 +287,10 @@
           <key>Bakerloo (northbound)</key>
           <value type="dictionary">
             <item>
+              <key>name</key>
+              <value type="string">Bakerloo (northbound)</value>
+            </item>
+            <item>
               <key>lines</key>
               <value type="objectlist">Bakerloo</value>
             </item>
@@ -304,6 +308,10 @@
         <item>
           <key>Bakerloo (southbound)</key>
           <value type="dictionary">
+            <item>
+              <key>name</key>
+              <value type="string">Bakerloo (southbound)</value>
+            </item>
             <item>
               <key>lines</key>
               <value type="objectlist">Bakerloo</value>
