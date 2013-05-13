@@ -157,14 +157,32 @@
     <object name="Act 0 London Bridge">
       <inherit name="editor_room" />
       <description>At London Bridge</description>
+      <enter type="script">
+        train.direction = -1
+        train.location = London Bridge
+        train.line = Jubilee
+        player.parent = train
+      </enter>
     </object>
     <object name="Act 0 Stockwell Escape">
       <inherit name="editor_room" />
       <description>Escape towards Vauxhall</description>
+      <enter type="script">
+        train.direction = -1
+        train.location = Stockwell
+        train.line = VictoriaLine
+        player.parent = train
+      </enter>
     </object>
     <object name="Act 0 Kennington Escape">
       <inherit name="editor_room" />
       <description>Escape on Charing Cross branch</description>
+      <enter type="script">
+        train.direction = -1
+        train.location = Kennington
+        train.line = Northern2
+        player.parent = train
+      </enter>
     </object>
     <object name="Act 0 Elephant Escape">
       <inherit name="editor_room" />
