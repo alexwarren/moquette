@@ -1,4 +1,4 @@
-﻿<!--Saved by Quest 5.5.4877.37023-->
+<!--Saved by Quest 5.5.4877.37023-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -21,6 +21,7 @@
     <author>Alex Warren</author>
     <subtitle type="string"></subtitle>
     <showtitle />
+    <command_newline />
   </game>
   <object name="Act 0">
     <inherit name="editor_room" />
@@ -205,7 +206,7 @@
     </enter>
     <command>
       <pattern>next</pattern>
-      <script><![CDATA[
+      <script>
         next = GetNextStation()
         if (next = null) {
           msg ("End of the line")
@@ -217,14 +218,14 @@
             msg ("Can interchange to {command:change " + line.name + ":" + SafeXML(GetDisplayAlias(line)) + "}")
           }
           next = GetNextStation()
-	      if (next = null) {
-	        msg ("End of the line. {command:reverse:Go the other way}")
-	      }
-	      else {
-	      	msg ("{command:next:Stay on the train} or {command:reverse:Go the other way}")
-	      }
+          if (next = null) {
+            msg ("End of the line. {command:reverse:Go the other way}")
+          }
+          else {
+            msg ("{command:next:Stay on the train} or {command:reverse:Go the other way}")
+          }
         }
-      ]]></script>
+      </script>
     </command>
     <command>
       <pattern>change #text_line#</pattern>
@@ -241,7 +242,7 @@
         else {
           train.line = newline
           msg ("We are now at " + GetDisplayAlias(train.location))
-      	  msg ("{command:next:Go to next station}")
+          msg ("{command:next:Go to next station}")
         }
       </script>
     </command>
