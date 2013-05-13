@@ -51,7 +51,7 @@
       <metropolitan type="int">108</metropolitan>
     </object>
     <object name="Aldgate East">
-      <district2 type="int">113</district2>
+      <district2 type="int">114</district2>
       <hc type="int">110</hc>
     </object>
     <object name="Angel">
@@ -83,7 +83,7 @@
     </object>
     <object name="Blackfriars">
       <circle type="int">115</circle>
-      <district2 type="int">108</district2>
+      <district2 type="int">109</district2>
     </object>
     <object name="Bond Street">
       <central type="int">104</central>
@@ -94,7 +94,7 @@
     </object>
     <object name="Cannon Street">
       <circle type="int">113</circle>
-      <district2 type="int">110</district2>
+      <district2 type="int">111</district2>
     </object>
     <object name="Chancery Lane">
       <central type="int">108</central>
@@ -136,6 +136,7 @@
       <bakerloo type="int">108</bakerloo>
       <circle type="int">117</circle>
       <northern2 type="int">106</northern2>
+      <district2 type="int">107</district2>
     </object>
     <object name="Euston">
       <northern1 type="int">100</northern1>
@@ -219,7 +220,7 @@
     </object>
     <object name="Mansion House">
       <circle type="int">114</circle>
-      <district2 type="int">109</district2>
+      <district2 type="int">110</district2>
     </object>
     <object name="Marble Arch">
       <central type="int">103</central>
@@ -229,7 +230,7 @@
     </object>
     <object name="Monument">
       <circle type="int">112</circle>
-      <district2 type="int">111</district2>
+      <district2 type="int">112</district2>
     </object>
     <object name="Moorgate">
       <circle type="int">108</circle>
@@ -302,7 +303,7 @@
     </object>
     <object name="Temple">
       <circle type="int">116</circle>
-      <district2 type="int">107</district2>
+      <district2 type="int">108</district2>
     </object>
     <object name="Tottenham Court Road">
       <central type="int">106</central>
@@ -310,7 +311,7 @@
     </object>
     <object name="Tower Hill">
       <circle type="int">111</circle>
-      <district2 type="int">112</district2>
+      <district2 type="int">113</district2>
     </object>
     <object name="Vauxhall">
       <victoria type="int">107</victoria>
