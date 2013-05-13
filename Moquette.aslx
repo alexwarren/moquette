@@ -196,6 +196,35 @@
       </enter>
     </object>
   </object>
+  <object name="platform">
+  	<location type="object">Chancery Lane</location>
+    <lines type="objectlist">Central</lines>
+    <directions type="stringdictionary">
+      <item>
+      	<key>central</key>
+      	<value>-1</value>
+      </item>
+    </directions>
+    <enter type="script">
+	  msg ("We are now on the platform at " + GetDisplayAlias(platform.location))
+      msg ("{command:next:Summon a train}")
+	</enter>
+    <command>
+      <pattern>board</pattern>
+      <script>
+        player.parent = train
+      </script>
+    </command>
+    <command>
+      <pattern>next</pattern>
+      <script>
+        train.line = ObjectListItem(platform.lines, GetRandomInt(0, ListCount(platform.lines) - 1))
+        train.location = platform.location
+        train.direction = ToInt(StringDictionaryItem(platform.directions, train.line.code))
+        msg ("A " + train.line.name + " train arrives. {command:board:Board}")
+      </script>
+    </command>
+  </object>
   <object name="train">
     <direction type="int">-1</direction>
     <location type="object">Chancery Lane</location>
@@ -251,17 +280,20 @@
         }
         else {
           if (text_direction = "-1") {
-            train.direction = -1
+            direction = -1
           }
           else if (text_direction = "1") {
-            train.direction = 1
+            direction = 1
           }
           else {
             msg ("Not a valid direction")
           }
-          train.line = newline
-          msg ("We are now at " + GetDisplayAlias(train.location))
-          msg ("{command:next:Go to next station}")
+          platform.location = train.location
+          platform.lines = NewObjectList()
+          list add (platform.lines, newline)
+          platform.directions = NewStringDictionary()
+          dictionary add (platform.directions, newline.code, ToString(direction))
+          player.parent = platform
         }
       </script>
     </command>
