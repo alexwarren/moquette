@@ -64,6 +64,9 @@
       <jubilee type="int">100</jubilee>
       <metropolitan type="int">100</metropolitan>
     </object>
+    <object name="Balham">
+      <northern1 type="int">115</northern1>
+    </object>
     <object name="Bank">
       <central type="int">110</central>
       <northern1 type="int">105</northern1>
@@ -99,6 +102,15 @@
     <object name="Charing Cross">
       <bakerloo type="int">107</bakerloo>
       <northern2 type="int">105</northern2>
+    </object>
+    <object name="Clapham Common">
+      <northern1 type="int">113</northern1>
+    </object>
+    <object name="Clapham North">
+      <northern1 type="int">112</northern1>
+    </object>
+    <object name="Clapham South">
+      <northern1 type="int">114</northern1>
     </object>
     <object name="Covent Garden">
       <piccadilly type="int">108</piccadilly>
@@ -169,6 +181,10 @@
     <object name="Hyde Park Corner">
       <piccadilly type="int">104</piccadilly>
     </object>
+    <object name="Kennington">
+      <northern1 type="int">109</northern1>
+      <northern2 type="int">108</northern2>
+    </object>
     <object name="Kings Cross St Pancras">
       <alias>King's Cross St. Pancras</alias>
       <circle type="int">105</circle>
@@ -234,6 +250,9 @@
       <central type="int">105</central>
       <victoria type="int">103</victoria>
     </object>
+    <object name="Oval">
+      <northern1 type="int">110</northern1>
+    </object>
     <object name="Paddington">
       <bakerloo type="int">100</bakerloo>
       <circle type="int">100</circle>
@@ -276,6 +295,10 @@
     <object name="St Pauls">
       <alias>St. Paul's</alias>
       <central type="int">109</central>
+    </object>
+    <object name="Stockwell">
+      <northern1 type="int">111</northern1>
+      <victoria type="int">108</victoria>
     </object>
     <object name="Temple">
       <circle type="int">116</circle>
