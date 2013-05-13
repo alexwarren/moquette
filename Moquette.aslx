@@ -169,13 +169,14 @@
     <object name="Act 0 Elephant Escape">
       <inherit name="editor_room" />
       <description>Escape up Bakerloo line</description>
+      <enter type="script">
+        train.direction = -1
+        train.location = Elephant Castle
+        train.line = Bakerloo
+        player.parent = train
+      </enter>
     </object>
   </object>
-  <verb>
-    <property>board</property>
-    <pattern>board; get in</pattern>
-    <defaultexpression>"You can't board " + object.article + "."</defaultexpression>
-  </verb>
   <object name="onplatform">
     <inherit name="editor_room" />
     <object name="platform">
@@ -187,12 +188,8 @@
       <direction type="int">-1</direction>
       <location type="object">Chancery Lane</location>
       <line type="object">Central</line>
-      <board type="script">
-        msg ("You get onto the train.")
-        MoveObject (player, train)
-      </board>
       <enter type="script">
-        msg ("Type " + CommandLink("next", "NEXT") + " to go to next station.")
+        msg ("{command:next:Go to next station}")
       </enter>
       <command>
         <pattern>next</pattern>
