@@ -235,15 +235,24 @@
     </directions>
     <enter type="script">
     <![CDATA[
-	  msg ("We are now on the platform at " + GetDisplayAlias(platform.location))
-      msg ("{command:next:Summon a train}")
+	  availablelist = ""
       foreach (availableplatform, platform.location.platforms) {
         platformdata = DictionaryItem(platform.location.platforms, availableplatform)
         platformname = DictionaryItem(platformdata, "name")
         if (platformname <> platform.platformname) {
-          msg ("A platform: " + availableplatform)
+          if (LengthOf(availablelist) > 0) {
+            availablelist = availablelist + ", "
+          }
+          availablelist = availablelist + ("{command:change " + availableplatform + ":" + availableplatform + "}")
+        }
+        else {
+          msg ("We are now on the " + platformname + " platform at " + GetDisplayAlias(platform.location))
         }
       }
+      if (LengthOf(availablelist) > 0) {
+        msg ("Changes: " + availablelist)
+      }
+      msg ("{command:next:Wait for a train here}")
     ]]>
 	</enter>
     <command>
@@ -259,6 +268,17 @@
         train.location = platform.location
         train.direction = ToInt(StringDictionaryItem(platform.directions, train.line.code))
         msg ("A " + train.line.name + " train arrives. {command:board:Board}")
+      </script>
+    </command>
+    <command>
+      <pattern>change #text_platform#</pattern>
+      <script>
+        foreach (availableplatform, platform.location.platforms) {
+          if (availableplatform = text_platform) {
+            MoveToPlatform (platform.location, DictionaryItem(platform.location.platforms, availableplatform))
+            invoke (platform.enter)
+          }
+        }
       </script>
     </command>
   </object>
