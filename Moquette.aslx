@@ -177,62 +177,54 @@
       </enter>
     </object>
   </object>
-  <object name="onplatform">
-    <inherit name="editor_room" />
-    <object name="platform">
-      <inherit name="editor_object" />
-      <scenery />
-      <look>There is nothing interesting about the platform.</look>
-    </object>
-    <object name="train">
-      <direction type="int">-1</direction>
-      <location type="object">Chancery Lane</location>
-      <line type="object">Central</line>
-      <enter type="script">
-        msg ("{command:next:Go to next station}")
-      </enter>
-      <command>
-        <pattern>next</pattern>
-        <script><![CDATA[
-          next = GetNextStation()
-          if (next = null) {
-            msg ("End of the line")
-          }
-          else {
-            train.location = next
-            msg ("We are now at " + GetDisplayAlias(train.location))
-            foreach (line, GetInterchanges()) {
-              msg ("Can interchange to <command input=\"change " + line.name + "\">" + SafeXML(GetDisplayAlias(line)) + "</command>")
-            }
-          }
-        ]]></script>
-      </command>
-      <command>
-        <pattern>change #text_line#</pattern>
-        <script>
-          newline = null
+  <object name="train">
+    <direction type="int">-1</direction>
+    <location type="object">Chancery Lane</location>
+    <line type="object">Central</line>
+    <enter type="script">
+      msg ("{command:next:Go to next station}")
+    </enter>
+    <command>
+      <pattern>next</pattern>
+      <script><![CDATA[
+        next = GetNextStation()
+        if (next = null) {
+          msg ("End of the line")
+        }
+        else {
+          train.location = next
+          msg ("We are now at " + GetDisplayAlias(train.location))
           foreach (line, GetInterchanges()) {
-            if (line.name = text_line) {
-              newline = line
-            }
+            msg ("Can interchange to <command input=\"change " + line.name + "\">" + SafeXML(GetDisplayAlias(line)) + "</command>")
           }
-          if (newline = null) {
-            msg ("Not a valid interchange")
+        }
+      ]]></script>
+    </command>
+    <command>
+      <pattern>change #text_line#</pattern>
+      <script>
+        newline = null
+        foreach (line, GetInterchanges()) {
+          if (line.name = text_line) {
+            newline = line
           }
-          else {
-            msg ("ok")
-            train.line = newline
-          }
-        </script>
-      </command>
-      <command>
-        <pattern>reverse</pattern>
-        <script>
-          train.direction = -train.direction
+        }
+        if (newline = null) {
+          msg ("Not a valid interchange")
+        }
+        else {
           msg ("ok")
-        </script>
-      </command>
-    </object>
+          train.line = newline
+        }
+      </script>
+    </command>
+    <command>
+      <pattern>reverse</pattern>
+      <script>
+        train.direction = -train.direction
+        msg ("ok")
+      </script>
+    </command>
   </object>
   <function name="GetNextStation" type="object">
     nextlocationcode = GetInt(train.location, train.line.code) + train.direction
