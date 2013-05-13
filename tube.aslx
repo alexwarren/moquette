@@ -282,6 +282,44 @@
       <bakerloo type="int">100</bakerloo>
       <circle type="int">100</circle>
       <hc type="int">100</hc>
+      <platforms type="dictionary">
+        <item>
+          <key>Bakerloo (northbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Bakerloo</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>bakerloo</key>
+                  <value>-1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+        <item>
+          <key>Bakerloo (southbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Bakerloo</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>bakerloo</key>
+                  <value>1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+      </platforms>
     </object>
     <object name="Piccadilly Circus">
       <bakerloo type="int">106</bakerloo>

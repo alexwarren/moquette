@@ -22,6 +22,26 @@
     <subtitle type="string"></subtitle>
     <showtitle />
     <command_newline />
+    <start type="script">
+      foreach (station, GetDirectChildren(stationdata)) {
+        if (not HasAttribute(station, "platforms")) {
+          station.platforms = NewDictionary()
+          foreach (line, GetDirectChildren(linedata)) {
+            if (HasAttribute(station, line.code)) {
+              // TO DO: For loop -1 to 1, see if there is a station that way, if so add the platform
+              platformdata = NewDictionary()
+              lines = NewObjectList()
+              list add (lines, line)
+              dictionary add (platformdata, "lines", lines)
+              directions = NewStringDictionary()
+              dictionary add (directions, line.code, "-1")
+              dictionary add (platformdata, "directions", directions)
+              dictionary add (station.platforms, GetPlatformName(line, -1), platformdata)
+            }
+          }
+        }
+	  }
+    </start>
   </game>
   <object name="Act 0">
     <inherit name="editor_room" />
@@ -289,10 +309,10 @@
             msg ("Not a valid direction")
           }
           platform.location = train.location
-          platform.lines = NewObjectList()
-          list add (platform.lines, newline)
-          platform.directions = NewStringDictionary()
-          dictionary add (platform.directions, newline.code, ToString(direction))
+		  platform.lines = NewObjectList()
+		  list add (platform.lines, newline)
+		  platform.directions = NewStringDictionary()
+		  dictionary add (platform.directions, newline.code, ToString(direction))
           player.parent = platform
         }
       </script>
@@ -345,5 +365,23 @@
       bound = up
     }
   	return ("{command:change " + line.name + "," + direction + ":" + SafeXML(GetDisplayAlias(line)) + " (" + bound + ")}")
+  </function>
+  <function name="GetPlatformName" parameters="line, direction" type="string">
+    if (line = Circle) {
+      // TO DO: Add "via"
+      up = "anticlockwise"
+      down = "clockwise"
+    }
+    else {
+      up = line.up
+      down = line.down
+    }
+    if (direction = -1) {
+      bound = down
+    }
+    else {
+      bound = up
+    }
+  	return (GetDisplayAlias(line) + " (" + bound + ")")
   </function>
 </asl>
