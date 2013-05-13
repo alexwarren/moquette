@@ -218,13 +218,13 @@
             nextup = GetNextStation(1, line.code)
             nextdown = GetNextStation(-1, line.code)
             if (nextup = null) {
-              msg ("Can interchange to {command:change " + line.name + ",-1:" + SafeXML(GetDisplayAlias(line)) + "}")
+              msg ("Can interchange to " + GetInterchangeLabel(line, -1))
             }
             else if (nextdown = null) {
-              msg ("Can interchange to {command:change " + line.name + ",1:" + SafeXML(GetDisplayAlias(line)) + "}")
+              msg ("Can interchange to " + GetInterchangeLabel(line, 1))
             }
             else {
-              msg ("Can interchange to {command:change " + line.name + ",1:" + SafeXML(GetDisplayAlias(line)) + " (up)} or {command:change " + line.name + ",-1:" + SafeXML(GetDisplayAlias(line)) + " (down)}")
+              msg ("Can interchange to " + GetInterchangeLabel(line, 1) + " or " + GetInterchangeLabel(line, -1))
             }
           }
           next = GetNextStation(train.direction, train.line.code)
@@ -259,7 +259,6 @@
           else {
             msg ("Not a valid direction")
           }
-          msg ("Direction " + train.direction)
           train.line = newline
           msg ("We are now at " + GetDisplayAlias(train.location))
           msg ("{command:next:Go to next station}")
@@ -297,4 +296,7 @@
     }
     return (result)
   ]]></function>
+  <function name="GetInterchangeLabel" parameters="line, direction" type="string">
+  	return ("{command:change " + line.name + "," + direction + ":" + SafeXML(GetDisplayAlias(line)) + "}")
+  </function>
 </asl>
