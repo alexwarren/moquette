@@ -297,6 +297,21 @@
     return (result)
   ]]></function>
   <function name="GetInterchangeLabel" parameters="line, direction" type="string">
-  	return ("{command:change " + line.name + "," + direction + ":" + SafeXML(GetDisplayAlias(line)) + "}")
+    if (line = Circle) {
+      // TO DO: Add "via"
+      up = "anticlockwise"
+      down = "clockwise"
+    }
+    else {
+      up = line.up
+      down = line.down
+    }
+    if (direction = -1) {
+      bound = down
+    }
+    else {
+      bound = up
+    }
+  	return ("{command:change " + line.name + "," + direction + ":" + SafeXML(GetDisplayAlias(line)) + " (" + bound + ")}")
   </function>
 </asl>

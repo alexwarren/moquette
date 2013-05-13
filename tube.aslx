@@ -2,47 +2,71 @@
   <object name="linedata">
     <object name="Bakerloo">
       <code>bakerloo</code>
+      <up>southbound</up>
+      <down>northbound</down>
     </object>
     <object name="Central">
       <code>central</code>
+      <up>eastbound</up>
+      <down>westbound</down>
     </object>
     <object name="Circle">
       <code>circle</code>
     </object>
     <object name="District1">
       <code>district1</code>
+      <up>northbound</up>
+      <down>southbound</down>
     </object>
     <object name="District2">
       <code>district2</code>
+      <up>eastbound</up>
+      <down>westbound</down>
     </object>
     <object name="Hammersmith City">
       <alias>Hammersmith &amp; City</alias>
       <code>hc</code>
+      <up>eastbound</up>
+      <down>westbound</down>
     </object>
     <object name="Jubilee">
       <code>jubilee</code>
+      <up>southbound</up>
+      <down>northbound</down>
     </object>
     <object name="Metropolitan">
       <code>metropolitan</code>
+      <up>eastbound</up>
+      <down>westbound</down>
     </object>
     <object name="Northern1">
       <alias>Northern Line (Bank Branch)</alias>
       <code>northern1</code>
+      <up>southbound</up>
+      <down>northbound</down>
     </object>
     <object name="Northern2">
       <alias>Northern Line (Charing Cross Branch)</alias>
       <code>northern2</code>
+      <up>southbound</up>
+      <down>northbound</down>
     </object>
     <object name="Piccadilly">
       <code>piccadilly</code>
+      <up>northbound</up>
+      <down>southbound</down>
     </object>
     <object name="VictoriaLine">
       <alias>Victoria</alias>
       <code>victoria</code>
+      <up>southbound</up>
+      <down>northbound</down>
     </object>
     <object name="Waterloo City">
       <alias>Waterloo &amp; City</alias>
       <code>wc</code>
+      <up>northbound</up>
+      <down>southbound</down>
     </object>
   </object>
   <object name="stationdata">
