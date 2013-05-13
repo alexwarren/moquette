@@ -23,24 +23,29 @@
     <showtitle />
     <command_newline />
     <start type="script">
+    <![CDATA[
       foreach (station, GetDirectChildren(stationdata)) {
         if (not HasAttribute(station, "platforms")) {
           station.platforms = NewDictionary()
           foreach (line, GetDirectChildren(linedata)) {
             if (HasAttribute(station, line.code)) {
-              // TO DO: For loop -1 to 1, see if there is a station that way, if so add the platform
-              platformdata = NewDictionary()
-              lines = NewObjectList()
-              list add (lines, line)
-              dictionary add (platformdata, "lines", lines)
-              directions = NewStringDictionary()
-              dictionary add (directions, line.code, "-1")
-              dictionary add (platformdata, "directions", directions)
-              dictionary add (station.platforms, GetPlatformName(line, -1), platformdata)
+              for (direction, -1, 1, 2) {
+                if (GetNextStation(station, direction, line.code) <> null) {
+	              platformdata = NewDictionary()
+	              lines = NewObjectList()
+	              list add (lines, line)
+	              dictionary add (platformdata, "lines", lines)
+	              directions = NewStringDictionary()
+	              dictionary add (directions, line.code, ToString(direction))
+	              dictionary add (platformdata, "directions", directions)
+	              dictionary add (station.platforms, GetPlatformName(line, direction), platformdata)
+	            }
+	          }
             }
           }
         }
 	  }
+	]]>
     </start>
   </game>
   <object name="Act 0">
@@ -256,7 +261,7 @@
     <command>
       <pattern>next</pattern>
       <script>
-        next = GetNextStation(train.direction, train.line.code)
+        next = GetNextStation(train.location, train.direction, train.line.code)
         if (next = null) {
           msg ("End of the line")
         }
@@ -264,8 +269,8 @@
           train.location = next
           msg ("We are now at " + GetDisplayAlias(train.location))
           foreach (line, GetInterchanges()) {
-            nextup = GetNextStation(1, line.code)
-            nextdown = GetNextStation(-1, line.code)
+            nextup = GetNextStation(train.location, 1, line.code)
+            nextdown = GetNextStation(train.location, -1, line.code)
             if (nextup = null) {
               msg ("Can interchange to " + GetInterchangeLabel(line, -1))
             }
@@ -276,7 +281,7 @@
               msg ("Can interchange to " + GetInterchangeLabel(line, 1) + " or " + GetInterchangeLabel(line, -1))
             }
           }
-          next = GetNextStation(train.direction, train.line.code)
+          next = GetNextStation(train.location, train.direction, train.line.code)
           if (next = null) {
             msg ("End of the line. {command:reverse:Go the other way}")
           }
@@ -326,8 +331,8 @@
       </script>
     </command>
   </object>
-  <function name="GetNextStation" parameters="direction, linecode" type="object">
-    nextlocationcode = GetInt(train.location, linecode) + direction
+  <function name="GetNextStation" parameters="location, direction, linecode" type="object">
+    nextlocationcode = GetInt(location, linecode) + direction
     return (GetStation(linecode, nextlocationcode))
   </function>
   <function name="GetStation" parameters="line, code" type="object">
