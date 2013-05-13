@@ -38,13 +38,15 @@
 	              directions = NewStringDictionary()
 	              dictionary add (directions, line.code, ToString(direction))
 	              dictionary add (platformdata, "directions", directions)
-	              name = GetPlatformName(line, direction)
-	              dictionary add (platformdata, "name", name)
-	              dictionary add (station.platforms, name, platformdata)
+	              dictionary add (station.platforms, GetPlatformName(line, direction), platformdata)
 	            }
 	          }
             }
           }
+        }
+        foreach (platformkey, station.platforms) {
+          value = DictionaryItem(station.platforms, platformkey)
+          dictionary add (value, "name", platformkey)
         }
 	  }
 	]]>
