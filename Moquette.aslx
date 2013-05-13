@@ -268,25 +268,12 @@
         else {
           train.location = next
           msg ("We are now at " + GetDisplayAlias(train.location))
-          foreach (line, GetInterchanges()) {
-            nextup = GetNextStation(train.location, 1, line.code)
-            nextdown = GetNextStation(train.location, -1, line.code)
-            if (nextup = null) {
-              msg ("Can interchange to " + GetInterchangeLabel(line, -1))
-            }
-            else if (nextdown = null) {
-              msg ("Can interchange to " + GetInterchangeLabel(line, 1))
-            }
-            else {
-              msg ("Can interchange to " + GetInterchangeLabel(line, 1) + " or " + GetInterchangeLabel(line, -1))
-            }
-          }
           next = GetNextStation(train.location, train.direction, train.line.code)
           if (next = null) {
-            msg ("End of the line. {command:reverse:Go the other way}")
+            msg ("End of the line. {command:unboard:Get off the train}")
           }
           else {
-            msg ("{command:next:Stay on the train} or {command:reverse:Go the other way}")
+            msg ("{command:next:Stay on the train} or {command:unboard:Get off the train}")
           }
         }
       </script>
@@ -323,14 +310,35 @@
       </script>
     </command>
     <command>
-      <pattern>reverse</pattern>
+      <pattern>unboard</pattern>
       <script>
-        train.direction = -train.direction
-        msg ("Reversed.")
-        msg ("{command:next:Go to next station}")
+        platform = GetPlatform(train.location, train.line, train.direction)
+        MoveToPlatform(train.location, platform)
       </script>
     </command>
   </object>
+  <function name="MoveToPlatform" parameters="location, platformdata">
+    platform.location = location
+    platform.lines = DictionaryItem(platformdata, "lines")
+    platform.directions = DictionaryItem(platformdata, "directions")
+    player.parent = platform
+  </function>
+  <function name="GetPlatform" parameters="location, line, direction" type="dictionary">
+    value = null
+    directionstring = ToString(direction)
+    foreach (platform, location.platforms) {
+      platformdata = DictionaryItem(location.platforms, platform)
+      lines = DictionaryItem(platformdata, "lines")
+      directions = DictionaryItem(platformdata, "directions")
+      if (ListContains(lines, line)) {
+        platformdirection = DictionaryItem(directions, line.code)
+        if (directionstring = platformdirection) {
+          value = platformdata
+        }
+      }
+    }
+    return (value)
+  </function>
   <function name="GetNextStation" parameters="location, direction, linecode" type="object">
     nextlocationcode = GetInt(location, linecode) + direction
     return (GetStation(linecode, nextlocationcode))
