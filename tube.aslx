@@ -150,6 +150,92 @@
       <circle type="int">127</circle>
       <district1 type="int">104</district1>
       <hc type="int">101</hc>
+      <platforms type="dictionary">
+        <item>
+          <key>Bakerloo (northbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Bakerloo</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>bakerloo</key>
+                  <value>-1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+        <item>
+          <key>Bakerloo (southbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Bakerloo</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>bakerloo</key>
+                  <value>1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+        <item>
+          <key>Hammersmith &amp; City/Circle (eastbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Hammersmith City; Circle</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>hc</key>
+                  <value>1</value>
+                </item>
+                <item>
+                  <key>circle</key>
+                  <value>1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+        <item>
+          <key>Hammersmith &amp; City/Circle/District (westbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Hammersmith City; Circle; District1</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>hc</key>
+                  <value>-1</value>
+                </item>
+                <item>
+                  <key>circle</key>
+                  <value>-1</value>
+                </item>
+                <item>
+                  <key>district1</key>
+                  <value>-1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+      </platforms>
     </object>
     <object name="Elephant Castle">
       <alias><![CDATA[Elephant & Castle]]></alias>
@@ -280,27 +366,8 @@
     </object>
     <object name="Paddington">
       <bakerloo type="int">100</bakerloo>
-      <circle type="int">100</circle>
       <hc type="int">100</hc>
       <platforms type="dictionary">
-        <item>
-          <key>Bakerloo (northbound)</key>
-          <value type="dictionary">
-            <item>
-              <key>lines</key>
-              <value type="objectlist">Bakerloo</value>
-            </item>
-            <item>
-              <key>directions</key>
-              <value type="stringdictionary">
-                <item>
-                  <key>bakerloo</key>
-                  <value>-1</value>
-                </item>
-              </value>
-            </item>
-          </value>
-        </item>
         <item>
           <key>Bakerloo (southbound)</key>
           <value type="dictionary">
@@ -313,6 +380,25 @@
               <value type="stringdictionary">
                 <item>
                   <key>bakerloo</key>
+                  <value>1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+        <item>
+          <!-- Circle intentionally omitted -->
+          <key>Hammersmith &amp; City/Circle (eastbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Hammersmith City</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>hc</key>
                   <value>1</value>
                 </item>
               </value>

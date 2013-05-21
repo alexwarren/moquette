@@ -393,8 +393,8 @@
   <function name="GetPlatformName" parameters="line, direction" type="string">
     if (line = Circle) {
       // TO DO: Add "via"
-      up = "anticlockwise"
-      down = "clockwise"
+      up = "clockwise"
+      down = "anticlockwise"
     }
     else {
       up = line.up
