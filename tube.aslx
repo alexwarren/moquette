@@ -73,10 +73,76 @@
     <object name="Aldgate">
       <circle type="int">110</circle>
       <metropolitan type="int">108</metropolitan>
+      <platforms type="dictionary">
+        <item>
+          <key>Circle/Metropolitan (northbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Circle; Metropolitan</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>circle</key>
+                  <value>-1</value>
+                </item>
+                <item>
+                  <key>metropolitan</key>
+                  <value>-1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+        <item>
+          <key>Circle (southbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Circle</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>circle</key>
+                  <value>1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+      </platforms>
     </object>
     <object name="Aldgate East">
       <district2 type="int">114</district2>
       <hc type="int">110</hc>
+      <platforms type="dictionary">
+        <item>
+          <key>Hammersmith &amp; City/District (westbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Hammersmith City; District2</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>hc</key>
+                  <value>-1</value>
+                </item>
+                <item>
+                  <key>district2</key>
+                  <value>-1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+      </platforms>
     </object>
     <object name="Angel">
       <northern1 type="int">102</northern1>
@@ -262,6 +328,52 @@
     <object name="Blackfriars">
       <circle type="int">115</circle>
       <district2 type="int">109</district2>
+      <platforms type="dictionary">
+        <item>
+          <key>Circle/District (westbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Circle; District2</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>circle</key>
+                  <value>1</value>
+                </item>
+                <item>
+                  <key>district2</key>
+                  <value>-1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+        <item>
+          <key>Circle/District (eastbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Circle; District2</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>circle</key>
+                  <value>-1</value>
+                </item>
+                <item>
+                  <key>district2</key>
+                  <value>1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+      </platforms>
     </object>
     <object name="Bond Street">
       <central type="int">104</central>
@@ -273,6 +385,52 @@
     <object name="Cannon Street">
       <circle type="int">113</circle>
       <district2 type="int">111</district2>
+      <platforms type="dictionary">
+        <item>
+          <key>Circle/District (westbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Circle; District2</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>circle</key>
+                  <value>1</value>
+                </item>
+                <item>
+                  <key>district2</key>
+                  <value>-1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+        <item>
+          <key>Circle/District (eastbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Circle; District2</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>circle</key>
+                  <value>-1</value>
+                </item>
+                <item>
+                  <key>district2</key>
+                  <value>1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+      </platforms>
     </object>
     <object name="Chancery Lane">
       <central type="int">108</central>
@@ -863,6 +1021,52 @@
     <object name="Mansion House">
       <circle type="int">114</circle>
       <district2 type="int">110</district2>
+      <platforms type="dictionary">
+        <item>
+          <key>Circle/District (westbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Circle; District2</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>circle</key>
+                  <value>1</value>
+                </item>
+                <item>
+                  <key>district2</key>
+                  <value>-1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+        <item>
+          <key>Circle/District (eastbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Circle; District2</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>circle</key>
+                  <value>-1</value>
+                </item>
+                <item>
+                  <key>district2</key>
+                  <value>1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+      </platforms>
     </object>
     <object name="Marble Arch">
       <central type="int">103</central>
@@ -873,6 +1077,52 @@
     <object name="Monument">
       <circle type="int">112</circle>
       <district2 type="int">112</district2>
+      <platforms type="dictionary">
+        <item>
+          <key>Circle/District (westbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Circle; District2</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>circle</key>
+                  <value>1</value>
+                </item>
+                <item>
+                  <key>district2</key>
+                  <value>-1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+        <item>
+          <key>Circle/District (eastbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Circle; District2</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>circle</key>
+                  <value>-1</value>
+                </item>
+                <item>
+                  <key>district2</key>
+                  <value>1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+      </platforms>
     </object>
     <object name="Moorgate">
       <circle type="int">108</circle>
@@ -1074,6 +1324,52 @@
     <object name="Temple">
       <circle type="int">116</circle>
       <district2 type="int">108</district2>
+      <platforms type="dictionary">
+        <item>
+          <key>Circle/District (westbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Circle; District2</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>circle</key>
+                  <value>1</value>
+                </item>
+                <item>
+                  <key>district2</key>
+                  <value>-1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+        <item>
+          <key>Circle/District (eastbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Circle; District2</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>circle</key>
+                  <value>-1</value>
+                </item>
+                <item>
+                  <key>district2</key>
+                  <value>1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+      </platforms>
     </object>
     <object name="Tottenham Court Road">
       <central type="int">106</central>
@@ -1082,6 +1378,52 @@
     <object name="Tower Hill">
       <circle type="int">111</circle>
       <district2 type="int">113</district2>
+      <platforms type="dictionary">
+        <item>
+          <key>Circle/District (westbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Circle; District2</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>circle</key>
+                  <value>1</value>
+                </item>
+                <item>
+                  <key>district2</key>
+                  <value>-1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+        <item>
+          <key>Circle/District (eastbound)</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Circle; District2</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>circle</key>
+                  <value>-1</value>
+                </item>
+                <item>
+                  <key>district2</key>
+                  <value>1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
+      </platforms>
     </object>
     <object name="Vauxhall">
       <victoria type="int">107</victoria>
