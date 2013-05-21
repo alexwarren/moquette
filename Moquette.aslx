@@ -1,4 +1,4 @@
-﻿<!--Saved by Quest 5.5.4877.37023-->
+<!--Saved by Quest 5.5.4889.18269-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -22,8 +22,7 @@
     <subtitle type="string"></subtitle>
     <showtitle />
     <command_newline />
-    <start type="script">
-    <![CDATA[
+    <start type="script"><![CDATA[
       foreach (station, GetDirectChildren(stationdata)) {
         if (not HasAttribute(station, "platforms")) {
           station.platforms = NewDictionary()
@@ -31,16 +30,16 @@
             if (HasAttribute(station, line.code)) {
               for (direction, -1, 1, 2) {
                 if (GetNextStation(station, direction, line.code) <> null) {
-	              platformdata = NewDictionary()
-	              lines = NewObjectList()
-	              list add (lines, line)
-	              dictionary add (platformdata, "lines", lines)
-	              directions = NewStringDictionary()
-	              dictionary add (directions, line.code, ToString(direction))
-	              dictionary add (platformdata, "directions", directions)
-	              dictionary add (station.platforms, GetPlatformName(line, direction), platformdata)
-	            }
-	          }
+                  platformdata = NewDictionary()
+                  lines = NewObjectList()
+                  list add (lines, line)
+                  dictionary add (platformdata, "lines", lines)
+                  directions = NewStringDictionary()
+                  dictionary add (directions, line.code, ToString(direction))
+                  dictionary add (platformdata, "directions", directions)
+                  dictionary add (station.platforms, GetPlatformName(line, direction), platformdata)
+                }
+              }
             }
           }
         }
@@ -48,9 +47,8 @@
           value = DictionaryItem(station.platforms, platformkey)
           dictionary add (value, "name", platformkey)
         }
-	  }
-	]]>
-    </start>
+      }
+    ]]></start>
   </game>
   <object name="Act 0">
     <inherit name="editor_room" />
@@ -83,7 +81,7 @@
     </object>
     <object name="Act 0 Balham Train Boarded">
       <inherit name="editor_room" />
-      <description><![CDATA[It's not too busy at this time of day. Nowhere to sit, but plenty of standing space. It presents no challenges. Nothing to engage my conscious brain with. I just glide automatically to a pole and grab hold of it without a moment's thought. No decisions, no effort, no choice, no problem. Almost an unconscious twitch, the act of getting on a tube to work. I will change at Bank, travel one stop to Liverpool Street, arrive at the office, and barely notice the whole thing. And then I will sit at my desk, go home at the end of the day, eat a ready meal and go to bed, having hardly troubled my synapses.<br/><br/>The doors open.<br/><br/>This station is {command:1:Clapham South}]]></description>
+      <description><![CDATA[Pretty full as usual. No expectation of a seat, so I barely look for one. Space over by the opposite door though.<br/><br/>No challenges here. Nothing to engage my conscious brain with. I just glide automatically to a pole and grab hold of it without a moment's thought. No decisions, no effort, no choice, no problem.<br/><br/>Auto-pilot. Almost a reflex action to the alarm clock, to get up, leave the flat, catch the tube to work. Ten stops to Bank, change to the Central line, one stop to Liverpool Street, turn left, up the escalator, left, through the barriers, right, up the stairs, up the ramp, past the huge big rusty metal sculpture thingy, into the office, and barely notice the whole thing.<br/><br/>And then I will sit at my desk, go home at the end of the day, heat up that other frozen pizza from the 2-for-1 offer, and go to bed having hardly troubled my synapses in 16 hours. Possibly the most exciting thing I will do today is go for a shit. Sneak off from my desk for 10 minutes of unscheduled me-time. Like a mini holiday.<br/><br/>The doors open.<br/><br/>This station is {command:1:Clapham South}.]]></description>
       <beforeenter type="script">
         JS.EndOutputSection ("intro")
         JS.HideOutputSection ("intro")
@@ -226,18 +224,16 @@
     </object>
   </object>
   <object name="platform">
-  	<location type="object">Chancery Lane</location>
-  	<platformname>Central (westbound)</platformname>
-    <lines type="objectlist">Central</lines>
+    <platformname>Central (westbound)</platformname>
     <directions type="stringdictionary">
       <item>
-      	<key>central</key>
-      	<value>-1</value>
+        <key>central</key>
+        <value>-1</value>
       </item>
     </directions>
-    <enter type="script">
-    <![CDATA[
-	  availablelist = ""
+    <location type="object">Chancery Lane</location>
+    <enter type="script"><![CDATA[
+      availablelist = ""
       foreach (availableplatform, platform.location.platforms) {
         platformdata = DictionaryItem(platform.location.platforms, availableplatform)
         platformname = DictionaryItem(platformdata, "name")
@@ -255,8 +251,8 @@
         msg ("Changes: " + availablelist)
       }
       msg ("{command:next:Wait for a train here}")
-    ]]>
-	</enter>
+    ]]></enter>
+    <lines type="objectlist">Central</lines>
     <command>
       <pattern>board</pattern>
       <script>
@@ -314,7 +310,7 @@
     </command>
     <command>
       <pattern>unboard</pattern>
-      <script>
+      <script><![CDATA[
         platform = GetPlatform(train.location, train.line, train.direction)
         if (platform = null) {
           // we're at the end of the line
@@ -329,9 +325,9 @@
           msg ("Changes: " + availablelist)
         }
         else {
-          MoveToPlatform(train.location, platform)
+          MoveToPlatform (train.location, platform)
         }
-      </script>
+      ]]></script>
     </command>
     <command>
       <pattern>change #text_platform#</pattern>
@@ -406,6 +402,6 @@
     else {
       bound = up
     }
-  	return (GetDisplayAlias(line) + " (" + bound + ")")
+    return (GetDisplayAlias(line) + " (" + bound + ")")
   </function>
 </asl>
