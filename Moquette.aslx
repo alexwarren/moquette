@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4890.26461-->
+﻿<!--Saved by Quest 5.5.4890.26461-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -122,7 +122,7 @@
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Act 0 Oval)
+          MoveObject (player, Act 0 Stockwell to Oval)
         </script>
       </command>
       <command>
@@ -132,23 +132,23 @@
         </script>
       </command>
     </object>
-    <object name="Act 0 Oval">
+    <object name="Act 0 Stockwell to Oval">
       <inherit name="editor_room" />
       <description><![CDATA[Stayed on train, now at Oval<br/><br/>{command:1:Continue to Kennington}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Act 0 Kennington)
+          MoveObject (player, Act 0 Oval to Kennington)
         </script>
       </command>
     </object>
-    <object name="Act 0 Kennington">
+    <object name="Act 0 Oval to Kennington">
       <inherit name="editor_room" />
       <description>I could {command:1:stay on the train} or {command:2:change to the Charing Cross branch}.</description>
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Act 0 Elephant)
+          MoveObject (player, Act 0 Kennington to Elephant)
         </script>
       </command>
       <command>
@@ -158,13 +158,13 @@
         </script>
       </command>
     </object>
-    <object name="Act 0 Elephant">
+    <object name="Act 0 Kennington to Elephant">
       <inherit name="editor_room" />
       <description>I could {command:1:stay on the train} or {command:2:change to the Bakerloo line}.</description>
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Act 0 Borough)
+          MoveObject (player, Act 0 Elephant to Borough)
         </script>
       </command>
       <command>
@@ -174,17 +174,17 @@
         </script>
       </command>
     </object>
-    <object name="Act 0 Borough">
+    <object name="Act 0 Elephant to Borough">
       <inherit name="editor_room" />
       <description>Continue to {command:1:London Bridge}</description>
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Act 0 London Bridge)
+          MoveObject (player, Act 0 Borough to London Bridge)
         </script>
       </command>
     </object>
-    <object name="Act 0 London Bridge">
+    <object name="Act 0 Borough to London Bridge">
       <inherit name="editor_room" />
       <description>At London Bridge</description>
       <enter type="script">
