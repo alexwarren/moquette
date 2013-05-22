@@ -1,4 +1,4 @@
-﻿<!--Saved by Quest 5.5.4890.26461-->
+<!--Saved by Quest 5.5.4890.26461-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -144,7 +144,7 @@
     </object>
     <object name="Act 0 Oval to Kennington">
       <inherit name="editor_room" />
-      <description>I could {command:1:stay on the train} or {command:2:change to the Charing Cross branch}.</description>
+      <description><![CDATA[On train from Oval to Kennington.<br/><br/>We have arrived.<br/><br/>I could {command:1:stay on the train} or {command:2:change to the Charing Cross branch}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -160,7 +160,7 @@
     </object>
     <object name="Act 0 Kennington to Elephant">
       <inherit name="editor_room" />
-      <description>I could {command:1:stay on the train} or {command:2:change to the Bakerloo line}.</description>
+      <description><![CDATA[So I stay on the train, and travel to Elephant & Castle.<br/><br/>We have arrived.<br/><br/>I could {command:1:stay on the train} or I could {command:2:change to the Bakerloo line}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -176,7 +176,7 @@
     </object>
     <object name="Act 0 Elephant to Borough">
       <inherit name="editor_room" />
-      <description>Continue to {command:1:London Bridge}</description>
+      <description><![CDATA[Stayed on the train, now we're travelling to Borough.<br/><br/>We are here.<br/><br/>Continue to {command:1:London Bridge}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
