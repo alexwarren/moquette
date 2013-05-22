@@ -81,44 +81,44 @@
           SetTimeout (1) {
             ClearScreen
             JS.StartOutputSection ("act01")
-            MoveObject (player, Act 0 Balham Train Boarded)
+            MoveObject (player, Act 0 Balham to Clapham South)
           }
         </script>
       </command>
     </object>
-    <object name="Act 0 Balham Train Boarded">
+    <object name="Act 0 Balham to Clapham South">
       <inherit name="editor_room" />
       <description><![CDATA[Pretty full as usual. No expectation of a seat, so I barely look for one. Space over by the opposite door though.<br/><br/>No challenges here. Nothing to engage my conscious brain with. I just glide automatically to a pole and grab hold of it without a moment's thought. No decisions, no effort, no choice, no problem.<br/><br/>Auto-pilot. Almost a reflex action to the alarm clock, to get up, leave the flat, catch the tube to work. Ten stops to Bank, change to the Central line, one stop to Liverpool Street, turn left, up the escalator, left, through the barriers, right, up the stairs, up the ramp, past the huge big rusty metal sculpture thingy, into the office, and barely notice the whole thing.<br/><br/>And then I will sit at my desk, go home at the end of the day, heat up that other frozen pizza from the 2-for-1 offer, and go to bed having hardly troubled my synapses in 16 hours. Possibly the most exciting thing I will do today is go for a shit. Sneak off from my desk for 10 minutes of unscheduled me-time. Like a mini holiday.<br/><br/>The doors open. One person gets on.<br/><br/>This station is {command:1:Clapham South}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Act 0 Clapham South)
+          MoveObject (player, Act 0 Clapham South to Clapham Common)
         </script>
       </command>
     </object>
-    <object name="Act 0 Clapham South">
+    <object name="Act 0 Clapham South to Clapham Common">
       <inherit name="editor_room" />
-      <description><![CDATA[Beep-beep-beep-beep-beep.<br/><br/>The doors close. The train lurches onward. {There is only one way ahead for the train, as for Z, it seems.}<br/><br/>{command:1:Clapham Common}]]></description>
+      <description><![CDATA[Beep-beep-beep-beep-beep.<br/><br/>The doors close. The train lurches onward. {There is only one way ahead for the train, as for Z, it seems.}<br/><br/>This station is {command:1:Clapham Common}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Act 0 Clapham Common)
+          MoveObject (player, Act 0 Clapham Common to Clapham North)
         </script>
       </command>
     </object>
-    <object name="Act 0 Clapham Common">
+    <object name="Act 0 Clapham Common to Clapham North">
       <inherit name="editor_room" />
-      <description>{command:1:Stockwell}</description>
+      <description><![CDATA[On the train to Clapham North...<br/><br/>This station is {command:1:Clapham North}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Act 0 Stockwell)
+          MoveObject (player, Act 0 Clapham North to Stockwell)
         </script>
       </command>
     </object>
-    <object name="Act 0 Stockwell">
+    <object name="Act 0 Clapham North to Stockwell">
       <inherit name="editor_room" />
-      <description>I could {command:1:stay on this train} or {command:2:get on the Victoria line}.</description>
+      <description><![CDATA[On the train from Clapham North to Stockwell.<br/><br/>We have arrived.<br/><br/>I suppose I could {command:1:stay on this train}, or I could {command:2:get on the Victoria line} instead if I wanted to.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
