@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4889.18269-->
+<!--Saved by Quest 5.5.4890.26461-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -79,6 +79,8 @@
           JS.HideOutputSection ("intro")
           JS.HideOutputSection ("title")
           SetTimeout (1) {
+            ClearScreen
+            JS.StartOutputSection ("act01")
             MoveObject (player, Act 0 Balham Train Boarded)
           }
         </script>
@@ -186,6 +188,7 @@
       <inherit name="editor_room" />
       <description>At London Bridge</description>
       <enter type="script">
+        EndAct0
         train.direction = -1
         train.location = London Bridge
         train.line = Jubilee
@@ -196,6 +199,7 @@
       <inherit name="editor_room" />
       <description>Escape towards Vauxhall</description>
       <enter type="script">
+        EndAct0
         train.direction = -1
         train.location = Stockwell
         train.line = VictoriaLine
@@ -206,6 +210,7 @@
       <inherit name="editor_room" />
       <description>Escape on Charing Cross branch</description>
       <enter type="script">
+        EndAct0
         train.direction = -1
         train.location = Kennington
         train.line = Northern2
@@ -216,6 +221,7 @@
       <inherit name="editor_room" />
       <description>Escape up Bakerloo line</description>
       <enter type="script">
+        EndAct0
         train.direction = -1
         train.location = Elephant Castle
         train.line = Bakerloo
@@ -403,5 +409,11 @@
       bound = up
     }
     return (GetDisplayAlias(line) + " (" + bound + ")")
+  </function>
+  <function name="EndAct0">
+    JS.EndOutputSection ("act01")
+    JS.HideOutputSection ("act01")
+    ClearScreen
+    JS.StartOutputSection ("act1")
   </function>
 </asl>
