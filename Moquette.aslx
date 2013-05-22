@@ -88,7 +88,7 @@
     </object>
     <object name="Act 0 Balham Train Boarded">
       <inherit name="editor_room" />
-      <description><![CDATA[Pretty full as usual. No expectation of a seat, so I barely look for one. Space over by the opposite door though.<br/><br/>No challenges here. Nothing to engage my conscious brain with. I just glide automatically to a pole and grab hold of it without a moment's thought. No decisions, no effort, no choice, no problem.<br/><br/>Auto-pilot. Almost a reflex action to the alarm clock, to get up, leave the flat, catch the tube to work. Ten stops to Bank, change to the Central line, one stop to Liverpool Street, turn left, up the escalator, left, through the barriers, right, up the stairs, up the ramp, past the huge big rusty metal sculpture thingy, into the office, and barely notice the whole thing.<br/><br/>And then I will sit at my desk, go home at the end of the day, heat up that other frozen pizza from the 2-for-1 offer, and go to bed having hardly troubled my synapses in 16 hours. Possibly the most exciting thing I will do today is go for a shit. Sneak off from my desk for 10 minutes of unscheduled me-time. Like a mini holiday.<br/><br/>The doors open.<br/><br/>This station is {command:1:Clapham South}.]]></description>
+      <description><![CDATA[Pretty full as usual. No expectation of a seat, so I barely look for one. Space over by the opposite door though.<br/><br/>No challenges here. Nothing to engage my conscious brain with. I just glide automatically to a pole and grab hold of it without a moment's thought. No decisions, no effort, no choice, no problem.<br/><br/>Auto-pilot. Almost a reflex action to the alarm clock, to get up, leave the flat, catch the tube to work. Ten stops to Bank, change to the Central line, one stop to Liverpool Street, turn left, up the escalator, left, through the barriers, right, up the stairs, up the ramp, past the huge big rusty metal sculpture thingy, into the office, and barely notice the whole thing.<br/><br/>And then I will sit at my desk, go home at the end of the day, heat up that other frozen pizza from the 2-for-1 offer, and go to bed having hardly troubled my synapses in 16 hours. Possibly the most exciting thing I will do today is go for a shit. Sneak off from my desk for 10 minutes of unscheduled me-time. Like a mini holiday.<br/><br/>The doors open. One person gets on.<br/><br/>This station is {command:1:Clapham South}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -98,7 +98,7 @@
     </object>
     <object name="Act 0 Clapham South">
       <inherit name="editor_room" />
-      <description><![CDATA[The doors close. The train lurches onward. {There is only one way ahead for the train, as for Z, it seems.}<br/><br/>{command:1:Clapham Common}]]></description>
+      <description><![CDATA[Beep-beep-beep-beep-beep.<br/><br/>The doors close. The train lurches onward. {There is only one way ahead for the train, as for Z, it seems.}<br/><br/>{command:1:Clapham Common}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
