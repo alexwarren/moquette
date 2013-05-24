@@ -193,21 +193,18 @@
     </object>
     <object name="Act 0 Stockwell Escape">
       <inherit name="editor_room" />
-      <description>Escape towards Vauxhall</description>
       <enter type="script">
         EndAct0 (-1, Stockwell, VictoriaLine)
       </enter>
     </object>
     <object name="Act 0 Kennington Escape">
       <inherit name="editor_room" />
-      <description>Escape on Charing Cross branch</description>
       <enter type="script">
         EndAct0 (-1, Kennington, Northern2)
       </enter>
     </object>
     <object name="Act 0 Elephant Escape">
       <inherit name="editor_room" />
-      <description>Escape up Bakerloo line</description>
       <enter type="script">
         EndAct0 (-1, Elephant Castle, Bakerloo)
       </enter>
