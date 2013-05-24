@@ -247,6 +247,9 @@
       <pattern>board</pattern>
       <script>
         player.parent = train
+        InitTrain
+        // TO DO: Train counter will be incremented now from 0 to 1 even though we haven't waited on the train yet.
+        // So will prob want to set counter to -1 here.
       </script>
     </command>
     <command>
