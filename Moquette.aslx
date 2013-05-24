@@ -98,7 +98,7 @@
     </object>
     <object name="Act 0 Clapham South to Clapham Common">
       <inherit name="editor_room" />
-      <description><![CDATA[Beep-beep-beep-beep-beep.<br/><br/>The doors close. The train lurches onward. {There is only one way ahead for the train, as for Z, it seems.}<br/><br/>This station is {command:1:Clapham Common}.]]></description>
+      <description><![CDATA[Beep-beep-beep-beep-beep.<br/><br/>The doors close. The train lurches onward.<br/><br/>Despite the clatter of the train, and the rocking motion, there is a peaceful stillness here. Many people in a small area, yet we are all alone. It is comfortable, in a strange way, even though I am standing up, having to hold on so I don't fall over the next time the train unexpectedly yanks left or right.<br/><br/>Like water droplets coming together and flowing through a pipe, the Tube carries us along, we are swept through from home to the office. It's automatic. Water starts at one place and ends up at the other, and so do we. We are packed together and become indistinguishable from a general flow.<br/><br/>This station is {command:1:Clapham Common}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -108,7 +108,7 @@
     </object>
     <object name="Act 0 Clapham Common to Clapham North">
       <inherit name="editor_room" />
-      <description><![CDATA[On the train to Clapham North...<br/><br/>This station is {command:1:Clapham North}.]]></description>
+      <description><![CDATA[Could one water droplet separate from the rest? Can it go its own way?<br/><br/>This station is {command:1:Clapham North}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -188,44 +188,28 @@
       <inherit name="editor_room" />
       <description>At London Bridge</description>
       <enter type="script">
-        EndAct0
-        train.direction = -1
-        train.location = London Bridge
-        train.line = Jubilee
-        player.parent = train
+        EndAct0 (-1, London Bridge, Jubilee)
       </enter>
     </object>
     <object name="Act 0 Stockwell Escape">
       <inherit name="editor_room" />
       <description>Escape towards Vauxhall</description>
       <enter type="script">
-        EndAct0
-        train.direction = -1
-        train.location = Stockwell
-        train.line = VictoriaLine
-        player.parent = train
+        EndAct0 (-1, Stockwell, VictoriaLine)
       </enter>
     </object>
     <object name="Act 0 Kennington Escape">
       <inherit name="editor_room" />
       <description>Escape on Charing Cross branch</description>
       <enter type="script">
-        EndAct0
-        train.direction = -1
-        train.location = Kennington
-        train.line = Northern2
-        player.parent = train
+        EndAct0 (-1, Kennington, Northern2)
       </enter>
     </object>
     <object name="Act 0 Elephant Escape">
       <inherit name="editor_room" />
       <description>Escape up Bakerloo line</description>
       <enter type="script">
-        EndAct0
-        train.direction = -1
-        train.location = Elephant Castle
-        train.line = Bakerloo
-        player.parent = train
+        EndAct0 (-1, Elephant Castle, Bakerloo)
       </enter>
     </object>
   </object>
@@ -410,10 +394,16 @@
     }
     return (GetDisplayAlias(line) + " (" + bound + ")")
   </function>
-  <function name="EndAct0">
+  <function name="EndAct0" parameters="direction, location, line">
     JS.EndOutputSection ("act01")
     JS.HideOutputSection ("act01")
-    ClearScreen
-    JS.StartOutputSection ("act1")
+    train.direction = direction
+    train.location = location
+    train.line = line
+    SetTimeout (1) {
+      ClearScreen
+      JS.StartOutputSection ("act1")
+      player.parent = train
+    }
   </function>
 </asl>
