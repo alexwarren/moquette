@@ -308,6 +308,12 @@
         }
       </script>
     </command>
+    <command>
+      <pattern>interact #object#</pattern>
+      <script>
+        msg (object.desc)
+      </script>
+    </command>
     <turnscript>
       <enabled />
       <script>
@@ -411,7 +417,7 @@
     train.nextstopcount = 3
     train.counter = 0
     InitTrainAtStation
-    msg (FormatObjectList("I can see", GetNonTransparentParent(game.pov.parent), "and", ".", false))
+    msg (TrainObjectList("I can see", GetNonTransparentParent(game.pov.parent), "and", "."))
   </function>
   <function name="InitTrainAtStation">
     msg ("We are now at " + GetDisplayAlias(train.location))
@@ -446,6 +452,30 @@
         if (not ListContains(result, item)) {
           list add (result, item)
         }
+      }
+    }
+    return (result)
+  ]]>
+  </function>
+  <function name="TrainObjectList" type="string" parameters="preList, parent, preFinal, postList">
+    <![CDATA[
+    result = ""
+    count = 0
+    list = RemoveSceneryObjects(GetDirectChildren(parent))
+    listLength = ListCount(list)
+    foreach (item, list) {
+      if (LengthOf(result) = 0) result = preList + " "
+      verbs = GetDisplayVerbs(item)
+      result = result + "{command:interact " + item.name + ":" + item.title + "}"
+      count = count + 1
+      if (count = listLength - 1) {
+        result = result + " " + preFinal + " "
+      }
+      else if (count < listLength) {
+        result = result + ", "
+      }
+      else {
+        result = result + postList
       }
     }
     return (result)
