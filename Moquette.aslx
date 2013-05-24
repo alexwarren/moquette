@@ -3,6 +3,7 @@
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
   <include ref="tube.aslx" />
+  <include ref="people.aslx" />
   <game name="Moquette">
     <gameid>ff2da758-286e-4c47-b6f2-eb26ba2f7591</gameid>
     <showpanes type="boolean">false</showpanes>
@@ -389,35 +390,65 @@
     SetTimeout (1) {
       ClearScreen
       JS.StartOutputSection ("act1")
-      player.parent = train
       InitTrain
     }
   </function>
   <function name="MoveTrainToNextStation">
-	next = GetNextStation(train.location, train.direction, train.line.code)
-	if (next = null) {
-	  msg ("End of the line")
-	}
-	else {
-	  train.location = next
-	  train.nextstopcount = 3
-	  train.counter = 0
-	  InitTrainAtStation
-	}
+  next = GetNextStation(train.location, train.direction, train.line.code)
+  if (next = null) {
+    msg ("End of the line")
+  }
+  else {
+    train.location = next
+    train.nextstopcount = 3
+    train.counter = 0
+    InitTrainAtStation
+  }
   </function>
   <function name="InitTrain">
+    SetUpTrain
+    player.parent = train
     train.nextstopcount = 3
-	train.counter = 0
-	InitTrainAtStation
+    train.counter = 0
+    InitTrainAtStation
+    msg (FormatObjectList("I can see", GetNonTransparentParent(game.pov.parent), "and", ".", false))
   </function>
   <function name="InitTrainAtStation">
     msg ("We are now at " + GetDisplayAlias(train.location))
     next = GetNextStation(train.location, train.direction, train.line.code)
-	if (next = null) {
-	  msg ("End of the line. {command:unboard:Get off the train}")
-	}
-	else {
-	  msg ("{command:wait:Stay on the train} or {command:unboard:Get off the train}")
-	}
+    if (next = null) {
+      msg ("End of the line. {command:unboard:Get off the train}")
+    }
+    else {
+      msg ("{command:wait:Stay on the train} or {command:unboard:Get off the train}")
+    }
+  </function>
+  <function name="SetUpTrain">
+    foreach (obj, GetDirectChildren(train)) {
+      // TO DO: Only move train items back into unseenpeople if we haven't looked at them
+      obj.parent = unseenpeople
+    }
+    passengers = RandomObjectListItems(GetDirectChildren(unseenpeople), 2)
+    foreach (obj, passengers) {
+      obj.parent = train
+    }
+  </function>
+  <function name="RandomObjectListItems" parameters="list, items" type="objectlist">
+  <![CDATA[
+    if (items >= ListCount(list)) {
+      return (list)
+    }
+    else {
+      result = NewObjectList()
+      while (ListCount(result) < items) {
+        index = GetRandomInt(0, ListCount(list) - 1)
+        item = ObjectListItem(list, index)
+        if (not ListContains(result, item)) {
+          list add (result, item)
+        }
+      }
+    }
+    return (result)
+  ]]>
   </function>
 </asl>

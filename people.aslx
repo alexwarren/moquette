@@ -1,0 +1,22 @@
+<library>
+	<object name="unseenpeople">
+		<object name="person1">
+			<alias>a man</alias>
+			<desc>He is person 1.</desc>
+		</object>
+		<object name="person2">
+			<alias>a woman</alias>
+			<desc>She is person 2.</desc>
+		</object>
+		<object name="person3">
+			<alias>a man</alias>
+			<desc>He is person 3.</desc>
+		</object>
+		<object name="person4">
+			<alias>a woman</alias>
+			<desc>She is person 4.</desc>
+		</object>
+	</object>
+	<object name="seenpeople">
+	</object>
+</library>
