@@ -430,18 +430,24 @@
     }
   </function>
   <function name="SetUpTrain">
+  <![CDATA[
     foreach (obj, GetDirectChildren(train)) {
-      // TO DO: Only move train items back into unseenpeople if we haven't looked at them
-      obj.parent = unseenpeople
+      if (obj <> player) {
+        // TO DO: Only move train items back into unseenpeople if we haven't looked at them
+        obj.parent = unseenpeople
+      }
     }
     passengers = RandomObjectListItems(GetDirectChildren(unseenpeople), 2)
     foreach (obj, passengers) {
+      Log ("move " + obj.name)
       obj.parent = train
     }
+  ]]>
   </function>
   <function name="RandomObjectListItems" parameters="list, items" type="objectlist">
   <![CDATA[
     if (items >= ListCount(list)) {
+      Log ("requested more items than were in list")
       return (list)
     }
     else {
