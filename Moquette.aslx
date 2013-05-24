@@ -244,7 +244,6 @@
     <command>
       <pattern>board</pattern>
       <script>
-        player.parent = train
         InitTrain
         // TO DO: Train counter will be incremented now from 0 to 1 even though we haven't waited on the train yet.
         // So will prob want to set counter to -1 here.
@@ -312,6 +311,7 @@
       <pattern>interact #object#</pattern>
       <script>
         msg (object.desc)
+        object.interacted = true
       </script>
     </command>
     <turnscript>
@@ -433,8 +433,12 @@
   <![CDATA[
     foreach (obj, GetDirectChildren(train)) {
       if (obj <> player) {
-        // TO DO: Only move train items back into unseenpeople if we haven't looked at them
-        obj.parent = unseenpeople
+        if (GetBoolean(obj, "interacted")) {
+          obj.parent = seenpeople
+        }
+        else {
+          obj.parent = unseenpeople
+        }
       }
     }
     passengers = RandomObjectListItems(GetDirectChildren(unseenpeople), 2)
@@ -447,8 +451,7 @@
   <function name="RandomObjectListItems" parameters="list, items" type="objectlist">
   <![CDATA[
     if (items >= ListCount(list)) {
-      Log ("requested more items than were in list")
-      return (list)
+      result = list
     }
     else {
       result = NewObjectList()
