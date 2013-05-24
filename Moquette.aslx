@@ -490,4 +490,14 @@
     return (result)
   ]]>
   </function>
+  <function name="ScopeCommands" type="objectlist">
+    result = NewObjectList()
+    foreach (command, AllCommands()) {
+      if (command.parent = null or Contains(game.pov.parent, command)) {
+        list add(result, command)
+      }
+    }
+    return (result)
+  </function>
+
 </asl>

@@ -2,7 +2,13 @@
 	<object name="unseenpeople">
 		<object name="person1">
 			<title>a man</title>
-			<desc>He is person 1.</desc>
+			<desc>He is person 1. {command:test}</desc>
+			<command>
+		      <pattern>test</pattern>
+		      <script>
+		        msg ("Tested person 1.")
+		      </script>
+		    </command>
 		</object>
 		<object name="person2">
 			<title>a woman</title>
