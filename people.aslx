@@ -22,6 +22,24 @@
 			<title>a woman</title>
 			<desc>She is person 4.</desc>
 		</object>
+		<object name="person5">
+			<title>a young pretty woman</title>
+			<desc>She is incredibly pretty in that fragile sort of way. A fine {command:bone:bone structure}, I suppose, that looks like it might break at any moment.</desc>
+			<command>
+				<pattern>bone</pattern>
+				<script>
+					msg ("Truly an exquisite skeleton. Even her X-rays would have me sighing wistfully. And she knows it.")
+				</script>
+			</command>
+		</object>
+		<object name="person6">
+			<title>a chubby couple</title>
+			<desc>They are dressed in matching waterproof jackets, and the guy is holding a tatty guide to London.</desc>
+		</object>
+		<object name="person7">
+			<title>an old woman</title>
+			<desc>She is sat in the priority seat. At least, I presume it's a she. There is a lot of wispy white hair around the chin area. I would think a man would keep his beard in better shape, and wear it with pride.</desc>
+		</object>
 	</object>
 	<object name="seenpeople">
 	</object>
