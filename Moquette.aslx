@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4881.40382-->
+﻿<!--Saved by Quest 5.5.4881.40382-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -50,6 +50,18 @@
         }
       }
     ]]></start>
+    <triggers type="dictionary">
+	  <item>
+	    <key>2</key>
+	    <value type="string">Just some text.</value>
+	  </item>
+	  <item>
+	    <key>5</key>
+	    <value type="script">
+	      msg ("A test script")
+	    </value>
+	  </item>
+	</triggers>
   </game>
   <object name="Act 0">
     <inherit name="editor_room" />
@@ -279,6 +291,7 @@
   <object name="train">
     <direction type="int">-1</direction>
     <counter type="int">0</counter>
+    <totalturns type="int">0</totalturns>
     <location type="object">Chancery Lane</location>
     <line type="object">Central</line>
     <command>
@@ -324,6 +337,16 @@
       <enabled />
       <script>
         train.counter = train.counter + 1
+        train.totalturns = train.totalturns + 1
+        if (DictionaryContains(game.triggers, ToString(train.totalturns))) {
+          action = DictionaryItem(game.triggers, ToString(train.totalturns))
+          if (TypeOf(action) = "script") {
+            invoke (action)
+          }
+          else {
+            msg (action)
+          }
+        }
         if (train.counter = train.nextstopcount) {
           MoveTrainToNextStation
         }
