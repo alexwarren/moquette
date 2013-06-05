@@ -23,6 +23,34 @@
     <subtitle type="string"></subtitle>
     <showtitle />
     <command_newline />
+    <triggers type="dictionary">
+      <item>
+        <key>2</key>
+        <value type="string">Maybe I'll go to the park.</value>
+      </item>
+      <item>
+        <key>3</key>
+        <value type="string">Hyde Park would be nice today.</value>
+      </item>
+      <item>
+        <key>7</key>
+        <value type="string">This headache is creeping up on me. Coffee. Sweet coffee.</value>
+      </item>
+      <item>
+        <key>10</key>
+        <value type="string">Headache headache headache.</value>
+      </item>
+      <item>
+        <key>17</key>
+        <value type="string">I'm sweating. This pain is like something tearing in the centre of my head.</value>
+      </item>
+      <item>
+        <key>20</key>
+        <value type="script">
+          MoveObject (player, Act 1 Vision 1)
+        </value>
+      </item>
+    </triggers>
     <start type="script"><![CDATA[
       foreach (station, GetDirectChildren(stationdata)) {
         if (not HasAttribute(station, "platforms")) {
@@ -50,18 +78,6 @@
         }
       }
     ]]></start>
-    <triggers type="dictionary">
-	  <item>
-	    <key>2</key>
-	    <value type="string">Just some text.</value>
-	  </item>
-	  <item>
-	    <key>5</key>
-	    <value type="script">
-	      msg ("A test script")
-	    </value>
-	  </item>
-	</triggers>
   </game>
   <object name="Act 0">
     <inherit name="editor_room" />
@@ -339,6 +355,7 @@
         train.counter = train.counter + 1
         train.totalturns = train.totalturns + 1
         if (DictionaryContains(game.triggers, ToString(train.totalturns))) {
+          msg ("")
           action = DictionaryItem(game.triggers, ToString(train.totalturns))
           if (TypeOf(action) = "script") {
             invoke (action)
@@ -348,10 +365,24 @@
           }
         }
         if (train.counter = train.nextstopcount) {
+          msg ("")
           MoveTrainToNextStation
         }
       </script>
     </turnscript>
+  </object>
+  <object name="Act 1">
+    <inherit name="editor_room" />
+    <object name="Act 1 Vision 1">
+      <inherit name="editor_room" />
+      <description><![CDATA[My vision clouds over.<br/><br/>I can smell cigarette smoke.<br/><br/>I close my eyes. I slowly {command:1:open them again}.]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, train)
+        </script>
+      </command>
+    </object>
   </object>
   <function name="MoveToPlatform" parameters="location, platformdata">
     platform.location = location
