@@ -66,6 +66,26 @@
 				</script>
 			</command>
 		</object>
+		<object name="person10">
+			<title>two female friends</title>
+			<desc>It seems like they don't know each other too well, they're deep in polite {command:conversation:small talk}.</desc>
+			<command>
+				<pattern>conversation</pattern>
+				<script>
+					msg ("It's quite hard to hear above the rumble of the tube. What time did that finish... Did you know him from Nottingham... I didn't get back until 2... I don't think I'm missing out on much by not paying attention to this.")
+				</script>
+			</command>
+		</object>
+		<object name="person11">
+			<title>a man</title>
+			<desc>Unlike most people it seems, he's not filling his journey by looking at a newspaper or listening to earphones. He is {command:muttering:muttering} to himself a bit though, as he stares vacantly into space.</desc>
+			<command>
+				<pattern>muttering</pattern>
+				<script>
+					msg ("Impossible to hear what he's saying. He doesn't seem threatening though, somehow. He seems too nerdy to be dangerous. I mean, he probably has a proper job and everything. Which is probably the perfect cover. He's probably exactly the kind of person that would have somebody kept in his basement.")
+				</script>
+			</command>
+		</object>
 	</object>
 	<object name="seenpeople">
 	</object>
