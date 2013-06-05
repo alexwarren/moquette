@@ -50,6 +50,12 @@
           MoveObject (player, Act 1 Vision 1)
         </value>
       </item>
+      <item>
+        <key>30</key>
+        <value type="script">
+          MoveObject (player, Act 1 Vision 2)
+        </value>
+      </item>
     </triggers>
     <start type="script"><![CDATA[
       foreach (station, GetDirectChildren(stationdata)) {
@@ -375,12 +381,36 @@
     <inherit name="editor_room" />
     <object name="Act 1 Vision 1">
       <inherit name="editor_room" />
-      <description><![CDATA[My vision clouds over.<br/><br/>I can smell cigarette smoke.<br/><br/>I close my eyes. I slowly {command:1:open them again}.]]></description>
+      <description><![CDATA[I can't see properly. My head is pounding. Thump, thump, thump.<br/><br/>I think I can smell cigarette smoke.<br/><br/>My fellow passengers have become murky. I can barely see them - just blurry, shadowy outlines.<br/><br/>The sound of tinny headphones has disappeared.<br/><br/>Breathe, relax. Let it pass.<br/><br/>I close my eyes.<br/><br/>I slowly {command:1:open them again}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
+          msg ("The tinny headphones are back. I can't smell cigarette smoke any more.")
           MoveObject (player, train)
         </script>
+      </command>
+    </object>
+    <object name="Act 1 Vision 2">
+      <inherit name="editor_room" />
+      <description><![CDATA[My eyes are going again. Blurriness. And my head. Thump. Thump. Thump.<br/><br/>That smell of cigarette smoke again. Who is that?<br/><br/>I'm trying to {command:1:see}.<br/>]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script><![CDATA[
+          msg ("Slowly I regain focus. There he is, puffing away. Who the fuck does he think he is?<br/><br/>And there's another one!<br/><br/>Nobody seems bothered about it. I'm certainly not going to be the one to say anything.<br/><br/>Just {command:2:look away}.")
+        ]]></script>
+      </command>
+      <command>
+        <pattern>2</pattern>
+        <script><![CDATA[
+          msg ("Struggling to read the advert above the smoker's head.<br/><br/>\"The world's most popular cassette deck\".<br/><br/>That's what it looks like it says.<br/><br/>I close my eyes. The smell fades.<br/><br/>I {command:3:open my eyes} again.")
+        ]]></script>
+      </command>
+      <command>
+        <pattern>3</pattern>
+        <script><![CDATA[
+          msg ("Thing seem sharper once more.<br/><br/>Ah, it's not the world's most popular cassette deck. It's the world's most advanced nutrition supplements for pregnant women.<br/><br/>I wonder how I got that muddled up.")
+          MoveObject (player, train)
+        ]]></script>
       </command>
     </object>
   </object>
