@@ -2,17 +2,24 @@
 	<object name="unseenpeople">
 		<object name="person1">
 			<title>a man</title>
-			<desc>He is person 1. {command:test}</desc>
+			<desc>He is reading a biography of Kurt Cobain. The face on the cover is almost life size. If the man holds the book up in the right place, it will be like he lives among us again, albeit with the fixed expression of permanent {command:satisfaction:self satisfaction} that the photo on the book's cover gives him.</desc>
 			<command>
-		      <pattern>test</pattern>
+		      <pattern>satisfaction</pattern>
 		      <script>
-		        msg ("Tested person 1.")
+		        msg ("Although to be fair, if Kurt Cobain was riding in plain sight, on the tube, having faked his own death and then not noticably aged in any way, he'd have every right to look pleased with himself.")
 		      </script>
 		    </command>
 		</object>
 		<object name="person2">
-			<title>a woman</title>
-			<desc>She is person 2.</desc>
+			<title>a woman and child</title>
+			<desc>Like all children, the boy completely fails to be able to sit still for any length of time. His mother sits next to him, not paying much {command:attention:attention}.</desc>
+			<command>
+		      <pattern>attention</pattern>
+		      <script>
+		        msg ("The child starts pulling faces at the other passengers. What a quandry. This child knows none of the rules. Are we supposed to smile back? Look annoyed? Just ignore him?")
+		      </script>
+		      <!-- those three should be options... -->
+		    </command>
 		</object>
 		<object name="person3">
 			<title>a man</title>
