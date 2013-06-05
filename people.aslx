@@ -40,6 +40,32 @@
 			<title>an old woman</title>
 			<desc>She is sat in the priority seat. At least, I presume it's a she. There is a lot of wispy white hair around the chin area. I would think a man would keep his beard in better shape, and wear it with pride.</desc>
 		</object>
+		<object name="person8">
+			<title>a woman</title>
+			<desc>There's something familiar about her. Where have I seen her before? Was she in the old office? Maybe she was in {command:tv:something} on telly...</desc>
+			<command>
+				<pattern>tv</pattern>
+				<script>
+					msg ("Or maybe it wasn't on telly, maybe it was something I saw {command:online:online}.")
+				</script>
+			</command>
+			<command>
+				<pattern>online</pattern>
+				<script>
+					msg ("Oh God, was she in... have I seen her... well, all of her. Do not catch her eye. Do not catch her eye. I must be bright red. Why is she on the tube anyway? I thought they did all that in America.")
+				</script>
+			</command>
+		</object>
+		<object name="person9">
+			<title>a woman</title>
+			<desc>She is sat scribbling something in a notebook, occasionally looking up and glancing around the carriage, like she's taking {command:notes:notes} about what she sees.</desc>
+			<command>
+				<pattern>notes</pattern>
+				<script>
+					msg ("I can't see what she's writing from this angle. Maybe she's writing a novel. Or practicing to be a spy. Not doing a very good job of it in that case.")
+				</script>
+			</command>
+		</object>
 	</object>
 	<object name="seenpeople">
 	</object>
