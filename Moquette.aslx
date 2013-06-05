@@ -1,4 +1,4 @@
-﻿<!--Saved by Quest 5.5.4890.26461-->
+<!--Saved by Quest 5.5.4881.40382-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -55,7 +55,7 @@
     <inherit name="editor_room" />
     <object name="Act 0 Balham">
       <inherit name="editor_room" />
-      <description><![CDATA["Become who you want to be". Yes, I suppose I could jack in my job tomorrow and upload my CV. Where would that get me? I don't know who I want to be.<br/><br/>"London to Bournemouth from £9". You'll never get it that cheap. And who wants to go to Bournemouth?<br/><br/>"Why pay more for your car insurance?" Because I don't want to give you bastards your precious commission, you annoying attention-seeking twats.<br/><br/>"Malaria kills a child every 45 seconds". Texting you costs £3, and will that really help anything?<br/><br/>The {command:1:train now approaching}  is for all stations to Edgware.]]></description>
+      <description><![CDATA[{command:skip:(Skip)}<br/><br/>"Become who you want to be". Yes, I suppose I could jack in my job tomorrow and upload my CV. Where would that get me? I don't know who I want to be.<br/><br/>"London to Bournemouth from £9". You'll never get it that cheap. And who wants to go to Bournemouth?<br/><br/>"Why pay more for your car insurance?" Because I don't want to give you bastards your precious commission, you annoying attention-seeking twats.<br/><br/>"Malaria kills a child every 45 seconds". Texting you costs £3, and will that really help anything?<br/><br/>The {command:1:train now approaching}  is for all stations to Edgware.]]></description>
       <beforeenter type="script">
         JS.StartOutputSection ("intro")
       </beforeenter>
@@ -67,6 +67,12 @@
         <pattern>1</pattern>
         <script>
           MoveObject (player, Act 0 Balham Train)
+        </script>
+      </command>
+      <command>
+        <pattern>skip</pattern>
+        <script>
+          MoveObject (player, Act 0 Stockwell Escape)
         </script>
       </command>
     </object>
@@ -272,9 +278,9 @@
   </object>
   <object name="train">
     <direction type="int">-1</direction>
+    <counter type="int">0</counter>
     <location type="object">Chancery Lane</location>
     <line type="object">Central</line>
-    <counter type="int">0</counter>
     <command>
       <pattern>unboard</pattern>
       <script><![CDATA[
@@ -400,16 +406,16 @@
     }
   </function>
   <function name="MoveTrainToNextStation">
-  next = GetNextStation(train.location, train.direction, train.line.code)
-  if (next = null) {
-    msg ("End of the line")
-  }
-  else {
-    train.location = next
-    train.nextstopcount = 3
-    train.counter = 0
-    InitTrainAtStation
-  }
+    next = GetNextStation(train.location, train.direction, train.line.code)
+    if (next = null) {
+      msg ("End of the line")
+    }
+    else {
+      train.location = next
+      train.nextstopcount = 3
+      train.counter = 0
+      InitTrainAtStation
+    }
   </function>
   <function name="InitTrain">
     SetUpTrain
@@ -429,8 +435,7 @@
       msg ("{command:wait:Stay on the train} or {command:unboard:Get off the train}")
     }
   </function>
-  <function name="SetUpTrain">
-  <![CDATA[
+  <function name="SetUpTrain"><![CDATA[
     foreach (obj, GetDirectChildren(train)) {
       if (obj <> player) {
         if (GetBoolean(obj, "interacted")) {
@@ -446,10 +451,8 @@
       Log ("move " + obj.name)
       obj.parent = train
     }
-  ]]>
-  </function>
-  <function name="RandomObjectListItems" parameters="list, items" type="objectlist">
-  <![CDATA[
+  ]]></function>
+  <function name="RandomObjectListItems" parameters="list, items" type="objectlist"><![CDATA[
     if (items >= ListCount(list)) {
       result = list
     }
@@ -464,16 +467,16 @@
       }
     }
     return (result)
-  ]]>
-  </function>
-  <function name="TrainObjectList" type="string" parameters="preList, parent, preFinal, postList">
-    <![CDATA[
+  ]]></function>
+  <function name="TrainObjectList" parameters="preList, parent, preFinal, postList" type="string"><![CDATA[
     result = ""
     count = 0
     list = RemoveSceneryObjects(GetDirectChildren(parent))
     listLength = ListCount(list)
     foreach (item, list) {
-      if (LengthOf(result) = 0) result = preList + " "
+      if (LengthOf(result) = 0) {
+        result = preList + " "
+      }
       verbs = GetDisplayVerbs(item)
       result = result + "{command:interact " + item.name + ":" + item.title + "}"
       count = count + 1
@@ -488,16 +491,14 @@
       }
     }
     return (result)
-  ]]>
-  </function>
+  ]]></function>
   <function name="ScopeCommands" type="objectlist">
     result = NewObjectList()
     foreach (command, AllCommands()) {
       if (command.parent = null or Contains(game.pov.parent, command)) {
-        list add(result, command)
+        list add (result, command)
       }
     }
     return (result)
   </function>
-
 </asl>
