@@ -23,6 +23,7 @@
     <subtitle type="string"></subtitle>
     <showtitle />
     <command_newline />
+    <triggeract2 type="boolean">false</triggeract2>
     <triggers type="dictionary">
       <item>
         <key>2</key>
@@ -54,6 +55,12 @@
         <key>30</key>
         <value type="script">
           MoveObject (player, Act 1 Vision 2)
+        </value>
+      </item>
+      <item>
+        <key>37</key>
+        <value type="script">
+          game.triggeract2 = true
         </value>
       </item>
     </triggers>
@@ -372,9 +379,9 @@
         if (player.parent = train) {
           train.counter = train.counter + 1
           if (train.counter = train.nextstopcount) {
-	        msg ("")
-	        MoveTrainToNextStation
-	      }
+            msg ("")
+            MoveTrainToNextStation
+          }
         }
       </script>
     </turnscript>
@@ -414,6 +421,13 @@
           MoveObject (player, train)
         ]]></script>
       </command>
+    </object>
+  </object>
+  <object name="Act 2">
+    <inherit name="editor_room" />
+    <object name="Act 2 Part 1">
+      <inherit name="editor_room" />
+      <description>Act 2 Part 1</description>
     </object>
   </object>
   <function name="MoveToPlatform" parameters="location, platformdata">
@@ -504,12 +518,17 @@
     }
   </function>
   <function name="InitTrain">
-    SetUpTrain
-    player.parent = train
-    train.nextstopcount = 3
-    train.counter = 0
-    InitTrainAtStation
-    msg (TrainObjectList("I can see", GetNonTransparentParent(game.pov.parent), "and", "."))
+    if (game.triggeract2) {
+      player.parent = Act 2 Part 1
+    }
+    else {
+	  SetUpTrain
+	  player.parent = train
+	  train.nextstopcount = 3
+	  train.counter = 0
+	  InitTrainAtStation
+	  msg (TrainObjectList("I can see", GetNonTransparentParent(game.pov.parent), "and", "."))
+	}
   </function>
   <function name="InitTrainAtStation">
     msg ("We are now at " + GetDisplayAlias(train.location))
