@@ -60,7 +60,14 @@
       <item>
         <key>37</key>
         <value type="script">
+          msg ("(act 2 triggered)")
           game.triggeract2 = true
+        </value>
+      </item>
+      <item>
+        <key>40</key>
+        <value type="script">
+          msg ("this is in act 2")
         </value>
       </item>
     </triggers>
@@ -365,24 +372,26 @@
     <turnscript>
       <enabled />
       <script>
-        train.totalturns = train.totalturns + 1
-        if (DictionaryContains(game.triggers, ToString(train.totalturns))) {
-          msg ("")
-          action = DictionaryItem(game.triggers, ToString(train.totalturns))
-          if (TypeOf(action) = "script") {
-            invoke (action)
-          }
-          else {
-            msg (action)
-          }
-        }
-        if (player.parent = train) {
-          train.counter = train.counter + 1
-          if (train.counter = train.nextstopcount) {
-            msg ("")
-            MoveTrainToNextStation
-          }
-        }
+        if (not game.triggeract2) {
+	        train.totalturns = train.totalturns + 1
+	        if (DictionaryContains(game.triggers, ToString(train.totalturns))) {
+	          msg ("")
+	          action = DictionaryItem(game.triggers, ToString(train.totalturns))
+	          if (TypeOf(action) = "script") {
+	            invoke (action)
+	          }
+	          else {
+	            msg (action)
+	          }
+	        }
+	        if (player.parent = train) {
+	          train.counter = train.counter + 1
+	          if (train.counter = train.nextstopcount) {
+	            msg ("")
+	            MoveTrainToNextStation
+	          }
+	        }
+	    }
       </script>
     </turnscript>
   </object>
@@ -427,7 +436,14 @@
     <inherit name="editor_room" />
     <object name="Act 2 Part 1">
       <inherit name="editor_room" />
-      <description>Act 2 Part 1</description>
+      <description>Act 2 Part 1. {command:99:Finish}</description>
+      <command>
+        <pattern>99</pattern>
+        <script>
+          msg ("Finished intro to act 2")
+          InitTrain
+        </script>
+      </command>
     </object>
   </object>
   <function name="MoveToPlatform" parameters="location, platformdata">
@@ -520,6 +536,7 @@
   <function name="InitTrain">
     if (game.triggeract2) {
       player.parent = Act 2 Part 1
+      game.triggeract2 = false
     }
     else {
 	  SetUpTrain
