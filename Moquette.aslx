@@ -358,7 +358,6 @@
     <turnscript>
       <enabled />
       <script>
-        train.counter = train.counter + 1
         train.totalturns = train.totalturns + 1
         if (DictionaryContains(game.triggers, ToString(train.totalturns))) {
           msg ("")
@@ -370,9 +369,12 @@
             msg (action)
           }
         }
-        if (train.counter = train.nextstopcount) {
-          msg ("")
-          MoveTrainToNextStation
+        if (player.parent = train) {
+          train.counter = train.counter + 1
+          if (train.counter = train.nextstopcount) {
+	        msg ("")
+	        MoveTrainToNextStation
+	      }
         }
       </script>
     </turnscript>
