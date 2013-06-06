@@ -67,7 +67,7 @@
       <item>
         <key>40</key>
         <value type="script">
-          msg ("this is in act 2")
+          msg ("this is in act 3")
         </value>
       </item>
     </triggers>
@@ -440,7 +440,7 @@
       <command>
         <pattern>99</pattern>
         <script>
-          msg ("Finished intro to act 2")
+          msg ("Finished act 2")
           InitTrain
         </script>
       </command>
