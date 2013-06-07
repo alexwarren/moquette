@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4881.40382-->
+﻿<!--Saved by Quest 5.5.4881.40382-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -103,7 +103,7 @@
     <inherit name="editor_room" />
     <object name="Act 0 Balham">
       <inherit name="editor_room" />
-      <description><![CDATA[{command:skip:(Skip)}<br/><br/>"Become who you want to be". Yes, I suppose I could jack in my job tomorrow and upload my CV. Where would that get me? I don't know who I want to be.<br/><br/>"London to Bournemouth from £9". You'll never get it that cheap. And who wants to go to Bournemouth?<br/><br/>"Why pay more for your car insurance?" Because I don't want to give you bastards your precious commission, you annoying attention-seeking twats.<br/><br/>"Malaria kills a child every 45 seconds". Texting you costs £3, and will that really help anything?<br/><br/>The {command:1:train now approaching}  is for all stations to Edgware.]]></description>
+      <description><![CDATA[{command:skip:(Skip to Act 1)}<br/>{command:skip2:(Skip to Act 2)}<br/><br/>"Become who you want to be". Yes, I suppose I could jack in my job tomorrow and upload my CV. Where would that get me? I don't know who I want to be.<br/><br/>"London to Bournemouth from £9". You'll never get it that cheap. And who wants to go to Bournemouth?<br/><br/>"Why pay more for your car insurance?" Because I don't want to give you bastards your precious commission, you annoying attention-seeking twats.<br/><br/>"Malaria kills a child every 45 seconds". Texting you costs £3, and will that really help anything?<br/><br/>The {command:1:train now approaching}  is for all stations to Edgware.]]></description>
       <beforeenter type="script">
         JS.StartOutputSection ("intro")
       </beforeenter>
@@ -121,6 +121,14 @@
         <pattern>skip</pattern>
         <script>
           MoveObject (player, Act 0 Stockwell Escape)
+        </script>
+      </command>
+      <command>
+        <pattern>skip2</pattern>
+        <script>
+          train.totalturns = 38
+          ClearScreen
+          MoveObject (player, Act 2 Page 100)
         </script>
       </command>
     </object>
@@ -472,11 +480,11 @@
     </object>
     <object name="Act 2 Page 400">
       <inherit name="editor_room" />
-      <description><![CDATA["Oh, fine."<br/><br/>What? Is that it? OK, next item. Why is she making this difficult? Why is she still so bloody lovely? Her job is essentially worthless, for somebody who is apparently such a people person she's really bad at holding a conversation. Is this some deliberate game? Let's play it then. Eye contact and silence. How long can we keep this up?<br/><br/>One, two, three, four, __five__.<br/><br/>Damn you!<br/><br/>{command:1:"So, er..."}]]></description>
+      <description><![CDATA["Oh, fine."<br/><br/>What? Is that it? OK, next item. Why is she making this difficult? Why is she still so bloody lovely? Her job is essentially worthless, for somebody who is apparently such a people person she's really bad at holding a conversation. Is this some deliberate game? Let's play it then. Eye contact and silence. How long can we keep this up?<br/><br/>One, two, three, four, {command:1:five}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Act 2 Page 500)
+          MoveObject (player, Act 2 Page 410)
         </script>
       </command>
     </object>
@@ -558,6 +566,16 @@
           InitTrain
         </script>
         <pattern>1</pattern>
+      </command>
+    </object>
+    <object name="Act 2 Page 410">
+      <inherit name="editor_room" />
+      <description><![CDATA[Damn you!<br/><br/>{command:1:"So, er..."}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 2 Page 500)
+        </script>
       </command>
     </object>
   </object>
