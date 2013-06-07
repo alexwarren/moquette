@@ -1,4 +1,4 @@
-﻿<!--Saved by Quest 5.5.4881.40382-->
+<!--Saved by Quest 5.5.4881.40382-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -373,25 +373,25 @@
       <enabled />
       <script>
         if (not game.triggeract2) {
-	        train.totalturns = train.totalturns + 1
-	        if (DictionaryContains(game.triggers, ToString(train.totalturns))) {
-	          msg ("")
-	          action = DictionaryItem(game.triggers, ToString(train.totalturns))
-	          if (TypeOf(action) = "script") {
-	            invoke (action)
-	          }
-	          else {
-	            msg (action)
-	          }
-	        }
-	        if (player.parent = train) {
-	          train.counter = train.counter + 1
-	          if (train.counter = train.nextstopcount) {
-	            msg ("")
-	            MoveTrainToNextStation
-	          }
-	        }
-	    }
+          train.totalturns = train.totalturns + 1
+          if (DictionaryContains(game.triggers, ToString(train.totalturns))) {
+            msg ("")
+            action = DictionaryItem(game.triggers, ToString(train.totalturns))
+            if (TypeOf(action) = "script") {
+              invoke (action)
+            }
+            else {
+              msg (action)
+            }
+          }
+          if (player.parent = train) {
+            train.counter = train.counter + 1
+            if (train.counter = train.nextstopcount) {
+              msg ("")
+              MoveTrainToNextStation
+            }
+          }
+        }
       </script>
     </turnscript>
   </object>
@@ -410,7 +410,7 @@
     </object>
     <object name="Act 1 Vision 2">
       <inherit name="editor_room" />
-      <description><![CDATA[My eyes are going again. Blurriness. And my head. Thump. Thump. Thump.<br/><br/>That smell of cigarette smoke again. Who is that?<br/><br/>I'm trying to {command:1:see}.<br/>]]></description>
+      <description><![CDATA[My eyes are going again. Blurriness. And my head. Thump. Thump. Thump.<br/><br/>That smell of cigarette smoke again. Who is that?<br/><br/>I'm trying to {command:1:see}.]]></description>
       <command>
         <pattern>1</pattern>
         <script><![CDATA[
@@ -426,7 +426,7 @@
       <command>
         <pattern>3</pattern>
         <script><![CDATA[
-          msg ("Thing seem sharper once more.<br/><br/>Ah, it's not the world's most popular cassette deck. It's the world's most advanced nutrition supplements for pregnant women.<br/><br/>I wonder how I got that muddled up.")
+          msg ("Things seem sharper once more.<br/><br/>Ah, it's not the world's most popular cassette deck. It's the world's most advanced nutrition supplements for pregnant women.<br/><br/>I wonder how I got that muddled up.")
           MoveObject (player, train)
         ]]></script>
       </command>
@@ -434,15 +434,130 @@
   </object>
   <object name="Act 2">
     <inherit name="editor_room" />
-    <object name="Act 2 Part 1">
+    <object name="Act 2 Page 100">
       <inherit name="editor_room" />
-      <description>Act 2 Part 1. {command:99:Finish}</description>
+      <description><![CDATA[The train doors open. And there she is.<br/><br/>Heather.<br/><br/>It's been four years.<br/><br/>There's no way she'd remember me, surely?<br/><br/>Her hair is different. I liked it before. Now it's even better.<br/><br/>Immediately captivating eyes. They have swallowed me. I am powerless.<br/><br/>I am unable to look anywhere else. I have already massively overstepped whatever the rule is for eye contact.<br/><br/>Can't back out now. Even if she doesn't remember me, she can't have failed to spot the man who has just been staring at her for too long already. How long has it been? It feels like forever. It can only have been a few seconds - the doors are still open.<br/><br/>Must say something.<br/><br/>Must be funny. Friendly. Charming. Not scary. Not creepy. Maybe I should apologise for staring. Don't want to apologise for staring - I want to look at her forever. Must think quickly. Must speak soon. Already left it a bit too long. Too much pressure. Must say something. Anything.<br/><br/>{command:1:"Hello"}]]></description>
       <command>
         <pattern>99</pattern>
         <script>
-          msg ("Finished act 2")
           InitTrain
         </script>
+      </command>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 2 Page 200)
+        </script>
+      </command>
+    </object>
+    <object name="Act 2 Page 200">
+      <inherit name="editor_room" />
+      <description><![CDATA[A smile bursts across her face, and her eyes sparkle, as if she has suddenly been reactivated.<br/><br/>"Hi!..."<br/><br/>She points at me and pauses, loading data from memory banks. Two seconds later - "Zoran! Dave's friend, isn't it? How are you doing?"<br/><br/>I have been obsessing over you every night for months, even though there was a good chance I would never see you again.<br/><br/>{command:1:"Fine. Good, actually. How's things with you?"}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 2 Page 300)
+        </script>
+      </command>
+    </object>
+    <object name="Act 2 Page 300">
+      <inherit name="editor_room" />
+      <description><![CDATA["Good."<br/><br/>Smile. Eye contact. Silence. Fuck!<br/><br/>Quick, what did we talk about at Dave's party? Her job... er, some kind of Social Media Somebody.<br/><br/>{command:1:"How's the world of social media then?"}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 2 Page 400)
+        </script>
+      </command>
+    </object>
+    <object name="Act 2 Page 400">
+      <inherit name="editor_room" />
+      <description><![CDATA["Oh, fine."<br/><br/>What? Is that it? OK, next item. Why is she making this difficult? Why is she still so bloody lovely? Her job is essentially worthless, for somebody who is apparently such a people person she's really bad at holding a conversation. Is this some deliberate game? Let's play it then. Eye contact and silence. How long can we keep this up?<br/><br/>One, two, three, four, __five__.<br/><br/>Damn you!<br/><br/>{command:1:"So, er..."}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 2 Page 500)
+        </script>
+      </command>
+    </object>
+    <object name="Act 2 Page 500">
+      <inherit name="editor_room" />
+      <description><![CDATA[Think, think. God, this was a lot easier after mojitos. Right, social media is a dead end. Was she going anywhere on holiday? What am I, a fucking hairdresser? There's got to be something more interesting than that.<br/><br/>{command:1:"How was Morocco?"}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 2 Page 600)
+        </script>
+      </command>
+    </object>
+    <object name="Act 2 Page 600">
+      <inherit name="editor_room" />
+      <description><![CDATA["Oh, we haven't been yet, that's next month."<br/><br/>Great. Serves me right for asking a boring question. And "we"? There was never a "we", was there? She was going on her own, wasn't she?<br/><br/>The cat! She had just got a cat! Thank fuck.<br/><br/>{command:1:"How's the cat doing?"}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 2 Page 700)
+        </script>
+      </command>
+    </object>
+    <object name="Act 2 Page 700">
+      <inherit name="editor_room" />
+      <description><![CDATA["Settling in. Behaving herself. Had to take her to the vet last week."<br/><br/>"Yeah?"<br/><br/>"She wasn't eating much. Doesn't seem to be anything wrong with her though."<br/><br/>OK, so it turns out I'm not in the slightest bit interested in the cat. How is this so different to before, when conversation flowed freely, and it was like it could never end? Like we had always known each other somehow, and had just been reunited. We were about to start something big, something life-changing. There was a connection there. So much excitement, so many possibilites. That fire still burns within me. Did she just move on? Is she just really... nice?<br/><br/>No. Maybe she's just nervous too.<br/><br/>Hey! We're both on the tube. Got to be a conversation there.<br/><br/>{command:1:"Where are you off to then?"}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 2 Page 800)
+        </script>
+      </command>
+    </object>
+    <object name="Act 2 Page 800">
+      <inherit name="editor_room" />
+      <description><![CDATA["Just on my way to work. What about you?"<br/><br/>Ah. yes. What am I doing here? Playing truant, like a schoolboy? Not exactly sexy, is it?<br/><br/>"Are you alright? You've gone very pale."<br/><br/>I'm fine. I'm fine. My left arm has gone numb, but I'm fine. Slightly dizzy. Just need to breathe. More oxygen. Am I having a heart attack? Both arms numb now. My fingers tingle.<br/><br/>{command:1:"I'm fine."}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 2 Page 900)
+        </script>
+      </command>
+    </object>
+    <object name="Act 2 Page 900">
+      <inherit name="editor_room" />
+      <description><![CDATA[Black speckles growing.<br/><br/>(fade to black... maybe invert the colour scheme at this point??)<br/><br/>"Are you OK? Do you want some water?"<br/><br/>You look like my aunt. I reach out and she hands me a water bottle. I sip. I don't want any more.<br/><br/>{command:1:"I'm fine."}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 2 Page 1000)
+        </script>
+      </command>
+    </object>
+    <object name="Act 2 Page 1000">
+      <inherit name="editor_room" />
+      <description><![CDATA[I'm sitting on a bench at [station]. This woman is in her fifties. Opposite, an advert tells me how wonderful studying in the evening is. I can get my life on track apparently.<br/><br/>{command:1:"Where's Heather?"}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 2 Page 1100)
+        </script>
+      </command>
+    </object>
+    <object name="Act 2 Page 1100">
+      <inherit name="editor_room" />
+      <description><![CDATA["I don't know who that is. You were on your own. You passed out. This man will look after you. Take care, hope everything's alright".<br/><br/>She gets up. A man in a bright orange jacket is here.<br/><br/>"Are you OK? Do you need anything?"<br/><br/>{command:1:"I'm fine."}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 2 Page 1200)
+        </script>
+      </command>
+    </object>
+    <object name="Act 2 Page 1200">
+      <inherit name="editor_room" />
+      <description><![CDATA["Are you sure? I can call a paramedic. You should probably be checked out."<br/><br/>A train has pulled in. {command:1:Get on}]]></description>
+      <command>
+        <script>
+          InitTrain
+        </script>
+        <pattern>1</pattern>
       </command>
     </object>
   </object>
@@ -535,17 +650,17 @@
   </function>
   <function name="InitTrain">
     if (game.triggeract2) {
-      player.parent = Act 2 Part 1
+      player.parent = Act 2 Page 100
       game.triggeract2 = false
     }
     else {
-	  SetUpTrain
-	  player.parent = train
-	  train.nextstopcount = 3
-	  train.counter = 0
-	  InitTrainAtStation
-	  msg (TrainObjectList("I can see", GetNonTransparentParent(game.pov.parent), "and", "."))
-	}
+      SetUpTrain
+      player.parent = train
+      train.nextstopcount = 3
+      train.counter = 0
+      InitTrainAtStation
+      msg (TrainObjectList("I can see", GetNonTransparentParent(game.pov.parent), "and", "."))
+    }
   </function>
   <function name="InitTrainAtStation">
     msg ("We are now at " + GetDisplayAlias(train.location))
