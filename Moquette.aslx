@@ -60,14 +60,17 @@
       <item>
         <key>37</key>
         <value type="script">
-          msg ("(act 2 triggered)")
           game.triggeract2 = true
         </value>
       </item>
       <item>
-        <key>40</key>
+        <key>45</key>
+        <value type="string">Wait, is that... no. The girl at the other end of the carriage is not Heather.</value>
+      </item>
+      <item>
+        <key>55</key>
         <value type="script">
-          msg ("this is in act 3")
+          MoveObject (player, Act 3 Vision 1 Page 100)
         </value>
       </item>
     </triggers>
@@ -562,10 +565,10 @@
       <inherit name="editor_room" />
       <description><![CDATA["Are you sure? I can call a paramedic. You should probably be checked out."<br/><br/>A train has pulled in. {command:1:Get on}]]></description>
       <command>
+        <pattern>1</pattern>
         <script>
           InitTrain
         </script>
-        <pattern>1</pattern>
       </command>
     </object>
     <object name="Act 2 Page 410">
@@ -576,6 +579,40 @@
         <script>
           MoveObject (player, Act 2 Page 500)
         </script>
+      </command>
+    </object>
+  </object>
+  <object name="Act 3">
+    <inherit name="editor_room" />
+    <object name="Act 3 Vision 1 Page 100">
+      <inherit name="editor_room" />
+      <description>{command:1:I can't see again.}</description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 3 Vision 1 Page 200)
+        </script>
+      </command>
+    </object>
+    <object name="Act 3 Vision 1 Page 200">
+      <inherit name="editor_room" />
+      <description><![CDATA[I am cold.<br/><br/>Silence. Blackness.<br/><br/>A cold, claggy sensation. Tastes like {command:1:clay}.]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 3 Vision 1 Page 300)
+        </script>
+      </command>
+    </object>
+    <object name="Act 3 Vision 1 Page 300">
+      <inherit name="editor_room" />
+      <description><![CDATA[It is clay. Filling my mouth, my nose and throat. I am suspended in cold clay.<br/><br/>I can't move.<br/><br/>I can't breathe.<br/><br/>I think I would enjoy the quiet, if I wasn't asphyxiating.<br/><br/>I may be blacking out, but it's hard to tell.<br/><br/>Now there is {command:1:light}.]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script><![CDATA[
+          msg ("The light grows larger. I can taste the air again.<br/><br/>I become aware of the inside of a tube carriage again.")
+          MoveObject (player, train)
+        ]]></script>
       </command>
     </object>
   </object>
