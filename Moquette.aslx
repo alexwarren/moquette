@@ -1,4 +1,4 @@
-﻿<!--Saved by Quest 5.5.4881.40382-->
+<!--Saved by Quest 5.5.4881.40382-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -24,6 +24,7 @@
     <showtitle />
     <command_newline />
     <triggeract2 type="boolean">false</triggeract2>
+    <triggeract4 type="boolean">false</triggeract4>
     <triggers type="dictionary">
       <item>
         <key>2</key>
@@ -71,6 +72,12 @@
         <key>55</key>
         <value type="script">
           MoveObject (player, Act 3 Vision 1 Page 100)
+        </value>
+      </item>
+      <item>
+        <key>70</key>
+        <value type="script">
+          game.triggeract4 = true
         </value>
       </item>
     </triggers>
@@ -395,11 +402,16 @@
               msg (action)
             }
           }
-          if (player.parent = train) {
-            train.counter = train.counter + 1
-            if (train.counter = train.nextstopcount) {
+        }
+        if (player.parent = train) {
+          train.counter = train.counter + 1
+          if (train.counter = train.nextstopcount) {
+            if (not game.triggeract4) {
               msg ("")
               MoveTrainToNextStation
+            }
+            else {
+              player.parent = Act 4 Page 100
             }
           }
         }
@@ -614,6 +626,17 @@
           MoveObject (player, train)
         ]]></script>
       </command>
+    </object>
+  </object>
+  <object name="Act 4">
+    <inherit name="editor_room" />
+    <object name="Act 4 Page 100">
+      <inherit name="editor_room" />
+      <beforeenter type="script">
+        next = GetNextStation(train.location, train.direction, train.line.code)
+        msg ("We are now at " + GetDisplayAlias(next))
+      </beforeenter>
+      <description>... and here Act 4 begins</description>
     </object>
   </object>
   <function name="MoveToPlatform" parameters="location, platformdata">
