@@ -22,12 +22,12 @@
 		    </command>
 		</object>
 		<object name="person3">
-			<title>a man</title>
-			<desc>He is person 3.</desc>
+			<title>a male student</title>
+			<desc>He could not look more like a student. He's sat there with a pile of papers, looking through page after page of tables. The stripy jumper, brown trousers and brown shoes finish off the look. He is clearly very comfortable fitting into that category of person. He has fully bought in to that lifestyle and appearance. It makes me feel somewhat jealous actually - I'd never want to look like that, but I'd love to be able to fit in, and know my place, and be happy with it. Maybe in blissful ignorance of other options, but blissful nonetheless.</desc>
 		</object>
 		<object name="person4">
-			<title>a woman</title>
-			<desc>She is person 4.</desc>
+			<title>a fat man</title>
+			<desc>His belly hangs over his belt. Maybe if he just loosened his belt a bit, his weight wouldn't have been the first thing I noticed.</desc>
 		</object>
 		<object name="person5">
 			<title>a young pretty woman</title>
@@ -93,6 +93,28 @@
 				</script>
 			</command>
 		</object>
+		<object name="person12">
+			<title>a smiling woman</title>
+			<desc>She is smiling, then suppressing it. But she's not doing very well at suppressing it. I wonder what she's seen. I hope it's not me. My cock's not {command:hanging:hanging out}, is it?</desc>
+			<command>
+				<pattern>hanging</pattern>
+				<script>
+					msg ("Of course it's not.")
+					msg ("")
+					msg ("Anyway, if my cock was hanging out, she'd simply faint, right... right? Or pull the alarm lever. Or actually, do absolutely nothing at all. I could {command:cock:get my cock out} now. What would happen? What would really happen?")
+				</script>
+			</command>
+			<command>
+				<pattern>cock</pattern>
+				<script>
+					msg ("I'm not getting my fucking cock out. What is wrong with you?")
+				</script>
+			</command>
+		</object>
+		<object name="person13">
+			<title>a man in a suit</title>
+			<desc>He listens diligently to his iPod through white earbuds. I can't hear what he's listening to - which is unusual for those stock earbuds. He seems to be listening very carefully though. He has glossy black shoes with bright red laces. The only dash of colour on him. Like a little private joke.</desc>
+		</object>
 	</object>
 	<object name="seenpeople">
 	</object>
@@ -100,6 +122,20 @@
 		<object name="person300">
 			<title>a man</title>
 			<desc>He is not Heather. He is unimportant.</desc>
+		</object>
+		<object name="person301">
+			<title>a man</title>
+			<desc>He has legs like pencils, and impossibly tight {command:jeans:jeans}, and a hairstyle.</desc>
+			<command>
+				<pattern>jeans</pattern>
+				<script>
+					msg ("How does that he get into those jeans? Nobody has legs that thin - and those jeans look even thinner than his legs, somehow. It must take him hours to get into those. And the hair. If I put that much effort into my appearance I would just look desparate and ridiculous.")
+					msg ("")
+					msg ("I wonder if he's the type Heather goes for.")
+					msg ("")
+					msg ("I wonder if he is really sad inside.")
+				</script>
+			</command>
 		</object>
 	</object>
 </library>
