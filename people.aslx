@@ -96,4 +96,10 @@
 	</object>
 	<object name="seenpeople">
 	</object>
+	<object name="act3extrapeople">
+		<object name="person300">
+			<title>a man</title>
+			<desc>He is not Heather. He is unimportant.</desc>
+		</object>
+	</object>
 </library>
