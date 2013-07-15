@@ -356,6 +356,8 @@
       <script>
         foreach (availableplatform, platform.location.platforms) {
           if (availableplatform = text_platform) {
+            msg ("I follow the signs.")
+            msg ("")
             MoveToPlatform (platform.location, DictionaryItem(platform.location.platforms, availableplatform))
             invoke (platform.enter)
           }
