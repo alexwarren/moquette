@@ -14,11 +14,13 @@
       <code>circle</code>
     </object>
     <object name="District1">
+      <alias>District</alias>
       <code>district1</code>
       <up>northbound</up>
       <down>southbound</down>
     </object>
     <object name="District2">
+      <alias>District</alias>
       <code>district2</code>
       <up>eastbound</up>
       <down>westbound</down>

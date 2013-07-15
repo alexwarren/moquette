@@ -339,7 +339,16 @@
         train.line = ObjectListItem(platform.lines, GetRandomInt(0, ListCount(platform.lines) - 1))
         train.location = platform.location
         train.direction = ToInt(StringDictionaryItem(platform.directions, train.line.code))
-        msg ("A " + train.line.name + " train arrives. {command:board:Board}")
+        linename = train.line.name
+        if (StartsWith(linename, "Northern")) {
+          linename = "Northern"
+        }
+        else {
+          if (HasString(train.line, "alias")) {
+            linename = train.line.alias
+          }
+        }
+        msg ("A " + linename + " line train arrives. {command:board:Board}")
       </script>
     </command>
     <command>
