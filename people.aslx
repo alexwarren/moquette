@@ -115,6 +115,37 @@
 			<title>a man in a suit</title>
 			<desc>He listens diligently to his iPod through white earbuds. I can't hear what he's listening to - which is unusual for those stock earbuds. He seems to be listening very carefully though. He has glossy black shoes with bright red laces. The only dash of colour on him. Like a little private joke.</desc>
 		</object>
+		<object name="person14">
+			<title>a large man</title>
+			<desc>He is wearing a leather jacket, a wooly hat, and, bizarrely, shorts. He also has a massive
+				beard - the top half of him must be a lot warmer than the bottom half.</desc>
+		</object>
+		<object name="person15">
+			<title>a small woman</title>
+			<desc>She is carrying a big bright yellow handbag - almost the same size as she is. I wonder
+				what she keeps in there. She could possibly live in it.</desc>
+		</object>
+		<object name="person16">
+			<title>a teenage girl</title>
+			<desc>She is wearing huge bright green headphones on top of her long black hair. She gets her
+				phone out to check her reflection in the camera.</desc>
+		</object>
+		<object name="person17">
+			<title>a man</title>
+			<desc>He is balding, wearing jeans and tatty Converse trainers, and doing something on a Macbook Air. He has a bag stuffed with papers and files.</desc>
+		</object>
+		<object name="person18">
+			<title>a sleeping man</title>
+			<desc>He is a builder by the looks of it - paint-splattered jeans. He is sleeping next to another builder who looks almost the same. These two big burly men look almost cute, blissfully asleep like enormous babies.</desc>
+		</object>
+		<object name="person19">
+			<title>a woman</title>
+			<desc>She is reading some kind of arty magazine.</desc>
+		</object>
+		<object name="person20">
+			<title>a man</title>
+			<desc>He is wearing a grey striped shirt, grey trousers and grey shoes. Even his hair is going grey. Mr. Monochrome.</desc>
+		</object>
 	</object>
 	<object name="seenpeople">
 	</object>
