@@ -321,15 +321,19 @@
           }
           counter = counter + 1
         }
-        msg ("I could change to " + liststring + ".")
+        msg ("I could change to " + liststring + ". Or I could {command:next:wait} for a train here.")
       }
-      msg ("{command:next:Wait}.")
+      else {
+        msg ("I will {command:next:wait} for a train.")
+      }
     ]]></enter>
     <lines type="objectlist">Central</lines>
     <command>
       <pattern>board</pattern>
       <script>
         train.justboarded = true
+        msg ("I get on the train.")
+        msg ("")
         InitTrain
       </script>
     </command>
@@ -348,7 +352,7 @@
             linename = train.line.alias
           }
         }
-        msg ("A " + linename + " line train arrives. {command:board:Board}")
+        msg ("A " + linename + " line train arrives. The doors open. I can {command:board:get on}.")
       </script>
     </command>
     <command>
@@ -894,18 +898,16 @@
     }
   </function>
   <function name="InitTrainAtStation">
-    OutputTextNoBr ("This is " + GetDisplayAlias(train.location) + ". ")
+    if (not train.justboarded) {
+      OutputTextNoBr ("This is " + GetDisplayAlias(train.location) + ". ")
+    }
     next = GetNextStation(train.location, train.direction, train.line.code)
     if (next = null) {
       msg ("End of the line. {command:unboard:Get off the train}")
     }
     else {
-      //msg ("{command:wait:Stay on the train} or {command:unboard:Get off the train}")
       if (not train.justboarded) {
         msg ("I could {command:unboard:get out here}.")
-      }
-      else {
-        msg ("")
       }
     }
   </function>
