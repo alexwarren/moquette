@@ -316,9 +316,8 @@
     <command>
       <pattern>board</pattern>
       <script>
+        train.justboarded = true
         InitTrain
-        // TO DO: Train counter will be incremented now from 0 to 1 even though we haven't waited on the train yet.
-        // So will prob want to set counter to -1 here.
       </script>
     </command>
     <command>
@@ -348,6 +347,7 @@
     <totalturns type="int">0</totalturns>
     <location type="object">Chancery Lane</location>
     <line type="object">Central</line>
+    <justboarded type="boolean">false</justboarded>
     <command>
       <pattern>unboard</pattern>
       <script><![CDATA[
@@ -409,15 +409,28 @@
           }
         }
         if (player.parent = train) {
-          train.counter = train.counter + 1
-          if (train.counter = train.nextstopcount) {
-            if (not game.triggeract4) {
+          if (not train.justboarded) {
+            if (train.counter = 0) {
               msg ("")
-              MoveTrainToNextStation
+              msg ("The doors close.")
             }
-            else {
-              player.parent = Act 4 Page 100
+            train.counter = train.counter + 1
+            if (train.counter = train.nextstopcount) {
+              if (not game.triggeract4) {
+                msg ("")
+                MoveTrainToNextStation
+              }
+              else {
+                player.parent = Act 4 Page 100
+              }
             }
+          }
+          else {
+            train.justboarded = false
+            msg ("")
+            msg ("The doors close.")
+            train.counter = 1
+            train.nextstopcount = train.nextstopcount + 1
           }
         }
       </script>
@@ -823,6 +836,7 @@
     train.direction = direction
     train.location = location
     train.line = line
+    train.justboarded = true
     SetTimeout (1) {
       ClearScreen
       JS.StartOutputSection ("act1")
@@ -856,13 +870,19 @@
     }
   </function>
   <function name="InitTrainAtStation">
-    msg ("We are now at " + GetDisplayAlias(train.location))
+    OutputTextNoBr ("We are now at " + GetDisplayAlias(train.location) + ". ")
     next = GetNextStation(train.location, train.direction, train.line.code)
     if (next = null) {
       msg ("End of the line. {command:unboard:Get off the train}")
     }
     else {
-      msg ("{command:wait:Stay on the train} or {command:unboard:Get off the train}")
+      //msg ("{command:wait:Stay on the train} or {command:unboard:Get off the train}")
+      if (not train.justboarded) {
+        msg ("I could {command:unboard:get out here}.")
+      }
+      else {
+        msg ("")
+      }
     }
   </function>
   <function name="SetUpTrain"><![CDATA[
