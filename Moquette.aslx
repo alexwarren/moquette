@@ -351,21 +351,26 @@
     <command>
       <pattern>unboard</pattern>
       <script><![CDATA[
-        platform = GetPlatform(train.location, train.line, train.direction)
-        if (platform = null) {
-          // we're at the end of the line
-          availablelist = ""
-          foreach (availableplatform, train.location.platforms) {
-            platformdata = DictionaryItem(train.location.platforms, availableplatform)
-            if (LengthOf(availablelist) > 0) {
-              availablelist = availablelist + ", "
+        if (train.counter = 0) {
+          platform = GetPlatform(train.location, train.line, train.direction)
+          if (platform = null) {
+            // we're at the end of the line
+            availablelist = ""
+            foreach (availableplatform, train.location.platforms) {
+              platformdata = DictionaryItem(train.location.platforms, availableplatform)
+              if (LengthOf(availablelist) > 0) {
+                availablelist = availablelist + ", "
+              }
+              availablelist = availablelist + ("{command:change " + availableplatform + ":" + availableplatform + "}")
             }
-            availablelist = availablelist + ("{command:change " + availableplatform + ":" + availableplatform + "}")
+            msg ("Changes: " + availablelist)
           }
-          msg ("Changes: " + availablelist)
+          else {
+            MoveToPlatform (train.location, platform)
+          }
         }
         else {
-          MoveToPlatform (train.location, platform)
+          msg ("The train is moving.")
         }
       ]]></script>
     </command>
