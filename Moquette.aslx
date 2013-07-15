@@ -293,24 +293,37 @@
     </directions>
     <location type="object">Chancery Lane</location>
     <enter type="script"><![CDATA[
-      availablelist = ""
+      availablelist = NewStringList()
       foreach (availableplatform, platform.location.platforms) {
         platformdata = DictionaryItem(platform.location.platforms, availableplatform)
         platformname = DictionaryItem(platformdata, "name")
         if (platformname <> platform.platformname) {
-          if (LengthOf(availablelist) > 0) {
-            availablelist = availablelist + ", "
+          displayname = availableplatform
+          if (not StartsWith(displayname, "Northern")) {
+            displayname = displayname + " line"
           }
-          availablelist = availablelist + ("{command:change " + availableplatform + ":" + availableplatform + "}")
+          list add (availablelist, "{command:change " + availableplatform + ":" + displayname + "}")
         }
         else {
-          msg ("We are now on the " + platformname + " platform at " + GetDisplayAlias(platform.location))
+          msg ("I am standing on the platform for the " + platformname + " line at " + GetDisplayAlias(platform.location) + ".")
         }
       }
-      if (LengthOf(availablelist) > 0) {
-        msg ("Changes: " + availablelist)
+      if (ListCount(availablelist) > 0) {
+        liststring = ""
+        counter = 0
+        foreach (item, availablelist) {
+          liststring = liststring + "the " + item
+          if (counter < ListCount(availablelist) - 2) {
+            liststring = liststring + ", "
+          }
+          else if (counter = ListCount(availablelist) - 2) {
+            liststring = liststring + " or "
+          }
+          counter = counter + 1
+        }
+        msg ("I could change to " + liststring + ".")
       }
-      msg ("{command:next:Wait for a train here}")
+      msg ("{command:next:Wait}.")
     ]]></enter>
     <lines type="objectlist">Central</lines>
     <command>
