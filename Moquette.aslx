@@ -442,10 +442,15 @@
               shuffleresult = ShuffleTrain()
               removed = ListItem(shuffleresult, 0)
               added = ListItem(shuffleresult, 1)
+              msg ("")
               msg (DisembarkList("Stepping off: ", removed, "and", "."))
               msg (TrainObjectList("Getting on: ", added, "and", "."))
               msg ("")
               msg ("The doors close.")
+              msg ("")
+              parent = GetNonTransparentParent(game.pov.parent)
+              list = RemoveSceneryObjects(GetDirectChildren(parent))
+              msg (TrainObjectList("I can see", list, "and", "."))
             }
             train.counter = train.counter + 1
             if (train.counter = train.nextstopcount) {
