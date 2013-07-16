@@ -442,7 +442,8 @@
               shuffleresult = ShuffleTrain()
               removed = ListItem(shuffleresult, 0)
               added = ListItem(shuffleresult, 1)
-              msg ("Removed " + ListCount(removed) + ", added " + ListCount(added))
+              msg (DisembarkList("Stepping off: ", removed, "and", "."))
+              msg (TrainObjectList("Getting on: ", added, "and", "."))
               msg ("")
               msg ("The doors close.")
             }
@@ -898,7 +899,9 @@
       train.nextstopcount = 3
       train.counter = 0
       InitTrainAtStation
-      msg (TrainObjectList("I can see", GetNonTransparentParent(game.pov.parent), "and", "."))
+      parent = GetNonTransparentParent(game.pov.parent)
+      list = RemoveSceneryObjects(GetDirectChildren(parent))
+      msg (TrainObjectList("I can see", list, "and", "."))
     }
   </function>
   <function name="InitTrainAtStation">
@@ -926,7 +929,7 @@
         }
       }
     }
-    passengers = RandomObjectListItems(GetDirectChildren(unseenpeople), 4)
+    passengers = RandomObjectListItems(GetDirectChildren(unseenpeople), GetRandomInt(2, 4))
     foreach (obj, passengers) {
       obj.parent = train
     }
@@ -968,7 +971,7 @@
     if (ListCount(passengers) - removecount > 4) {
       addcount = 0
     }
-    addedpassengers = RandomObjectListItems(GetDirectChildren(unseenpeople), 2)
+    addedpassengers = RandomObjectListItems(GetDirectChildren(unseenpeople), addcount)
     foreach (obj, addedpassengers) {
       obj.parent = train
     }
@@ -977,17 +980,38 @@
     list add (result, addedpassengers)
     return (result)
   ]]></function>
-  <function name="TrainObjectList" parameters="preList, parent, preFinal, postList" type="string"><![CDATA[
+  <function name="TrainObjectList" parameters="preList, list, preFinal, postList" type="string"><![CDATA[
     result = ""
     count = 0
-    list = RemoveSceneryObjects(GetDirectChildren(parent))
     listLength = ListCount(list)
     foreach (item, list) {
       if (LengthOf(result) = 0) {
         result = preList + " "
       }
-      verbs = GetDisplayVerbs(item)
       result = result + "{command:interact " + item.name + ":" + item.title + "}"
+      count = count + 1
+      if (count = listLength - 1) {
+        result = result + " " + preFinal + " "
+      }
+      else if (count < listLength) {
+        result = result + ", "
+      }
+      else {
+        result = result + postList
+      }
+    }
+    return (result)
+  ]]></function>
+  <function name="DisembarkList" parameters="preList, list, preFinal, postList" type="string"><![CDATA[
+    result = ""
+    count = 0
+    listLength = ListCount(list)
+    foreach (item, list) {
+      if (LengthOf(result) = 0) {
+        result = preList + " "
+      }
+      // need a new attribute, if .title is "a man", .disembark is "the man"
+      result = result + item.title
       count = count + 1
       if (count = listLength - 1) {
         result = result + " " + preFinal + " "
