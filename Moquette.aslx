@@ -439,6 +439,10 @@
         if (player.parent = train) {
           if (not train.justboarded) {
             if (train.counter = 0) {
+              shuffleresult = ShuffleTrain()
+              removed = ListItem(shuffleresult, 0)
+              added = ListItem(shuffleresult, 1)
+              msg ("Removed " + ListCount(removed) + ", added " + ListCount(added))
               msg ("")
               msg ("The doors close.")
             }
@@ -922,7 +926,7 @@
         }
       }
     }
-    passengers = RandomObjectListItems(GetDirectChildren(unseenpeople), 2)
+    passengers = RandomObjectListItems(GetDirectChildren(unseenpeople), 4)
     foreach (obj, passengers) {
       obj.parent = train
     }
@@ -941,6 +945,36 @@
         }
       }
     }
+    return (result)
+  ]]></function>
+  <function name="ShuffleTrain" type="list"><![CDATA[
+    passengers = NewObjectList()
+    foreach (obj, GetDirectChildren(train)) {
+      if (obj <> player) {
+        list add (passengers, obj)
+      }
+    }
+    removecount = GetRandomInt(0, ListCount(passengers))
+    removedpassengers = RandomObjectListItems(passengers, removecount)
+    foreach (obj, removedpassengers) {
+      if (GetBoolean(obj, "interacted")) {
+        obj.parent = seenpeople
+      }
+      else {
+        obj.parent = unseenpeople
+      }
+    }
+    addcount = GetRandomInt(0, 2)
+    if (ListCount(passengers) - removecount > 4) {
+      addcount = 0
+    }
+    addedpassengers = RandomObjectListItems(GetDirectChildren(unseenpeople), 2)
+    foreach (obj, addedpassengers) {
+      obj.parent = train
+    }
+    result = NewList()
+    list add (result, removedpassengers)
+    list add (result, addedpassengers)
     return (result)
   ]]></function>
   <function name="TrainObjectList" parameters="preList, parent, preFinal, postList" type="string"><![CDATA[
