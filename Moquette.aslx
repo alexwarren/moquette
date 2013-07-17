@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4881.40382-->
+<!--Saved by Quest 5.5.4945.24498-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -81,6 +81,7 @@
         </value>
       </item>
     </triggers>
+    <deactivatecommandlinks />
     <start type="script"><![CDATA[
       foreach (station, GetDirectChildren(stationdata)) {
         if (not HasAttribute(station, "platforms")) {
@@ -373,9 +374,9 @@
     <direction type="int">-1</direction>
     <counter type="int">0</counter>
     <totalturns type="int">0</totalturns>
+    <justboarded type="boolean">false</justboarded>
     <location type="object">Chancery Lane</location>
     <line type="object">Central</line>
-    <justboarded type="boolean">false</justboarded>
     <command>
       <pattern>unboard</pattern>
       <script><![CDATA[
@@ -691,11 +692,11 @@
     <inherit name="editor_room" />
     <object name="Act 4 Page 100">
       <inherit name="editor_room" />
+      <description><![CDATA[Heather... Heather... Heather... Heather... Heather... Heather... Heather... Heather... Heather... (glides in train style)<br/><br/>The doors open. And there she is. Again.<br/><br/>Heather.<br/><br/>Eye contact.<br/><br/>Blank expression.<br/><br/>Smile? I'm smiling.<br/><br/>Nothing.<br/><br/>Doors bleeping. I jump out as they snap shut behind me.<br/><br/>Standing on the platform. Now where has she gone?<br/><br/>A glimpse to my left. There she is, calmly walking up the platform.<br/><br/>{command:1:Run}]]></description>
       <beforeenter type="script">
         next = GetNextStation(train.location, train.direction, train.line.code)
         msg ("This is " + GetDisplayAlias(next) + ".")
       </beforeenter>
-      <description><![CDATA[Heather... Heather... Heather... Heather... Heather... Heather... Heather... Heather... Heather... (glides in train style)<br/><br/>The doors open. And there she is. Again.<br/><br/>Heather.<br/><br/>Eye contact.<br/><br/>Blank expression.<br/><br/>Smile? I'm smiling.<br/><br/>Nothing.<br/><br/>Doors bleeping. I jump out as they snap shut behind me.<br/><br/>Standing on the platform. Now where has she gone?<br/><br/>A glimpse to my left. There she is, calmly walking up the platform.<br/><br/>{command:1:Run}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -810,6 +811,7 @@
     platform.lines = DictionaryItem(platformdata, "lines")
     platform.directions = DictionaryItem(platformdata, "directions")
     platform.platformname = DictionaryItem(platformdata, "name")
+    JS.disableAllCommandLinks ()
     player.parent = platform
   </function>
   <function name="GetPlatform" parameters="location, line, direction" type="dictionary">
