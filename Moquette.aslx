@@ -82,6 +82,7 @@
       </item>
     </triggers>
     <deactivatecommandlinks />
+    <linkcount type="int">0</linkcount>
     <start type="script"><![CDATA[
       foreach (station, GetDirectChildren(stationdata)) {
         if (not HasAttribute(station, "platforms")) {
@@ -404,6 +405,11 @@
       ]]></script>
     </command>
     <command>
+      <pattern>wait1</pattern>
+      <script>
+      </script>
+    </command>
+    <command>
       <pattern>change #text_platform#</pattern>
       <script>
         // this version is only used for the end of the line
@@ -423,7 +429,8 @@
     </command>
     <turnscript>
       <enabled />
-      <script>
+      <script><![CDATA[
+        game.linkcount = game.linkcount - 1
         if (not game.triggeract2) {
           train.totalturns = train.totalturns + 1
           if (DictionaryContains(game.triggers, ToString(train.totalturns))) {
@@ -452,6 +459,7 @@
               parent = GetNonTransparentParent(game.pov.parent)
               list = RemoveSceneryObjects(GetDirectChildren(parent))
               msg (TrainObjectList("I can see", list, "and", "."))
+              UpdateLinkCount
             }
             train.counter = train.counter + 1
             if (train.counter = train.nextstopcount) {
@@ -463,6 +471,11 @@
                 player.parent = Act 4 Page 100
               }
             }
+            else {
+              if (game.linkcount <= 0) {
+                msg ("{command:wait:Wait}. That's all I can do.")
+              }
+            }
           }
           else {
             train.justboarded = false
@@ -472,7 +485,7 @@
             train.nextstopcount = train.nextstopcount + 1
           }
         }
-      </script>
+      ]]></script>
     </turnscript>
   </object>
   <object name="Act 1">
@@ -909,6 +922,7 @@
       parent = GetNonTransparentParent(game.pov.parent)
       list = RemoveSceneryObjects(GetDirectChildren(parent))
       msg (TrainObjectList("I can see", list, "and", "."))
+      UpdateLinkCount
     }
   </function>
   <function name="InitTrainAtStation">
@@ -921,7 +935,7 @@
     }
     else {
       if (not train.justboarded) {
-        msg ("I could {command:unboard:get out here}.")
+        msg ("I could {command:unboard:get out here}. Or {command:wait1:wait}.")
       }
     }
   </function>
@@ -1031,6 +1045,20 @@
       }
     }
     return (result)
+  ]]></function>
+  <function name="UpdateLinkCount"><![CDATA[
+    game.linkcount = 0
+    children = GetDirectChildren(train)
+    foreach (obj, children) {
+      if (obj <> player) {
+        game.linkcount = game.linkcount + 1
+      }
+    }
+    foreach (command, AllCommands()) {
+      if (ListContains(children, command.parent) ) {
+        game.linkcount = game.linkcount + 1
+      }
+    }
   ]]></function>
   <function name="ScopeCommands" type="objectlist">
     result = NewObjectList()
