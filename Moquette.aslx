@@ -371,6 +371,19 @@
       </script>
     </command>
   </object>
+  <object name="nullplatform">
+    <command>
+      <pattern>change #text_platform#</pattern>
+      <script>
+        // this version is only used for the end of the line
+        foreach (availableplatform, train.location.platforms) {
+          if (availableplatform = text_platform) {
+            MoveToPlatform (train.location, DictionaryItem(train.location.platforms, availableplatform))
+          }
+        }
+      </script>
+    </command>
+  </object>
   <object name="train">
     <direction type="int">-1</direction>
     <counter type="int">0</counter>
@@ -393,6 +406,7 @@
               }
               availablelist = availablelist + ("{command:change " + availableplatform + ":" + availableplatform + "}")
             }
+            player.parent = nullplatform
             msg ("Changes: " + availablelist)
           }
           else {
@@ -407,17 +421,6 @@
     <command>
       <pattern>wait1</pattern>
       <script>
-      </script>
-    </command>
-    <command>
-      <pattern>change #text_platform#</pattern>
-      <script>
-        // this version is only used for the end of the line
-        foreach (availableplatform, train.location.platforms) {
-          if (availableplatform = text_platform) {
-            MoveToPlatform (train.location, DictionaryItem(train.location.platforms, availableplatform))
-          }
-        }
       </script>
     </command>
     <command>
