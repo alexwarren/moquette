@@ -1005,11 +1005,25 @@
     result = ""
     count = 0
     listLength = ListCount(list)
+    usedtitles = NewStringList()
     foreach (item, list) {
       if (LengthOf(result) = 0) {
         result = preList + " "
       }
-      result = result + "{command:interact " + item.name + ":" + item.title + "}"
+      if (not ListContains(usedtitles, item.title)) {
+        title = item.title
+        list add (usedtitles, item.title)
+      }
+      else {
+        if (StartsWith(item.title, "a ")) {
+          title = "another" + Mid(item.title, 2)
+        }
+        if (ListContains(usedtitles, title)) {
+          title = "yet " + title
+        }
+        list add (usedtitles, title)
+      }
+      result = result + "{command:interact " + item.name + ":" + title + "}"
       count = count + 1
       if (count = listLength - 1) {
         result = result + " " + preFinal + " "
