@@ -209,7 +209,7 @@
     </object>
     <object name="Act 0 Stockwell to Oval">
       <inherit name="editor_room" />
-      <description><![CDATA[Stayed on train, now at Oval<br/><br/>{command:1:Continue to Kennington}]]></description>
+      <description><![CDATA[Fair enough. Better be sensible. I don't want to get fired.<br/><br/>About 15 people get off the train. All the people standing between the seats took the free ones though, so there's still nowhere to sit. I'll carry on hanging here. At least it's not so packed, and I can breathe now.<br/><br/>This station is Oval. The doors open.<br/><br/>Well, even if I wanted to escape and do something different today, there's nowhere I can go - other than turn around and go south again. May as well stay on. The next station is Kennington - I could change there for the other branch of the Northern line.<br/><br/>All I can do is {command:1:wait}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -219,7 +219,7 @@
     </object>
     <object name="Act 0 Oval to Kennington">
       <inherit name="editor_room" />
-      <description><![CDATA[On train from Oval to Kennington.<br/><br/>We have arrived.<br/><br/>I could {command:1:stay on the train} or {command:2:change to the Charing Cross branch}.]]></description>
+      <description><![CDATA[One woman rushes on as the doors close, and we're off again.<br/><br/>We come to a stop in the tunnel. Nobody says anything. One minute later, on we go.<br/><br/>Here we are now at Kennington.<br/><br/>I could {command:1:stay on the train} again. Or I could {command:2:change to the Charing Cross branch}. I could do that. There is nothing stopping me.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
