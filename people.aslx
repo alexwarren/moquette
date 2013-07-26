@@ -137,6 +137,8 @@
 		<object name="person18">
 			<title>a sleeping man</title>
 			<desc>He is a builder by the looks of it - paint-splattered jeans. He is sleeping next to another builder who looks almost the same. These two big burly men look almost cute, blissfully asleep like enormous babies.</desc>
+			<!-- wonder how long he's been there for, should somebody wake him up? -->
+			<!-- TODO: They cannot board, they can only be on the train. And they can't get off. -->
 		</object>
 		<object name="person19">
 			<title>a woman</title>
