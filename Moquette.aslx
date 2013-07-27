@@ -115,7 +115,7 @@
     <inherit name="editor_room" />
     <object name="Act 0 Balham">
       <inherit name="editor_room" />
-      <description><![CDATA[{command:skip:(Skip to Act 1)}<br/>{command:skip2:(Skip to Act 2)}<br/><br/>Tuesday morning, 08:03. Waiting for the Northern line at Balham. 3 minutes to fill.<br/><br/>"Muesli. A delicious way to make sure today isn't one of those days". Right. Who knew a horrible breakfast cereal could have so much power? Maybe it just sets your expectations suitably low for the rest of the day. If you start off with disappointment, things can only go up from there.<br/><br/>"Become who you want to be. Get a place at Birkbeck". Good idea. Shame I don't know who I want to be.<br/><br/>"Meet someone amazing". Sounds lovely. You have to meet a lot of strange people first, by the sounds of it. One day I'll have to sign up though. Can't carry on like this forever.<br/><br/>"Feeling unwell? Seek help at the next station. It's quicker to ask staff for help at a station than pull the passenger alarm between stops". Thanks, TfL. Can your staff help me with this hangover?<br/><br/>The platform is filling up. 1 minute. On my left, behind the yellow line, a guy in a dreadlocks reads today's Metro. Some tedious shit about a report into child obesity. On my right, a woman checks her makeup in the camera of her phone. To her right, a guy in a bowler hat. What is this, the 1960s? Hipster twat. Shit, eye contact! I flick my head forward. Feels like he's still looking.<br/><br/>At last. "{command:1:The train now arriving is for all stations to Edgware via Bank}".]]></description>
+      <description><![CDATA[{command:skip:(Skip to Act 1)}<br/>{command:skip2:(Skip to Act 2)}<br/><br/>Tuesday morning, 08:03. Waiting for the Northern line at Balham. 3 minutes to fill.<br/><br/>"Muesli. A delicious way to make sure today isn't one of those days". Right. Who knew a horrible breakfast cereal could have so much power? Maybe it just sets your expectations suitably low for the rest of the day. If you start off with disappointment, things can only go up from there.<br/><br/>"Become who you want to be. Get a place at Birkbeck". Good idea. Shame I don't know who I want to be.<br/><br/>"Meet someone amazing". Sounds lovely. You have to meet a lot of strange people first, by the sounds of it. One day I'll have to sign up though. Can't carry on like this forever.<br/><br/>"Feeling unwell? Seek help at the next station. It's quicker to ask staff for help at a station than pull the passenger alarm between stops". Thanks, TfL. Can your staff help me with this hangover?<br/><br/>The platform is filling up. 1 minute. On my left, behind the yellow line, a guy in a dreadlocks reads today's Metro - some tediousness about a report into child obesity. On my right, a woman checks her makeup in the camera of her phone. To her right, a guy in a bowler hat. What is this, the 1960s? Hipster twat. Shit, eye contact! I flick my head forward. Feels like he's still looking.<br/><br/>At last. "{command:1:The train now arriving is for all stations to Edgware via Bank}".]]></description>
       <beforeenter type="script">
         JS.StartOutputSection ("intro")
       </beforeenter>
@@ -173,7 +173,7 @@
     </object>
     <object name="Act 0 Clapham South to Clapham Common">
       <inherit name="editor_room" />
-      <description><![CDATA[Beep-beep-beep-beep-beep.<br/><br/>The doors close. The train lurches onward.<br/><br/>Despite the clatter of the train, and the rocking motion, there is a peaceful stillness here. Many people in a small area, yet we are all alone. It is comfortable, in a strange way, even though I am standing up, having to hold on so I don't fall over the next time the train unexpectedly yanks left or right.<br/><br/>Like water droplets coming together and flowing through a pipe, the Tube carries us along, we are swept through from home to the office. It's automatic. Water starts at one place and ends up at the other, and so do we. We are packed together and become indistinguishable from a general flow.<br/><br/>This station is {command:1:Clapham Common}.]]></description>
+      <description><![CDATA[Beep-beep-beep-beep-beep.<br/><br/>The doors close. The train lurches onward.<br/><br/>Despite the clatter of the train, and the rocking motion, there is a peaceful stillness here. Many people in a small area, yet we are all alone. It is comfortable, in a strange way, even though I am standing up, having to hold on so I don't fall over the next time the train unexpectedly yanks left or right. Almost meditative. Almost soothing my hangover. Almost.<br/><br/>Like water droplets coming together and flowing through a pipe, the Tube carries us along, we are swept through from home to the office. It's automatic. Water starts at one place and ends up at the other, and so do we. We are packed together and become indistinguishable from a general flow.<br/><br/>This station is {command:1:Clapham Common}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -518,7 +518,7 @@
     <inherit name="editor_room" />
     <object name="Act 1 Vision 1">
       <inherit name="editor_room" />
-      <description><![CDATA[I can't see properly. My head is pounding. Thump, thump, thump.<br/><br/>I think I can smell cigarette smoke.<br/><br/>My fellow passengers have become murky. I can barely see them - just blurry, shadowy outlines.<br/><br/>The sound of tinny headphones has disappeared.<br/><br/>Breathe, relax. Let it pass.<br/><br/>I close my eyes.<br/><br/>I slowly {command:1:open them again}.]]></description>
+      <description><![CDATA[I can't see properly. My head is pounding. Thump, thump, thump.<br/><br/>I think I can smell cigarette smoke.<br/><br/>My fellow passengers have become murky. I can barely see them - just blurry, shadowy outlines.<br/><br/>The sound of tinny headphones has disappeared.<br/><br/>A silhouette with a hat walks past me.<br/><br/>Breathe, relax. It will pass.<br/><br/>I close my eyes.<br/><br/>I slowly {command:1:open them again}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -533,19 +533,19 @@
       <command>
         <pattern>1</pattern>
         <script><![CDATA[
-          msg ("Slowly I regain focus. There he is, puffing away. Who the fuck does he think he is?<br/><br/>And there's another one!<br/><br/>Nobody seems bothered about it. I'm certainly not going to be the one to say anything.<br/><br/>Just {command:2:look away}.")
+          msg ("Slowly I regain focus. There he is, on my left, puffing away. Who the fuck does he think he is?<br/><br/>But wait, smoke coming from my right too. Somebody else, facing the other way - another guy wearing a fucking bowler hat. When did this become a thing?<br/><br/>And nobody seems bothered in the slightest. Well, I'm certainly not going to be the one to say anything.<br/><br/>Just {command:2:look away}.")
         ]]></script>
       </command>
       <command>
         <pattern>2</pattern>
         <script><![CDATA[
-          msg ("Struggling to read the advert above the smoker's head.<br/><br/>\"The world's most popular cassette deck\".<br/><br/>That's what it looks like it says.<br/><br/>I close my eyes. The smell fades.<br/><br/>I {command:3:open my eyes} again.")
+          msg ("The smoke makes my eyes water. Above the first smoker's head there's an advert which I can't quite read.<br/><br/>\"The world's most popular cassette deck\". That's what it looks like it says.<br/><br/>I close my eyes. The smell fades.<br/><br/>I {command:3:open my eyes} again.")
         ]]></script>
       </command>
       <command>
         <pattern>3</pattern>
         <script><![CDATA[
-          msg ("Things seem sharper once more.<br/><br/>Ah, it's not the world's most popular cassette deck. It's the world's most advanced nutrition supplements for pregnant women.<br/><br/>I wonder how I got that muddled up.")
+          msg ("Things seem sharper once more. The cigarettes have disappeared, and so has the smell.<br/><br/>Ah, it's not the world's most popular cassette deck. It's the world's most advanced nutrition supplements for pregnant women. I wonder how I got that muddled up.<br/><br/>Where did bowler hat guy go? Weird.")
           MoveObject (player, train)
         ]]></script>
       </command>
@@ -721,7 +721,7 @@
       <command>
         <pattern>1</pattern>
         <script><![CDATA[
-          msg ("The light grows larger. I can taste the air again.<br/><br/>I become aware of the inside of a tube carriage again.")
+          msg ("The light grows larger. I can taste the air again.<br/><br/>I become aware of the inside of a tube carriage again.<br/><br/>I thought I saw another bowler hat out of the corner of my eye. But there was nobody there.")
           MoveObject (player, train)
         ]]></script>
       </command>
