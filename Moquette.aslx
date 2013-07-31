@@ -477,10 +477,15 @@
               shuffleresult = ShuffleTrain()
               removed = ListItem(shuffleresult, 0)
               added = ListItem(shuffleresult, 1)
-              msg ("")
-              msg (DisembarkList("Stepping off: ", removed, "and", "."))
-              msg (TrainObjectList("Getting on: ", added, "and", "."))
-              msg ("")
+              if (ListCount(removed) > 0) {
+                msg (DisembarkList("Stepping off: ", removed, "and", "."))
+              }
+              if (ListCount(added) > 0) {
+                msg (TrainObjectList("Getting on: ", added, "and", "."))
+              }
+              if (ListCount(removed) + ListCount(added) > 0) {
+                msg ("")
+              }
               msg ("The doors close.")
               msg ("")
               parent = GetNonTransparentParent(game.pov.parent)
