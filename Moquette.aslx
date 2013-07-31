@@ -109,6 +109,7 @@
           dictionary add (value, "name", platformkey)
         }
       }
+      HrStyle
     ]]></start>
   </game>
   <object name="Act 0">
@@ -845,6 +846,68 @@
       <inherit name="editor_room" />
     </object>
   </object>
+  <function name="HandleCommand" parameters="command, metadata"><![CDATA[
+    handled = false
+    if (game.menucallback <> null) {
+      if (HandleMenuTextResponse(command)) {
+        handled = true
+      }
+      else {
+        if (game.menuallowcancel) {
+          ClearMenu
+        }
+        else {
+          handled = true
+        }
+      }
+    }
+    if (not handled) {
+      StartTurnOutputSection
+      if (StartsWith (command, "*")) {
+        msg ("")
+        msg (SafeXML (command))
+      }
+      else {
+        shownlink = false
+        if (game.echocommand) {
+          if (metadata <> null and game.enablehyperlinks and game.echohyperlinks) {
+            foreach (key, metadata) {
+              if (EndsWith(command, key)) {
+                objectname = StringDictionaryItem(metadata, key)
+                object = GetObject(objectname)
+                if (object <> null) {
+                  OutputTextNoBr ("<hr/>")
+                  msg ("&gt; " + Left(command, LengthOf(command) - LengthOf(key)) + "{object:" + object.name + "}")
+                  shownlink = true
+                }
+              }
+            }
+          }
+          if (not shownlink) {
+            OutputTextNoBr ("<hr/>")
+            OutputTextRaw ("&gt; " + SafeXML(command))
+          }
+        }
+        if (game.command_newline) {
+          OutputTextNoBr ("<hr/>")
+        }
+        commands = Split(command, ".")
+        game.pov.commandmetadata = metadata
+        if (ListCount(commands) = 1) {
+          game.pov.commandqueue = null
+          HandleSingleCommand (Trim(command))
+        }
+        else {
+          game.pov.commandqueue = commands
+          HandleNextCommandQueueItem
+        }
+      }
+    }
+  ]]></function>
+  <function name="ClearScreen">
+    request (ClearScreen, "")
+    HrStyle
+  </function>
   <function name="MoveToPlatform" parameters="location, platformdata">
     platform.location = location
     platform.lines = DictionaryItem(platformdata, "lines")
@@ -1109,4 +1172,7 @@
     }
     return (result)
   </function>
+  <function name="HrStyle"><![CDATA[
+    msg ("<style>hr { border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3); margin-top: 16px; margin-bottom: 16px; }</style>")
+  ]]></function>
 </asl>
