@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4951.34104-->
+<!--Saved by Quest 5.5.4960.36756-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -252,7 +252,7 @@
     </object>
     <object name="Act 0 Elephant to Borough">
       <inherit name="editor_room" />
-      <description><![CDATA[Good self control there. I suppose I should feel pleased with myself. I do not feel pleased with myself. I feel like I am denying my true self in favour of being a nice compliant automaton.<br/><br/>Soon enough we're at Borough. I can't even make a choice here. All I can do is {command:1:stay on the Northern line}.]]></description>
+      <description><![CDATA[Good self control there. I suppose I should feel pleased with myself. I do not feel pleased with myself. I am denying my true self in favour of being a nice compliant automaton. This is not what I want. It's what you want.<br/><br/>Soon enough we're at Borough. I can't even make a choice here. All I can do is {command:1:stay on the Northern line}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -262,13 +262,19 @@
     </object>
     <object name="Act 0 Borough to London Bridge">
       <inherit name="editor_room" />
-      <description><![CDATA[No, I'm doing this. You can't force me. I'm heading to the Jubilee line.<br/><br/>A train is waiting, I {command:1:get on}.]]></description>
+      <description><![CDATA[Nobody gets on at Borough. The doors close, then open, then close again.<br/><br/>Onwards we go, and nobody is looking very happy. Maybe some people describe the inside of the tube as being like a cattle truck, not because of the crowded conditions but because we're piled in anonymously and simply awaiting the fate of whatever the day brings. I'm starting to feel the cows have an easier time of it - at least they get a quick bolt through their head at the other end.<br/><br/>We are at London Bridge.<br/><br/>I could {command:1:change to the Jubilee line}.<br/><br/>I could do that. I should totally do that.<br/><br/>It's either that or {command:2:stay here}. With Daisy and Buttercup.]]></description>
       <enter type="script">
       </enter>
       <command>
         <pattern>1</pattern>
         <script>
-          EndAct0 (-1, London Bridge, Jubilee)
+          MoveObject (player, Act 0 London Bridge Escape)
+        </script>
+      </command>
+      <command>
+        <pattern>2</pattern>
+        <script>
+          MoveObject (player, Act 0 London Bridge 1)
         </script>
       </command>
     </object>
@@ -305,6 +311,36 @@
         <pattern>1</pattern>
         <script>
           EndAct0 (-1, Elephant Castle, Bakerloo)
+        </script>
+      </command>
+    </object>
+    <object name="Act 0 London Bridge Escape">
+      <inherit name="editor_room" />
+      <description>I run through corridors, a train is waiting, I {command:1:get on}.</description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          EndAct0 (-1, London Bridge, Jubilee)
+        </script>
+      </command>
+    </object>
+    <object name="Act 0 London Bridge 1">
+      <inherit name="editor_room" />
+      <description><![CDATA[Is that it? Just stand here? Don't complain, know my place? Don't choose life - choose not to choose?<br/><br/>Why do you want me to do that? Who says you're in charge?<br/><br/>Beep-Beep-Beep-Beep-Beep-Beep-Beep-Beep-{command:1:Beep}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 0 London Bridge 2)
+        </script>
+      </command>
+    </object>
+    <object name="Act 0 London Bridge 2">
+      <inherit name="editor_room" />
+      <description><![CDATA[I jump out of the train as the door closes onto me. Its rubber edge barges heavily into my right shoulder and knocks me off balance. Fortunately I avoid being crushed against the inside of the doorway and I spin out onto the platform.<br/><br/>That's going to be a bruise.<br/><br/>This way to the {command:1:Jubilee line}.]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 0 London Bridge Escape)
         </script>
       </command>
     </object>
@@ -418,6 +454,7 @@
     <command>
       <pattern>unboard</pattern>
       <script><![CDATA[
+        JS.disableAllCommandLinks ()
         if (train.counter = 0) {
           platform = GetPlatform(train.location, train.line, train.direction)
           if (platform = null) {
@@ -445,6 +482,7 @@
     <command>
       <pattern>wait1</pattern>
       <script>
+        JS.disableAllCommandLinks ()
       </script>
     </command>
     <command>
@@ -477,6 +515,7 @@
               shuffleresult = ShuffleTrain()
               removed = ListItem(shuffleresult, 0)
               added = ListItem(shuffleresult, 1)
+              // TODO: need a newline here if the previous command was not "wait"
               if (ListCount(removed) > 0) {
                 msg (DisembarkList("Stepping off: ", removed, "and", "."))
               }
