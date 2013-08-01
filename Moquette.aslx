@@ -297,7 +297,7 @@
     </object>
     <object name="Act 0 Kennington Escape">
       <inherit name="editor_room" />
-      <description>I run through corridors, a train is waiting, I {command:1:get on}.</description>
+      <description><![CDATA[I follow the signs to the Charing Cross branch. It doesn't take very long.<br/><br/>Well, that was easy.<br/><br/>A train pulls in and I can {command:1:get on}.]]></description>
       <enter type="script">
       </enter>
       <command>
@@ -309,7 +309,7 @@
     </object>
     <object name="Act 0 Elephant Escape">
       <inherit name="editor_room" />
-      <description>I run through corridors, a train is waiting, I {command:1:get on}.</description>
+      <description><![CDATA[I follow the signs to the Bakerloo line. It's doesn't take long to reach the platform.<br/><br/>Well, that was easy.<br/><br/>A train pulls in and I can {command:1:get on}.]]></description>
       <enter type="script">
       </enter>
       <command>
@@ -321,7 +321,7 @@
     </object>
     <object name="Act 0 London Bridge Escape">
       <inherit name="editor_room" />
-      <description>I run through corridors, a train is waiting, I {command:1:get on}.</description>
+      <description><![CDATA[I follow the signs to the Jubilee line. It's not a very quick interchange - down some corridors and up and down some steps. But it doesn't take a huge amount of effort, and here I am on the platform, going somewhere else.<br/><br/>That was pretty easy really.<br/><br/>A train pulls in and I can {command:1:get on}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -462,9 +462,9 @@
     <counter type="int">0</counter>
     <totalturns type="int">0</totalturns>
     <justboarded type="boolean">false</justboarded>
+    <waitcount type="int">0</waitcount>
     <location type="object">Chancery Lane</location>
     <line type="object">Central</line>
-    <waitcount type="int">0</waitcount>
     <command>
       <pattern>unboard</pattern>
       <script><![CDATA[
