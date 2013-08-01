@@ -23,8 +23,10 @@
     <subtitle type="string"></subtitle>
     <showtitle />
     <command_newline />
+    <textsection type="int">0</textsection>
     <triggeract2 type="boolean">false</triggeract2>
     <triggeract4 type="boolean">false</triggeract4>
+    <waitingfortimer type="boolean">false</waitingfortimer>
     <triggers type="dictionary">
       <item>
         <key>2</key>
@@ -468,24 +470,32 @@
     <command>
       <pattern>unboard</pattern>
       <script><![CDATA[
-        JS.disableAllCommandLinks ()
         if (train.counter = 0) {
-          platform = GetPlatform(train.location, train.line, train.direction)
-          if (platform = null) {
-            // we're at the end of the line
-            availablelist = ""
-            foreach (availableplatform, train.location.platforms) {
-              platformdata = DictionaryItem(train.location.platforms, availableplatform)
-              if (LengthOf(availablelist) > 0) {
-                availablelist = availablelist + ", "
+          JS.disableAllCommandLinks ()
+          EndTextSection ()
+          game.waitingfortimer = true
+          SetTimeout (1) {
+            game.waitingfortimer = false
+            ClearScreen
+            StartTextSection
+            platform = GetPlatform(train.location, train.line, train.direction)
+            if (platform = null) {
+              // we're at the end of the line
+              availablelist = ""
+              foreach (availableplatform, train.location.platforms) {
+                platformdata = DictionaryItem(train.location.platforms, availableplatform)
+                if (LengthOf(availablelist) > 0) {
+                  availablelist = availablelist + ", "
+                }
+                availablelist = availablelist + ("{command:change " + availableplatform + ":" + availableplatform + "}")
               }
-              availablelist = availablelist + ("{command:change " + availableplatform + ":" + availableplatform + "}")
+              player.parent = nullplatform
+              msg ("Changes: " + availablelist)
             }
-            player.parent = nullplatform
-            msg ("Changes: " + availablelist)
-          }
-          else {
-            MoveToPlatform (train.location, platform)
+            else {
+              MoveToPlatform (train.location, platform)
+            }
+            RunTurnScript
           }
         }
         else {
@@ -532,84 +542,11 @@
     </command>
     <turnscript>
       <enabled />
-      <script><![CDATA[
-        if (not train.justboarded) {
-          game.linkcount = game.linkcount - 1
-          Log ("Turn script reduces link count to " + game.linkcount)
+      <script>
+        if (not game.waitingfortimer) {
+          RunTurnScript
         }
-        if (not game.triggeract2) {
-          train.totalturns = train.totalturns + 1
-          if (DictionaryContains(game.triggers, ToString(train.totalturns))) {
-            if (not game.waited) {
-              msg ("")
-            }
-            action = DictionaryItem(game.triggers, ToString(train.totalturns))
-            if (TypeOf(action) = "script") {
-              invoke (action)
-            }
-            else {
-              msg (action)
-            }
-            if (game.waited) {
-              msg ("")
-            }
-          }
-        }
-        if (player.parent = train) {
-          if (not train.justboarded) {
-            if (train.counter = 0) {
-              shuffleresult = ShuffleTrain()
-              removed = ListItem(shuffleresult, 0)
-              added = ListItem(shuffleresult, 1)
-              if (not game.waited) {
-                msg ("")
-              }
-              if (ListCount(removed) > 0) {
-                msg (DisembarkList("Stepping off: ", removed, "and", "."))
-              }
-              if (ListCount(added) > 0) {
-                msg (TrainObjectList("Getting on: ", added, "and", "."))
-              }
-              if (ListCount(removed) + ListCount(added) > 0) {
-                msg ("")
-              }
-              msg ("The doors close.")
-              parent = GetNonTransparentParent(game.pov.parent)
-              list = RemoveSceneryObjects(GetDirectChildren(parent))
-              if (ListCount(list) > 0) {
-                msg ("")
-                msg (TrainObjectList("I can see", list, "and", "."))
-              }
-              UpdateLinkCount
-            }
-            train.counter = train.counter + 1
-            if (train.counter = train.nextstopcount) {
-              if (not game.triggeract4) {
-                if (not game.waited) {
-                  msg ("")
-                }
-                MoveTrainToNextStation
-              }
-              else {
-                player.parent = Act 4 Page 100
-              }
-            }
-            else {
-              if (game.linkcount <= 0) {
-                msg ("")
-                msg ("{command:wait2:Wait}. That's all I can do.")
-              }
-            }
-          }
-          else {
-            train.justboarded = false
-            msg ("")
-            msg ("The doors close.")
-            train.counter = 1
-            train.nextstopcount = train.nextstopcount + 1
-          }
-        }
-      ]]></script>
+      </script>
     </turnscript>
   </object>
   <object name="Act 1">
@@ -1080,6 +1017,7 @@
     SetTimeout (1) {
       ClearScreen
       JS.StartOutputSection ("act1")
+      StartTextSection
       InitTrain
     }
   </function>
@@ -1276,5 +1214,91 @@
   </function>
   <function name="HrStyle"><![CDATA[
     msg ("<style>hr { border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3); margin-top: 16px; margin-bottom: 16px; }</style>")
+  ]]></function>
+  <function name="StartTextSection">
+    game.textsection = game.textsection + 1
+    JS.StartOutputSection ("textsection" + game.textsection)
+  </function>
+  <function name="EndTextSection">
+    JS.EndOutputSection ("textsection" + game.textsection)
+    JS.HideOutputSection ("textsection" + game.textsection)
+  </function>
+  <function name="RunTurnScript"><![CDATA[
+    if (not train.justboarded) {
+      game.linkcount = game.linkcount - 1
+      Log ("Turn script reduces link count to " + game.linkcount)
+    }
+    if (not game.triggeract2) {
+      train.totalturns = train.totalturns + 1
+      if (DictionaryContains(game.triggers, ToString(train.totalturns))) {
+        if (not game.waited) {
+          msg ("")
+        }
+        action = DictionaryItem(game.triggers, ToString(train.totalturns))
+        if (TypeOf(action) = "script") {
+          invoke (action)
+        }
+        else {
+          msg (action)
+        }
+        if (game.waited) {
+          msg ("")
+        }
+      }
+    }
+    if (player.parent = train) {
+      if (not train.justboarded) {
+        if (train.counter = 0) {
+          shuffleresult = ShuffleTrain()
+          removed = ListItem(shuffleresult, 0)
+          added = ListItem(shuffleresult, 1)
+          if (not game.waited) {
+            msg ("")
+          }
+          if (ListCount(removed) > 0) {
+            msg (DisembarkList("Stepping off: ", removed, "and", "."))
+          }
+          if (ListCount(added) > 0) {
+            msg (TrainObjectList("Getting on: ", added, "and", "."))
+          }
+          if (ListCount(removed) + ListCount(added) > 0) {
+            msg ("")
+          }
+          msg ("The doors close.")
+          parent = GetNonTransparentParent(game.pov.parent)
+          list = RemoveSceneryObjects(GetDirectChildren(parent))
+          if (ListCount(list) > 0) {
+            msg ("")
+            msg (TrainObjectList("I can see", list, "and", "."))
+          }
+          UpdateLinkCount
+        }
+        train.counter = train.counter + 1
+        if (train.counter = train.nextstopcount) {
+          if (not game.triggeract4) {
+            if (not game.waited) {
+              msg ("")
+            }
+            MoveTrainToNextStation
+          }
+          else {
+            player.parent = Act 4 Page 100
+          }
+        }
+        else {
+          if (game.linkcount <= 0) {
+            msg ("")
+            msg ("{command:wait2:Wait}. That's all I can do.")
+          }
+        }
+      }
+      else {
+        train.justboarded = false
+        msg ("")
+        msg ("The doors close.")
+        train.counter = 1
+        train.nextstopcount = train.nextstopcount + 1
+      }
+    }
   ]]></function>
 </asl>
