@@ -172,17 +172,42 @@
 				</script>
 			</command>
 		</object>
+		<object name="person24">
+			<title>a man with a moustache</title>
+			<desc>Apart from a huge bushy moustache, he is clean shaven. He looks a bit like Lord Kitchener in those posters from the First World War. He might turn round at any second, point at me and say "I want {command:you:YOU}".</desc>
+			<command>
+				<pattern>you</pattern>
+				<script>
+					msg ("It would be nice to feel wanted, but not by somebody who just wants to send me to a pointless death in a muddy hole in France.")
+				</script>
+			</command>
+		</object>
+		<object name="person25">
+			<title>a man in sunglasses</title>
+			<desc>Sunglasses, down here? And chewing gum, with his mouth wide open. All nonchalant and cool, like he doesn't need to be here, but hey, he just puts up with it, y'know, why complain? So many reasons to hate. He's really playing with that gum as well, like he's totally the boss of it. Everything's going his way - apart from his debilitating eye disorder which means his retinas will fall out if he's exposed to more than two photons at a time. What a colossal prick.</desc>
+		</object>
+		<object name="person26">
+			<title>a man</title>
+			<desc>He's eating a steaming hot tub of porridge. It's pretty hot down here already - surely the last thing anybody needs is piping hot breakfast mush?
+		</object>
+		<object name="person27">
+			<title>a man in a jumper</title>
+			<desc>It's quite a big blue jumper - inappopriately warm for both the weather and the temperature down here on the tube, I should think. And what's that suspicious white stain at the bottom? Does he realise that's there? I hope that's yogurt, or the milk from his breakfast cereal.</desc>
+		</object>
+		<object name="person28">
+			<title>a scruffy man</title>
+			<desc>He looks like some sort of academic. Quite poor dress sense - and if I can spot that, it must be really poor dress sense. He's reading some kind of {command:paper:scientific paper}, and chuckling to himself.</desc>
+			<command>
+				<pattern>paper</pattern>
+				<script>
+					msg ("Straining to read the title over his shoulder before he turns the page - review... platelet function disorders. I wonder what's so funny about that?")
+				</script>
+			</command>
+			<!-- would be good to offer asking what's so funny as an option. If this is earlier in the game, Z doesn't want to ask questions like a nutter. Later on, maybe he takes a riskier approach and does more nutty things? Maybe we can build up the nutty behaviour vignettes, this can be an earlier one, then perhaps there is a progression onwards to asking to eat people's snot, chasing rats... -->
+		</object>
 		<!-- 
 
-		guy with lord kitchener moustache. He wants YOU. To send you to your death.
-
 		cabin crew (only on piccadilly line?)
-
-		man in sunglasses. chewing gum with his mouth open, really playing with it. so many reasons to hate him.
-
-		man eating a tub of porridge. it's pretty hot down here already.
-
-		man with a stain on his jumper. i hope that's yogurt, or the milk from his breakfast cereal.
 
 		Tall and slim and stripy
 
@@ -192,6 +217,8 @@
 		funny about that.
 
 		A guy with tall tightly cropped hair, like the 80s, like grace jones
+
+		+ need about 2/3 more women
 
 		-->
 	</object>
