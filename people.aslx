@@ -148,6 +148,52 @@
 			<title>a man</title>
 			<desc>He is wearing a grey striped shirt, grey trousers and grey shoes. Even his hair is going grey. Mr. Monochrome.</desc>
 		</object>
+		<object name="person21">
+			<title>a woman drinking coffee</title>
+			<desc>Her coffee cup has her name scrawled on it in black felt tip. {command:roberta:Roberta}. I know nothing about her, but now I know her name - which is more than I can say for anybody else in this carriage. It's like we have some kind of connection now.</desc>
+			<command>
+				<pattern>roberta</pattern>
+				<script>
+					msg ("I don't like her name. She looks like she's probably nice, but I think her name is horrible. It's kind of manly. Like Geraldine or Bernardette - big blokey names with a small concession to femininity at the end. Makes me think of an old man with a big beard wearing a flowery dress.")
+				</script>
+			</command>
+		</object>
+		<object name="person22">
+			<title>a man in a suit</title>
+			<desc>He has an earring, which I suppose makes him feel more individual than the rest of the people he works with. Yet he still adheres to a dress code. An act of futile rebellion.</desc>
+		</object>
+		<object name="person23">
+			<title>a young guy</title>
+			<desc>He's wearing a T-shirt and picking his nose. Yuck. What can you do though? Ask him to stop? Is he going to {command:eat:eat that}?</desc>
+			<command>
+				<pattern>eat</pattern>
+				<script>
+					msg ("Eugh. What do you want me to do, go up and ask him if I can have some? You're not helping me feel any better.")
+				</script>
+			</command>
+		</object>
+		<!-- 
+
+		guy with lord kitchener moustache. He wants YOU. To send you to your death.
+
+		cabin crew (only on piccadilly line?)
+
+		man in sunglasses. chewing gum with his mouth open, really playing with it. so many reasons to hate him.
+
+		man eating a tub of porridge. it's pretty hot down here already.
+
+		man with a stain on his jumper. i hope that's yogurt, or the milk from his breakfast cereal.
+
+		Tall and slim and stripy
+
+		Fat child crisps
+
+		Laughing man reads a review of platelet function disorders and new guidelines for ukgho, don't know what's so 
+		funny about that.
+
+		A guy with tall tightly cropped hair, like the 80s, like grace jones
+
+		-->
 	</object>
 	<object name="seenpeople">
 	</object>
