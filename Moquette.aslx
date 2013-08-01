@@ -285,7 +285,7 @@
     </object>
     <object name="Act 0 Stockwell Escape">
       <inherit name="editor_room" />
-      <description>I run through corridors, a train is waiting, I {command:1:get on}.</description>
+      <description><![CDATA[I follow the sign to the Victoria line. Down one small corridor, and there it is - a very quick interchange.<br/><br/>Well, that was easy.<br/><br/>A train pulls in and I can {command:1:get on}.]]></description>
       <enter type="script">
       </enter>
       <command>
@@ -456,6 +456,7 @@
     <justboarded type="boolean">false</justboarded>
     <location type="object">Chancery Lane</location>
     <line type="object">Central</line>
+    <waitcount type="int">0</waitcount>
     <command>
       <pattern>unboard</pattern>
       <script><![CDATA[
@@ -488,6 +489,30 @@
       <pattern>wait1</pattern>
       <script>
         JS.disableAllCommandLinks ()
+        game.waited = true
+      </script>
+    </command>
+    <command>
+      <pattern>wait2</pattern>
+      <script>
+        train.waitcount = train.waitcount + 1
+        switch (train.waitcount) {
+          case (1) {
+            msg ("I stand for a while staring at the tunnel wall flying by with all its pipes.")
+          }
+          case (2) {
+            firsttime {
+              msg ("I look at the floor, hiding its dirt with its colourful speckles. Clever floor. Also, kind of disgusting.")
+            }
+            otherwise {
+              msg ("I look at the floor, still cleverly hiding its dirt there.")
+            }
+          }
+          case (3) {
+            msg ("Time continues to elapse.")
+            train.waitcount = 0
+          }
+        }
       </script>
     </command>
     <command>
@@ -520,7 +545,9 @@
               shuffleresult = ShuffleTrain()
               removed = ListItem(shuffleresult, 0)
               added = ListItem(shuffleresult, 1)
-              // TODO: need a newline here if the previous command was not "wait"
+              if (not game.waited) {
+                msg ("")
+              }
               if (ListCount(removed) > 0) {
                 msg (DisembarkList("Stepping off: ", removed, "and", "."))
               }
@@ -531,16 +558,20 @@
                 msg ("")
               }
               msg ("The doors close.")
-              msg ("")
               parent = GetNonTransparentParent(game.pov.parent)
               list = RemoveSceneryObjects(GetDirectChildren(parent))
-              msg (TrainObjectList("I can see", list, "and", "."))
+              if (ListCount(list) > 0) {
+                msg ("")
+                msg (TrainObjectList("I can see", list, "and", "."))
+              }
               UpdateLinkCount
             }
             train.counter = train.counter + 1
             if (train.counter = train.nextstopcount) {
               if (not game.triggeract4) {
-                msg ("")
+                if (not game.waited) {
+                  msg ("")
+                }
                 MoveTrainToNextStation
               }
               else {
@@ -549,7 +580,8 @@
             }
             else {
               if (game.linkcount <= 0) {
-                msg ("{command:wait:Wait}. That's all I can do.")
+                msg ("")
+                msg ("{command:wait2:Wait}. That's all I can do.")
               }
             }
           }
@@ -897,6 +929,7 @@
   </object>
   <function name="HandleCommand" parameters="command, metadata"><![CDATA[
     handled = false
+    game.waited = false
     if (game.menucallback <> null) {
       if (HandleMenuTextResponse(command)) {
         handled = true
