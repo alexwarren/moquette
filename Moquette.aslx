@@ -388,13 +388,21 @@
           }
           counter = counter + 1
         }
-        msg ("I could change to " + liststring + ". Or I could {command:next:wait} for a train here.")
+        train.liststring = liststring
+        msg ("")
+        msg ("I could {command:next:wait} for a train here, or {command:change:change} to another line.")
       }
       else {
         msg ("I will {command:next:wait} for a train.")
       }
     ]]></enter>
     <lines type="objectlist">Central</lines>
+    <command>
+      <pattern>change</pattern>
+      <script>
+        msg ("I could change to " + train.liststring  + ".")
+      </script>
+    </command>
     <command>
       <pattern>board</pattern>
       <script>
