@@ -533,7 +533,10 @@
     <turnscript>
       <enabled />
       <script><![CDATA[
-        game.linkcount = game.linkcount - 1
+        if (not train.justboarded) {
+          game.linkcount = game.linkcount - 1
+          Log ("Turn script reduces link count to " + game.linkcount)
+        }
         if (not game.triggeract2) {
           train.totalturns = train.totalturns + 1
           if (DictionaryContains(game.triggers, ToString(train.totalturns))) {
@@ -1245,18 +1248,22 @@
     return (result)
   ]]></function>
   <function name="UpdateLinkCount"><![CDATA[
+    Log ("Updating Link Count...")
     game.linkcount = 0
     children = GetDirectChildren(train)
     foreach (obj, children) {
       if (obj <> player) {
+        Log (" - found object " + obj.name + " (" + GetString(obj, "title") + ")")
         game.linkcount = game.linkcount + 1
       }
     }
     foreach (command, AllCommands()) {
       if (ListContains(children, command.parent) ) {
+        Log (" - found a command in " + command.parent.name + " (" + GetString(command.parent, "title") + ")")
         game.linkcount = game.linkcount + 1
       }
     }
+    Log ("Total link count is " + game.linkcount)
   ]]></function>
   <function name="ScopeCommands" type="objectlist">
     result = NewObjectList()
