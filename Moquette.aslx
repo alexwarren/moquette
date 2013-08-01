@@ -529,13 +529,18 @@
         if (not game.triggeract2) {
           train.totalturns = train.totalturns + 1
           if (DictionaryContains(game.triggers, ToString(train.totalturns))) {
-            msg ("")
+            if (not game.waited) {
+              msg ("")
+            }
             action = DictionaryItem(game.triggers, ToString(train.totalturns))
             if (TypeOf(action) = "script") {
               invoke (action)
             }
             else {
               msg (action)
+            }
+            if (game.waited) {
+              msg ("")
             }
           }
         }
