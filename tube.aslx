@@ -1178,7 +1178,7 @@
               <key>directions</key>
               <value type="stringdictionary">
                 <item>
-                  <key>northern</key>
+                  <key>northern1</key>
                   <value>-1</value>
                 </item>
               </value>
@@ -1196,7 +1196,7 @@
               <key>directions</key>
               <value type="stringdictionary">
                 <item>
-                  <key>northern</key>
+                  <key>northern1</key>
                   <value>1</value>
                 </item>
               </value>
@@ -1529,7 +1529,7 @@
               <key>directions</key>
               <value type="stringdictionary">
                 <item>
-                  <key>northern</key>
+                  <key>northern1</key>
                   <value>-1</value>
                 </item>
               </value>
@@ -1547,7 +1547,7 @@
               <key>directions</key>
               <value type="stringdictionary">
                 <item>
-                  <key>northern</key>
+                  <key>northern1</key>
                   <value>1</value>
                 </item>
               </value>
