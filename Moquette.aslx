@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4960.36756-->
+<!--Saved by Quest 5.5.4960.29909-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -205,6 +205,7 @@
         <pattern>2</pattern>
         <script>
           MoveObject (player, Act 0 Stockwell Escape)
+          game.escapepoint = 1
         </script>
       </command>
     </object>
@@ -231,6 +232,7 @@
         <pattern>2</pattern>
         <script>
           MoveObject (player, Act 0 Kennington Escape)
+          game.escapepoint = 2
         </script>
       </command>
     </object>
@@ -247,6 +249,7 @@
         <pattern>2</pattern>
         <script>
           MoveObject (player, Act 0 Elephant Escape)
+          game.escapepoint = 3
         </script>
       </command>
     </object>
@@ -269,12 +272,14 @@
         <pattern>1</pattern>
         <script>
           MoveObject (player, Act 0 London Bridge Escape)
+          game.escapepoint = 4
         </script>
       </command>
       <command>
         <pattern>2</pattern>
         <script>
           MoveObject (player, Act 0 London Bridge 1)
+          game.escapepoint = 5
         </script>
       </command>
     </object>
