@@ -1088,12 +1088,12 @@
         }
       }
     }
-    passengers = RandomObjectListItems(GetDirectChildren(unseenpeople), GetRandomInt(2, 4))
+    passengers = RandomObjectListItems(GetDirectChildren(unseenpeople), GetRandomInt(2, 4), "")
     foreach (obj, passengers) {
       obj.parent = train
     }
   ]]></function>
-  <function name="RandomObjectListItems" parameters="list, items" type="objectlist"><![CDATA[
+  <function name="RandomObjectListItems" parameters="list, items, disallowattribute" type="objectlist"><![CDATA[
     if (items >= ListCount(list)) {
       result = list
     }
@@ -1102,7 +1102,7 @@
       while (ListCount(result) < items) {
         index = GetRandomInt(0, ListCount(list) - 1)
         item = ObjectListItem(list, index)
-        if (not ListContains(result, item)) {
+        if (not ListContains(result, item) and (disallowattribute = "" or not GetBoolean(item, disallowattribute))) {
           list add (result, item)
         }
       }
@@ -1117,7 +1117,7 @@
       }
     }
     removecount = GetRandomInt(0, ListCount(passengers))
-    removedpassengers = RandomObjectListItems(passengers, removecount)
+    removedpassengers = RandomObjectListItems(passengers, removecount, "disallowboarding")
     foreach (obj, removedpassengers) {
       if (GetBoolean(obj, "interacted")) {
         obj.parent = seenpeople
@@ -1130,7 +1130,7 @@
     if (ListCount(passengers) - removecount > 4) {
       addcount = 0
     }
-    addedpassengers = RandomObjectListItems(GetDirectChildren(unseenpeople), addcount)
+    addedpassengers = RandomObjectListItems(GetDirectChildren(unseenpeople), addcount, "disallowboarding")
     foreach (obj, addedpassengers) {
       obj.parent = train
     }
