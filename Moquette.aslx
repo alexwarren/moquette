@@ -594,7 +594,7 @@
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Act 2 Page 110)
+          JS.heatherText ()
         </script>
       </command>
     </object>
@@ -1308,4 +1308,8 @@
       }
     }
   ]]></function>
+  <function name="JSFinish_HeatherText" parameters="dummy">
+    MoveObject (player, Act 2 Page 110)
+  </function>
+  <javascript src="moquette.js" />
 </asl>
