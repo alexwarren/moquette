@@ -22,7 +22,9 @@ function doHeatherText() {
 		}, 20);
 	}
 	else {
-		$("#heatherText").fadeOut(2000);
+		$("#heatherText").fadeOut(2000, function() {
+			$(this).remove();
+		});
 		setTimeout(function() {
 			ASLEvent("JSFinish_HeatherText", "");
 		}, 500);
