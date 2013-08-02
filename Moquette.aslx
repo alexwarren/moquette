@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4960.29909-->
+<!--Saved by Quest 5.5.4960.36756-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -472,7 +472,7 @@
       <script><![CDATA[
         if (train.counter = 0) {
           JS.disableAllCommandLinks ()
-          EndTextSection ()
+          EndTextSection
           game.waitingfortimer = true
           SetTimeout (1) {
             game.waitingfortimer = false
@@ -590,23 +590,17 @@
     <inherit name="editor_room" />
     <object name="Act 2 Page 100">
       <inherit name="editor_room" />
-      <description><![CDATA[The train doors open. And there she is.<br/><br/>Heather.<br/><br/>It's been four years.<br/><br/>There's no way she'd remember me, surely?<br/><br/>Her hair is different. I liked it before. Now it's even better.<br/><br/>Immediately captivating eyes. They have swallowed me. I am powerless.<br/><br/>I am unable to look anywhere else. I have already massively overstepped whatever the rule is for eye contact.<br/><br/>Can't back out now. Even if she doesn't remember me, she can't have failed to spot the man who has just been staring at her for too long already. How long has it been? It feels like forever. It can only have been a few seconds - the doors are still open.<br/><br/>Must say something.<br/><br/>Must be funny. Friendly. Charming. Not scary. Not creepy. Maybe I should apologise for staring. Don't want to apologise for staring - I want to look at her forever. Must think quickly. Must speak soon. Already left it a bit too long. Too much pressure. Must say something. Anything.<br/><br/>{command:1:"Hello"}]]></description>
-      <command>
-        <pattern>99</pattern>
-        <script>
-          InitTrain
-        </script>
-      </command>
+      <description><![CDATA[I step on the train. She is right there in front of me.<br/><br/>{command:1:Heather}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Act 2 Page 200)
+          MoveObject (player, Act 2 Page 110)
         </script>
       </command>
     </object>
     <object name="Act 2 Page 200">
       <inherit name="editor_room" />
-      <description><![CDATA[A smile bursts across her face, and her eyes sparkle, as if she has suddenly been reactivated.<br/><br/>"Hi!..."<br/><br/>She points at me and pauses, loading data from memory banks. Two seconds later - "Zoran! Dave's friend, isn't it? How are you doing?"<br/><br/>I have been obsessing over you every night for months, even though there was a good chance I would never see you again.<br/><br/>{command:1:"Fine. Good, actually. How's things with you?"}]]></description>
+      <description><![CDATA[Well, that word squeaked out like a rat's fart. I've fucked it up already.<br/><br/>But then a smile bursts across her face, and her eyes sparkle, as if she has suddenly been reactivated.<br/><br/>"Hi!..."<br/><br/>She points at me and pauses, loading data from memory banks. Two seconds later - "Zoran! Dave's friend, isn't it? How are you doing?"<br/><br/>I have been obsessing over you every night for months, even though there was a good chance I would never see you again.<br/><br/>{command:1:"Fine. Good, actually. How's things with you?"}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -724,6 +718,16 @@
         <pattern>1</pattern>
         <script>
           MoveObject (player, Act 2 Page 500)
+        </script>
+      </command>
+    </object>
+    <object name="Act 2 Page 110">
+      <inherit name="editor_room" />
+      <description><![CDATA[Heather. Heather. Heather. Butterflies. Don't throw up.<br/><br/>It's been four months. She's probably forgotten me. I should have called. At least sent her an email. Or added her on Facebook. I was too scared. I didn't have any contact details. Or even a surname. Should've asked Dave. But I didn't want to be too eager. I played it cool. I probably played it too cool. And now I'm starting from absolute zero.<br/><br/>Her hair is different. I liked it before. Now it's even better.<br/><br/>Her eyes. Captivating. They have swallowed me. I am powerless. I am unable to look anywhere else.<br/><br/>I must have already massively overstepped the unwritten rules about eye contact.<br/><br/>Can't back out now. Even if she doesn't remember me, she can't have failed to spot the man who has just been staring at her for too long already. How long has it been? It feels like forever. It can only have been a few seconds - the doors are still open.<br/><br/>Must say something.<br/><br/>Must be funny. Friendly. Charming. Not scary. Not creepy. Maybe I should apologise for staring. Don't want to apologise for staring - I want to look at her forever. Must think quickly. Must speak soon. Already left it a bit too long. Too much pressure. Must say something. Anything.<br/><br/>{command:1:"Hello"}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 2 Page 200)
         </script>
       </command>
     </object>
