@@ -31,17 +31,19 @@ function doHeatherText() {
 	}
 	var maxLeft = $(window).width();
 	var maxTop = $(window).height();
-	$("<div/>", {
-		text: "Heather"
-	}).css({
-		position: "absolute",
-		left: Math.random() * maxLeft,
-		top: Math.random() * maxTop,
-		"font-size": getRandomInt(8, 100) + "px",
-		"font-family": "Georgia, serif",
-		color: getRandomGrey(),
-		opacity: Math.random(),
-	}).appendTo("#heatherText");
+	for (var i = 0; i < 3; i++) {
+		$("<div/>", {
+			text: "Heather"
+		}).css({
+			position: "absolute",
+			left: Math.random() * maxLeft,
+			top: Math.random() * maxTop,
+			"font-size": getRandomInt(8, 100) + "px",
+			"font-family": "Georgia, serif",
+			color: getRandomGrey(),
+			opacity: Math.random(),
+		}).appendTo("#heatherText");
+	}
 }
 
 function getRandomInt(min, max) {
