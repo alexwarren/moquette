@@ -1117,6 +1117,9 @@
     if (ListCount(passengers) - removecount > 4) {
       addcount = 0
     }
+    if (ListCount(passengers) - removecount + addcount <= 1) {
+      addcount = GetRandomInt(2, 3)
+    }
     addedpassengers = RandomObjectListItems(GetDirectChildren(unseenpeople), addcount, "disallowboarding")
     foreach (obj, addedpassengers) {
       obj.parent = train
