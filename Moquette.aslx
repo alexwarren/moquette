@@ -664,13 +664,17 @@
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Act 2 Page 900)
+          msg ("Black speckles.")
+          JS.blackout ()
         </script>
       </command>
     </object>
     <object name="Act 2 Page 900">
       <inherit name="editor_room" />
-      <description><![CDATA[Black speckles growing.<br/><br/>(fade to black... maybe invert the colour scheme at this point??)<br/><br/>"Are you OK? Do you want some water?"<br/><br/>You look like my aunt. I reach out and she hands me a water bottle. I sip. I don't want any more.<br/><br/>{command:1:"I'm fine."}]]></description>
+      <description><![CDATA["Are you OK? Do you want some water?"<br/><br/>You look like my aunt. I reach out and she hands me a water bottle. I sip. I don't want any more.<br/><br/>{command:1:"I'm fine."}]]></description>
+      <beforeenter type="script">
+        ClearScreen
+      </beforeenter>
       <command>
         <pattern>1</pattern>
         <script>
@@ -1310,6 +1314,9 @@
   ]]></function>
   <function name="JSFinish_HeatherText" parameters="dummy">
     MoveObject (player, Act 2 Page 110)
+  </function>
+  <function name="JSFinish_Blackout" parameters="dummy">
+    MoveObject (player, Act 2 Page 900)
   </function>
   <javascript src="moquette.js" />
 </asl>

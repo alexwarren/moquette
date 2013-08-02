@@ -54,3 +54,27 @@ function getRandomGrey() {
 	var hex = Math.floor(Math.random() * 256).toString(16);
 	return "#" + hex + hex + hex;
 }
+
+function blackout() {
+	$("<div/>", {
+		id: "blackout"
+	}).css({
+		position: "fixed",
+		top: 0,
+		left: 0,
+		width: "100%",
+		height: "100%",
+		background: "black",
+		display: "none"
+	}).appendTo("body");
+	$("#blackout").fadeIn(10000);
+	setTimeout(function () {
+		ASLEvent("JSFinish_Blackout", "");
+	}, 11000);
+	setTimeout(function () {
+		$("#blackout").fadeOut(10000, function() {
+			console.log("remove");
+			$(this).remove();
+		});
+	}, 12000);
+}
