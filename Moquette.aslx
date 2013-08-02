@@ -1228,7 +1228,7 @@
       game.linkcount = game.linkcount - 1
       Log ("Turn script reduces link count to " + game.linkcount)
     }
-    if (not game.triggeract2) {
+    if (player.parent = train and (not game.triggeract2) and (not train.justboarded)) {
       train.totalturns = train.totalturns + 1
       if (DictionaryContains(game.triggers, ToString(train.totalturns))) {
         if (not game.waited) {
