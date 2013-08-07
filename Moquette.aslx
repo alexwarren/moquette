@@ -684,7 +684,7 @@
     </object>
     <object name="Act 2 Page 1000">
       <inherit name="editor_room" />
-      <description><![CDATA[I'm sitting on a bench at [station]. This woman is in her fifties. Opposite, an advert tells me how wonderful studying in the evening is. I can get my life on track apparently.<br/><br/>{command:1:"Where's Heather?"}]]></description>
+      <description><![CDATA[I'm sitting on a bench at {game.act2blackoutstation}. This woman is in her fifties. Opposite, an advert tells me how wonderful studying in the evening is. I can get my life on track apparently.<br/><br/>{command:1:"Where's Heather?"}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -1045,6 +1045,7 @@
     if (game.triggeract2) {
       player.parent = Act 2 Page 100
       game.triggeract2 = false
+      game.act2blackoutstation = GetDisplayAlias(GetNextStation(train.location, train.direction, train.line.code))
     }
     else {
       SetUpTrain
