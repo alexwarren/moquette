@@ -791,7 +791,7 @@
     <inherit name="editor_room" />
     <object name="Act 4 Page 100">
       <inherit name="editor_room" />
-      <description><![CDATA[Heather... Heather... Heather... Heather... Heather... Heather... Heather... Heather... Heather... (glides in train style)<br/><br/>The doors open. And there she is. Again.<br/><br/>Heather.<br/><br/>Eye contact.<br/><br/>Blank expression.<br/><br/>Smile? I'm smiling.<br/><br/>Nothing.<br/><br/>Doors bleeping. I jump out as they snap shut behind me.<br/><br/>Standing on the platform. Now where has she gone?<br/><br/>A glimpse to my left. There she is, calmly walking up the platform.<br/><br/>{command:1:Run}]]></description>
+      <description><![CDATA[Heather... Heather... Heather... Heather... Heather... Heather... Heather... Heather... Heather... (glides in train style)<br/><br/>The doors open. And there she is, standing on the platform.<br/><br/>Heather.<br/><br/>Eye contact.<br/><br/>Blank expression. Smile? I'm smiling. Nothing. Like she's not really there.<br/><br/>Doors bleeping. She's not even getting on then? I jump out as they snap shut behind me. Why stand on a platform if you're not getting on a train?<br/><br/>Now I'm standing on the platform in the same spot she was. But I can't see her now. Where has she gone?<br/><br/>A glimpse to my left. There she is, calmly walking up the platform.<br/><br/>I {command:1:run}.]]></description>
       <beforeenter type="script">
         next = GetNextStation(train.location, train.direction, train.line.code)
         msg ("This is " + GetDisplayAlias(next) + ".")
@@ -805,7 +805,7 @@
     </object>
     <object name="Act 4 Page 200">
       <inherit name="editor_room" />
-      <description><![CDATA[She opens a cupboard and steps inside, closing the door behind her.<br/><br/>There is a sign on the cupboard. It says "PRIVATE ROD".<br/><br/>{command:1:Knock}]]></description>
+      <description><![CDATA[She opens a cupboard and steps inside, closing the door behind her.<br/><br/>There is a sign on the door. It says "PRIVATE ROD".<br/><br/>I {command:1:knock}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -815,7 +815,7 @@
     </object>
     <object name="Act 4 Page 300">
       <inherit name="editor_room" />
-      <description><![CDATA[The door nudges open as I knock. Inside, a bank of flickering monitors. Sitting in front of them, a man. A man who is wearing a fucking bowler hat.<br/><br/>The monitors show CCTV images - some inside tube trains, some platforms. Most are in black and white, but a few are in colour.<br/><br/>{command:1:"Hello?"}]]></description>
+      <description><![CDATA[The door nudges open as I knock. Inside, a bank of flickering monitors. Sitting in front of them, a man. He is wearing a bowler hat.<br/><br/>The monitors show CCTV images - some inside tube trains, some platforms. Most are in black and white, but a few are in colour.<br/><br/>{command:1:"Hello?"}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -903,6 +903,13 @@
     </object>
     <object name="Act 4 Page 1000">
       <inherit name="editor_room" />
+    </object>
+  </object>
+  <object name="Epilogue">
+    <inherit name="editor_room" />
+    <object name="Epilogue Page 100">
+      <inherit name="editor_room" />
+      <description><![CDATA[This station is Balham.<br/><br/>I step off the train and turn right, heading for the Way Out. It's entirely automatic. It's 11.54am. Almost time for lunch. Maybe I'll treat myself to a can of beer as well. Hair of the dog. Might shift this headache at last.<br/><br/>I'll need to call the office. I don't know what to tell them. I'm not sure if I want to go back. I could just say I was really ill last night, and just woke up. I think I need a few more days to get my head together anyway. Food poisoning would be a perfect excuse.<br/><br/>Hey, look, it's been... interesting. I can't say it's not been fun. But I've been thinking on the way back about what Private Rod said. If that is his real name. I suppose it doesn't matter either way. Some of those things really got to me. And all of the events this morning... I just need some time. I need to spend some time on my own.<br/><br/>So I guess what I'm trying to say is, it's probably time for us to go our separate ways. I don't think it's healthy for me to listen to you any more. I don't think I really know who you are anyway. But it's clear to me that I don't actually need you now. I want to do my own thing. And I don't want somebody watching over me the whole time. I don't want somebody to tell me what to do. I want to figure it out for myself.<br/><br/>The trouble is I don't really know how to get rid of you. I have this feeling like you've been a constant presence, and there's nothing I can do to escape. There is something I need to do. Otherwise I will be stuck with you forever.<br/><br/>I can see the two lights of a train approaching in the blackness of the tunnel. To my left, the stairs.<br/><br/>So I need to ask you a favour. Can you please just let me do one thing? One thing without looking. Let me do one thing and promise you won't exert any control over my actions. Let me do this, and let me be free.<br/><br/>Thank you.]]></description>
     </object>
   </object>
   <function name="HandleCommand" parameters="command, metadata"><![CDATA[
