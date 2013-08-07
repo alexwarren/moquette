@@ -481,16 +481,7 @@
             platform = GetPlatform(train.location, train.line, train.direction)
             if (platform = null) {
               // we're at the end of the line
-              availablelist = ""
-              foreach (availableplatform, train.location.platforms) {
-                platformdata = DictionaryItem(train.location.platforms, availableplatform)
-                if (LengthOf(availablelist) > 0) {
-                  availablelist = availablelist + ", "
-                }
-                availablelist = availablelist + ("{command:change " + availableplatform + ":" + availableplatform + "}")
-              }
-              player.parent = nullplatform
-              msg ("Changes: " + availablelist)
+              ShowEndOfLineChanges
             }
             else {
               MoveToPlatform (train.location, platform)
@@ -684,7 +675,7 @@
     </object>
     <object name="Act 2 Page 1000">
       <inherit name="editor_room" />
-      <description><![CDATA[I'm sitting on a bench at {game.act2blackoutstation}. This woman is in her fifties. Opposite, an advert tells me how wonderful studying in the evening is. I can get my life on track apparently.<br/><br/>{command:1:"Where's Heather?"}]]></description>
+      <description><![CDATA[I'm sitting on a bench at {game.act2blackoutstationname}. This woman is in her fifties. Opposite, an advert tells me how wonderful studying in the evening is. I can get my life on track apparently.<br/><br/>{command:1:"Where's Heather?"}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -698,13 +689,36 @@
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Act 2 Page 1200)
+          train.location = game.act2blackoutstation
+          next = GetNextStation(train.location, train.direction, train.line.code)
+          if (next = null) {
+            MoveObject (player, Act 2 Page 1200 Change)
+          }
+          else {
+            MoveObject (player, Act 2 Page 1200)
+          }
         </script>
       </command>
     </object>
     <object name="Act 2 Page 1200">
       <inherit name="editor_room" />
       <description><![CDATA["Are you sure? I can call a paramedic. You should probably be checked out."<br/><br/>A train has pulled in. {command:1:Get on}]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          foreach (obj, GetDirectChildren(act3extrapeople)) {
+            MoveObject (obj, unseenpeople)
+          }
+          InitTrain
+        </script>
+      </command>
+    </object>
+    <object name="Act 2 Page 1200 Change">
+      <inherit name="editor_room" />
+      <description type="script"><![CDATA[
+        msg("\"Are you sure? I can call a paramedic. You should probably be checked out.\"<br/><br/>Enough of this.")
+        ShowEndOfLineChanges
+      ]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -1045,7 +1059,8 @@
     if (game.triggeract2) {
       player.parent = Act 2 Page 100
       game.triggeract2 = false
-      game.act2blackoutstation = GetDisplayAlias(GetNextStation(train.location, train.direction, train.line.code))
+      game.act2blackoutstation = GetNextStation(train.location, train.direction, train.line.code)
+      game.act2blackoutstationname = GetDisplayAlias(game.act2blackoutstation)
     }
     else {
       SetUpTrain
@@ -1318,6 +1333,18 @@
   </function>
   <function name="JSFinish_Blackout" parameters="dummy">
     MoveObject (player, Act 2 Page 900)
+  </function>
+  <function name="ShowEndOfLineChanges">
+    availablelist = ""
+    foreach (availableplatform, train.location.platforms) {
+      platformdata = DictionaryItem(train.location.platforms, availableplatform)
+      if (LengthOf(availablelist) > 0) {
+        availablelist = availablelist + ", "
+      }
+      availablelist = availablelist + ("{command:change " + availableplatform + ":" + availableplatform + "}")
+    }
+    player.parent = nullplatform
+    msg ("Changes: " + availablelist)
   </function>
   <javascript src="moquette.js" />
 </asl>
