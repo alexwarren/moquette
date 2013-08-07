@@ -67,6 +67,14 @@
         </value>
       </item>
       <item>
+        <key>38</key>
+        <value type="string">Where did Heather go then? Why wouldn't she stick around? Hardly a spark between us, but buggering off like that when a guy passes out?</value>
+      </item>
+      <item>
+        <key>39</key>
+        <value type="string">Did Heather just have somewhere important to be? A social media emergency?</value>
+      </item>
+      <item>
         <key>45</key>
         <value type="string">Wait, is that... no. The girl at the other end of the carriage is not Heather.</value>
       </item>
@@ -141,9 +149,14 @@
       <command>
         <pattern>skip2</pattern>
         <script>
-          train.totalturns = 38
           ClearScreen
           MoveObject (player, Act 2 Page 100)
+          train.justboarded = true
+          train.totalturns = 37
+          train.line = Bakerloo
+          train.direction = -1
+          game.act2blackoutstation = Lambeth North
+          game.act2blackoutstationname = GetDisplayAlias(game.act2blackoutstation)
         </script>
       </command>
     </object>
