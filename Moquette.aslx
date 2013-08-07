@@ -378,19 +378,7 @@
         }
       }
       if (ListCount(availablelist) > 0) {
-        liststring = ""
-        counter = 0
-        foreach (item, availablelist) {
-          liststring = liststring + "the " + item
-          if (counter < ListCount(availablelist) - 2) {
-            liststring = liststring + ", "
-          }
-          else if (counter = ListCount(availablelist) - 2) {
-            liststring = liststring + " or "
-          }
-          counter = counter + 1
-        }
-        train.liststring = liststring
+        train.liststring = GetInterchangeListString(availablelist)
         msg ("")
         msg ("I could {command:next:wait} for a train here, or {command:change:change} to another line.")
       }
@@ -453,6 +441,8 @@
         // this version is only used for the end of the line
         foreach (availableplatform, train.location.platforms) {
           if (availableplatform = text_platform) {
+            msg ("I follow the signs.")
+            msg ("")
             MoveToPlatform (train.location, DictionaryItem(train.location.platforms, availableplatform))
           }
         }
@@ -1335,16 +1325,28 @@
     MoveObject (player, Act 2 Page 900)
   </function>
   <function name="ShowEndOfLineChanges">
-    availablelist = ""
+    availablelist = NewStringList()
     foreach (availableplatform, train.location.platforms) {
-      platformdata = DictionaryItem(train.location.platforms, availableplatform)
-      if (LengthOf(availablelist) > 0) {
-        availablelist = availablelist + ", "
-      }
-      availablelist = availablelist + ("{command:change " + availableplatform + ":" + availableplatform + "}")
+      platformdata = DictionaryItem(train.location.platforms, availableplatform) 
+      list add (availablelist, "{command:change " + availableplatform + ":" + availableplatform + "}")
     }
     player.parent = nullplatform
-    msg ("Changes: " + availablelist)
+    msg ("I could change to " + GetInterchangeListString(availablelist))
   </function>
+  <function name="GetInterchangeListString" parameters="availablelist" type="string"><![CDATA[
+    liststring = ""
+    counter = 0
+    foreach (item, availablelist) {
+      liststring = liststring + "the " + item
+      if (counter < ListCount(availablelist) - 2) {
+        liststring = liststring + ", "
+      }
+      else if (counter = ListCount(availablelist) - 2) {
+        liststring = liststring + " or "
+      }
+      counter = counter + 1
+    }
+    return (liststring)
+  ]]></function>
   <javascript src="moquette.js" />
 </asl>
