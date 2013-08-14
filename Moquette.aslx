@@ -166,6 +166,8 @@
           train.line = Bakerloo
           train.direction = -1
           train.location = Piccadilly Circus
+          game.escapepoint = 2
+          game.escapepointname = "Kennington"
           MoveObject (player, Act 4 Page 100)
         </script>
       </command>
@@ -231,6 +233,7 @@
         <script>
           MoveObject (player, Act 0 Stockwell Escape)
           game.escapepoint = 1
+          game.escapepointname = "Stockwell"
         </script>
       </command>
     </object>
@@ -258,6 +261,7 @@
         <script>
           MoveObject (player, Act 0 Kennington Escape)
           game.escapepoint = 2
+          game.escapepointname = "Kennington"
         </script>
       </command>
     </object>
@@ -275,6 +279,7 @@
         <script>
           MoveObject (player, Act 0 Elephant Escape)
           game.escapepoint = 3
+          game.escapepointname = "Elephant and Castle"
         </script>
       </command>
     </object>
@@ -298,6 +303,7 @@
         <script>
           MoveObject (player, Act 0 London Bridge Escape)
           game.escapepoint = 4
+          game.escapepointname = "London Bridge"
         </script>
       </command>
       <command>
@@ -873,7 +879,7 @@
     </object>
     <object name="Act 4 Page 600">
       <inherit name="editor_room" />
-      <description><![CDATA["Come on, Zoran! You didn't need to stop and ask <i>them</i> that, did you? I suppose that's what I've been trying to show you."<br/><br/>He turns back to face the monitors, and presses keys on a keyboard.<br/><br/>"And you really don't need to keep telling them that stuff. It's none of their business."<br/><br/>The monitors flash up some more images from this morning. There's (some more images) and there's (more).<br/><br/>"You don't need them any more, Zoran. You're not the narrator of your own life. You're the participant. You can make decisions yourself now. [You've shown me you can. It was your decision that you made at London Bridge this morning. I saw it. They didn't want you to take that decision. They were going to let you go straight to work. You stopped that, Zoran. That was you. You did it.] [You've seen that you have choices. You don't need to follow the well trodden path, no matter how many times you have gone down it before. They showed you that this morning. Their guiding hand put you on a different path when you got to X. I saw it. And you saw what happened next. There's a whole world out there, Zoran. You've learned that now. And you don't need them any more to help you explore it.]"<br/><br/>And what about {command:1:Heather?}]]></description>
+      <description><![CDATA["Come on, Zoran! You didn't need to stop and ask <i>them</i> that, did you? I suppose that's what I've been trying to show you."<br/><br/>He turns back to face the monitors, and presses keys on a keyboard.<br/><br/>"And you really don't need to keep telling them that stuff. It's none of their business."<br/><br/>The monitors flash up some more images from this morning. There's (some more images) and there's (more).<br/><br/>"You don't need them any more, Zoran. You're not the narrator of your own life. You're the participant. You can make decisions yourself now. {if game.escapepoint=5:You've shown me you can. It was your decision that you made at London Bridge this morning. I saw it. <i>They</i> didn't want you to take that decision. <i>They</i> were going to let you go straight to work. You stopped that, Zoran. That was you. You did it.}{if game.escapepoint<5:You've seen that you have choices. You don't need to follow the well trodden path, no matter how many times you have gone down it before. <i>They</i> showed you that this morning. <i>Their</i> guiding hand put you on a different path when you got to {game.escapepointname}. I saw it. And you saw what happened next. There's a whole world out there, Zoran. You've learned that now. And you don't need <i>them</i> any more to help you explore it.}"<br/><br/>And what about {command:1:Heather?}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
