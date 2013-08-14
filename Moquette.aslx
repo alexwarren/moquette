@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4965.30172-->
+<!--Saved by Quest 5.5.4960.29909-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -624,7 +624,7 @@
     </object>
     <object name="Act 2 Page 400">
       <inherit name="editor_room" />
-      <description><![CDATA["Oh, fine."<br/><br/>What? Is that it? OK, next item. Why is she making this difficult? Why is she still so bloody lovely? Her job is essentially worthless, for somebody who is apparently such a people person she's really bad at holding a conversation. Is this some deliberate game? Let's play it then. Eye contact and silence. How long can we keep this up?<br/><br/>One, two, three, four, {command:1:five}.]]></description>
+      <description><![CDATA["Oh, fine."<br/><br/>What? Is that it? OK, next item. Why is she making this difficult?<br/><br/>For someone who is apparently a professional people person, she's really bad at holding a conversation.<br/><br/>Is this some deliberate game? Let's play it then. Eye contact and silence. How long can we keep this up?<br/><br/>One, two, three, four, {command:1:five}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -634,7 +634,7 @@
     </object>
     <object name="Act 2 Page 500">
       <inherit name="editor_room" />
-      <description><![CDATA[Think, think. God, this was a lot easier after mojitos. Right, social media is a dead end. Was she going anywhere on holiday? What am I, a fucking hairdresser? There's got to be something more interesting than that.<br/><br/>{command:1:"How was Morocco?"}]]></description>
+      <description><![CDATA[Think, think. God, this was a lot easier after mojitos.<br/><br/>We talked for such a long time before, like it could never end. We got on the tube then, too - I was heading back to my place, she to hers - and we talked about the Underground most of the way. We talked about tube mice, abandoned stations, all that history, and just what is behind those doors you see on some platforms that just say "PRIVATE ROD"?<br/><br/>Right, so social media is a dead end. Was she going anywhere on holiday?<br/><br/>What am I, a fucking hairdresser? There's got to be something more interesting than that.<br/><br/>{command:1:"How was Morocco?"}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -654,7 +654,7 @@
     </object>
     <object name="Act 2 Page 700">
       <inherit name="editor_room" />
-      <description><![CDATA["Settling in. Behaving herself. Had to take her to the vet last week."<br/><br/>"Yeah?"<br/><br/>"She wasn't eating much. Doesn't seem to be anything wrong with her though."<br/><br/>OK, so it turns out I'm not in the slightest bit interested in the cat. How is this so different to before, when conversation flowed freely, and it was like it could never end? Like we had always known each other somehow, and had just been reunited. We were about to start something big, something life-changing. There was a connection there. So much excitement, so many possibilites. That fire still burns within me. Did she just move on? Is she just really... nice?<br/><br/>No. Maybe she's just nervous too.<br/><br/>Hey! We're both on the tube. Got to be a conversation there.<br/><br/>{command:1:"Where are you off to then?"}]]></description>
+      <description><![CDATA["Settling in. Behaving herself. Had to take her to the vet last week."<br/><br/>"Yeah?"<br/><br/>"She wasn't eating much. Doesn't seem to be anything wrong with her though."<br/><br/>OK, so it turns out I'm not in the slightest bit interested in the cat. How is this so different to before, when conversation flowed so freely? Like we had always known each other somehow, and had just been reunited. We were about to start something big, something life-changing. There was a connection there. So much excitement, so many possibilites. That fire still burns within me. Did she just move on? Is she just really... nice?<br/><br/>That's it, isn't it? Social Media job - completely worthless in the real world, but it's the kind of role they would give to someone who possessed no real skills other than being fucking lovely, just so they could get to hang around with her all the time.<br/><br/>No. No. Wait. No need for pointless anger. Maybe she's just nervous too.<br/><br/>{command:1:"Where are you off to then?"}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
