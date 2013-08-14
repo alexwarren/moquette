@@ -863,27 +863,9 @@
     </object>
     <object name="Act 4 Page 500">
       <inherit name="editor_room" />
-      <description><![CDATA[There is a big rack of hard disks connected to the monitors. On one of the screens I think I spot a quick flash of my face. Looking closer, things seem more familiar. There's a view inside a train carriage. I can see myself standing there. I'm looking at [a character we saw earlier in the game].<br/><br/>On another monitor, I can see myself standing on a platform. It's at [station where something happened]. I am [doing something...]<br/><br/>And what's that? On another monitor, a carriage full of people dressed in old-fashioned clothing {fix this}, and some of them are smoking. There's me, blinking, looking annoyed.<br/><br/>{command:1:Who is this guy?} {command:2:Do I know him from somewhere?} {command:3:Why has he got all this video of me?}]]></description>
+      <description><![CDATA[There is a big rack of hard disks connected to the monitors. On one of the screens I think I spot a quick flash of my face. Looking closer, things seem more familiar. There's a view inside a train carriage. I can see myself standing there. I'm looking at [a character we saw earlier in the game].<br/><br/>On another monitor, I can see myself standing on a platform. It's at [station where something happened]. I am [doing something...]<br/><br/>And what's that? On another monitor, a carriage full of people dressed in old-fashioned clothing {fix this}, and some of them are smoking. There's me, blinking, looking annoyed.<br/><br/>"Interesting, isn't it?" says the man.<br/><br/>Well, I suppose {command:1:you could say that}.]]></description>
       <command>
         <pattern>1</pattern>
-        <script><![CDATA[
-          msg ("\"Who are you?\"<br/><br/>\"Well{, Zoran}... I'm just someone who is trying to help you.\"  (\"Zoran\" text appears for first answer)")
-        ]]></script>
-      </command>
-      <command>
-        <pattern>2</pattern>
-        <script><![CDATA[
-          msg ("\"Have we met before?\"<br/><br/>\"I've been, er, involved with your for a while now{, Zoran}. You've not seen me. But you have seen the things I've done for you.\"")
-        ]]></script>
-      </command>
-      <command>
-        <pattern>3</pattern>
-        <script><![CDATA[
-          msg ("\"What is all this video?\"<br/><br/>\"It's you. Your life, Zoran.\"<br/><br/>[after final question]<br/><br/>\"Is that all? Do you have any further questions?\"<br/><br/>{command:4:\"Of course I have further questions!\"}")
-        ]]></script>
-      </command>
-      <command>
-        <pattern>4</pattern>
         <script>
           MoveObject (player, Act 4 Page 600)
         </script>
@@ -891,7 +873,7 @@
     </object>
     <object name="Act 4 Page 600">
       <inherit name="editor_room" />
-      <description><![CDATA["Why not come out and ask them then? Or do you have to formulate everything for your minder's approval?"<br/><br/>{command:1:"Minder?"}]]></description>
+      <description><![CDATA["Come on, Zoran! You didn't need to stop and ask <i>them</i> that, did you? I suppose that's what I've been trying to show you."<br/><br/>He turns back to face the monitors, and presses keys on a keyboard.<br/><br/>"And you really don't need to keep telling them that stuff. It's none of their business."<br/><br/>The monitors flash up some more images from this morning. There's (some more images) and there's (more).<br/><br/>"You don't need them any more, Zoran. You're not the narrator of your own life. You're the participant. You can make decisions yourself now. [You've shown me you can. It was your decision that you made at London Bridge this morning. I saw it. They didn't want you to take that decision. They were going to let you go straight to work. You stopped that, Zoran. That was you. You did it.] [You've seen that you have choices. You don't need to follow the well trodden path, no matter how many times you have gone down it before. They showed you that this morning. Their guiding hand put you on a different path when you got to X. I saw it. And you saw what happened next. There's a whole world out there, Zoran. You've learned that now. And you don't need them any more to help you explore it.]"<br/><br/>And what about {command:1:Heather?}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -901,36 +883,13 @@
     </object>
     <object name="Act 4 Page 700">
       <inherit name="editor_room" />
-      <description><![CDATA["That's what they effectively are, Zoran. Whoever they are. Maybe it's time you made some decisions yourself."<br/><br/>{command:1:"What are you talking about?"}]]></description>
+      <description><![CDATA["I hope I have shown you that any connection you had there was only a fleeting moment. It was beautiful, Zoran, but it's gone now, and you can see that. You had an opportunity there, months ago, and you missed it. I want you to stop obsessing. I want you to seek new opportunities. If you seize them, act, make decisions yourself, stop just hoping that stuff will happen - then you will do well."<br/><br/>"Now," he says, pressing some more buttons as the monitors switch off one by one, "I think we are done here. Excuse me, but I am busy, and there are others who need my intervention."<br/><br/>He continues to type, and after all the monitors have switched off, they begin to flicker back on again, with a new set of images. I don't recognise anything that's shown on them now. Several of them show different images of what looks like the same person, but I don't know who it is. One monitor shows a still image of a train, blurred as it rushes into a tube platform, and I can just make out the word "Moquette" written over it.<br/><br/>I leave the dark cupboard. A {command:1:train} has just pulled in to the platform.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Act 4 Page 800)
+          MoveObject (player, Epilogue Page 100)
         </script>
       </command>
-    </object>
-    <object name="Act 4 Page 800">
-      <inherit name="editor_room" />
-      <description><![CDATA["There you go again. And it's not always even a decision, is it. You're like a dog that wants to run off, continually looking back to his master for approval. You don't need approval, Zoran. You can make your own choices. Live at your own pace. And take those choices Zoran. Don't let other people decide what's best for you. Don't just follow what other people are doing. But don't just obey the whims of strangers either. You've got to seize life, Zoran. You've got to live it yourself. Don't let THAT person, whoever it is, say what you can and cannot do. Be your own man, Zoran. Live, make choices, do things, be bold enough to do something you may regret. Seize opportunities when they come. You know that often they don't come back."<br/><br/>Looking at the smoking carriage. "These headaches, these visions, is that something to do with you?"<br/><br/>"I wanted to show you, Zoran, how fleeting the now is. Life is full of moments, they come and they go, and they leave no trace. A tube train full of people smoking - so ordinary at the time, barely remembered now. Most actions leave no trace. Indeed, most lives leave no trace either. So don't be fearful, Zoran. Don't be afraid to make an impact, to make people know who you are. There is no correct path, there is no one route through the system. I hope me and my companion have helped to show you that."<br/><br/>Were you in this all along?<br/><br/>{command:1:I had no idea}]]></description>
-      <command>
-        <pattern>1</pattern>
-        <script>
-          MoveObject (player, Act 4 Page 900)
-        </script>
-      </command>
-    </object>
-    <object name="Act 4 Page 900">
-      <inherit name="editor_room" />
-      <description><![CDATA["No, I brought you in. I enticed you. Under false pretenses most likely. I needed him to see things from a different perspective. A force of beneficial malevolence, to mix things up a bit I suppose."<br/><br/>What about Heather? What about his job? You've ruined him!<br/><br/>"Heather was a lesson. Heather's not coming back. You saw it. You did see that, didn't you? There is nothing there. No connection. That was obvious. Zoran is deluded. He needs to get a grip. Find somebody he really likes. Somebody who likes him. Not somebody who is here today, gone tomorrow, chasing the next exciting thing."<br/><br/>"He needs to think about that. Yes, he can stay in this machine. Plug away, 9 to 5. The illusion of security is there. It's the same job his father did, pretty much. But he's not going to be happy if he just copies that template."<br/><br/>(after final) "Now if you don't mind, I think we are done here."<br/><br/>He turns back to the bank of monitors and starts typing on a keyboard. One by one, the monitors switch off. He continues typing and they switch back on again, with different images. {could expand this, who is Private Rod going to turn his attention to next? Maybe the player themselves - do they show somebody reading text and tapping links?}<br/><br/>It looks like somebody reading some text on an electronic device of some kind. I can just make out the text in larger writing at the top of the screen, in a serif font. "Moquette". I wonder what that means.]]></description>
-      <command>
-        <pattern>1</pattern>
-        <script>
-          MoveObject (player, Act 4 Page 1000)
-        </script>
-      </command>
-    </object>
-    <object name="Act 4 Page 1000">
-      <inherit name="editor_room" />
     </object>
   </object>
   <object name="Epilogue">
