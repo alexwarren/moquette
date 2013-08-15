@@ -29,6 +29,8 @@ function doHeatherText() {
 			ASLEvent("JSFinish_HeatherText", "");
 		}, 500);
 	}
+	var minLeft = -100;
+	var minTop = -100;
 	var maxLeft = $(window).width();
 	var maxTop = $(window).height();
 	for (var i = 0; i < 3; i++) {
@@ -36,8 +38,8 @@ function doHeatherText() {
 			text: "Heather"
 		}).css({
 			position: "absolute",
-			left: Math.random() * maxLeft,
-			top: Math.random() * maxTop,
+			left: getRandomInt(minLeft, maxLeft),
+			top: getRandomInt(minTop, maxTop),
 			"font-size": getRandomInt(8, 100) + "px",
 			"font-family": "Georgia, serif",
 			color: getRandomGrey(),
