@@ -6,6 +6,7 @@
 			<command>
 		      <pattern>satisfaction</pattern>
 		      <script>
+		      	list add (game.interactedpeoplehistory, "the man with the Kurt Cobain biography")
 		        msg ("Although to be fair, if Kurt Cobain was riding in plain sight, on the tube, having faked his own death and then not noticably aged in any way, he'd have every right to look pleased with himself.")
 		      </script>
 		    </command>
@@ -16,6 +17,7 @@
 			<command>
 		      <pattern>attention</pattern>
 		      <script>
+		      	list add (game.interactedpeoplehistory, "the woman with the boy who was pulling faces")
 		        msg ("The child starts pulling faces at the other passengers. What a quandry. This child knows none of the rules. Are we supposed to smile back? Look annoyed? Just ignore him?")
 		      </script>
 		      <!-- those three should be options... -->
@@ -35,6 +37,7 @@
 			<command>
 				<pattern>bone</pattern>
 				<script>
+					list add (game.interactedpeoplehistory, "the woman with the fragile skeleton")
 					msg ("Truly an exquisite skeleton. Even her X-rays would have me sighing wistfully. And she knows it.")
 				</script>
 			</command>
@@ -59,6 +62,7 @@
 			<command>
 				<pattern>online</pattern>
 				<script>
+					list add (game.interactedpeoplehistory, "the woman who I have seen naked online")
 					msg ("Oh God, was she in... have I seen her... well, all of her. Do not catch her eye. Do not catch her eye. I must be bright red. Why is she on the tube anyway? I thought they did all that in America.")
 				</script>
 			</command>
@@ -69,6 +73,7 @@
 			<command>
 				<pattern>notes</pattern>
 				<script>
+					list add (game.interactedpeoplehistory, "the woman who was taking surreptitious notes")
 					msg ("I can't see what she's writing from this angle. Maybe she's writing a novel. Or practicing to be a spy. Not doing a very good job of it in that case.")
 				</script>
 			</command>
@@ -79,6 +84,7 @@
 			<command>
 				<pattern>conversation</pattern>
 				<script>
+					list add (game.interactedpeoplehistory, "the two women who were having that inane conversation")
 					msg ("It's quite hard to hear above the rumble of the tube. What time did that finish... Did you know him from Nottingham... I didn't get back until 2... I don't think I'm missing out on much by not paying attention to this.")
 				</script>
 			</command>
@@ -89,6 +95,7 @@
 			<command>
 				<pattern>muttering</pattern>
 				<script>
+					list add (game.interactedpeoplehistory, "the muttering man")
 					msg ("Impossible to hear what he's saying. He doesn't seem threatening though, somehow. He seems too nerdy to be dangerous. I mean, he probably has a proper job and everything. Which is probably the perfect cover. He's probably exactly the kind of person that would have somebody kept in his basement.")
 				</script>
 			</command>
@@ -99,6 +106,7 @@
 			<command>
 				<pattern>hanging</pattern>
 				<script>
+					list add (game.interactedpeoplehistory, "the woman who was smiling as though my cock was hanging out")
 					msg ("Of course it's not.")
 					msg ("")
 					msg ("Anyway, if my cock was hanging out, she'd simply faint, right... right? Or pull the alarm lever. Or actually, do absolutely nothing at all. I could {command:cock:get my cock out} now. What would happen? What would really happen?")
@@ -154,6 +162,7 @@
 			<command>
 				<pattern>roberta</pattern>
 				<script>
+					list add (game.interactedpeoplehistory, "Roberta with her coffee cup")
 					msg ("I don't like her name. She looks like she's probably nice, but I think her name is horrible. It's kind of manly. Like Geraldine or Bernardette - big blokey names with a small concession to femininity at the end. Makes me think of an old man with a big beard wearing a flowery dress.")
 				</script>
 			</command>
@@ -168,6 +177,7 @@
 			<command>
 				<pattern>eat</pattern>
 				<script>
+					list add (game.interactedpeoplehistory, "the young guy who was picking his nose")
 					msg ("Eugh. What do you want me to do, go up and ask him if I can have some? You're not helping me feel any better.")
 				</script>
 			</command>
@@ -178,6 +188,7 @@
 			<command>
 				<pattern>you</pattern>
 				<script>
+					list add (game.interactedpeoplehistory, "the chap with the Lord Kitchener moustache")
 					msg ("It would be nice to feel wanted, but not by somebody who just wants to send me to a pointless death in a muddy hole in France.")
 				</script>
 			</command>
@@ -200,6 +211,7 @@
 			<command>
 				<pattern>paper</pattern>
 				<script>
+					list add (game.interactedpeoplehistory, "the man who was chuckling at platelet function disorders")
 					msg ("Straining to read the title over his shoulder before he turns the page - review... platelet function disorders. I wonder what's so funny about that?")
 				</script>
 			</command>
@@ -235,6 +247,7 @@
 			<command>
 				<pattern>jeans</pattern>
 				<script>
+					list add (game.interactedpeoplehistory, "the man with the ridiculously tiny jeans")
 					msg ("How does that he get into those jeans? Nobody has legs that thin - and those jeans look even thinner than his legs, somehow. It must take him hours to get into those. And the hair. If I put that much effort into my appearance I would just look desparate and ridiculous.")
 					msg ("")
 					msg ("I wonder if he's the type Heather goes for.")

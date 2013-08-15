@@ -94,6 +94,7 @@
     <deactivatecommandlinks />
     <linkcount type="int">0</linkcount>
     <platformhistory type="stringlist" />
+    <interactedpeoplehistory type="stringlist" />
     <start type="script"><![CDATA[
       foreach (station, GetDirectChildren(stationdata)) {
         if (not HasAttribute(station, "platforms")) {
@@ -171,6 +172,10 @@
           game.escapepointname = "Kennington"
           list add (game.platformhistory, "Victoria line at Oxford Circus")
           list add (game.platformhistory, "Bakerloo line at Piccadilly Circus")
+          list add (game.interactedpeoplehistory, "the man who was skipped")
+          list add (game.interactedpeoplehistory, "the woman who was invisible")
+          list add (game.interactedpeoplehistory, "the boy who didn't appear")
+          list add (game.interactedpeoplehistory, "the girl who you never saw")
           MoveObject (player, Act 4 Page 100)
         </script>
       </command>
@@ -872,12 +877,23 @@
     </object>
     <object name="Act 4 Page 500">
       <inherit name="editor_room" />
-      <description><![CDATA[There is a big rack of hard disks connected to the monitors. On one of the screens I think I spot a quick flash of my face. Looking closer, things seem more familiar. There's a view inside a train carriage. I can see myself standing there. I'm looking at [a character we saw earlier in the game].<br/><br/>On another monitor, I can see myself standing on a platform. I am waiting for the {game.randomplatformhistory}.<br/><br/>And what's that? On another monitor, a carriage full of people dressed in old-fashioned clothing {fix this}, and some of them are smoking. There's me, blinking, looking annoyed.<br/><br/>"Interesting, isn't it?" says the man.<br/><br/>Well, I suppose {command:1:you could say that}.]]></description>
+      <description><![CDATA[There is a big rack of hard disks connected to the monitors. On one of the screens I think I spot a quick flash of my face. Looking closer, things seem more familiar. There's a view inside a train carriage. I can see myself standing there. {game.randompeoplehistory}<br/><br/>On another monitor, I can see myself standing on a platform. I am waiting for the {game.randomplatformhistory}.<br/><br/>And what's that? On another monitor, a carriage full of people dressed in old-fashioned clothing {fix this}, and some of them are smoking. There's me, blinking, looking annoyed.<br/><br/>"Interesting, isn't it?" says the man.<br/><br/>Well, I suppose {command:1:you could say that}.]]></description>
       <enter type="script">
       </enter>
       <beforeenter type="script"><![CDATA[
         if (ListCount(game.platformhistory) > 0) {
           game.randomplatformhistory = StringListItem(game.platformhistory, GetRandomInt(0, ListCount(game.platformhistory) - 1))
+        }
+        game.randompeoplehistory = ""
+        if (ListCount(game.interactedpeoplehistory) > 0) {
+          randomitems = RandomStringListItems(game.interactedpeoplehistory, 3)
+          game.randompeoplehistory = "I'm looking at " + StringListItem(randomitems, 0) + ". "
+          if (ListCount(randomitems) > 1) {
+            game.randompeoplehistory = game.randompeoplehistory + "Another monitor shows me looking at " + StringListItem(randomitems, 1) + ". "
+            if (ListCount(randomitems) > 2) {
+              game.randompeoplehistory = game.randompeoplehistory + "And there's a monitor that shows me sitting opposite " + StringListItem(randomitems, 2) + ". "
+            }
+          }
         }
       ]]></beforeenter>
       <command>
@@ -1130,6 +1146,22 @@
         index = GetRandomInt(0, ListCount(list) - 1)
         item = ObjectListItem(list, index)
         if (not ListContains(result, item) and (disallowattribute = "" or not GetBoolean(item, disallowattribute))) {
+          list add (result, item)
+        }
+      }
+    }
+    return (result)
+  ]]></function>
+  <function name="RandomStringListItems" parameters="list, items" type="stringlist"><![CDATA[
+    if (items >= ListCount(list)) {
+      result = list
+    }
+    else {
+      result = NewStringList()
+      while (ListCount(result) < items) {
+        index = GetRandomInt(0, ListCount(list) - 1)
+        item = StringListItem(list, index)
+        if (not ListContains(result, item)) {
           list add (result, item)
         }
       }
