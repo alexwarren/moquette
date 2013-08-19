@@ -85,7 +85,7 @@ function heatherTube() {
 	setTimeout(function () {
 		$("<div/>", {
 			id: "heathertube",
-			html: "HEATHER".replace(/ /g, "&nbsp;")
+			text: "HEATHER"
 		}).css({
 			position: "relative",
 			left: "1200px",
