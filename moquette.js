@@ -82,25 +82,29 @@ function blackout() {
 }
 
 function heatherTube() {
-	$("<div/>", {
-		id: "heathertube",
-		html: "HEATHER        HEATHER        HEATHER        HEATHER        HEATHER        HEATHER".replace(/ /g, "&nbsp;")
-	}).css({
-		position: "relative",
-		left: "1200px",
-		top: "0px",
-		"font-size": "12pt",
-		"font-family": "Georgia, serif"
-	}).appendTo(getCurrentDiv());
-	animateHeatherTube(100);
+	setTimeout(function () {
+		$("<div/>", {
+			id: "heathertube",
+			html: "HEATHER".replace(/ /g, "&nbsp;")
+		}).css({
+			position: "relative",
+			left: "1200px",
+			top: "0px",
+			"font-size": "36pt",
+			"font-family": "Georgia, serif"
+		}).appendTo(getCurrentDiv());
+		animateHeatherTube(200);
+	}, 2000);
 }
 
 function animateHeatherTube(duration) {
-	if (duration >= 1000) {
+	if (duration >= 2000) {
 		$("#heathertube").animate({
 			left: "0px"
 		}, duration, "swing", function () {
-			ASLEvent("JSFinish_HeatherTube", "");
+			$("#heathertube").fadeOut(1000, function() {
+				ASLEvent("JSFinish_HeatherTube", "");
+			});
 		});
 	}
 	else {
@@ -108,7 +112,7 @@ function animateHeatherTube(duration) {
 			left: "-1200px"
 		}, duration, "linear", function () {
 			$("#heathertube").css("left", "1200px");
-			duration = duration + 100;
+			duration = duration * 1.5;
 			animateHeatherTube(duration);
 		});
 	}

@@ -819,7 +819,6 @@
       <beforeenter type="script">
         next = GetNextStation(train.location, train.direction, train.line.code)
         msg ("This is " + GetDisplayAlias(next) + ".")
-        msg ("")
       </beforeenter>
       <enter type="script">
         JS.heatherTube ()
