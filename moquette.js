@@ -80,3 +80,36 @@ function blackout() {
 		});
 	}, 12000);
 }
+
+function heatherTube() {
+	$("<div/>", {
+		id: "heathertube",
+		html: "HEATHER        HEATHER        HEATHER        HEATHER        HEATHER        HEATHER".replace(/ /g, "&nbsp;")
+	}).css({
+		position: "relative",
+		left: "1200px",
+		top: "0px",
+		"font-size": "12pt",
+		"font-family": "Georgia, serif"
+	}).appendTo(getCurrentDiv());
+	animateHeatherTube(100);
+}
+
+function animateHeatherTube(duration) {
+	if (duration >= 1000) {
+		$("#heathertube").animate({
+			left: "0px"
+		}, duration, "swing", function () {
+			ASLEvent("JSFinish_HeatherTube", "");
+		});
+	}
+	else {
+		$("#heathertube").animate({
+			left: "-1200px"
+		}, duration, "linear", function () {
+			$("#heathertube").css("left", "1200px");
+			duration = duration + 100;
+			animateHeatherTube(duration);
+		});
+	}
+}

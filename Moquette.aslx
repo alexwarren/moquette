@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4960.29909-->
+<!--Saved by Quest 5.5.4965.30172-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -815,17 +815,15 @@
     <inherit name="editor_room" />
     <object name="Act 4 Page 100">
       <inherit name="editor_room" />
-      <description><![CDATA[Heather... Heather... Heather... Heather... Heather... Heather... Heather... Heather... Heather... (glides in train style)<br/><br/>The doors open. And there she is, standing on the platform.<br/><br/>Heather.<br/><br/>Eye contact.<br/><br/>Blank expression. Smile? I'm smiling. Nothing. Like she's not really there.<br/><br/>Doors bleeping. She's not even getting on then? I jump out as they snap shut behind me. Why stand on a platform if you're not getting on a train?<br/><br/>Now I'm standing on the platform in the same spot she was. But I can't see her now. Where has she gone?<br/><br/>A glimpse to my left. There she is, calmly walking up the platform.<br/><br/>I {command:1:run}.]]></description>
+      <description type="string"></description>
       <beforeenter type="script">
         next = GetNextStation(train.location, train.direction, train.line.code)
         msg ("This is " + GetDisplayAlias(next) + ".")
+        msg ("")
       </beforeenter>
-      <command>
-        <pattern>1</pattern>
-        <script>
-          MoveObject (player, Act 4 Page 200)
-        </script>
-      </command>
+      <enter type="script">
+        JS.heatherTube ()
+      </enter>
     </object>
     <object name="Act 4 Page 200">
       <inherit name="editor_room" />
@@ -920,6 +918,16 @@
         <pattern>1</pattern>
         <script>
           MoveObject (player, Epilogue Page 100)
+        </script>
+      </command>
+    </object>
+    <object name="Act 4 Page 110">
+      <inherit name="editor_room" />
+      <description><![CDATA[<br/>The doors open. And there she is, standing on the platform.<br/><br/>Heather.<br/><br/>Eye contact.<br/><br/>Blank expression. Smile? I'm smiling. Nothing. Like she's not really there.<br/><br/>Doors bleeping. She's not even getting on then? I jump out as they snap shut behind me. Why stand on a platform if you're not getting on a train?<br/><br/>Now I'm standing on the platform in the same spot she was. But I can't see her now. Where has she gone?<br/><br/>A glimpse to my left. There she is, calmly walking up the platform.<br/><br/>I {command:1:run}.]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 4 Page 200)
         </script>
       </command>
     </object>
@@ -1406,5 +1414,8 @@
     }
     return (liststring)
   ]]></function>
+  <function name="JSFinish_HeatherTube" parameters="dummy">
+    MoveObject (player, Act 4 Page 110)
+  </function>
   <javascript src="moquette.js" />
 </asl>
