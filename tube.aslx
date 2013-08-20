@@ -9,6 +9,12 @@
       <code>central</code>
       <up>eastbound</up>
       <down>westbound</down>
+      <facts type="scriptdictionary">
+        <item key="106"><![CDATA[
+          msg ("We're passing through an{if game.abandonedstationcount>0:other} abandoned station here, called British Museum. There's not very much left of it now, just some assorted railway junk where the platforms used to be. Most people never even know it's there.")
+          game.abandonedstationcount = game.abandonedstationcount + 1
+        ]]></item>
+      </facts>
     </object>
     <object name="Circle">
       <code>circle</code>
@@ -35,6 +41,16 @@
       <code>jubilee</code>
       <up>southbound</up>
       <down>northbound</down>
+      <facts type="scriptdictionary">
+        <item key="102">
+          if (train.direction = 1) {
+            msg ("The Jubilee line used to go to Charing Cross from here, where it terminated. The short spur still exists, and they use the platforms at Charing Cross for filming sometimes. So we're now going from the older bit of the Jubilee line onto the newer extension, which opened in 1999.")
+          }
+          else {
+            msg ("We're now heading onto the \"old\" bit of the Jubilee line - it used to run from Charing Cross to Westminster and then up to Stanmore. You can't get to Charing Cross any more on the Jubilee, but the line from Green Park to there still exists, and they use the platforms at Charing Cross for filming sometimes.")
+          }
+        </item>
+      </facts>
     </object>
     <object name="Metropolitan">
       <code>metropolitan</code>
@@ -46,6 +62,12 @@
       <code>northern1</code>
       <up>southbound</up>
       <down>northbound</down>
+      <facts type="scriptdictionary">
+        <item key="102"><![CDATA[
+          msg ("We're passing through an{if game.abandonedstationcount>0:other} abandoned station here, City Road. It was shut in 1922 and there's very left of it.")
+          game.abandonedstationcount = game.abandonedstationcount + 1
+        ]]></item>
+      </facts>
     </object>
     <object name="Northern2">
       <alias>Northern Line (Charing Cross Branch)</alias>
