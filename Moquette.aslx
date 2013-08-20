@@ -95,6 +95,7 @@
     <linkcount type="int">0</linkcount>
     <platformhistory type="stringlist" />
     <interactedpeoplehistory type="stringlist" />
+    <abandonedstationcount type="int">0</abandonedstationcount>
     <start type="script"><![CDATA[
       foreach (station, GetDirectChildren(stationdata)) {
         if (not HasAttribute(station, "platforms")) {
