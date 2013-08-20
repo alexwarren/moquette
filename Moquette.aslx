@@ -1355,6 +1355,20 @@
           }
           UpdateLinkCount
         }
+        if (train.counter = 1) {
+          if (HasAttribute(train.line, "facts")) {
+            d = 0
+            if (train.direction = -1) {
+              d = -1
+            }
+            locationcode = ToString(GetInt(train.location, train.line.code) + d)
+            if (DictionaryContains(train.line.facts, locationcode)) {
+              msg ("")
+              msg (StringDictionaryItem(train.line.facts, locationcode))
+              dictionary remove (train.line.facts, locationcode)
+            }
+          }
+        }
         train.counter = train.counter + 1
         if (train.counter = train.nextstopcount) {
           if (not game.triggeract4) {

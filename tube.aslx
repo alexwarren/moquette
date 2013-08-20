@@ -57,6 +57,20 @@
       <code>piccadilly</code>
       <up>northbound</up>
       <down>southbound</down>
+      <facts type="stringdictionary">
+        <item>
+          <key>107</key>
+          <value>This is the shortest distance between stations on the Underground. I think everybody knows that, except tourists.</value>
+        </item>
+        <item>
+          <key>104</key>
+          <value>There's an abandoned station around here, Down Street. I like to keep an eye on the window here as you can see the black tunnel change to beige bricks as we go through it. It closed in the 1930s and it was used by Winston Churchill as an underground bunker for government meetings. How cool is that?</value>
+        </item>
+        <item>
+          <key>102</key>
+          <value>There used to be a station here called Brompton Road. You can still see it at surface level - if you look down a side street, there's a distinctive red-tiled building which is immediately recognisable as a tube station.</value>
+        </item>
+      </facts>
     </object>
     <object name="VictoriaLine">
       <alias>Victoria</alias>
