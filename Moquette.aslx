@@ -1117,6 +1117,10 @@
   <function name="InitTrainAtStation">
     if (not train.justboarded) {
       OutputTextNoBr ("This is " + GetDisplayAlias(train.location) + ". ")
+      if (HasAttribute(train.location, "fact")) {
+        OutputTextNoBr (train.location.fact + " ")
+        train.location.fact = null
+      }
     }
     next = GetNextStation(train.location, train.direction, train.line.code)
     if (next = null) {

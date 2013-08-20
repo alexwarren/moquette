@@ -49,6 +49,7 @@
           else {
             msg ("We're now heading onto the \"old\" bit of the Jubilee line - it used to run from Charing Cross to Westminster and then up to Stanmore. You can't get to Charing Cross any more on the Jubilee, but the line from Green Park to there still exists, and they use the platforms at Charing Cross for filming sometimes.")
           }
+          Charing Cross.fact = null
         </item>
       </facts>
     </object>
@@ -152,6 +153,7 @@
           </value>
         </item>
       </platforms>
+      <fact>This station is built on the site of a plague pit. Yum yum.</fact>
     </object>
     <object name="Aldgate East">
       <district2 type="int">114</district2>
@@ -183,6 +185,7 @@
     </object>
     <object name="Angel">
       <northern1 type="int">102</northern1>
+      <fact>Home of the longest escalators on the London Underground.</fact>
     </object>
     <object name="Baker Street">
       <bakerloo type="int">103</bakerloo>
@@ -357,6 +360,7 @@
           </value>
         </item>
       </platforms>
+      <fact>This station used to be known as Aldersgate.</fact>
     </object>
     <object name="Bayswater">
       <circle type="int">126</circle>
@@ -521,6 +525,7 @@
     <object name="Charing Cross">
       <bakerloo type="int">107</bakerloo>
       <northern2 type="int">105</northern2>
+      <fact>You used to be able to change to the Jubilee line here, until the extension was built.</fact>
     </object>
     <object name="Clapham Common">
       <northern1 type="int">113</northern1>
@@ -581,6 +586,7 @@
           </value>
         </item>
       </platforms>
+      <fact>This is where they installed the very first escalators on the tube, in 1911.</fact>
     </object>
     <object name="Edgware Road">
       <bakerloo type="int">101</bakerloo>
@@ -866,6 +872,7 @@
           </value>
         </item>
       </platforms>
+      <fact>This used to be called Gower Street.</fact>
     </object>
     <object name="Farringdon">
       <circle type="int">106</circle>
@@ -1133,6 +1140,7 @@
     <object name="Holborn">
       <central type="int">107</central>
       <piccadilly type="int">109</piccadilly>
+      <fact>There used to be a little shuttle branch of the Piccadilly line here that ran down to Aldwych. Pretty pointless really - by the time you'd waited for the train you could have probably just walked to Aldwych from Holborn as it's only about five minutes away. So hardly anybody used it and they shut it in 1994.</fact>
     </object>
     <object name="Hyde Park Corner">
       <piccadilly type="int">104</piccadilly>
@@ -1438,12 +1446,14 @@
           </value>
         </item>
       </platforms>
+      <fact>One of only two stations to feature all the vowels - the other is South Ealing.</fact>
     </object>
     <object name="Marble Arch">
       <central type="int">103</central>
     </object>
     <object name="Marylebone">
       <bakerloo type="int">102</bakerloo>
+      <fact>When it opened, this station was called Great Central. Bit of a grand name considering it's only a small mainline station above.</fact>
     </object>
     <object name="Monument">
       <circle type="int">112</circle>
@@ -1723,6 +1733,7 @@
     </object>
     <object name="Queensway">
       <central type="int">101</central>
+      <fact>This station was called Queen's Road once upon a time.</fact>
     </object>
     <object name="Regents Park">
       <alias>Regent's Park</alias>
@@ -1780,6 +1791,7 @@
           </value>
         </item>
       </platforms>
+      <fact>There is a pipe above the platform here that carries the River Westbourne.</fact>
     </object>
     <object name="South Kensington">
       <circle type="int">122</circle>
@@ -2127,6 +2139,7 @@
     <object name="Warren Street">
       <northern2 type="int">101</northern2>
       <victoria type="int">102</victoria>
+      <fact>This station was called Euston Road when it first opened. You can still see the old name in tiles at the end of the Northern line platforms.</fact>
     </object>
     <object name="Waterloo">
       <bakerloo type="int">109</bakerloo>
