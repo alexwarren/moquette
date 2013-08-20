@@ -1364,7 +1364,8 @@
             locationcode = ToString(GetInt(train.location, train.line.code) + d)
             if (DictionaryContains(train.line.facts, locationcode)) {
               msg ("")
-              msg (StringDictionaryItem(train.line.facts, locationcode))
+              script = DictionaryItem(train.line.facts, locationcode)
+              invoke (script)
               dictionary remove (train.line.facts, locationcode)
             }
           }
