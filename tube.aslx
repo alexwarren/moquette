@@ -59,7 +59,7 @@
       <down>southbound</down>
       <facts type="scriptdictionary">
         <item key="107">
-          msg ("This is the shortest distance between stations on the Underground. I think everybody knows that, except tourists.")
+          msg ("This section of Piccadilly line between {if train.direction=1:Leicester Square and Covent Garden}{if train.direction=-1:Covent Garden and Leicester Square} is the shortest distance between stations on the Underground. I think everybody knows that, except tourists.")
         </item>
         <item key="104">
           msg ("There's an abandoned station around here, Down Street. I like to keep an eye on the window here as you can see the black tunnel change to beige bricks as we go through it. It closed in the 1930s and it was used by Winston Churchill as an underground bunker for government meetings. How cool is that?")
