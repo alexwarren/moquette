@@ -83,6 +83,7 @@ function blackout() {
 
 function heatherTube() {
 	setTimeout(function () {
+		$("body").css("overflow-x", "hidden");
 		$("<div/>", {
 			id: "heathertube",
 			text: "HEATHER"
@@ -102,6 +103,7 @@ function animateHeatherTube(duration) {
 		$("#heathertube").animate({
 			left: "0px"
 		}, duration, "swing", function () {
+			$("body").css("overflow-x", "inherit");
 			$("#heathertube").fadeOut(1000, function() {
 				ASLEvent("JSFinish_HeatherTube", "");
 			});
