@@ -460,16 +460,28 @@
     </command>
     <command>
       <pattern>change #text_platform#</pattern>
-      <script>
+      <script><![CDATA[
         foreach (availableplatform, platform.location.platforms) {
           if (availableplatform = text_platform) {
-            msg ("I follow the signs.")
+            topiccadilly = Instr(availableplatform, "Piccadilly") > 0
+            frompiccadilly = Instr(platform.platformname, "Piccadilly") > 0
+            if (platform.location = Green Park and (frompiccadilly xor topiccadilly)) {
+              firsttime {
+                msg ("Such a rookie error, changing at Green Park. I follow the signs, walking through the interminably long tunnel, past the annoying busker. I wish there was one of those travelator things here.")
+              }
+              otherwise {
+                msg ("Through the long tunnel again I go, following the signs.")
+              }
+            }
+            else {
+              msg ("I follow the signs.")
+            }
             msg ("")
             MoveToPlatform (platform.location, DictionaryItem(platform.location.platforms, availableplatform), true)
             invoke (platform.enter)
           }
         }
-      </script>
+      ]]></script>
     </command>
   </object>
   <object name="nullplatform">
