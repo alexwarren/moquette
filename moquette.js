@@ -58,34 +58,79 @@ function getRandomGrey() {
 }
 
 function blackout() {
+	setTimeout(function() {
+		$("<div/>", {
+			id: "blackout"
+		}).css({
+			position: "fixed",
+			top: 0,
+			left: 0,
+			width: "100%",
+			height: "100%",
+			background: "black",
+			display: "none"
+		}).appendTo("body");
+		$("#blackout").fadeIn({
+			duration: 10000,
+			easing: "easeInQuad",
+		});
+		speckles();
+		setTimeout(function () {
+			$("#speckles").remove();
+			ASLEvent("JSFinish_Blackout", "");
+		}, 11000);
+		setTimeout(function () {
+			$("#blackout").fadeOut({
+				duration: 10000,
+				easing: "easeInQuad",
+				complete: function() {
+					console.log("remove");
+					$(this).remove();
+				}
+			});
+		}, 12000);
+	}, 1000);
+}
+
+function speckles() {
 	$("<div/>", {
-		id: "blackout"
+		id: "speckles"
 	}).css({
 		position: "fixed",
 		top: 0,
 		left: 0,
 		width: "100%",
 		height: "100%",
-		background: "black",
-		display: "none"
+		overflow: "hidden"
 	}).appendTo("body");
-	$("#blackout").fadeIn({
-		duration: 10000,
-		easing: "easeInQuad",
-	});
-	setTimeout(function () {
-		ASLEvent("JSFinish_Blackout", "");
-	}, 11000);
-	setTimeout(function () {
-		$("#blackout").fadeOut({
-			duration: 10000,
-			easing: "easeInQuad",
-			complete: function() {
-				console.log("remove");
-				$(this).remove();
-			}
-		});
-	}, 12000);
+	doSpeckles();
+}
+
+var _speckleCount = 0;
+var _speckleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+
+function doSpeckles() {
+	_speckleCount++;
+	if (_speckleCount < 150) {
+		setTimeout(function() {
+			doSpeckles();
+		}, 50);
+	}
+	var minLeft = -10;
+	var minTop = -10;
+	var maxLeft = $(window).width();
+	var maxTop = $(window).height();
+	for (var i = 0; i < 20; i++) {
+		$("<div/>", {
+			text: _speckleChars.charAt(Math.floor(Math.random() * _speckleChars.length))
+		}).css({
+			position: "absolute",
+			left: getRandomInt(minLeft, maxLeft),
+			top: getRandomInt(minTop, maxTop),
+			"font-size": getRandomInt(4, 10 + _speckleCount) + "px",
+			"font-family": "Georgia, serif"
+		}).appendTo("#speckles");
+	}
 }
 
 function heatherTube() {
