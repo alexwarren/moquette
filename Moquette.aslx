@@ -984,7 +984,7 @@
         msg (SafeXML (command))
       }
       else {
-        if (not game.suppresshr) {
+        if (not game.suppresshr and command <> "unboard") {
           OutputTextNoBr ("<hr/>")
         }
         else {
