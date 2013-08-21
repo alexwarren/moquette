@@ -69,14 +69,21 @@ function blackout() {
 		background: "black",
 		display: "none"
 	}).appendTo("body");
-	$("#blackout").fadeIn(10000);
+	$("#blackout").fadeIn({
+		duration: 10000,
+		easing: "easeInQuad",
+	});
 	setTimeout(function () {
 		ASLEvent("JSFinish_Blackout", "");
 	}, 11000);
 	setTimeout(function () {
-		$("#blackout").fadeOut(10000, function() {
-			console.log("remove");
-			$(this).remove();
+		$("#blackout").fadeOut({
+			duration: 10000,
+			easing: "easeInQuad",
+			complete: function() {
+				console.log("remove");
+				$(this).remove();
+			}
 		});
 	}, 12000);
 }
