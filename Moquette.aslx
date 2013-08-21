@@ -1130,7 +1130,7 @@
       InitTrainAtStation
       parent = GetNonTransparentParent(game.pov.parent)
       list = RemoveSceneryObjects(GetDirectChildren(parent))
-      msg (TrainObjectList("I can see", list, "and", "."))
+      msg (TrainObjectList("I can see", list, "and", ".", true))
       UpdateLinkCount
     }
   </function>
@@ -1233,13 +1233,13 @@
     list add (result, addedpassengers)
     return (result)
   ]]></function>
-  <function name="TrainObjectList" parameters="preList, list, preFinal, postList" type="string"><![CDATA[
+  <function name="TrainObjectList" parameters="preList, list, preFinal, postList, links" type="string"><![CDATA[
     result = ""
     count = 0
     listLength = ListCount(list)
     usedtitles = NewStringList()
     foreach (item, list) {
-      if (LengthOf(result) = 0) {
+      if (LengthOf(result) = 0 and preList <> "") {
         result = preList + " "
       }
       if (not ListContains(usedtitles, item.title)) {
@@ -1255,7 +1255,12 @@
         }
         list add (usedtitles, title)
       }
-      result = result + "{command:interact " + item.name + ":" + title + "}"
+      if (links) {
+        result = result + "{command:interact " + item.name + ":" + title + "}"
+      }
+      else {
+        result = result + title
+      }
       count = count + 1
       if (count = listLength - 1) {
         result = result + " " + preFinal + " "
@@ -1269,25 +1274,18 @@
     }
     return (result)
   ]]></function>
-  <function name="DisembarkList" parameters="preList, list, preFinal, postList" type="string"><![CDATA[
+  <function name="DisembarkList" parameters="list, preFinal" type="string"><![CDATA[
     result = ""
     count = 0
     listLength = ListCount(list)
     foreach (item, list) {
-      if (LengthOf(result) = 0) {
-        result = preList + " "
-      }
-      // need a new attribute, if .title is "a man", .disembark is "the man"
-      result = result + item.title
+      result = result + item.offtitle
       count = count + 1
       if (count = listLength - 1) {
         result = result + " " + preFinal + " "
       }
       else if (count < listLength) {
         result = result + ", "
-      }
-      else {
-        result = result + postList
       }
     }
     return (result)
@@ -1363,10 +1361,18 @@
             msg ("")
           }
           if (ListCount(removed) > 0) {
-            msg (DisembarkList("Stepping off: ", removed, "and", "."))
+            get = "get"
+            if (ListCount(removed) = 1 and not Instr(StringListItem(removed, 0), " and ") > 0) {
+              get = "gets"
+            }
+            OutputTextNoBr (CapFirst(DisembarkList(removed, "and")) + " " + get + " off the train. ")
           }
           if (ListCount(added) > 0) {
-            msg (TrainObjectList("Getting on: ", added, "and", "."))
+            are = "are"
+            if (ListCount(added) = 1 and not Instr(StringListItem(added, 0), " and ") > 0) {
+              are = "is"
+            }
+            msg ("Getting on " + are + " " + TrainObjectList("", added, "and", ".", false))
           }
           if (ListCount(removed) + ListCount(added) > 0) {
             msg ("")
@@ -1376,7 +1382,7 @@
           list = RemoveSceneryObjects(GetDirectChildren(parent))
           if (ListCount(list) > 0) {
             msg ("")
-            msg (TrainObjectList("I can see", list, "and", "."))
+            msg (TrainObjectList("I can see", list, "and", ".", true))
           }
           UpdateLinkCount
         }
