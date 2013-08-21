@@ -1,4 +1,15 @@
-﻿var _heatherTextCount = 0;
+﻿function endAct0() {
+	$("#divOutput").effect("drop");
+	setTimeout(function() {
+		ASLEvent("StartAct1", "");
+	}, 1000);
+}
+
+function startAct1() {
+	$("#divOutput").show();
+}
+
+var _heatherTextCount = 0;
 
 function heatherText() {
 	$("<div/>", {

@@ -96,6 +96,7 @@
     <platformhistory type="stringlist" />
     <interactedpeoplehistory type="stringlist" />
     <abandonedstationcount type="int">0</abandonedstationcount>
+    <suppresshr type="boolean">false</suppresshr>
     <start type="script"><![CDATA[
       foreach (station, GetDirectChildren(stationdata)) {
         if (not HasAttribute(station, "platforms")) {
@@ -184,6 +185,9 @@
     <object name="Act 0 Balham Train">
       <inherit name="editor_room" />
       <description><![CDATA[I glance to my right. I can't see the hipster at all now.<br/><br/>The doors open. I {command:1:get on}.]]></description>
+      <enter type="script">
+        game.suppresshr = true
+      </enter>
       <command>
         <pattern>1</pattern>
         <script>
@@ -327,6 +331,7 @@
       <inherit name="editor_room" />
       <description><![CDATA[I follow the sign to the Victoria line. Down one small corridor, and there it is - a very quick interchange.<br/><br/>Well, that was easy.<br/><br/>A train pulls in and I can {command:1:get on}.]]></description>
       <enter type="script">
+        game.suppresshr = true
       </enter>
       <command>
         <pattern>1</pattern>
@@ -339,6 +344,7 @@
       <inherit name="editor_room" />
       <description><![CDATA[I follow the signs to the Charing Cross branch. It doesn't take very long.<br/><br/>Well, that was easy.<br/><br/>A train pulls in and I can {command:1:get on}.]]></description>
       <enter type="script">
+        game.suppresshr = true
       </enter>
       <command>
         <pattern>1</pattern>
@@ -351,6 +357,7 @@
       <inherit name="editor_room" />
       <description><![CDATA[I follow the signs to the Bakerloo line. It's doesn't take long to reach the platform.<br/><br/>Well, that was easy.<br/><br/>A train pulls in and I can {command:1:get on}.]]></description>
       <enter type="script">
+        game.suppresshr = true
       </enter>
       <command>
         <pattern>1</pattern>
@@ -362,6 +369,9 @@
     <object name="Act 0 London Bridge Escape">
       <inherit name="editor_room" />
       <description><![CDATA[I follow the signs to the Jubilee line. It's not a very quick interchange - down some corridors and up and down some steps. But it doesn't take a huge amount of effort, and here I am on the platform, going somewhere else.<br/><br/>That was pretty easy really.<br/><br/>A train pulls in and I can {command:1:get on}.]]></description>
+      <enter type="script">
+        game.suppresshr = true
+      </enter>
       <command>
         <pattern>1</pattern>
         <script>
@@ -974,28 +984,11 @@
         msg (SafeXML (command))
       }
       else {
-        shownlink = false
-        if (game.echocommand) {
-          if (metadata <> null and game.enablehyperlinks and game.echohyperlinks) {
-            foreach (key, metadata) {
-              if (EndsWith(command, key)) {
-                objectname = StringDictionaryItem(metadata, key)
-                object = GetObject(objectname)
-                if (object <> null) {
-                  OutputTextNoBr ("<hr/>")
-                  msg ("&gt; " + Left(command, LengthOf(command) - LengthOf(key)) + "{object:" + object.name + "}")
-                  shownlink = true
-                }
-              }
-            }
-          }
-          if (not shownlink) {
-            OutputTextNoBr ("<hr/>")
-            OutputTextRaw ("&gt; " + SafeXML(command))
-          }
-        }
-        if (game.command_newline) {
+        if (not game.suppresshr) {
           OutputTextNoBr ("<hr/>")
+        }
+        else {
+          game.suppresshr = false
         }
         commands = Split(command, ".")
         game.pov.commandmetadata = metadata
@@ -1088,12 +1081,14 @@
     train.location = location
     train.line = line
     train.justboarded = true
-    SetTimeout (1) {
-      ClearScreen
-      JS.StartOutputSection ("act1")
-      StartTextSection
-      InitTrain
-    }
+    JS.endAct0 ()
+  </function>
+  <function name="StartAct1" parameters="dummy">
+    ClearScreen
+    JS.startAct1 ()
+    JS.StartOutputSection ("act1")
+    StartTextSection
+    InitTrain
   </function>
   <function name="MoveTrainToNextStation">
     next = GetNextStation(train.location, train.direction, train.line.code)
