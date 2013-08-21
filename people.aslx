@@ -3,6 +3,7 @@
 		<object name="person1">
 			<title>a man</title>
 			<desc>He is reading a biography of Kurt Cobain. The face on the cover is almost life size. If the man holds the book up in the right place, it will be like he lives among us again, albeit with the fixed expression of permanent {command:satisfaction:self satisfaction} that the photo on the book's cover gives him.</desc>
+			<desc2>He is still reading his Kurt Cobain biography.</desc2>
 			<command>
 		      <pattern>satisfaction</pattern>
 		      <script>
@@ -14,6 +15,7 @@
 		<object name="person2">
 			<title>a woman and child</title>
 			<desc>Like all children, the boy completely fails to be able to sit still for any length of time. His mother sits next to him, not paying much {command:attention:attention}.</desc>
+			<desc2>The child has calmed down a bit now, and is looking quietly at his reflection in the window.</desc2>
 			<command>
 		      <pattern>attention</pattern>
 		      <script>
@@ -26,14 +28,17 @@
 		<object name="person3">
 			<title>a male student</title>
 			<desc>He could not look more like a student. He's sat there with a pile of papers, looking through page after page of tables. The stripy jumper, brown trousers and brown shoes finish off the look. He is clearly very comfortable fitting into that category of person. He has fully bought in to that lifestyle and appearance. It makes me feel somewhat jealous actually - I'd never want to look like that, but I'd love to be able to fit in, and know my place, and be happy with it. Maybe in blissful ignorance of other options, but blissful nonetheless.</desc>
+			<desc2>He's still sitting there, all studenty, looking through his papers.</desc2>
 		</object>
 		<object name="person4">
 			<title>a fat man</title>
 			<desc>His belly hangs over his belt. Maybe if he just loosened his belt a bit, his weight wouldn't have been the first thing I noticed.</desc>
+			<desc2>He is still sitting there, belly calmly flopping onto his lap.</desc2>
 		</object>
 		<object name="person5">
 			<title>a young pretty woman</title>
 			<desc>She is incredibly pretty in that fragile sort of way. A fine {command:bone:bone structure}, I suppose, that looks like it might break at any moment.</desc>
+			<desc2>She remains intact, sat over there, her face all still in one piece. I just hope she never falls over because it looks like her bones couldn't take any kind of impact.</desc2>
 			<command>
 				<pattern>bone</pattern>
 				<script>
@@ -44,15 +49,18 @@
 		</object>
 		<object name="person6">
 			<title>a chubby couple</title>
-			<desc>They are dressed in matching waterproof jackets, and the guy is holding a tatty guide to London.</desc>
+			<desc>They are dressed in matching waterproof jackets, and the guy is holding a tatty guide to London. I wonder where they're off to, what their holiday schedule has in store for today.</desc>
+			<desc2>They are still sat there in their beautifully matching way.</desc2>
 		</object>
 		<object name="person7">
 			<title>an old woman</title>
 			<desc>She is sat in the priority seat. At least, I presume it's a she. There is a lot of wispy white hair around the chin area. I would think a man would keep his beard in better shape, and wear it with pride.</desc>
+			<desc2>She is still that there, quite still - maybe so as not to disturb that beard.</desc2>
 		</object>
 		<object name="person8">
 			<title>a woman</title>
 			<desc>There's something familiar about her. Where have I seen her before? Was she in the old office? Maybe she was in {command:tv:something} on telly...</desc>
+			<desc2>She's still there, and I don't want to risk making eye contact.</desc2>
 			<command>
 				<pattern>tv</pattern>
 				<script>
@@ -70,6 +78,7 @@
 		<object name="person9">
 			<title>a woman</title>
 			<desc>She is sat scribbling something in a notebook, occasionally looking up and glancing around the carriage, like she's taking {command:notes:notes} about what she sees.</desc>
+			<desc2>She's still there, scribbling notes.</desc2>
 			<command>
 				<pattern>notes</pattern>
 				<script>
@@ -81,6 +90,7 @@
 		<object name="person10">
 			<title>two female friends</title>
 			<desc>It seems like they don't know each other too well, they're deep in polite {command:conversation:small talk}.</desc>
+			<desc2>They're still there, chatting away.</desc2>
 			<command>
 				<pattern>conversation</pattern>
 				<script>
@@ -92,6 +102,7 @@
 		<object name="person11">
 			<title>a man</title>
 			<desc>Unlike most people it seems, he's not filling his journey by looking at a newspaper or listening to earphones. He is {command:muttering:muttering} to himself a bit though, as he stares vacantly into space.</desc>
+			<desc2>He's still muttering occasionally to himself.</desc2>
 			<command>
 				<pattern>muttering</pattern>
 				<script>
@@ -103,6 +114,7 @@
 		<object name="person12">
 			<title>a smiling woman</title>
 			<desc>She is smiling, then suppressing it. But she's not doing very well at suppressing it. I wonder what she's seen. I hope it's not me. My cock's not {command:hanging:hanging out}, is it?</desc>
+			<desc2>She's still sat there, smiling to herself.</desc2>
 			<command>
 				<pattern>hanging</pattern>
 				<script>
@@ -122,43 +134,52 @@
 		<object name="person13">
 			<title>a man in a suit</title>
 			<desc>He listens diligently to his iPod through white earbuds. I can't hear what he's listening to - which is unusual for those stock earbuds. He seems to be listening very carefully though. He has glossy black shoes with bright red laces. The only dash of colour on him. Like a little private joke.</desc>
+			<desc2>He's still there, tapping his glossy black shoes to the music.</desc2>
 		</object>
 		<object name="person14">
 			<title>a large man</title>
 			<desc>He is wearing a leather jacket, a wooly hat, and, bizarrely, shorts. He also has a massive
 				beard - the top half of him must be a lot warmer than the bottom half.</desc>
+			<desc2>He's still there in his leather jacket, beard and shorts.</desc2>
 		</object>
 		<object name="person15">
 			<title>a small woman</title>
 			<desc>She is carrying a big bright yellow handbag - almost the same size as she is. I wonder
 				what she keeps in there. She could possibly live in it.</desc>
+			<desc2>She's still there with her enormous handbag.</desc2>
 		</object>
 		<object name="person16">
 			<title>a teenage girl</title>
 			<desc>She is wearing huge bright green headphones on top of her long black hair. She gets her
 				phone out to check her reflection in the camera.</desc>
+			<desc2>She's still there with her massive headphones.</desc2>
 		</object>
 		<object name="person17">
 			<title>a man</title>
 			<desc>He is balding, wearing jeans and tatty Converse trainers, and doing something on a Macbook Air. He has a bag stuffed with papers and files.</desc>
+			<desc2>He's still sat there fiddling with his Macbook.</desc2>
 		</object>
 		<object name="person18">
 			<title>a sleeping man</title>
 			<desc>He is a builder by the looks of it - paint-splattered jeans. He is sleeping next to another builder who looks almost the same. These two big burly men look almost cute, blissfully asleep like enormous babies.</desc>
 			<!-- wonder how long he's been there for, should somebody wake him up? -->
 			<disallowboarding/>
+			<desc2>Still sound asleep like a baby, along with his mate.</desc2>
 		</object>
 		<object name="person19">
 			<title>a woman</title>
 			<desc>She is reading some kind of arty magazine.</desc>
+			<desc2>Still reading that magazine.</desc2>
 		</object>
 		<object name="person20">
 			<title>a man</title>
 			<desc>He is wearing a grey striped shirt, grey trousers and grey shoes. Even his hair is going grey. Mr. Monochrome.</desc>
+			<desc2>He remains as grey as ever.</desc2>
 		</object>
 		<object name="person21">
 			<title>a woman drinking coffee</title>
 			<desc>Her coffee cup has her name scrawled on it in black felt tip. {command:roberta:Roberta}. I know nothing about her, but now I know her name - which is more than I can say for anybody else in this carriage. It's like we have some kind of connection now.</desc>
+			<desc2>Roberta is still there, proudly displaying her named coffee cup.</desc2>
 			<command>
 				<pattern>roberta</pattern>
 				<script>
@@ -170,10 +191,12 @@
 		<object name="person22">
 			<title>a man in a suit</title>
 			<desc>He has an earring, which I suppose makes him feel more individual than the rest of the people he works with. Yet he still adheres to a dress code. An act of futile rebellion.</desc>
+			<desc2>He's still sat there with his silly little earring.</desc2>
 		</object>
 		<object name="person23">
 			<title>a young guy</title>
 			<desc>He's wearing a T-shirt and picking his nose. Yuck. What can you do though? Ask him to stop? Is he going to {command:eat:eat that}?</desc>
+			<desc2>Thankfully he has now stopped picking his nose.</desc2>
 			<command>
 				<pattern>eat</pattern>
 				<script>
@@ -185,6 +208,7 @@
 		<object name="person24">
 			<title>a man with a moustache</title>
 			<desc>Apart from a huge bushy moustache, he is clean shaven. He looks a bit like Lord Kitchener in those posters from the First World War. He might turn round at any second, point at me and say "I want {command:you:YOU}".</desc>
+			<desc2>His moustache is still looking around the carriage, twitchily.</desc2>
 			<command>
 				<pattern>you</pattern>
 				<script>
@@ -196,18 +220,22 @@
 		<object name="person25">
 			<title>a man in sunglasses</title>
 			<desc>Sunglasses, down here? And chewing gum, with his mouth wide open. All nonchalant and cool, like he doesn't need to be here, but hey, he just puts up with it, y'know, why complain? So many reasons to hate. He's really playing with that gum as well, like he's totally the boss of it. Everything's going his way - apart from his debilitating eye disorder which means his retinas will fall out if he's exposed to more than two photons at a time. What a colossal prick.</desc>
+			<desc2>Still not bright sunshine down here.</desc2>
 		</object>
 		<object name="person26">
 			<title>a man</title>
 			<desc>He's eating a steaming hot tub of porridge. It's pretty hot down here already - surely the last thing anybody needs is piping hot breakfast mush?</desc>
+			<desc2>He's got rid of his empty tub of porridge somewhere - probably left it somewhere where he can conveniently forget it.</desc2>
 		</object>
 		<object name="person27">
 			<title>a man in a jumper</title>
 			<desc>It's quite a big blue jumper - inappopriately warm for both the weather and the temperature down here on the tube, I should think. And what's that suspicious white stain at the bottom? Does he realise that's there? I hope that's yogurt, or the milk from his breakfast cereal.</desc>
+			<desc2>Still not sure about that stain.</desc2>
 		</object>
 		<object name="person28">
 			<title>a scruffy man</title>
 			<desc>He looks like some sort of academic. Quite poor dress sense - and if I can spot that, it must be really poor dress sense. He's reading some kind of {command:paper:scientific paper}, and chuckling to himself.</desc>
+			<desc2>He seems to have calmed down about whatever it was that was so funny before in his academic paper.</desc2>
 			<command>
 				<pattern>paper</pattern>
 				<script>
@@ -215,18 +243,12 @@
 					msg ("Straining to read the title over his shoulder before he turns the page - review... platelet function disorders. I wonder what's so funny about that?")
 				</script>
 			</command>
-			<!-- would be good to offer asking what's so funny as an option. If this is earlier in the game, Z doesn't want to ask questions like a nutter. Later on, maybe he takes a riskier approach and does more nutty things? Maybe we can build up the nutty behaviour vignettes, this can be an earlier one, then perhaps there is a progression onwards to asking to eat people's snot, chasing rats... -->
 		</object>
 		<!-- 
-
-		cabin crew (only on piccadilly line?)
 
 		Tall and slim and stripy
 
 		Fat child crisps
-
-		Laughing man reads a review of platelet function disorders and new guidelines for ukgho, don't know what's so 
-		funny about that.
 
 		A guy with tall tightly cropped hair, like the 80s, like grace jones
 
@@ -244,6 +266,7 @@
 		<object name="person301">
 			<title>a man</title>
 			<desc>He has legs like pencils, and impossibly tight {command:jeans:jeans}, and a hairstyle.</desc>
+			<desc2>Still sat there with his pencil legs.</desc2>
 			<command>
 				<pattern>jeans</pattern>
 				<script>

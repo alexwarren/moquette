@@ -577,8 +577,21 @@
     <command>
       <pattern>interact #object#</pattern>
       <script>
-        msg (object.desc)
-        object.interacted = true
+        if (not GetBoolean(object, "interacted")) {
+          msg (object.desc)
+          object.interacted = true
+        }
+        else {
+          msg (object.desc2)
+          // Link count correction for objects we've already interacted with
+          children = GetDirectChildren(train)
+          foreach (command, AllCommands()) {
+            if (ListContains(children, command.parent) ) {
+              Log ("Already interacted with this object, so reduce link count")
+              game.linkcount = game.linkcount - 1
+            }
+          }
+        }
       </script>
     </command>
     <turnscript>
