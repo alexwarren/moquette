@@ -1174,15 +1174,27 @@
     }
   ]]></function>
   <function name="RandomObjectListItems" parameters="list, items, disallowattribute" type="objectlist"><![CDATA[
-    if (items >= ListCount(list)) {
-      result = list
+    if (disallowattribute <> "") {
+      candidates = NewObjectList()
+      foreach (item, list) {
+        if (not GetBoolean(item, disallowattribute)) {
+          list add (candidates, item)
+        }
+      }
+    }
+    else {
+      candidates = list
+    }
+
+    if (items >= ListCount(candidates)) {
+      result = candidates
     }
     else {
       result = NewObjectList()
       while (ListCount(result) < items) {
-        index = GetRandomInt(0, ListCount(list) - 1)
-        item = ObjectListItem(list, index)
-        if (not ListContains(result, item) and (disallowattribute = "" or not GetBoolean(item, disallowattribute))) {
+        index = GetRandomInt(0, ListCount(candidates) - 1)
+        item = ObjectListItem(candidates, index)
+        if (not ListContains(result, item)) {
           list add (result, item)
         }
       }
