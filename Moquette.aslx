@@ -1149,7 +1149,17 @@
     }
     next = GetNextStation(train.location, train.direction, train.line.code)
     if (next = null) {
-      msg ("End of the line. {command:unboard:Get off the train}")
+      lineend = "{random:I don't want to go any further this way.:If I stay on this I'm going to end up in the middle of nowhere.:There's no need for me to travel to the darkest reaches of the outer zones.} {command:unboard:Time for me to get off this train}."
+      if (train.location = Stockwell and train.line.code = "northern1") {
+        lineend = "I'm not going home just yet. {command:unboard:Time to change trains}."
+      }
+      else if ((train.location = Aldgate and train.line.code = "metropolitan") or (train.location = Brixton and train.line.code = "victoria")) {
+        lineend = "This is the end of the line. {command:unboard:All change}."
+      }
+      else if (train.location = Elephant Castle and train.line.code = "bakerloo") {
+        lineend = "This is the end of the line.{once: They are thinking about extending the Bakerloo into south-east London at some point - but that won't be for a while. Certainly not today, anyway.} {command:unboard:All change}."
+      }
+      msg (lineend)
     }
     else {
       if (not train.justboarded) {
@@ -1469,7 +1479,7 @@
       list add (availablelist, "{command:change " + availableplatform + ":" + availableplatform + "}")
     }
     player.parent = nullplatform
-    msg ("I could change to " + GetInterchangeListString(availablelist))
+    msg ("I could change to " + GetInterchangeListString(availablelist) ".")
   </function>
   <function name="GetInterchangeListString" parameters="availablelist" type="string"><![CDATA[
     liststring = ""
