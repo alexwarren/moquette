@@ -1374,10 +1374,14 @@
             }
             msg ("Getting on " + are + " " + TrainObjectList("", added, "and", ".", false))
           }
-          if (ListCount(removed) + ListCount(added) > 0) {
+          if (ListCount(removed) + ListCount(added) = 0) {
+            msg ("Nobody gets on or off. The doors close.")
             msg ("")
           }
-          msg ("The doors close.")
+          else {
+            msg ("")
+            msg ("The doors close.")
+          }
           parent = GetNonTransparentParent(game.pov.parent)
           list = RemoveSceneryObjects(GetDirectChildren(parent))
           if (ListCount(list) > 0) {
