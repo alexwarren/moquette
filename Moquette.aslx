@@ -1130,7 +1130,12 @@
       InitTrainAtStation
       parent = GetNonTransparentParent(game.pov.parent)
       list = RemoveSceneryObjects(GetDirectChildren(parent))
-      msg (TrainObjectList("I can see", list, "and", ".", true))
+      if (ListCount(list) > 0) {
+        msg (TrainObjectList("I can see", list, "and", ".", true))
+      }
+      else {
+        msg ("It's pretty empty. Nothing to do but {command:wait2:Wait}.")
+      }
       UpdateLinkCount
     }
   </function>
@@ -1362,21 +1367,27 @@
           }
           if (ListCount(removed) > 0) {
             get = "get"
-            if (ListCount(removed) = 1 and not Instr(StringListItem(removed, 0), " and ") > 0) {
+            firstobject = ObjectListItem(removed, 0)
+            if (ListCount(removed) = 1 and Instr(firstobject.offtitle, " and ") = 0) {
               get = "gets"
             }
             OutputTextNoBr (CapFirst(DisembarkList(removed, "and")) + " " + get + " off the train. ")
           }
           if (ListCount(added) > 0) {
             are = "are"
-            if (ListCount(added) = 1 and not Instr(StringListItem(added, 0), " and ") > 0) {
+            firstobject = ObjectListItem(added, 0)
+            if (ListCount(added) = 1 and Instr(firstobject.title, " and ") = 0) {
               are = "is"
             }
             msg ("Getting on " + are + " " + TrainObjectList("", added, "and", ".", false))
           }
+          else {
+            if (ListCount(removed) > 0) {
+              msg ("")
+            }
+          }
           if (ListCount(removed) + ListCount(added) = 0) {
             msg ("Nobody gets on or off. The doors close.")
-            msg ("")
           }
           else {
             msg ("")
