@@ -644,7 +644,7 @@
     <inherit name="editor_room" />
     <object name="Act 2 Page 100">
       <inherit name="editor_room" />
-      <description><![CDATA[I step on the train. She is right there in front of me.<br/><br/>{command:1:Heather}.]]></description>
+      <description><![CDATA[She is right there in front of me.<br/><br/>{command:1:Heather}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
