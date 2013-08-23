@@ -417,12 +417,17 @@
         if (platformname <> platform.platformname) {
           displayname = availableplatform
           list add (availablelist, "{command:change " + availableplatform + ":" + displayname + "}")
+          singlechange = availableplatform
         }
         else {
           msg ("I am standing on the platform for the " + platformname + " at " + GetDisplayAlias(platform.location) + ".")
         }
       }
-      if (ListCount(availablelist) > 0) {
+      if (ListCount(availablelist) = 1) {
+        msg ("")
+        msg ("I could {command:next:wait} for a train here, or {command:change " + singlechange + ":go the other way}.")
+      }
+      else if (ListCount(availablelist) > 1) {
         train.liststring = GetInterchangeListString(availablelist)
         msg ("")
         msg ("I could {command:next:wait} for a train here, or {command:change:change} to another line.")
