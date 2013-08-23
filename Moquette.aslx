@@ -205,6 +205,9 @@
     <object name="Act 0 Balham to Clapham South">
       <inherit name="editor_room" />
       <description><![CDATA[Pretty full as usual. No expectation of a seat, so I barely look for one. Space over by the opposite door though.<br/><br/>No challenges here. I just glide to a pole and grab hold of it without a moment's thought. No decisions, no effort, no choice, no problem.<br/><br/>Auto-pilot. It's almost a reflex action to the alarm clock, to get up, leave the flat, and catch the tube to work. Ten stops to Bank, change to the Central line, one stop to Liverpool Street. Turn left, up the escalator, left, through the barriers, right, up the stairs. Up the ramp and past the huge big rusty metal sculpture. Through the revolving doors. Rummage in pockets for security badge, and into the office. All automatic, and I'll barely notice a thing.<br/><br/>"Morning, Zoran" the boss will say, and he'll hear a reply. But he only sees the body of Zoran Tharp, and my mind will be elsewhere.<br/><br/>The day will pass, eventually, and I'll go home and heat up that second pizza I bought yesterday, then go to bed having hardly troubled my synapses in 16 hours.<br/><br/>Possibly the most exciting thing I will do today is go for a shit. Sneak off from my desk for 10 minutes of unscheduled me-time. Like a mini holiday.<br/><br/>The doors open. One person gets on.<br/><br/>This station is {command:1:Clapham South}.]]></description>
+      <enter type="script">
+        JS.scrollFix ()
+      </enter>
       <command>
         <pattern>1</pattern>
         <script>

@@ -1,4 +1,10 @@
-﻿function endAct0() {
+﻿function scrollFix() {
+	setTimeout(function() {
+		$("body").scrollTop(0);
+	}, 100);
+}
+
+function endAct0() {
 	$("#divOutput").effect("drop", 1000);
 	setTimeout(function() {
 		EndOutputSection ("act01")
