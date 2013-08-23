@@ -1419,6 +1419,7 @@
             msg ("")
             msg ("The doors close.")
           }
+          JS.disableAllCommandLinks ()
           parent = GetNonTransparentParent(game.pov.parent)
           list = RemoveSceneryObjects(GetDirectChildren(parent))
           if (ListCount(list) > 0) {
