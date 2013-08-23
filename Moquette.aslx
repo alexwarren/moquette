@@ -465,7 +465,11 @@
             linename = train.line.alias
           }
         }
-        msg ("A " + linename + " line train arrives. The doors open. I can {command:board:get on}.")
+        alt = ""
+        if (DictionaryCount(platform.directions) > 1) {
+          alt = " Or I could {command:next:wait} for another train."
+        }
+        msg ("A " + linename + " line train arrives. The doors open. I can {command:board:get on}." + alt)
       </script>
     </command>
     <command>
