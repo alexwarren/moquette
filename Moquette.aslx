@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4965.30172-->
+<!--Saved by Quest 5.5.4982.17428-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -1088,8 +1088,6 @@
     return (bound + " " + GetDisplayAlias(line))
   </function>
   <function name="EndAct0" parameters="direction, location, line">
-    JS.EndOutputSection ("act01")
-    JS.HideOutputSection ("act01")
     train.direction = direction
     train.location = location
     train.line = line
@@ -1115,7 +1113,7 @@
       InitTrainAtStation
     }
   </function>
-  <function name="InitTrain">
+  <function name="InitTrain"><![CDATA[
     if (game.triggeract2) {
       player.parent = Act 2 Page 100
       game.triggeract2 = false
@@ -1138,7 +1136,7 @@
       }
       UpdateLinkCount
     }
-  </function>
+  ]]></function>
   <function name="InitTrainAtStation">
     if (not train.justboarded) {
       OutputTextNoBr ("This is " + GetDisplayAlias(train.location) + ". ")
@@ -1195,7 +1193,6 @@
     else {
       candidates = list
     }
-
     if (items >= ListCount(candidates)) {
       result = candidates
     }

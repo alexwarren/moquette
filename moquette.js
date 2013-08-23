@@ -1,8 +1,10 @@
 ﻿function endAct0() {
-	$("#divOutput").effect("drop");
+	$("#divOutput").effect("drop", 1000);
 	setTimeout(function() {
+		EndOutputSection ("act01")
+		HideOutputSection ("act01")
 		ASLEvent("StartAct1", "");
-	}, 1000);
+	}, 1500);
 }
 
 function startAct1() {
