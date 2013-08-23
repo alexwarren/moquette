@@ -1032,7 +1032,7 @@
     JS.disableAllCommandLinks ()
     player.parent = platform
     if (waiting) {
-      list add (game.platformhistory, platform.platformname + " line at " + GetDisplayAlias(platform.location))
+      list add (game.platformhistory, platform.platformname + " at " + GetDisplayAlias(platform.location))
     }
   </function>
   <function name="GetPlatform" parameters="location, line, direction" type="dictionary">
