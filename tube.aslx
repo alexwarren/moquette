@@ -59,7 +59,8 @@
       <down>westbound</down>
     </object>
     <object name="Northern1">
-      <alias>Northern Line (Bank Branch)</alias>
+      <!-- Bank Branch -->
+      <alias>Northern</alias>
       <code>northern1</code>
       <up>southbound</up>
       <down>northbound</down>
@@ -71,7 +72,8 @@
       </facts>
     </object>
     <object name="Northern2">
-      <alias>Northern Line (Charing Cross Branch)</alias>
+      <!-- Charing Cross Branch -->
+      <alias>Northern</alias>
       <code>northern2</code>
       <up>southbound</up>
       <down>northbound</down>
@@ -113,7 +115,7 @@
       <metropolitan type="int">108</metropolitan>
       <platforms type="dictionary">
         <item>
-          <key>northbound Circle/Metropolitan</key>
+          <key>northbound Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -135,7 +137,7 @@
           </value>
         </item>
         <item>
-          <key>southbound Circle</key>
+          <key>southbound Circle line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -160,7 +162,7 @@
       <hc type="int">110</hc>
       <platforms type="dictionary">
         <item>
-          <key>westbound Hammersmith &amp; City/District</key>
+          <key>westbound Hammersmith &amp; City/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -195,7 +197,7 @@
       <metropolitan type="int">100</metropolitan>
       <platforms type="dictionary">
         <item>
-          <key>northbound Bakerloo</key>
+          <key>northbound Bakerloo line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -213,7 +215,7 @@
           </value>
         </item>
         <item>
-          <key>southbound Bakerloo</key>
+          <key>southbound Bakerloo line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -231,7 +233,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Hammersmith &amp; City/Circle</key>
+          <key>eastbound Hammersmith &amp; City/Circle lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -253,7 +255,7 @@
           </value>
         </item>
         <item>
-          <key>westbound Hammersmith &amp; City/Circle</key>
+          <key>westbound Hammersmith &amp; City/Circle lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -275,7 +277,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Metropolitan</key>
+          <key>eastbound Metropolitan line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -305,7 +307,7 @@
       <metropolitan type="int">105</metropolitan>
       <platforms type="dictionary">
         <item>
-          <key>westbound Hammersmith &amp; City/Circle/Metropolitan</key>
+          <key>westbound Hammersmith &amp; City/Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -331,7 +333,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Hammersmith &amp; City/Circle/Metropolitan</key>
+          <key>eastbound Hammersmith &amp; City/Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -364,7 +366,7 @@
       <district1 type="int">103</district1>
       <platforms type="dictionary">
         <item>
-          <key>northbound Circle/District</key>
+          <key>northbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -386,7 +388,7 @@
           </value>
         </item>
         <item>
-          <key>southbound Circle/District</key>
+          <key>southbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -414,7 +416,7 @@
       <district2 type="int">109</district2>
       <platforms type="dictionary">
         <item>
-          <key>westbound Circle/District</key>
+          <key>westbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -436,7 +438,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Circle/District</key>
+          <key>eastbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -474,7 +476,7 @@
       <district2 type="int">111</district2>
       <platforms type="dictionary">
         <item>
-          <key>westbound Circle/District</key>
+          <key>westbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -496,7 +498,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Circle/District</key>
+          <key>eastbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -537,7 +539,7 @@
       <piccadilly type="int">100</piccadilly>
       <platforms type="dictionary">
         <item>
-          <key>District</key>
+          <key>District line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -559,7 +561,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Piccadilly</key>
+          <key>eastbound Piccadilly line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -586,7 +588,7 @@
       <hc type="int">101</hc>
       <platforms type="dictionary">
         <item>
-          <key>northbound Bakerloo</key>
+          <key>northbound Bakerloo line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -604,7 +606,7 @@
           </value>
         </item>
         <item>
-          <key>southbound Bakerloo</key>
+          <key>southbound Bakerloo line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -622,7 +624,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Hammersmith &amp; City/Circle</key>
+          <key>eastbound Hammersmith &amp; City/Circle lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -644,7 +646,7 @@
           </value>
         </item>
         <item>
-          <key>westbound Hammersmith &amp; City/Circle/District</key>
+          <key>westbound Hammersmith &amp; City/Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -683,7 +685,7 @@
       <district2 type="int">107</district2>
       <platforms type="dictionary">
         <item>
-          <key>westbound Circle/District</key>
+          <key>westbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -705,7 +707,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Circle/District</key>
+          <key>eastbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -727,7 +729,7 @@
           </value>
         </item>
         <item>
-          <key>northbound Northern</key>
+          <key>northbound Northern line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -745,7 +747,7 @@
           </value>
         </item>
         <item>
-          <key>southbound Northern</key>
+          <key>southbound Northern line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -763,7 +765,7 @@
           </value>
         </item>
         <item>
-          <key>northbound Bakerloo</key>
+          <key>northbound Bakerloo line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -781,7 +783,7 @@
           </value>
         </item>
         <item>
-          <key>southbound Bakerloo</key>
+          <key>southbound Bakerloo line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -811,7 +813,7 @@
       <metropolitan type="int">102</metropolitan>
       <platforms type="dictionary">
         <item>
-          <key>westbound Hammersmith &amp; City/Circle/Metropolitan</key>
+          <key>westbound Hammersmith &amp; City/Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -837,7 +839,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Hammersmith &amp; City/Circle/Metropolitan</key>
+          <key>eastbound Hammersmith &amp; City/Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -871,7 +873,7 @@
       <metropolitan type="int">104</metropolitan>
       <platforms type="dictionary">
         <item>
-          <key>westbound Hammersmith &amp; City/Circle/Metropolitan</key>
+          <key>westbound Hammersmith &amp; City/Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -897,7 +899,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Hammersmith &amp; City/Circle/Metropolitan</key>
+          <key>eastbound Hammersmith &amp; City/Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -930,7 +932,7 @@
       <piccadilly type="int">101</piccadilly>
       <platforms type="dictionary">
         <item>
-          <key>westbound Circle/District</key>
+          <key>westbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -952,7 +954,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Circle/District</key>
+          <key>eastbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -974,7 +976,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Piccadilly</key>
+          <key>eastbound Piccadilly line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -992,7 +994,7 @@
           </value>
         </item>
         <item>
-          <key>westbound Piccadilly</key>
+          <key>westbound Piccadilly line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1020,7 +1022,7 @@
       <metropolitan type="int">101</metropolitan>
       <platforms type="dictionary">
         <item>
-          <key>westbound Hammersmith &amp; City/Circle/Metropolitan</key>
+          <key>westbound Hammersmith &amp; City/Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1046,7 +1048,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Hammersmith &amp; City/Circle/Metropolitan</key>
+          <key>eastbound Hammersmith &amp; City/Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1083,7 +1085,7 @@
       <district1 type="int">101</district1>
       <platforms type="dictionary">
         <item>
-          <key>northbound Circle/District</key>
+          <key>northbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1105,7 +1107,7 @@
           </value>
         </item>
         <item>
-          <key>southbound Circle/District</key>
+          <key>southbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1150,7 +1152,7 @@
       <victoria type="int">100</victoria>
       <platforms type="dictionary">
         <item>
-          <key>westbound Hammersmith &amp; City/Circle/Metropolitan</key>
+          <key>westbound Hammersmith &amp; City/Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1176,7 +1178,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Hammersmith &amp; City/Circle/Metropolitan</key>
+          <key>eastbound Hammersmith &amp; City/Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1202,7 +1204,7 @@
           </value>
         </item>
         <item>
-          <key>northbound Northern</key>
+          <key>northbound Northern line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1220,7 +1222,7 @@
           </value>
         </item>
         <item>
-          <key>southbound Northern</key>
+          <key>southbound Northern line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1238,7 +1240,7 @@
           </value>
         </item>
         <item>
-          <key>southbound Piccadilly</key>
+          <key>southbound Piccadilly line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1256,7 +1258,7 @@
           </value>
         </item>
         <item>
-          <key>southbound Victoria</key>
+          <key>southbound Victoria line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1295,7 +1297,7 @@
       <metropolitan type="int">107</metropolitan>
       <platforms type="dictionary">
         <item>
-          <key>westbound Hammersmith &amp; City/Circle/Metropolitan</key>
+          <key>westbound Hammersmith &amp; City/Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1321,7 +1323,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Hammersmith &amp; City/Circle/Metropolitan</key>
+          <key>eastbound Hammersmith &amp; City/Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1347,7 +1349,7 @@
           </value>
         </item>
         <item>
-          <key>westbound Central</key>
+          <key>westbound Central line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1365,7 +1367,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Central</key>
+          <key>eastbound Central line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1393,7 +1395,7 @@
       <district2 type="int">110</district2>
       <platforms type="dictionary">
         <item>
-          <key>westbound Circle/District</key>
+          <key>westbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1415,7 +1417,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Circle/District</key>
+          <key>eastbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1451,7 +1453,7 @@
       <district2 type="int">112</district2>
       <platforms type="dictionary">
         <item>
-          <key>westbound Circle/District</key>
+          <key>westbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1473,7 +1475,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Circle/District</key>
+          <key>eastbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1503,7 +1505,7 @@
       <northern1 type="int">104</northern1>
       <platforms type="dictionary">
         <item>
-          <key>westbound Hammersmith &amp; City/Circle/Metropolitan</key>
+          <key>westbound Hammersmith &amp; City/Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1529,7 +1531,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Hammersmith &amp; City/Circle/Metropolitan</key>
+          <key>eastbound Hammersmith &amp; City/Circle/Metropolitan lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1555,7 +1557,7 @@
           </value>
         </item>
         <item>
-          <key>northbound Northern</key>
+          <key>northbound Northern line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1573,7 +1575,7 @@
           </value>
         </item>
         <item>
-          <key>southbound Northern</key>
+          <key>southbound Northern line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1598,7 +1600,7 @@
       <district1 type="int">102</district1>
       <platforms type="dictionary">
         <item>
-          <key>northbound Circle/District</key>
+          <key>northbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1620,7 +1622,7 @@
           </value>
         </item>
         <item>
-          <key>southbound Circle/District</key>
+          <key>southbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1642,7 +1644,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Central</key>
+          <key>eastbound Central line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1677,7 +1679,7 @@
       <hc type="int">100</hc>
       <platforms type="dictionary">
         <item>
-          <key>southbound Bakerloo</key>
+          <key>southbound Bakerloo line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1696,7 +1698,7 @@
         </item>
         <item>
           <!-- Circle intentionally omitted -->
-          <key>eastbound Hammersmith &amp; City/Circle</key>
+          <key>eastbound Hammersmith &amp; City/Circle lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1738,7 +1740,7 @@
       <district2 type="int">103</district2>
       <platforms type="dictionary">
         <item>
-          <key>westbound Circle/District</key>
+          <key>westbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1760,7 +1762,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Circle/District</key>
+          <key>eastbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1790,7 +1792,7 @@
       <piccadilly type="int">102</piccadilly>
       <platforms type="dictionary">
         <item>
-          <key>westbound Circle/District</key>
+          <key>westbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1812,7 +1814,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Circle/District</key>
+          <key>eastbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1834,7 +1836,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Piccadilly</key>
+          <key>eastbound Piccadilly line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1852,7 +1854,7 @@
           </value>
         </item>
         <item>
-          <key>westbound Piccadilly</key>
+          <key>westbound Piccadilly line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1880,7 +1882,7 @@
       <district2 type="int">105</district2>
       <platforms type="dictionary">
         <item>
-          <key>westbound Circle/District</key>
+          <key>westbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1902,7 +1904,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Circle/District</key>
+          <key>eastbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1938,7 +1940,7 @@
       <district2 type="int">108</district2>
       <platforms type="dictionary">
         <item>
-          <key>westbound Circle/District</key>
+          <key>westbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1960,7 +1962,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Circle/District</key>
+          <key>eastbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -1992,7 +1994,7 @@
       <district2 type="int">113</district2>
       <platforms type="dictionary">
         <item>
-          <key>westbound Circle/District</key>
+          <key>westbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -2014,7 +2016,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Circle/District</key>
+          <key>eastbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -2046,7 +2048,7 @@
       <victoria type="int">105</victoria>
       <platforms type="dictionary">
         <item>
-          <key>westbound Circle/District</key>
+          <key>westbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -2068,7 +2070,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Circle/District</key>
+          <key>eastbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -2090,7 +2092,7 @@
           </value>
         </item>
         <item>
-          <key>northbound Victoria</key>
+          <key>northbound Victoria line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -2108,7 +2110,7 @@
           </value>
         </item>
         <item>
-          <key>southbound Victoria</key>
+          <key>southbound Victoria line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -2144,7 +2146,7 @@
       <jubilee type="int">103</jubilee>
       <platforms type="dictionary">
         <item>
-          <key>westbound Circle/District</key>
+          <key>westbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -2166,7 +2168,7 @@
           </value>
         </item>
         <item>
-          <key>eastbound Circle/District</key>
+          <key>eastbound Circle/District lines</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -2188,7 +2190,7 @@
           </value>
         </item>
         <item>
-          <key>northbound Jubilee</key>
+          <key>northbound Jubilee line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
@@ -2206,7 +2208,7 @@
           </value>
         </item>
         <item>
-          <key>southbound Jubilee</key>
+          <key>southbound Jubilee line</key>
           <value type="dictionary">
             <item>
               <key>lines</key>

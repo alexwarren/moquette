@@ -112,7 +112,7 @@
                   directions = NewStringDictionary()
                   dictionary add (directions, line.code, ToString(direction))
                   dictionary add (platformdata, "directions", directions)
-                  dictionary add (station.platforms, GetPlatformName(line, direction), platformdata)
+                  dictionary add (station.platforms, GetPlatformName(station, line, direction), platformdata)
                 }
               }
             }
@@ -416,13 +416,10 @@
         platformname = DictionaryItem(platformdata, "name")
         if (platformname <> platform.platformname) {
           displayname = availableplatform
-          if (not StartsWith(displayname, "Northern")) {
-            displayname = displayname + " line"
-          }
           list add (availablelist, "{command:change " + availableplatform + ":" + displayname + "}")
         }
         else {
-          msg ("I am standing on the platform for the " + platformname + " line at " + GetDisplayAlias(platform.location) + ".")
+          msg ("I am standing on the platform for the " + platformname + " at " + GetDisplayAlias(platform.location) + ".")
         }
       }
       if (ListCount(availablelist) > 0) {
@@ -1076,7 +1073,7 @@
     }
     return (result)
   ]]></function>
-  <function name="GetPlatformName" parameters="line, direction" type="string">
+  <function name="GetPlatformName" parameters="station, line, direction" type="string">
     if (line = Circle) {
       // TO DO: Add "via"
       up = "clockwise"
@@ -1092,7 +1089,19 @@
     else {
       bound = up
     }
-    return (bound + " " + GetDisplayAlias(line))
+    Log (station.name + "," + line.name + "," + direction + "=" + line.name)
+    result = bound + " " + GetDisplayAlias(line) + " line"
+    if (StartsWith(line.code, "northern")) {
+      if (HasAttribute(station, "northern1") and HasAttribute(station, "northern2")) {
+        if (line.code = "northern1") {
+          result = result + " (Bank Branch)"
+        }
+        else {
+          result = result + " (Charing Cross Branch)"
+        }
+      }
+    }
+    return (result)
   </function>
   <function name="EndAct0" parameters="direction, location, line">
     train.direction = direction
