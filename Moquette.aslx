@@ -147,6 +147,8 @@
       <command>
         <pattern>skip</pattern>
         <script>
+          game.escapepoint = 1
+          game.escapepointname = "Stockwell"
           MoveObject (player, Act 0 Stockwell Escape)
         </script>
       </command>
