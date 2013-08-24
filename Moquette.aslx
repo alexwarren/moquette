@@ -1099,7 +1099,6 @@
     else {
       bound = up
     }
-    Log (station.name + "," + line.name + "," + direction + "=" + line.name)
     result = bound + " " + GetDisplayAlias(line) + " line"
     if (StartsWith(line.code, "northern")) {
       if (HasAttribute(station, "northern1") and HasAttribute(station, "northern2")) {
@@ -1195,9 +1194,11 @@
     foreach (obj, GetDirectChildren(train)) {
       if (obj <> player) {
         if (GetBoolean(obj, "interacted")) {
+          Log ("Interacted with " + obj.name)
           obj.parent = seenpeople
         }
         else {
+          Log ("Not interacted with " + obj.name)
           obj.parent = unseenpeople
         }
       }
@@ -1265,9 +1266,11 @@
     removedpassengers = RandomObjectListItems(passengers, removecount, "disallowboarding")
     foreach (obj, removedpassengers) {
       if (GetBoolean(obj, "interacted")) {
+        Log ("Interacted with " + obj.name)
         obj.parent = seenpeople
       }
       else {
+        Log ("Not interacted with " + obj.name)
         obj.parent = unseenpeople
       }
     }
