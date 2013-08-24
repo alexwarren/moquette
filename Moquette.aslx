@@ -1255,7 +1255,11 @@
         list add (passengers, obj)
       }
     }
-    removecount = GetRandomInt(0, ListCount(passengers))
+    averagechange = 0.3
+    if (DictionaryCount(train.location.platforms) > 2) {
+      averagechange = 2
+    }
+    removecount = GetRandomPoisson(averagechange)
     removedpassengers = RandomObjectListItems(passengers, removecount, "disallowboarding")
     foreach (obj, removedpassengers) {
       if (GetBoolean(obj, "interacted")) {
@@ -1265,12 +1269,12 @@
         obj.parent = unseenpeople
       }
     }
-    addcount = GetRandomInt(0, 2)
+    addcount = GetRandomPoisson(averagechange)
     if (ListCount(passengers) - removecount > 4) {
       addcount = 0
     }
     if (ListCount(passengers) - removecount + addcount <= 1) {
-      addcount = GetRandomInt(2, 3)
+      addcount = addcount + 1
     }
     addedpassengers = RandomObjectListItems(GetDirectChildren(unseenpeople), addcount, "disallowboarding")
     foreach (obj, addedpassengers) {
@@ -1533,6 +1537,18 @@
       msg ("Nobody here. Nothing to do but {command:wait2:Wait}.")
     }
     UpdateLinkCount
+  ]]></function>
+  <function name="GetRandomPoisson" type="int" parameters="expected"><![CDATA[
+    L = e ^ -expected
+    k = 0
+    p = 1
+    cont = true
+    while (cont) {
+      k = k + 1
+      p = p * GetRandomDouble()
+      cont = p > L
+    }
+    return (k - 1)
   ]]></function>
   <javascript src="moquette.js" />
 </asl>
