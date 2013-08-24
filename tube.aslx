@@ -1366,24 +1366,6 @@
             </item>
           </value>
         </item>
-        <item>
-          <key>eastbound Central line</key>
-          <value type="dictionary">
-            <item>
-              <key>lines</key>
-              <value type="objectlist">Central</value>
-            </item>
-            <item>
-              <key>directions</key>
-              <value type="stringdictionary">
-                <item>
-                  <key>central</key>
-                  <value>1</value>
-                </item>
-              </value>
-            </item>
-          </value>
-        </item>
       </platforms>
     </object>
     <object name="London Bridge">

@@ -79,7 +79,7 @@
 				<pattern>online</pattern>
 				<script>
 					list add (game.interactedpeoplehistory, "the woman who I have seen naked online")
-					msg ("Oh God, was she in... have I seen her... well, all of her. Do not catch her eye. Do not catch her eye. I must be bright red. Why is she on the tube anyway? I thought they did all that in America.")
+					msg ("Oh God, was she in... I have seen her... well, all of her. Do not catch her eye. Do not catch her eye. I must be bright red. Why is she on the tube anyway? I thought they did all that in America.")
 				</script>
 			</command>
 		</object>
