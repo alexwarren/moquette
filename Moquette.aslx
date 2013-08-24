@@ -237,7 +237,7 @@
     </object>
     <object name="Act 0 Clapham North to Stockwell">
       <inherit name="editor_room" />
-      <description><![CDATA[Sometimes the machine breaks. A spring snaps, and the clockwork mechanism seizes up. Sometimes the slaves rise up in a desparate bid for freedom. But we are not slaves, are we? Supposedly we have free will. I have free will. I don't need to be part of this.<br/><br/>We have arrived at Stockwell.<br/><br/>Normally I would {command:1:stay on the train}. But there is a sign pointing to the {command:2:Victoria line}. Dare I?]]></description>
+      <description><![CDATA[Sometimes the machine breaks. A spring snaps, and the clockwork mechanism seizes up. But we are not cogs, are we? Supposedly we have free will. I have free will. I don't need to be part of this.<br/><br/>We have arrived at Stockwell.<br/><br/>Normally I would {command:1:stay on the train}. But there is a sign pointing to the {command:2:Victoria line}. Dare I?]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -1185,7 +1185,7 @@
     }
     else {
       if (not train.justboarded) {
-        msg ("I could {command:unboard:get out here}. Or {command:wait1:wait}.")
+        msg ("I could {command:unboard:get off here}. Or {command:wait1:wait}.")
       }
     }
   </function>
