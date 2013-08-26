@@ -10,16 +10,20 @@
 		height: "100%",
 		overflow: "hidden",
 		"text-align": "center",
+		display: "none",
 	}).appendTo("body")
-	.html("<img style=\"max-width:100%;max-height:100%;\" src=\"" + url + "\"/>");
-	setTimeout(function() {
-		finishIntroScreen();
-	}, 3000);
+	.html("<img id=\"introScreenImg\" style=\"max-width:100%;max-height:100%;\" src=\"" + url + "\"/>");
+	$("#introScreenImg").load(function() {
+		$("#introScreen").fadeIn(4000);
+		setTimeout(function() {
+			finishIntroScreen();
+		}, 7500);
+	});
 }
 
 function finishIntroScreen() {
 	$("#gameBorder").show();
-	$("#introScreen").fadeOut(6000, function() {
+	$("#introScreen").fadeOut(7000, function() {
 		$("#introScreen").remove();
 	});
 }
