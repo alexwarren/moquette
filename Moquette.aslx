@@ -1013,6 +1013,9 @@
       <description><![CDATA[This station is Balham.<br/><br/>I step off the train and turn right, heading for the Way Out. It's entirely automatic. 11.54am. Almost time for lunch. Maybe I'll treat myself to a can of beer as well. Hair of the dog. Might shift this hangover at last.<br/><br/>I'll need to call the office. I don't know what to tell them. I'm not sure if I want to go back. I could just say I was really ill last night, and just woke up. I think I need a few more days to get my head together anyway. Food poisoning would be a perfect excuse.<br/><br/>Hey, look, it's been... interesting. I can't say it's not been fun. But I've been thinking on the way back about what Private Rod said. If that is his real name. I suppose it doesn't matter either way. Some of those things really got to me. And all of the events this morning... I just need some time. I need to spend some time on my own.<br/><br/>So I guess what I'm trying to say is, it's probably time for us to go our separate ways. I don't think it's healthy for me to listen to you any more. I don't think I really know who you are anyway. But it's clear to me that I don't actually need you now. You must have your own problems anyway, and I want to do my own thing. I don't want somebody watching over me the whole time. And I don't want somebody to tell me what to do. I want to figure it out for myself.<br/><br/>The trouble is I don't really know how to get rid of you. I have this feeling like you've been a constant presence, and there's nothing I can do to escape. There is something I need to do. Otherwise I will be stuck with you forever.<br/><br/>I can see the two lights of a train approaching in the blackness of the tunnel. To my left, the stairs.<br/><br/>So I need to ask you a favour. Can you please just let me do one thing? One thing without looking. Let me do one thing and promise you won't exert any control over my actions. Let me do this, and let me be free.<br/><br/>Thank you.]]></description>
     </object>
   </object>
+  <function name="InitUserInterface">
+    JS.introScreen (GetFileURL("intro.jpg"))
+  </function>
   <function name="HandleCommand" parameters="command, metadata"><![CDATA[
     handled = false
     game.waited = false
@@ -1568,7 +1571,7 @@
     }
     UpdateLinkCount
   ]]></function>
-  <function name="GetRandomPoisson" type="int" parameters="expected"><![CDATA[
+  <function name="GetRandomPoisson" parameters="expected" type="int"><![CDATA[
     L = e ^ -expected
     k = 0
     p = 1

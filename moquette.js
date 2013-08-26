@@ -1,4 +1,30 @@
-﻿function scrollFix() {
+﻿function introScreen(url) {
+	$("#gameBorder").hide();
+	$("<div/>", {
+		id: "introScreen"
+	}).css({
+		position: "fixed",
+		top: 0,
+		left: 0,
+		width: "100%",
+		height: "100%",
+		overflow: "hidden",
+		"text-align": "center",
+	}).appendTo("body")
+	.html("<img style=\"max-width:100%;max-height:100%;\" src=\"" + url + "\"/>");
+	setTimeout(function() {
+		finishIntroScreen();
+	}, 3000);
+}
+
+function finishIntroScreen() {
+	$("#gameBorder").show();
+	$("#introScreen").fadeOut(6000, function() {
+		$("#introScreen").remove();
+	});
+}
+
+function scrollFix() {
 	setTimeout(function() {
 		$("body").scrollTop(0);
 	}, 100);
