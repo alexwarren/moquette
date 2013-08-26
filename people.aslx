@@ -103,10 +103,10 @@
 			<desc2>They're still there, chatting away.</desc2>
 			<command>
 				<pattern>conversation</pattern>
-				<script>
+				<script><![CDATA[
 					list add (game.interactedpeoplehistory, "the two women who were having that inane conversation")
-					msg ("It's quite hard to hear above the rumble of the tube. What time did that finish... Did you know him from Nottingham... I didn't get back until 2... I don't think I'm missing out on much by not paying attention to this.")
-				</script>
+					msg ("It's quite hard to hear above the {if train.counter=0:din of the station}{if train.counter>0:rumble of the tube}. What time did that finish... Did you know him from Nottingham... I didn't get back until 2... I don't think I'm missing out on much by not paying attention to this.")
+				]]></script>
 			</command>
 		</object>
 		<object name="person11">
@@ -167,7 +167,7 @@
 			<title>a teenage girl</title>
 			<offtitle>the teenage girl</offtitle>
 			<desc>She is wearing huge bright green headphones on top of her long black hair. She gets her
-				phone out to check her reflection in the camera.</desc>
+				phone out to check her reflection in the camera. That's the second person I've seen doing that this morning. I remember when people used to use mirrors. Using your phone to see what you look like seems like a waste - such an enormous amount of technology for such a very small problem.</desc>
 			<desc2>She's still there with her massive headphones.</desc2>
 		</object>
 		<object name="person17">

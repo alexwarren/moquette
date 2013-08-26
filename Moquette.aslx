@@ -45,6 +45,10 @@
         <value type="string">Headache headache headache.</value>
       </item>
       <item>
+        <key>13</key>
+        <value type="string">Maybe I'm too hung over to handle the park today. Maybe I'll just stay down here. It feels safer - no phone signal, so nobody from work can reach me. I could stay down here all day.</value>
+      </item>
+      <item>
         <key>17</key>
         <value type="string">I'm sweating. This pain is like something tearing in the centre of my head.</value>
       </item>
@@ -61,6 +65,10 @@
         </value>
       </item>
       <item>
+        <key>32</key>
+        <value type="string">Why would a hangover make me think I was surrounded by people smoking? That is fucked up. I don't want to think about it. If I don't think about it, maybe I can forget it happened.</value>
+      </item>
+      <item>
         <key>37</key>
         <value type="script">
           game.triggeract2 = true
@@ -72,6 +80,10 @@
       </item>
       <item>
         <key>39</key>
+        <value type="string">My head feels really weirdly fuzzy now. But it feels like it's aching a bit less. Maybe the brief period of unconsciousness helped the hangover.</value>
+      </item>
+      <item>
+        <key>40</key>
         <value type="string">Did Heather just have somewhere important to be? A social media emergency?</value>
       </item>
       <item>
@@ -180,6 +192,9 @@
           list add (game.interactedpeoplehistory, "the woman who was invisible")
           list add (game.interactedpeoplehistory, "the boy who didn't appear")
           list add (game.interactedpeoplehistory, "the girl who you never saw")
+          list add (game.interactedpeoplehistory, "the person who would be recognisable")
+          list add (game.interactedpeoplehistory, "somebody you might have seen")
+          list add (game.interactedpeoplehistory, "that guy you remember")
           MoveObject (player, Act 4 Page 100)
         </script>
       </command>
@@ -267,7 +282,7 @@
     </object>
     <object name="Act 0 Oval to Kennington">
       <inherit name="editor_room" />
-      <description><![CDATA[One woman rushes on as the doors close, and we're off again.<br/><br/>We come to a stop in the tunnel. Nobody says anything. One minute later, on we go.<br/><br/>Here we are now at Kennington.<br/><br/>I could {command:1:stay on the train} again. Or I could {command:2:change to the Charing Cross branch}. I could do that. There is nothing stopping me.]]></description>
+      <description><![CDATA[One woman rushes on as the doors close, and we're off again.<br/><br/>We come to a stop in the tunnel. Nobody says anything. Why would they? There are no thoughts to communicate at this moment in time. We know trains stop, and then they start. Barely worth noticing, let alone commenting on. Like so much in life. One minute later, on we go.<br/><br/>Here we are now at Kennington.<br/><br/>I could {command:1:stay on the train} again. Or I could {command:2:change to the Charing Cross branch}. I could do that. There is nothing stopping me.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -717,7 +732,7 @@
     </object>
     <object name="Act 2 Page 700">
       <inherit name="editor_room" />
-      <description><![CDATA["Settling in. Behaving herself. Had to take her to the vet last week."<br/><br/>"Yeah?"<br/><br/>"She wasn't eating much. Doesn't seem to be anything wrong with her though."<br/><br/>OK, so it turns out I'm not in the slightest bit interested in the cat. How is this so different to before, when conversation flowed so freely? Like we had always known each other somehow, and had just been reunited. We were about to start something big, something life-changing. There was a connection there. So much excitement, so many possibilites. That fire still burns within me. Did she just move on? Is she just really... nice?<br/><br/>That's it, isn't it? Social Media job - completely worthless in the real world, but it's the kind of role they would give to someone who possessed no real skills other than being fucking lovely, just so they could get to hang around with her all the time.<br/><br/>No. No. Wait. No need for pointless anger. Maybe she's just nervous too.<br/><br/>{command:1:"Where are you off to then?"}]]></description>
+      <description><![CDATA["Settling in. Behaving herself. Had to take her to the vet last week."<br/><br/>"Yeah?"<br/><br/>"She wasn't eating much. Doesn't seem to be anything wrong with her though."<br/><br/>OK, so it turns out I'm not the slightest bit interested in the cat. How is this so different to before, when conversation flowed so freely? Like we had always known each other somehow, and had just been reunited. We were about to start something big, something life-changing. There was a connection there. So much excitement, so many possibilites. That fire still burns within me. Did she just move on? Is she just really... nice?<br/><br/>That's it, isn't it? Social Media job - completely worthless in the real world, but it's the kind of role they would give to someone who possessed no real skills other than being fucking lovely, just so they could get to hang around with her all the time.<br/><br/>No. No. Wait. No need for pointless anger. Maybe she's just nervous too.<br/><br/>{command:1:"Where are you off to then?"}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -785,6 +800,8 @@
           foreach (obj, GetDirectChildren(act3extrapeople)) {
             MoveObject (obj, unseenpeople)
           }
+          msg ("I get up slowly. I don't want to fall over and smash my face into the platform. I get on the train and hang tightly onto the bar above the door.")
+          msg ("")
           InitTrain
         </script>
       </command>
@@ -817,7 +834,7 @@
     </object>
     <object name="Act 2 Page 110">
       <inherit name="editor_room" />
-      <description><![CDATA[Heather. Heather. Heather. Butterflies. Don't throw up.<br/><br/>It's been four months. She's probably forgotten me. I should have called. At least sent her an email. Or added her on Facebook. I was too scared. I didn't have any contact details. Or even a surname. Should've asked Dave. But I didn't want to be too eager. I played it cool. I probably played it too cool. And now I'm starting from absolute zero.<br/><br/>Her hair is different. I liked it before. Now it's even better.<br/><br/>Her eyes. Captivating. They have swallowed me. I am powerless. I am unable to look anywhere else.<br/><br/>I must have already massively overstepped the unwritten rules about eye contact.<br/><br/>Can't back out now. Even if she doesn't remember me, she can't have failed to spot the man who has just been staring at her for too long already. How long has it been? It feels like forever. It can only have been a few seconds - the doors are still open.<br/><br/>Must say something.<br/><br/>Must be funny. Friendly. Charming. Not scary. Not creepy. Maybe I should apologise for staring. Don't want to apologise for staring - I want to look at her forever. Must think quickly. Must speak soon. Already left it a bit too long. Too much pressure. Must say something. Anything.<br/><br/>{command:1:"Hello"}]]></description>
+      <description><![CDATA[Heather. Heather. Heather. Butterflies. Don't throw up.<br/><br/>It's been four months. She's probably forgotten me. I should have called. At least sent her an email. Or added her on Facebook. I was too scared. Anyway, I didn't have any contact details. Or even a surname. Should've asked Dave. But I didn't want to be too eager. I played it cool. I probably played it too cool. And now I'm starting from absolute zero.<br/><br/>Her hair is different. I liked it before. Now it's even better.<br/><br/>Her eyes. Captivating. They have swallowed me. I am powerless. I am unable to look anywhere else.<br/><br/>I must have already massively overstepped the unwritten rules about eye contact.<br/><br/>Can't back out now. Even if she doesn't remember me, she can't have failed to spot the man who has just been staring at her for too long already. How long has it been? It feels like forever. It can only have been a few seconds - the doors are still open.<br/><br/>Must say something.<br/><br/>Must be funny. Friendly. Charming. Not scary. Not creepy. Maybe I should apologise for staring. Don't want to apologise for staring - I want to look at her forever. Must think quickly. Must speak soon. Already left it a bit too long. Too much pressure. Must say something. Anything.<br/><br/>{command:1:"Hello"}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -924,7 +941,7 @@
     </object>
     <object name="Act 4 Page 500">
       <inherit name="editor_room" />
-      <description><![CDATA[There is a big rack of hard disks connected to the monitors. On one of the screens I think I spot a quick flash of my face. Looking closer, things seem more familiar. There's a view inside a train carriage. I can see myself standing there. {game.randompeoplehistory}<br/><br/>On another monitor, I can see myself standing on a platform. I am waiting for the {game.randomplatformhistory}.<br/><br/>And what's that? On another monitor, a carriage full of people dressed in old-fashioned clothing {fix this}, and some of them are smoking. There's me, blinking, looking annoyed.<br/><br/>"Interesting, isn't it?" says the man.<br/><br/>Well, I suppose {command:1:you could say that}.]]></description>
+      <description><![CDATA[There is a big rack of hard disks connected to the monitors. On one of the screens I think I spot a quick flash of my face. Looking closer, things seem more familiar. There's a view inside a train carriage. I can see myself standing there. {game.randompeoplehistory}<br/><br/>On another monitor, I can see myself standing on a platform. I am waiting for the {game.randomplatformhistory}.<br/><br/>And what's that? On another monitor, a carriage full of people smoking. There's me, blinking, looking annoyed.<br/><br/>"Interesting, isn't it?" says the man.<br/><br/>Well, I suppose {command:1:you could say that}.]]></description>
       <enter type="script">
       </enter>
       <beforeenter type="script"><![CDATA[
@@ -932,13 +949,21 @@
           game.randomplatformhistory = StringListItem(game.platformhistory, GetRandomInt(0, ListCount(game.platformhistory) - 1))
         }
         game.randompeoplehistory = ""
+        game.randompeoplehistory2 = ""
         if (ListCount(game.interactedpeoplehistory) > 0) {
-          randomitems = RandomStringListItems(game.interactedpeoplehistory, 3)
+          randomitems = RandomStringListItems(game.interactedpeoplehistory, 5)
           game.randompeoplehistory = "I'm looking at " + StringListItem(randomitems, 0) + ". "
           if (ListCount(randomitems) > 1) {
             game.randompeoplehistory = game.randompeoplehistory + "Another monitor shows me looking at " + StringListItem(randomitems, 1) + ". "
             if (ListCount(randomitems) > 2) {
               game.randompeoplehistory = game.randompeoplehistory + "And there's a monitor that shows me sitting opposite " + StringListItem(randomitems, 2) + ". "
+            }
+            if (ListCount(randomitems) > 3) {
+              game.randompeoplehistory2 = "The monitors flash up some more images from this morning. There's " + StringListItem(randomitems, 3) + ". "
+              if (ListCount(randomitems) > 4) {
+                game.randompeoplehistory2 = game.randompeoplehistory2 + " And there's " + StringListItem(randomitems, 4) + ". "
+              }
+              game.randompeoplehistory2 = game.randompeoplehistory2 + "<br/><br/>"
             }
           }
         }
@@ -952,7 +977,7 @@
     </object>
     <object name="Act 4 Page 600">
       <inherit name="editor_room" />
-      <description><![CDATA["Come on, Zoran! You didn't need to stop and ask <i>them</i> that, did you? I suppose that's what I've been trying to show you."<br/><br/>He turns back to face the monitors, and presses keys on a keyboard.<br/><br/>"And you really don't need to keep telling them that stuff. It's none of their business."<br/><br/>The monitors flash up some more images from this morning. There's (some more images) and there's (more).<br/><br/>"You don't need them any more, Zoran. You're not the narrator of your own life. You're the participant. You can make decisions yourself now. {if game.escapepoint=5:You've shown me you can. It was your decision that you made at London Bridge this morning. I saw it. <i>They</i> didn't want you to take that decision. <i>They</i> were going to let you go straight to work. You stopped that, Zoran. That was you. You did it.}{if game.escapepoint<5:You've seen that you have choices. You don't need to follow the well trodden path, no matter how many times you have gone down it before. <i>They</i> showed you that this morning. <i>Their</i> guiding hand put you on a different path when you got to {game.escapepointname}. I saw it. And you saw what happened next. There's a whole world out there, Zoran. You've learned that now. And you don't need <i>them</i> any more to help you explore it.}"<br/><br/>And what about {command:1:Heather?}]]></description>
+      <description><![CDATA["Come on, Zoran! You didn't need to stop and ask <i>them</i> that, did you? I suppose that's what I've been trying to show you."<br/><br/>He turns back to face the monitors, and presses keys on a keyboard.<br/><br/>"And you really don't need to keep telling them that stuff. It's none of their business."<br/><br/>{game.randompeoplehistory2}"You don't need them any more, Zoran. You're not the narrator of your own life. You're the participant. You can make decisions yourself now. {if game.escapepoint=5:You've shown me you can. It was your decision that you made at London Bridge this morning. I saw it. <i>They</i> didn't want you to take that decision. <i>They</i> were going to let you go straight to work. You stopped that, Zoran. That was you. You did it.}{if game.escapepoint<5:You've seen that you have choices. You don't need to follow the well trodden path, no matter how many times you have gone down it before. <i>They</i> showed you that this morning. <i>Their</i> guiding hand put you on a different path when you got to {game.escapepointname}. I saw it. And you saw what happened next. There's a whole world out there, Zoran. You've learned that now. And you don't need <i>them</i> any more to help you explore it.}"<br/><br/>And what about {command:1:Heather?}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -985,7 +1010,7 @@
     <inherit name="editor_room" />
     <object name="Epilogue Page 100">
       <inherit name="editor_room" />
-      <description><![CDATA[This station is Balham.<br/><br/>I step off the train and turn right, heading for the Way Out. It's entirely automatic. 11.54am. Almost time for lunch. Maybe I'll treat myself to a can of beer as well. Hair of the dog. Might shift this headache at last.<br/><br/>I'll need to call the office. I don't know what to tell them. I'm not sure if I want to go back. I could just say I was really ill last night, and just woke up. I think I need a few more days to get my head together anyway. Food poisoning would be a perfect excuse.<br/><br/>Hey, look, it's been... interesting. I can't say it's not been fun. But I've been thinking on the way back about what Private Rod said. If that is his real name. I suppose it doesn't matter either way. Some of those things really got to me. And all of the events this morning... I just need some time. I need to spend some time on my own.<br/><br/>So I guess what I'm trying to say is, it's probably time for us to go our separate ways. I don't think it's healthy for me to listen to you any more. I don't think I really know who you are anyway. But it's clear to me that I don't actually need you now. You must have your own problems anyway, and I want to do my own thing. I don't want somebody watching over me the whole time. And I don't want somebody to tell me what to do. I want to figure it out for myself.<br/><br/>The trouble is I don't really know how to get rid of you. I have this feeling like you've been a constant presence, and there's nothing I can do to escape. There is something I need to do. Otherwise I will be stuck with you forever.<br/><br/>I can see the two lights of a train approaching in the blackness of the tunnel. To my left, the stairs.<br/><br/>So I need to ask you a favour. Can you please just let me do one thing? One thing without looking. Let me do one thing and promise you won't exert any control over my actions. Let me do this, and let me be free.<br/><br/>Thank you.]]></description>
+      <description><![CDATA[This station is Balham.<br/><br/>I step off the train and turn right, heading for the Way Out. It's entirely automatic. 11.54am. Almost time for lunch. Maybe I'll treat myself to a can of beer as well. Hair of the dog. Might shift this hangover at last.<br/><br/>I'll need to call the office. I don't know what to tell them. I'm not sure if I want to go back. I could just say I was really ill last night, and just woke up. I think I need a few more days to get my head together anyway. Food poisoning would be a perfect excuse.<br/><br/>Hey, look, it's been... interesting. I can't say it's not been fun. But I've been thinking on the way back about what Private Rod said. If that is his real name. I suppose it doesn't matter either way. Some of those things really got to me. And all of the events this morning... I just need some time. I need to spend some time on my own.<br/><br/>So I guess what I'm trying to say is, it's probably time for us to go our separate ways. I don't think it's healthy for me to listen to you any more. I don't think I really know who you are anyway. But it's clear to me that I don't actually need you now. You must have your own problems anyway, and I want to do my own thing. I don't want somebody watching over me the whole time. And I don't want somebody to tell me what to do. I want to figure it out for myself.<br/><br/>The trouble is I don't really know how to get rid of you. I have this feeling like you've been a constant presence, and there's nothing I can do to escape. There is something I need to do. Otherwise I will be stuck with you forever.<br/><br/>I can see the two lights of a train approaching in the blackness of the tunnel. To my left, the stairs.<br/><br/>So I need to ask you a favour. Can you please just let me do one thing? One thing without looking. Let me do one thing and promise you won't exert any control over my actions. Let me do this, and let me be free.<br/><br/>Thank you.]]></description>
     </object>
   </object>
   <function name="HandleCommand" parameters="command, metadata"><![CDATA[
