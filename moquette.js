@@ -28,6 +28,32 @@ function finishIntroScreen() {
 	});
 }
 
+function loadEndingScreen(url) {
+	$("<div/>", {
+		id: "endingScreen"
+	}).css({
+		position: "fixed",
+		top: 0,
+		left: 0,
+		width: "100%",
+		height: "100%",
+		overflow: "hidden",
+		"text-align": "center",
+		display: "none",
+	}).appendTo("body")
+	.html("<img style=\"max-width:100%;max-height:100%;\" src=\"" + url + "\"/>");
+}
+
+function showEndingScreen() {
+	$("#gameBorder").fadeOut(7000);
+	setTimeout(function() {
+		$("#endingScreen").fadeIn(10000);
+	}, 4000);
+	setTimeout(function() {
+		$("#endingScreen").fadeOut(60000);
+	}, 24000);
+}
+
 function scrollFix() {
 	setTimeout(function() {
 		$("body").scrollTop(0);
