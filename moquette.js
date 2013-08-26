@@ -60,6 +60,20 @@ function scrollFix() {
 	}, 100);
 }
 
+function act0Clear() {
+	$("#divOutput").effect("drop", {direction: "up"}, 1000);
+	setTimeout(function() {
+		EndOutputSection ("intro")
+		HideOutputSection ("intro")
+		HideOutputSection ("title")
+		ASLEvent("FinishAct0Clear", "");
+	}, 1500);
+}
+
+function reshowOutput() {
+	$("#divOutput").show();
+}
+
 function endAct0() {
 	$("#divOutput").effect("drop", 1000);
 	setTimeout(function() {

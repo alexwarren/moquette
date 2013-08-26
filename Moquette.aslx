@@ -208,14 +208,7 @@
       <command>
         <pattern>1</pattern>
         <script>
-          JS.EndOutputSection ("intro")
-          JS.HideOutputSection ("intro")
-          JS.HideOutputSection ("title")
-          SetTimeout (1) {
-            ClearScreen
-            JS.StartOutputSection ("act01")
-            MoveObject (player, Act 0 Balham to Clapham South)
-          }
+          JS.act0Clear ()
         </script>
       </command>
     </object>
@@ -1595,5 +1588,11 @@
     }
     return (k - 1)
   ]]></function>
+  <function name="FinishAct0Clear" parameters="dummy">
+    ClearScreen
+    JS.reshowOutput ()
+    JS.StartOutputSection ("act01")
+    MoveObject (player, Act 0 Balham to Clapham South)
+  </function>
   <javascript src="moquette.js" />
 </asl>
