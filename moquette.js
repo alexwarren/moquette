@@ -45,10 +45,10 @@ function loadEndingScreen(url) {
 }
 
 function showEndingScreen() {
-	$("#gameBorder").fadeOut(7000);
+	$("#gameBorder").fadeOut(10000);
 	setTimeout(function() {
 		$("#endingScreen").fadeIn(10000);
-	}, 4000);
+	}, 6000);
 	setTimeout(function() {
 		$("#endingScreen").fadeOut(60000);
 	}, 24000);
