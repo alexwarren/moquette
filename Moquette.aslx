@@ -983,11 +983,12 @@
       <description><![CDATA["I hope I have shown you that any connection you had there was only a fleeting moment. It was beautiful, Zoran, but it's gone now, and you can see that. You had an opportunity there, months ago, and you missed it. I want you to stop obsessing. I want you to seek new opportunities. If you seize them, act, make decisions yourself, stop just hoping that stuff will happen - then you will do well."<br/><br/>"Now," he says, pressing some more buttons as the monitors switch off one by one, "I think we are done here. Excuse me, but I am busy, and there are others who need my intervention."<br/><br/>He continues to type, and after all the monitors have switched off, they begin to flicker back on again, with a new set of images. I don't recognise anything that's shown on them now. Several of them show different images of what looks like the same person, but I don't know who it is. One monitor shows a still image of a train, blurred as it rushes into a tube platform, and I can just make out the word "Moquette" written over it.<br/><br/>I leave the dark cupboard. A {command:1:train} has just pulled in to the platform.]]></description>
       <enter type="script">
         JS.loadEndingScreen (GetFileURL("end.jpg"))
+        game.suppresshr = true
       </enter>
       <command>
         <pattern>1</pattern>
         <script>
-          MoveObject (player, Epilogue Page 100)
+          JS.act4Clear ()
         </script>
       </command>
     </object>
@@ -1593,6 +1594,11 @@
     JS.reshowOutput ()
     JS.StartOutputSection ("act01")
     MoveObject (player, Act 0 Balham to Clapham South)
+  </function>
+  <function name="JSFinish_Act4Clear" parameters="dummy">
+    ClearScreen
+    MoveObject (player, Epilogue Page 100)
+    JS.showEpilogue ()
   </function>
   <javascript src="moquette.js" />
 </asl>

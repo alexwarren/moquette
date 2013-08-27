@@ -260,3 +260,26 @@ function animateHeatherTube(duration) {
 		});
 	}
 }
+
+function act4Clear() {
+	$("#divOutput").css({
+		position: "relative"
+	});
+	$("body").css("overflow-x", "hidden");
+	$("#divOutput").animate({
+		left: "-1200px"
+	}, 2000, "swing", function() {
+		ASLEvent("JSFinish_Act4Clear", "");
+	});
+}
+
+function showEpilogue() {
+	$("#divOutput").css({
+		left: "1200px"
+	});
+	$("#divOutput").animate({
+		left: "0px"
+	}, 2000, "swing", function() {
+		$("body").css("overflow-x", "inherit");
+	});
+}
