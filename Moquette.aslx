@@ -69,6 +69,10 @@
         <value type="string">Why would a hangover make me think I was surrounded by people smoking? That is fucked up. I don't want to think about it. If I don't think about it, maybe I can forget it happened.</value>
       </item>
       <item>
+        <key>33</key>
+        <value type="string">That must have been normal, once, sparking up on the tube. Puffing away out of habit. An unremarkable default setting. Yet fatal. The cool kids at school all smoked. Popular people lulling others into their deadly trap. All in the name of fitting in. Easier to copy than to think for yourself. I wonder if we're really any more grown up now? None of us in this carriage are smoking, but what other long term traps have we blundered into without thinking?</value>
+      </item>
+      <item>
         <key>37</key>
         <value type="script">
           game.triggeract2 = true
@@ -1601,4 +1605,5 @@
     JS.showEpilogue ()
   </function>
   <javascript src="moquette.js" />
+  <javascript src="jquery.animate-enhanced.min.js" />
 </asl>
