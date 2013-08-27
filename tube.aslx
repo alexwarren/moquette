@@ -624,21 +624,17 @@
           </value>
         </item>
         <item>
-          <key>eastbound Hammersmith &amp; City/Circle lines</key>
+          <key>eastbound Hammersmith &amp; City</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
-              <value type="objectlist">Hammersmith City; Circle</value>
+              <value type="objectlist">Hammersmith City</value>
             </item>
             <item>
               <key>directions</key>
               <value type="stringdictionary">
                 <item>
                   <key>hc</key>
-                  <value>1</value>
-                </item>
-                <item>
-                  <key>circle</key>
                   <value>1</value>
                 </item>
               </value>

@@ -1209,7 +1209,7 @@
       if (train.location = Stockwell and train.line.code = "northern1") {
         lineend = "I'm not going home just yet. {command:unboard:Time to change trains}."
       }
-      else if ((train.location = Aldgate and train.line.code = "metropolitan") or (train.location = Brixton and train.line.code = "victoria") or (train.location = Edgware Road and train.line.code = "circle")) {
+      else if ((train.location = Aldgate and train.line.code = "metropolitan") or (train.location = Brixton and train.line.code = "victoria") or (train.location = Edgware Road and (train.line.code = "circle" or train.line.code = "district1"))) {
         lineend = "This is the end of the line. {command:unboard:All change}."
       }
       else if (train.location = Elephant Castle and train.line.code = "bakerloo") {
