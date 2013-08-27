@@ -266,10 +266,49 @@ function act4Clear() {
 		position: "relative"
 	});
 	$("body").css("overflow-x", "hidden");
+	$("<div/>", {
+		id: "act4Fade"
+	}).css({
+		position: "fixed",
+		top: 0,
+		left: 0,
+		width: "100%",
+		height: "100%",
+		background: "white",
+		display: "none"
+	}).appendTo("body");
 	$("#divOutput").animate({
-		left: "-1200px"
+		left: -($(window).width()/2 + $("#divOutput").width()/2)
 	}, 2000, "swing", function() {
-		ASLEvent("JSFinish_Act4Clear", "");
+		animateAct4Clear(3000, 0);
+	});
+}
+
+function animateAct4Clear(duration, count) {
+	$("#divOutput").css({
+		left: ($(window).width()/2 + $("#divOutput").width()/2)
+	});
+	$("#divOutput").animate({
+		left: -($(window).width()/2 + $("#divOutput").width()/2)
+	}, duration, "linear", function() {
+		if (count == 0) {
+			duration = duration / 1.2;
+			if (duration < 500) {
+				count = 1;
+				$("#act4Fade").fadeIn(10000, function() {
+				});
+			}
+			animateAct4Clear(duration, count);
+		}
+		else {
+			count++;
+			if (count > 20) {
+				ASLEvent("JSFinish_Act4Clear", "");
+			}
+			else {
+				animateAct4Clear(duration, count);
+			}
+		}
 	});
 }
 
@@ -277,6 +316,7 @@ function showEpilogue() {
 	$("#divOutput").css({
 		left: "1200px"
 	});
+	$("#act4Fade").remove();
 	$("#divOutput").animate({
 		left: "0px"
 	}, 2000, "swing", function() {
