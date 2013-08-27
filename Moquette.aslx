@@ -864,11 +864,31 @@
     </object>
     <object name="Act 3 Vision 1 Page 300">
       <inherit name="editor_room" />
-      <description><![CDATA[It is clay. Filling my mouth, my nose and throat. I am suspended in cold clay.<br/><br/>I can't move.<br/><br/>I can't breathe.<br/><br/>I think I would enjoy the quiet, if I wasn't asphyxiating.<br/><br/>I may be blacking out, but it's hard to tell.<br/><br/>Now there is {command:1:light}.]]></description>
+      <description><![CDATA[It is clay. Filling my mouth, my nose and throat. I am suspended in cold clay.<br/><br/>I can't move.<br/><br/>But I don't mind.<br/><br/>I can't breathe. But I don't mind that either.<br/><br/>I feel very peaceful here. A sense of {command:1:belonging}.]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 3 Vision 1 Page 400)
+        </script>
+      </command>
+    </object>
+    <object name="Act 3 Vision 1 Page 400">
+      <inherit name="editor_room" />
+      <description><![CDATA[My arms are clay. My legs are clay.<br/><br/>I feel, for the first time in my life, that I fit in. I am part of one homogenous mass, and I have no urge to fight. I could stay here forever, cold and unchanging, unnoticed by anybody, underneath London, supporting London, built on clay, with bricks of clay.<br/><br/>Soon my head will be clay.<br/><br/>A small {command:1:vibration}.]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Act 3 Vision 1 Page 500)
+        </script>
+      </command>
+    </object>
+    <object name="Act 3 Vision 1 Page 500">
+      <inherit name="editor_room" />
+      <description><![CDATA[Vibrations disturb the peace. A thudding murmur is being carried through the wet clay.<br/><br/>The vibrations increase. Noise, churning, scraping, slicing. {command:1:Something is coming}.]]></description>
       <command>
         <pattern>1</pattern>
         <script><![CDATA[
-          msg ("The light grows larger. I can taste the air again.<br/><br/>I become aware of the inside of a tube carriage again.<br/><br/>I thought I saw another bowler hat out of the corner of my eye. But there was nobody there.")
+          msg ("I am aware once more of light and air. A physical body and a sense of isolation. No more peace.<br/><br/>I am inside the tube carriage again.<br/><br/>Things are coming into focus. I thought I saw another bowler hat out of the corner of my eye. But there was nobody there.")
           MoveObject (player, train)
           FinishVision
         ]]></script>
