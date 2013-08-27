@@ -101,6 +101,14 @@
         </value>
       </item>
       <item>
+        <key>57</key>
+        <value type="string">Just a dream. It must just have been a dream. A vivid, clay-filled dream.</value>
+      </item>
+      <item>
+        <key>58</key>
+        <value type="string"><![CDATA[I don't want to be clay. Is that unusual? Nobody says they want to be clay. But we all want to feel like we belong. To fit in easily, not to stand out. Not to fight. To give in. So simple, so comfortable.<br/><br/> And suffocating.]]></value>
+      </item>
+      <item>
         <key>70</key>
         <value type="script">
           game.triggeract4 = true
