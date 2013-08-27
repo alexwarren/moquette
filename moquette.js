@@ -245,7 +245,7 @@ function animateHeatherTube(duration) {
 			left: "0px"
 		}, duration, "swing", function () {
 			$("body").css("overflow-x", "inherit");
-			$("#heathertube").fadeOut(1000, function() {
+			$("#heathertube").fadeOut(3000, function() {
 				ASLEvent("JSFinish_HeatherTube", "");
 			});
 		});

@@ -193,6 +193,15 @@
         <pattern>skip4</pattern>
         <script>
           ClearScreen
+          for (i, 1, 100) {
+            msg ("Some text")
+          }
+          msg ("{command:skip4a:Act 4}")
+        </script>
+      </command>
+      <command>
+        <pattern>skip4a</pattern>
+        <script>
           train.line = Bakerloo
           train.direction = -1
           train.location = Piccadilly Circus
@@ -1537,10 +1546,10 @@
         }
         train.counter = train.counter + 1
         if (train.counter = train.nextstopcount) {
+          if (not game.waited) {
+            msg ("")
+          }
           if (not game.triggeract4) {
-            if (not game.waited) {
-              msg ("")
-            }
             MoveTrainToNextStation
           }
           else {
