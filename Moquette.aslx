@@ -154,7 +154,7 @@
     <inherit name="editor_room" />
     <object name="Act 0 Balham">
       <inherit name="editor_room" />
-      <description><![CDATA[{command:skip:(Skip to Act 1)}<br/>{command:skip2:(Skip to Act 2)}<br/>{command:skip4:(Skip to Act 4)}<br/><br/>Tuesday morning, 08:03. Waiting for the Northern line at Balham. 3 minutes to fill.<br/><br/>"Muesli. A delicious way to make sure today isn't one of those days". Right. Who knew a horrible breakfast cereal could have so much power? Maybe it just sets your expectations suitably low for the rest of the day. If you start off with disappointment, things can only go up from there.<br/><br/>"Become who you want to be. Get a place at Birkbeck". Good idea. Shame I don't know who I want to be.<br/><br/>"Meet someone amazing". Sounds lovely. You have to meet a lot of strange people first, by the sounds of it. One day I'll have to sign up though. Can't carry on like this forever.<br/><br/>"Feeling unwell? Seek help at the next station. It's quicker to ask staff for help at a station than pull the passenger alarm between stops". Thanks, London Underground. Can your staff help me with this hangover?<br/><br/>The platform is filling up. 1 minute. On my left, behind the yellow line, a guy in a dreadlocks reads today's Metro - some tediousness about a report into child obesity. On my right, a woman checks her makeup in the camera of her phone. To her right, a guy in a bowler hat. What is this, the 1960s? Hipster twat. Shit, eye contact! I flick my head forward. Feels like he's still looking.<br/><br/>At last. "{command:1:The train now arriving is for all stations to Edgware via Bank}".]]></description>
+      <description><![CDATA[<!--<br/>{command:skip:(Skip to Act 1)}<br/>{command:skip2:(Skip to Act 2)}<br/>{command:skip4:(Skip to Act 4)}<br/>--><br/>Tuesday morning, 08:03. Waiting for the Northern line at Balham. 3 minutes to fill.<br/><br/>"Muesli. A delicious way to make sure today isn't one of those days". Right. Who knew a horrible breakfast cereal could have so much power? Maybe it just sets your expectations suitably low for the rest of the day. If you start off with disappointment, things can only go up from there.<br/><br/>"Become who you want to be. Get a place at Birkbeck". Good idea. Shame I don't know who I want to be.<br/><br/>"Meet someone amazing". Sounds lovely. You have to meet a lot of strange people first, by the sounds of it. One day I'll have to sign up though. Can't carry on like this forever.<br/><br/>"Feeling unwell? Seek help at the next station. It's quicker to ask staff for help at a station than pull the passenger alarm between stops". Thanks, London Underground. Can your staff help me with this hangover?<br/><br/>The platform is filling up. 1 minute. On my left, behind the yellow line, a guy in a dreadlocks reads today's Metro - some tediousness about a report into child obesity. On my right, a woman checks her makeup in the camera of her phone. To her right, a guy in a bowler hat. What is this, the 1960s? Hipster twat. Shit, eye contact! I flick my head forward. Feels like he's still looking.<br/><br/>At last. "{command:1:The train now arriving is for all stations to Edgware via Bank}".]]></description>
       <beforeenter type="script">
         JS.StartOutputSection ("intro")
       </beforeenter>
@@ -1336,7 +1336,7 @@
       }
     }
     averagechange = 0.3
-    if (DictionaryCount(train.location.platforms) > 2) {
+    if (DictionaryCount(train.location.platforms) > 2 or GetBoolean(train.location, "busy")) {
       averagechange = 2
     }
     removecount = GetRandomPoisson(averagechange)
@@ -1352,6 +1352,10 @@
       }
     }
     addcount = GetRandomPoisson(averagechange)
+    if (addcount > 4) {
+      addcount = 4
+      removecount = removecount + 1
+    }
     if (ListCount(passengers) - removecount > 4) {
       addcount = 0
     }

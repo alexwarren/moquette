@@ -255,21 +255,17 @@
           </value>
         </item>
         <item>
-          <key>westbound Hammersmith &amp; City/Circle lines</key>
+          <key>westbound Hammersmith &amp; City</key>
           <value type="dictionary">
             <item>
               <key>lines</key>
-              <value type="objectlist">Hammersmith City; Circle</value>
+              <value type="objectlist">Hammersmith City</value>
             </item>
             <item>
               <key>directions</key>
               <value type="stringdictionary">
                 <item>
                   <key>hc</key>
-                  <value>-1</value>
-                </item>
-                <item>
-                  <key>circle</key>
                   <value>-1</value>
                 </item>
               </value>
@@ -921,6 +917,7 @@
           </value>
         </item>
       </platforms>
+      <busy/>
     </object>
     <object name="Gloucester Road">
       <circle type="int">123</circle>
@@ -1425,6 +1422,7 @@
     <object name="Marylebone">
       <bakerloo type="int">102</bakerloo>
       <fact>When it opened, this station was called Great Central. Bit of a grand name considering it's only a small mainline station above.</fact>
+      <busy/>
     </object>
     <object name="Monument">
       <circle type="int">112</circle>
