@@ -1248,6 +1248,7 @@
     }
     next = GetNextStation(train.location, train.direction, train.line.code)
     if (next = null) {
+      JS.disableAllCommandLinks ()
       lineend = "{random:I don't want to go any further this way.:If I stay on this I'm going to end up in the middle of nowhere.:There's no need for me to travel to the darkest reaches of the outer zones.} {command:unboard:Time for me to get off this train}."
       if (train.location = Stockwell and train.line.code = "northern1") {
         lineend = "I'm not going home just yet. {command:unboard:Time to change trains}."
