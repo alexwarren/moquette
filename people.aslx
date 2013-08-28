@@ -271,19 +271,39 @@
 				</script>
 			</command>
 		</object>
+		<object name="person29">
+			<title>a trendy guy</title>
+			<offtitle>the trendy guy</offtitle>
+			<desc>He ticks so many hipster boxes at once. A beard and a flat cap, over which he's wearing huge headphones. Knowingly ironic unfashionable glasses too. I bet they don't even have a prescription. Shorts. Trainers with massive tongues, sticking half way up his shins. Unconventional, yet still a uniform to identify him as a certain type of person, a member of a particular {command:group:group}.</desc>
+			<desc2>Look at him sat there with his trendy smug beardy face.</desc2>
+			<command>
+				<pattern>group</pattern>
+				<script>
+					list add (game.interactedpeoplehistory, "the hipster with the flat cap and glasses")
+					msg ("A group of people who express their identities by trying to look like 1960s Yorkshiremen. Weekdays working down t' mill, weekends working the decks at an eclectic bar in Hoxton? Is that what we're supposed to think? Maybe this guy doesn't know what day of the week it is, so he's hedging his bets.")
+				</script>
+			</command>
+		</object>
+		<object name="person30">
+			<title>a woman with a baby</title>
+			<disallowboarding/>
+			<desc>The woman is sat in a priority seat with the baby on her lap. The baby is {command:baby:looking at me}.</desc>
+			<desc2>The baby is looking elsewhere now.</desc2>
+			<command>
+				<pattern>baby</pattern>
+				<script>
+					list add (game.interactedpeoplehistory, "the woman with the suspicious baby")
+					msg ("The baby is staring at me as if he knows something terrible. As if he's accusing me of something. But I haven't done anything. Well, I'm skipping work. But how does the baby know that? He looks like he would tell everybody everything, if only he had the power of language. That's where I win, mate. All you can do is {command:stare:keep staring}.")
+				</script>
+			</command>
+			<command>
+				<pattern>stare</pattern>
+				<script>
+					msg ("OK, I'd prefer it if he stopped staring to be honest. That's the trouble with babies. No concept of social norms. They don't know that you shouldn't keep staring at people.")
+				</script>
+			</command>
+		</object>
 		<!-- 
-
-		Tall and slim and stripy
-
-		Fat child crisps
-
-		A guy with tall tightly cropped hair, like the 80s, like grace jones
-
-		+ need about 2/3 more women
-
-		Hipster, flat cap. Bet those glasses don't even have a prescription. Glasses deliberately large and unfashionable. Maybe he's trying to parody his own father? Daddy issues. Massive tongues on trainers sticking half way up his shins. A triumph of irony over practicality. Beard. Big headphones.
-
-		Baby eyes me suspiciously. As if to say shouldn't you be going to work?
 
 		Woman reminds me of old teacher, but she'd be 10 years older now.
 
