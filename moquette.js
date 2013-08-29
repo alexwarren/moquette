@@ -56,7 +56,7 @@ function showEndingScreen() {
 
 function scrollFix() {
 	setTimeout(function() {
-		$("body").scrollTop(0);
+		$("html,body").scrollTop(0);
 	}, 100);
 }
 
