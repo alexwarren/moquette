@@ -565,18 +565,7 @@
           EndTextSection
           game.waitingfortimer = true
           SetTimeout (1) {
-            game.waitingfortimer = false
-            ClearScreen
-            StartTextSection
-            platform = GetPlatform(train.location, train.line, train.direction)
-            if (platform = null) {
-              // we're at the end of the line
-              ShowEndOfLineChanges
-            }
-            else {
-              MoveToPlatform (train.location, platform, false)
-            }
-            RunTurnScript
+            JS.doScreenClear ()
           }
         }
         else {
@@ -1646,6 +1635,20 @@
     ClearScreen
     MoveObject (player, Epilogue Page 100)
     JS.showEpilogue ()
+  </function>
+  <function name="JSFinish_Clear" parameters="dummy">
+    game.waitingfortimer = false
+    ClearScreen
+    StartTextSection
+    platform = GetPlatform(train.location, train.line, train.direction)
+    if (platform = null) {
+      // we're at the end of the line
+      ShowEndOfLineChanges
+    }
+    else {
+      MoveToPlatform (train.location, platform, false)
+    }
+    RunTurnScript
   </function>
   <javascript src="moquette.js" />
   <javascript src="jquery.animate-enhanced.min.js" />

@@ -323,3 +323,9 @@ function showEpilogue() {
 		$("body").css("overflow-x", "inherit");
 	});
 }
+
+function doScreenClear() {
+	setTimeout(function() {
+		ASLEvent("JSFinish_Clear", "");
+	}, 1000);
+}
