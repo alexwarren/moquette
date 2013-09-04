@@ -20,7 +20,7 @@
     <custompaddingtop type="int">60</custompaddingtop>
     <custompaddingbottom type="int">60</custompaddingbottom>
     <author>Alex Warren</author>
-    <subtitle>(PRIVATE BETA - please do not share this link yet!)</subtitle>
+    <subtitle>(PRIVATE BETA &amp;mdash; please do not share this link yet!)</subtitle>
     <showtitle />
     <command_newline />
     <textsection type="int">0</textsection>
@@ -46,7 +46,7 @@
       </item>
       <item>
         <key>13</key>
-        <value type="string">Maybe I'm too hung over to handle the park today. Maybe I'll just stay down here. It feels safer - no phone signal, so nobody from work can reach me. I could stay down here all day.</value>
+        <value type="string">Maybe I'm too hung over to handle the park today. Maybe I'll just stay down here. It feels safer &amp;mdash; no phone signal, so nobody from work can reach me. I could stay down here all day.</value>
       </item>
       <item>
         <key>17</key>
@@ -154,7 +154,7 @@
     <inherit name="editor_room" />
     <object name="Act 0 Balham">
       <inherit name="editor_room" />
-      <description><![CDATA[<!--<br/>{command:skip:(Skip to Act 1)}<br/>{command:skip2:(Skip to Act 2)}<br/>{command:skip4:(Skip to Act 4)}<br/>--><br/>Tuesday morning, 08:03. Waiting for the Northern line at Balham. 3 minutes to fill.<br/><br/>"Muesli. A delicious way to make sure today isn't one of those days". Right. Who knew a horrible breakfast cereal could have so much power? Maybe it just sets your expectations suitably low for the rest of the day. If you start off with disappointment, things can only go up from there.<br/><br/>"Become who you want to be. Get a place at Birkbeck". Good idea. Shame I don't know who I want to be.<br/><br/>"Meet someone amazing". Sounds lovely. You have to meet a lot of strange people first, by the sounds of it. One day I'll have to sign up though. Can't carry on like this forever.<br/><br/>"Feeling unwell? Seek help at the next station. It's quicker to ask staff for help at a station than pull the passenger alarm between stops". Thanks, London Underground. Can your staff help me with this hangover?<br/><br/>The platform is filling up. 1 minute. On my left, behind the yellow line, a guy in a dreadlocks reads today's Metro - some tediousness about a report into child obesity. On my right, a woman checks her makeup in the camera of her phone. To her right, a guy in a bowler hat. What is this, the 1960s? Hipster twat. Shit, eye contact! I flick my head forward. Feels like he's still looking.<br/><br/>At last. "{command:1:The train now arriving is for all stations to Edgware via Bank}".]]></description>
+      <description><![CDATA[<!--<br/>{command:skip:(Skip to Act 1)}<br/>{command:skip2:(Skip to Act 2)}<br/>{command:skip4:(Skip to Act 4)}<br/>--><br/>Tuesday morning, 08:03. Waiting for the Northern line at Balham. 3 minutes to fill.<br/><br/>"Muesli. A delicious way to make sure today isn't one of those days". Right. Who knew a horrible breakfast cereal could have so much power? Maybe it just sets your expectations suitably low for the rest of the day. If you start off with disappointment, things can only go up from there.<br/><br/>"Become who you want to be. Get a place at Birkbeck". Good idea. Shame I don't know who I want to be.<br/><br/>"Meet someone amazing". Sounds lovely. You have to meet a lot of strange people first, by the sound of it. One day I'll have to sign up though. Can't carry on like this forever.<br/><br/>"Feeling unwell? Seek help at the next station. It's quicker to ask staff for help at a station than pull the passenger alarm between stops". Thanks, London Underground. Can your staff help me with this hangover?<br/><br/>The platform is filling up. 1 minute. On my left, behind the yellow line, a guy in dreadlocks reads today's Metro &mdash; some tediousness about a report into child obesity. On my right, a woman checks her makeup in the camera of her phone. To her right, a guy in a bowler hat. What is this, the 1960s? Hipster twat. Shit, eye contact! I flick my head forward. Feels like he's still looking.<br/><br/>At last. "{command:1:The train now arriving is for all stations to Edgware via Bank}".]]></description>
       <beforeenter type="script">
         JS.StartOutputSection ("intro")
       </beforeenter>
@@ -286,7 +286,7 @@
     </object>
     <object name="Act 0 Stockwell to Oval">
       <inherit name="editor_room" />
-      <description><![CDATA[Fair enough. Better be sensible. I don't want to get fired.<br/><br/>About 15 people get off the train. All the people standing between the seats took the free ones though, so there's still nowhere to sit. I'll carry on hanging here. At least it's not so packed, and I can breathe now.<br/><br/>This station is Oval. The doors open.<br/><br/>Well, even if I wanted to escape and do something different today, there's nowhere I can go - other than turn around and go south again. May as well stay on. The next station is Kennington - I could change there for the other branch of the Northern line.<br/><br/>All I can do is {command:1:wait}.]]></description>
+      <description><![CDATA[Fair enough. Better be sensible. I don't want to get fired.<br/><br/>About 15 people get off the train. All the people standing between the seats took the free ones though, so there's still nowhere to sit. I'll carry on hanging here. At least it's not so packed, and I can breathe now.<br/><br/>This station is Oval. The doors open.<br/><br/>Well, even if I wanted to escape and do something different today, there's nowhere I can go &mdash; other than turn around and go south again. May as well stay on. The next station is Kennington &mdash; I could change there for the other branch of the Northern line.<br/><br/>All I can do is {command:1:wait}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -342,7 +342,7 @@
     </object>
     <object name="Act 0 Borough to London Bridge">
       <inherit name="editor_room" />
-      <description><![CDATA[Nobody gets on at Borough. The doors close, then open, then close again.<br/><br/>Onwards we go, and nobody is looking very happy. Maybe some people describe the inside of the tube as being like a cattle truck, not because of the crowded conditions but because we're piled in anonymously and simply awaiting the fate of whatever the day brings. I'm starting to feel the cows have an easier time of it - at least they get a quick bolt through their head at the other end.<br/><br/>We are at London Bridge.<br/><br/>I could {command:1:change to the Jubilee line}.<br/><br/>I could do that. I should totally do that.<br/><br/>It's either that or {command:2:stay here}. With Daisy and Buttercup.]]></description>
+      <description><![CDATA[Nobody gets on at Borough. The doors close, then open, then close again.<br/><br/>Onwards we go, and nobody is looking very happy. Maybe some people describe the inside of the tube as being like a cattle truck, not because of the crowded conditions but because we're piled in anonymously and simply awaiting the fate of whatever the day brings. I'm starting to feel the cows have an easier time of it &mdash; at least they get a quick bolt through their head at the other end.<br/><br/>We are at London Bridge.<br/><br/>I could {command:1:change to the Jubilee line}.<br/><br/>I could do that. I should totally do that.<br/><br/>It's either that or {command:2:stay here}. With Daisy and Buttercup.]]></description>
       <enter type="script">
       </enter>
       <command>
@@ -363,7 +363,7 @@
     </object>
     <object name="Act 0 Stockwell Escape">
       <inherit name="editor_room" />
-      <description><![CDATA[I follow the sign to the Victoria line. Down one small corridor, and there it is - a very quick interchange.<br/><br/>Well, that was easy.<br/><br/>A train pulls in and I can {command:1:get on}.]]></description>
+      <description><![CDATA[I follow the sign to the Victoria line. Down one small corridor, and there it is &mdash; a very quick interchange.<br/><br/>Well, that was easy.<br/><br/>A train pulls in and I can {command:1:get on}.]]></description>
       <enter type="script">
         game.suppresshr = true
       </enter>
@@ -402,7 +402,7 @@
     </object>
     <object name="Act 0 London Bridge Escape">
       <inherit name="editor_room" />
-      <description><![CDATA[I follow the signs to the Jubilee line. It's not a very quick interchange - down some corridors and up and down some steps. But it doesn't take a huge amount of effort, and here I am on the platform, going somewhere else.<br/><br/>That was pretty easy really.<br/><br/>A train pulls in and I can {command:1:get on}.]]></description>
+      <description><![CDATA[I follow the signs to the Jubilee line. It's not a very quick interchange &mdash; down some corridors and up and down some steps. But it doesn't take a huge amount of effort, and here I am on the platform, going somewhere else.<br/><br/>That was pretty easy really.<br/><br/>A train pulls in and I can {command:1:get on}.]]></description>
       <enter type="script">
         game.suppresshr = true
       </enter>
@@ -415,7 +415,7 @@
     </object>
     <object name="Act 0 London Bridge 1">
       <inherit name="editor_room" />
-      <description><![CDATA[Is that it? Just stand here? Don't complain, know my place? Don't choose life - choose not to choose?<br/><br/>Why do you want me to do that? Who says you're in charge?<br/><br/>Beep-Beep-Beep-Beep-Beep-Beep-Beep-Beep-{command:1:Beep}]]></description>
+      <description><![CDATA[Is that it? Just stand here? Don't complain, know my place? Don't choose life &mdash; choose not to choose?<br/><br/>Why do you want me to do that? Who says you're in charge?<br/><br/>Beep-Beep-Beep-Beep-Beep-Beep-Beep-Beep-{command:1:Beep}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -636,7 +636,7 @@
     <inherit name="editor_room" />
     <object name="Act 1 Vision 1">
       <inherit name="editor_room" />
-      <description><![CDATA[I can't see properly. My head is pounding. Thump, thump, thump.<br/><br/>I think I can smell cigarette smoke.<br/><br/>My fellow passengers have become murky. I can barely see them - just blurry, shadowy outlines.<br/><br/>The sound of tinny headphones has disappeared.<br/><br/>A silhouette with a hat walks past me.<br/><br/>Breathe, relax. It will pass.<br/><br/>I close my eyes.<br/><br/>I slowly {command:1:open them again}.]]></description>
+      <description><![CDATA[I can't see properly. My head is pounding. Thump, thump, thump.<br/><br/>I think I can smell cigarette smoke.<br/><br/>My fellow passengers have become murky. I can barely see them &mdash; just blurry, shadowy outlines.<br/><br/>The sound of tinny headphones has disappeared.<br/><br/>A silhouette with a hat walks past me.<br/><br/>Breathe, relax. It will pass.<br/><br/>I close my eyes.<br/><br/>I slowly {command:1:open them again}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -652,7 +652,7 @@
       <command>
         <pattern>1</pattern>
         <script><![CDATA[
-          msg ("Slowly I regain focus. There he is, on my left, puffing away. Who the fuck does he think he is?<br/><br/>But wait, smoke coming from my right too. Somebody else, facing the other way - another guy wearing a fucking bowler hat. When did this become a thing?<br/><br/>And nobody seems bothered in the slightest. Well, I'm certainly not going to be the one to say anything.<br/><br/>Just {command:2:look away}.")
+          msg ("Slowly I regain focus. There he is, on my left, puffing away. Who the fuck does he think he is?<br/><br/>But wait, smoke coming from my right too. Somebody else, facing the other way &mdash; another guy wearing a fucking bowler hat. When did this become a thing?<br/><br/>And nobody seems bothered in the slightest. Well, I'm certainly not going to be the one to say anything.<br/><br/>Just {command:2:look away}.")
         ]]></script>
       </command>
       <command>
@@ -685,7 +685,7 @@
     </object>
     <object name="Act 2 Page 200">
       <inherit name="editor_room" />
-      <description><![CDATA[Well, that word squeaked out like a rat's fart. I've fucked it up already.<br/><br/>But then a smile bursts across her face, and her eyes sparkle, as if she has suddenly been reactivated.<br/><br/>"Hi!..."<br/><br/>She points at me and pauses, loading data from memory banks. Two seconds later - "Zoran! Dave's friend, isn't it? How are you doing?"<br/><br/>I have been obsessing over you every night for months, even though there was a good chance I would never see you again.<br/><br/>{command:1:"Fine. Good, actually. How's things with you?"}]]></description>
+      <description><![CDATA[Well, that word squeaked out like a rat's fart. I've fucked it up already.<br/><br/>But then a smile bursts across her face, and her eyes sparkle, as if she has suddenly been reactivated.<br/><br/>"Hi!..."<br/><br/>She points at me and pauses, loading data from memory banks. Two seconds later &mdash; "Zoran! Dave's friend, isn't it? How are you doing?"<br/><br/>I have been obsessing over you every night for months, even though there was a good chance I would never see you again.<br/><br/>{command:1:"Fine. Good, actually. How's things with you?"}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -715,7 +715,7 @@
     </object>
     <object name="Act 2 Page 500">
       <inherit name="editor_room" />
-      <description><![CDATA[Think, think. God, this was a lot easier after mojitos.<br/><br/>We talked for such a long time before, like it could never end. We got on the tube then, too - I was heading back to my place, she to hers - and we talked about the Underground most of the way. We talked about tube mice, abandoned stations, all that history, and just what is behind those doors you see on some platforms that just say "PRIVATE ROD"?<br/><br/>Right, so social media is a dead end. Was she going anywhere on holiday?<br/><br/>What am I, a fucking hairdresser? There's got to be something more interesting than that.<br/><br/>{command:1:"How was Morocco?"}]]></description>
+      <description><![CDATA[Think, think. God, this was a lot easier after mojitos.<br/><br/>We talked for such a long time before, like it could never end. We got on the tube then, too &mdash; I was heading back to my place, she to hers &mdash; and we talked about the Underground most of the way. We talked about tube mice, abandoned stations, all that history, and just what is behind those doors you see on some platforms that just say "PRIVATE ROD"?<br/><br/>Right, so social media is a dead end. Was she going anywhere on holiday?<br/><br/>What am I, a fucking hairdresser? There's got to be something more interesting than that.<br/><br/>{command:1:"How was Morocco?"}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -735,7 +735,7 @@
     </object>
     <object name="Act 2 Page 700">
       <inherit name="editor_room" />
-      <description><![CDATA["Settling in. Behaving herself. Had to take her to the vet last week."<br/><br/>"Yeah?"<br/><br/>"She wasn't eating much. Doesn't seem to be anything wrong with her though."<br/><br/>OK, so it turns out I'm not the slightest bit interested in the cat. How is this so different to before, when conversation flowed so freely? Like we had always known each other somehow, and had just been reunited. We were about to start something big, something life-changing. There was a connection there. So much excitement, so many possibilites. That fire still burns within me. Did she just move on? Is she just really... nice?<br/><br/>That's it, isn't it? Social Media job - completely worthless in the real world, but it's the kind of role they would give to someone who possessed no real skills other than being fucking lovely, just so they could get to hang around with her all the time.<br/><br/>No. No. Wait. No need for pointless anger. Maybe she's just nervous too.<br/><br/>{command:1:"Where are you off to then?"}]]></description>
+      <description><![CDATA["Settling in. Behaving herself. Had to take her to the vet last week."<br/><br/>"Yeah?"<br/><br/>"She wasn't eating much. Doesn't seem to be anything wrong with her though."<br/><br/>OK, so it turns out I'm not the slightest bit interested in the cat. How is this so different to before, when conversation flowed so freely? Like we had always known each other somehow, and had just been reunited. We were about to start something big, something life-changing. There was a connection there. So much excitement, so many possibilites. That fire still burns within me. Did she just move on? Is she just really... nice?<br/><br/>That's it, isn't it? Social Media job &mdash; completely worthless in the real world, but it's the kind of role they would give to someone who possessed no real skills other than being fucking lovely, just so they could get to hang around with her all the time.<br/><br/>No. No. Wait. No need for pointless anger. Maybe she's just nervous too.<br/><br/>{command:1:"Where are you off to then?"}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -837,7 +837,7 @@
     </object>
     <object name="Act 2 Page 110">
       <inherit name="editor_room" />
-      <description><![CDATA[Heather. Heather. Heather. Butterflies. Don't throw up.<br/><br/>It's been four months. She's probably forgotten me. I should have called. At least sent her an email. Or added her on Facebook. I was too scared. Anyway, I didn't have any contact details. Or even a surname. Should've asked Dave. But I didn't want to be too eager. I played it cool. I probably played it too cool. And now I'm starting from absolute zero.<br/><br/>Her hair is different. I liked it before. Now it's even better.<br/><br/>Her eyes. Captivating. They have swallowed me. I am powerless. I am unable to look anywhere else.<br/><br/>I must have already massively overstepped the unwritten rules about eye contact.<br/><br/>Can't back out now. Even if she doesn't remember me, she can't have failed to spot the man who has just been staring at her for too long already. How long has it been? It feels like forever. It can only have been a few seconds - the doors are still open.<br/><br/>Must say something.<br/><br/>Must be funny. Friendly. Charming. Not scary. Not creepy. Maybe I should apologise for staring. Don't want to apologise for staring - I want to look at her forever. Must think quickly. Must speak soon. Already left it a bit too long. Too much pressure. Must say something. Anything.<br/><br/>{command:1:"Hello"}]]></description>
+      <description><![CDATA[Heather. Heather. Heather. Butterflies. Don't throw up.<br/><br/>It's been four months. She's probably forgotten me. I should have called. At least sent her an email. Or added her on Facebook. I was too scared. Anyway, I didn't have any contact details. Or even a surname. Should've asked Dave. But I didn't want to be too eager. I played it cool. I probably played it too cool. And now I'm starting from absolute zero.<br/><br/>Her hair is different. I liked it before. Now it's even better.<br/><br/>Her eyes. Captivating. They have swallowed me. I am powerless. I am unable to look anywhere else.<br/><br/>I must have already massively overstepped the unwritten rules about eye contact.<br/><br/>Can't back out now. Even if she doesn't remember me, she can't have failed to spot the man who has just been staring at her for too long already. How long has it been? It feels like forever. It can only have been a few seconds &mdash; the doors are still open.<br/><br/>Must say something.<br/><br/>Must be funny. Friendly. Charming. Not scary. Not creepy. Maybe I should apologise for staring. Don't want to apologise for staring &mdash; I want to look at her forever. Must think quickly. Must speak soon. Already left it a bit too long. Too much pressure. Must say something. Anything.<br/><br/>{command:1:"Hello"}]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -948,7 +948,7 @@
       <command>
         <pattern>monitors</pattern>
         <script>
-          msg ("The monitors show CCTV images - some inside tube trains, some platforms. Most are in black and white, but a few are in colour.")
+          msg ("The monitors show CCTV images &amp;mdash; some inside tube trains, some platforms. Most are in black and white, but a few are in colour.")
         </script>
       </command>
     </object>
@@ -1037,7 +1037,7 @@
     <inherit name="editor_room" />
     <object name="Epilogue Page 100">
       <inherit name="editor_room" />
-      <description><![CDATA[This station is Balham.<br/><br/>I step off the train and turn right, heading for the Way Out. It's entirely automatic. 11.54am. Almost time for lunch. Maybe I'll treat myself to a can of beer as well. Hair of the dog. Might shift this hangover at last.<br/><br/>I'll need to call the office. I don't know what to tell them. I'm not sure if I want to go back. I could just say I was really ill last night, and just woke up. I think I need a few more days to get my head together anyway. Food poisoning would be a perfect excuse.<br/><br/>Hey, look, it's been... interesting. I can't say it's not been fun. But I've been thinking on the way back about what Private Rod said. Or whatever his name actually is. He's made me think about a lot of things. It's going to take a take a while to work all this out.<br/><br/>But he's right. I need to do this on my own.<br/><br/>So I guess what I'm trying to say is, it's probably time for us to go our separate ways. I don't think it's healthy for me to listen to you any more. And I don't want to have to keep telling you everything. I don't even know who you are anyway. But it's clear to me that I don't actually need you now. I want to do my own thing. I don't want somebody watching over me the whole time, or telling me what to do. I want to figure all this out for myself.<br/><br/>And look, you must have your own problems anyway. You don't want me burdening you with mine as well.<br/><br/>The trouble is... I don't really know how to get rid of you. I have this feeling like you've been a constant presence, and there's nothing I can do to escape. I feel like you have the power to leave me at any time, but not the other way around. I need that freedom too - the freedom for me to leave you. I'm just not sure that you'd leave of your own accord otherwise. And even if you did, this needs to be my decision.<br/><br/>So, there is something I need to do. On my own.<br/><br/>If I don't do this, I will be stuck with you forever. There'd be nothing to stop you just coming back into my life. I need to make a very big decision, and I need to ask you to do one small thing.<br/><br/>I'm ready. Deep breath. I can hear that it's time. Now or never.<br/><br/>I can see the two white lights of a train approaching fast through the blackness of the tunnel. Seconds away. To my left, the stairs.<br/><br/>Right, quickly, here's the favour. Can you let me do one thing? One thing without looking.<br/><br/>Let me do one thing and promise you won't exert any control over my actions. You won't look. You won't ask.<br/><br/>Let me {command:1:do this}, and let me be free.]]></description>
+      <description><![CDATA[This station is Balham.<br/><br/>I step off the train and turn right, heading for the Way Out. It's entirely automatic. 11.54am. Almost time for lunch. Maybe I'll treat myself to a can of beer as well. Hair of the dog. Might shift this hangover at last.<br/><br/>I'll need to call the office. I don't know what to tell them. I'm not sure if I want to go back. I could just say I was really ill last night, and just woke up. I think I need a few more days to get my head together anyway. Food poisoning would be a perfect excuse.<br/><br/>Hey, look, it's been... interesting. I can't say it's not been fun. But I've been thinking on the way back about what Private Rod said. Or whatever his name actually is. He's made me think about a lot of things. It's going to take a take a while to work all this out.<br/><br/>But he's right. I need to do this on my own.<br/><br/>So I guess what I'm trying to say is, it's probably time for us to go our separate ways. I don't think it's healthy for me to listen to you any more. And I don't want to have to keep telling you everything. I don't even know who you are anyway. But it's clear to me that I don't actually need you now. I want to do my own thing. I don't want somebody watching over me the whole time, or telling me what to do. I want to figure all this out for myself.<br/><br/>And look, you must have your own problems anyway. You don't want me burdening you with mine as well.<br/><br/>The trouble is... I don't really know how to get rid of you. I have this feeling like you've been a constant presence, and there's nothing I can do to escape. I feel like you have the power to leave me at any time, but not the other way around. I need that freedom too &mdash; the freedom for me to leave you. I'm just not sure that you'd leave of your own accord otherwise. And even if you did, this needs to be my decision.<br/><br/>So, there is something I need to do. On my own.<br/><br/>If I don't do this, I will be stuck with you forever. There'd be nothing to stop you just coming back into my life. I need to make a very big decision, and I need to ask you to do one small thing.<br/><br/>I'm ready. Deep breath. I can hear that it's time. Now or never.<br/><br/>I can see the two white lights of a train approaching fast through the blackness of the tunnel. Seconds away. To my left, the stairs.<br/><br/>Right, quickly, here's the favour. Can you let me do one thing? One thing without looking.<br/><br/>Let me do one thing and promise you won't exert any control over my actions. You won't look. You won't ask.<br/><br/>Let me {command:1:do this}, and let me be free.]]></description>
       <enter type="script">
         game.suppresshr = true
         JS.scrollFix ()
@@ -1246,7 +1246,7 @@
         lineend = "This is the end of the line. {command:unboard:All change}."
       }
       else if (train.location = Elephant Castle and train.line.code = "bakerloo") {
-        lineend = "This is the end of the line.{once: They are thinking about extending the Bakerloo into south-east London at some point - but that won't be for a while. Certainly not today, anyway.} {command:unboard:All change}."
+        lineend = "This is the end of the line.{once: They are thinking about extending the Bakerloo into south-east London at some point &amp;mdash; but that won't be for a while. Certainly not today, anyway.} {command:unboard:All change}."
       }
       msg (lineend)
     }

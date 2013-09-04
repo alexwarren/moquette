@@ -30,7 +30,7 @@
 		<object name="person3">
 			<title>a male student</title>
 			<offtitle>the male student</offtitle>
-			<desc>He could not look more like a student. He's sat there with a pile of papers, looking through page after page of tables. The stripy jumper, brown trousers and brown shoes finish off the look. He is clearly very comfortable fitting into that category of person. He has fully bought in to that lifestyle and appearance. It makes me feel somewhat jealous actually - I'd never want to look like that, but I'd love to be able to fit in, and know my place, and be happy with it. Maybe in blissful ignorance of other options, but blissful nonetheless.</desc>
+			<desc>He could not look more like a student. He's sat there with a pile of papers, looking through page after page of tables. The stripy jumper, brown trousers and brown shoes finish off the look. He is clearly very comfortable fitting into that category of person. He has fully bought in to that lifestyle and appearance. It makes me feel somewhat jealous actually &amp;mdash;  I'd never want to look like that, but I'd love to be able to fit in, and know my place, and be happy with it. Maybe in blissful ignorance of other options, but blissful nonetheless.</desc>
 			<desc2>He's still sitting there, all studenty, looking through his papers.</desc2>
 		</object>
 		<object name="person4">
@@ -62,7 +62,7 @@
 			<title>an old woman</title>
 			<offtitle>the old woman</offtitle>
 			<desc>She is sat in the priority seat. At least, I presume it's a she. There is a lot of wispy white hair around the chin area. I would think a man would keep his beard in better shape, and wear it with pride.</desc>
-			<desc2>She is still that there, quite still - maybe so as not to disturb that beard.</desc2>
+			<desc2>She is still that there, quite still &amp;mdash;  maybe so as not to disturb that beard.</desc2>
 		</object>
 		<object name="person8">
 			<title>a woman</title>
@@ -146,20 +146,20 @@
 		<object name="person13">
 			<title>a man in a suit</title>
 			<offtitle>the man in the suit</offtitle>
-			<desc>He listens diligently to his iPod through white earbuds. I can't hear what he's listening to - which is unusual for those stock earbuds. He seems to be listening very carefully though. He has glossy black shoes with bright red laces. The only dash of colour on him. Like a little private joke.</desc>
+			<desc>He listens diligently to his iPod through white earbuds. I can't hear what he's listening to &amp;mdash;  which is unusual for those stock earbuds. He seems to be listening very carefully though. He has glossy black shoes with bright red laces. The only dash of colour on him. Like a little private joke.</desc>
 			<desc2>He's still there, tapping his glossy black shoes to the music.</desc2>
 		</object>
 		<object name="person14">
 			<title>a large man</title>
 			<offtitle>the large man</offtitle>
 			<desc>He is wearing a leather jacket, a wooly hat, and, bizarrely, shorts. He also has a massive
-				beard - the top half of him must be a lot warmer than the bottom half.</desc>
+				beard &amp;mdash;  the top half of him must be a lot warmer than the bottom half.</desc>
 			<desc2>He's still there in his leather jacket, beard and shorts.</desc2>
 		</object>
 		<object name="person15">
 			<title>a small woman</title>
 			<offtitle>the small woman</offtitle>
-			<desc>She is carrying a big bright yellow handbag - almost the same size as she is. I wonder
+			<desc>She is carrying a big bright yellow handbag &amp;mdash;  almost the same size as she is. I wonder
 				what she keeps in there. She could possibly live in it.</desc>
 			<desc2>She's still there with her enormous handbag.</desc2>
 		</object>
@@ -167,7 +167,7 @@
 			<title>a teenage girl</title>
 			<offtitle>the teenage girl</offtitle>
 			<desc>She is wearing huge bright green headphones on top of her long black hair. She gets her
-				phone out to check her reflection in the camera. That's the second person I've seen doing that this morning. I remember when people used to use mirrors. Using your phone to see what you look like seems like a waste - such an enormous amount of technology for such a very small problem.</desc>
+				phone out to check her reflection in the camera. That's the second person I've seen doing that this morning. I remember when people used to use mirrors. Using your phone to see what you look like seems like a waste &amp;mdash;  such an enormous amount of technology for such a very small problem.</desc>
 			<desc2>She's still there with her massive headphones.</desc2>
 		</object>
 		<object name="person17">
@@ -178,7 +178,7 @@
 		</object>
 		<object name="person18">
 			<title>a sleeping man</title>
-			<desc>He is a builder by the looks of it - paint-splattered jeans. He is sleeping next to another builder who looks almost the same. These two big burly men look almost cute, blissfully asleep like enormous babies.</desc>
+			<desc>He is a builder by the looks of it &amp;mdash;  paint-splattered jeans. He is sleeping next to another builder who looks almost the same. These two big burly men look almost cute, blissfully asleep like enormous babies.</desc>
 			<!-- wonder how long he's been there for, should somebody wake him up? -->
 			<disallowboarding/>
 			<desc2>Still sound asleep like a baby, along with his mate.</desc2>
@@ -198,13 +198,13 @@
 		<object name="person21">
 			<title>a woman drinking coffee</title>
 			<offtitle>the woman drinking coffee</offtitle>
-			<desc>Her coffee cup has her name scrawled on it in black felt tip. {command:roberta:Roberta}. I know nothing about her, but now I know her name - which is more than I can say for anybody else in this carriage. It's like we have some kind of connection now.</desc>
+			<desc>Her coffee cup has her name scrawled on it in black felt tip. {command:roberta:Roberta}. I know nothing about her, but now I know her name &amp;mdash;  which is more than I can say for anybody else in this carriage. It's like we have some kind of connection now.</desc>
 			<desc2>Roberta is still there, proudly displaying her named coffee cup.</desc2>
 			<command>
 				<pattern>roberta</pattern>
 				<script>
 					list add (game.interactedpeoplehistory, "Roberta with her coffee cup")
-					msg ("I don't like her name. She looks like she's probably nice, but I think her name is horrible. It's kind of manly. Like Geraldine or Bernardette - big blokey names with a small concession to femininity at the end. Makes me think of an old man with a big beard wearing a flowery dress.")
+					msg ("I don't like her name. She looks like she's probably nice, but I think her name is horrible. It's kind of manly. Like Geraldine or Bernardette &amp;mdash;  big blokey names with a small concession to femininity at the end. Makes me think of an old man with a big beard wearing a flowery dress.")
 				</script>
 			</command>
 		</object>
@@ -243,31 +243,31 @@
 		<object name="person25">
 			<title>a man in sunglasses</title>
 			<offtitle>the man in sunglasses</offtitle>
-			<desc>Sunglasses, down here? And chewing gum, with his mouth wide open. All nonchalant and cool, like he doesn't need to be here, but hey, he just puts up with it, y'know, why complain? So many reasons to hate. He's really playing with that gum as well, like he's totally the boss of it. Everything's going his way - apart from his debilitating eye disorder which means his retinas will fall out if he's exposed to more than two photons at a time. What a colossal prick.</desc>
+			<desc>Sunglasses, down here? And chewing gum, with his mouth wide open. All nonchalant and cool, like he doesn't need to be here, but hey, he just puts up with it, y'know, why complain? So many reasons to hate. He's really playing with that gum as well, like he's totally the boss of it. Everything's going his way &amp;mdash;  apart from his debilitating eye disorder which means his retinas will fall out if he's exposed to more than two photons at a time. What a colossal prick.</desc>
 			<desc2>Still not bright sunshine down here.</desc2>
 		</object>
 		<object name="person26">
 			<title>a man</title>
 			<offtitle>the man</offtitle>
-			<desc>He's eating a steaming hot tub of porridge. It's pretty hot down here already - surely the last thing anybody needs is piping hot breakfast mush?</desc>
-			<desc2>He's got rid of his empty tub of porridge somewhere - probably left it somewhere where he can conveniently forget it.</desc2>
+			<desc>He's eating a steaming hot tub of porridge. It's pretty hot down here already &amp;mdash;  surely the last thing anybody needs is piping hot breakfast mush?</desc>
+			<desc2>He's got rid of his empty tub of porridge somewhere &amp;mdash;  probably left it somewhere where he can conveniently forget it.</desc2>
 		</object>
 		<object name="person27">
 			<title>a man in a jumper</title>
 			<offtitle>the man in the jumper</offtitle>
-			<desc>It's quite a big blue jumper - inappopriately warm for both the weather and the temperature down here on the tube, I should think. And what's that suspicious white stain at the bottom? Does he realise that's there? I hope that's yogurt, or the milk from his breakfast cereal.</desc>
+			<desc>It's quite a big blue jumper &amp;mdash;  inappopriately warm for both the weather and the temperature down here on the tube, I should think. And what's that suspicious white stain at the bottom? Does he realise that's there? I hope that's yogurt, or the milk from his breakfast cereal.</desc>
 			<desc2>Still not sure about that stain.</desc2>
 		</object>
 		<object name="person28">
 			<title>a scruffy man</title>
 			<offtitle>the scruffy man</offtitle>
-			<desc>He looks like some sort of academic. Quite poor dress sense - and if I can spot that, it must be really poor dress sense. He's reading some kind of {command:paper:scientific paper}, and chuckling to himself.</desc>
+			<desc>He looks like some sort of academic. Quite poor dress sense &amp;mdash;  and if I can spot that, it must be really poor dress sense. He's reading some kind of {command:paper:scientific paper}, and chuckling to himself.</desc>
 			<desc2>He seems to have calmed down about whatever it was that was so funny before in his academic paper.</desc2>
 			<command>
 				<pattern>paper</pattern>
 				<script>
 					list add (game.interactedpeoplehistory, "the man who was chuckling at platelet function disorders")
-					msg ("Straining to read the title over his shoulder before he turns the page - review... platelet function disorders. I wonder what's so funny about that?")
+					msg ("Straining to read the title over his shoulder before he turns the page &amp;mdash;  review... platelet function disorders. I wonder what's so funny about that?")
 				</script>
 			</command>
 		</object>
@@ -312,7 +312,7 @@
 				<pattern>attention</pattern>
 				<script>
 					list add (game.interactedpeoplehistory, "my old French teacher")
-					msg ("Why are you making me look? I think it is her. I think that's a mole on her right cheek - it's got to be. I'm not going to say anything. She wouldn't remember me anyway. And besides, I've pretty much forgotten all the French I once knew, and I don't want to get a bollocking. Je voudrais to just stay here quietly, merci beaucoup.")
+					msg ("Why are you making me look? I think it is her. I think that's a mole on her right cheek &amp;mdash;  it's got to be. I'm not going to say anything. She wouldn't remember me anyway. And besides, I've pretty much forgotten all the French I once knew, and I don't want to get a bollocking. Je voudrais to just stay here quietly, merci beaucoup.")
 				</script>
 			</command>
 		</object>
@@ -341,7 +341,7 @@
 				<pattern>jeans</pattern>
 				<script>
 					list add (game.interactedpeoplehistory, "the man with the ridiculously tiny jeans")
-					msg ("How does that he get into those jeans? Nobody has legs that thin - and those jeans look even thinner than his legs, somehow. It must take him hours to get into those. And the hair. If I put that much effort into my appearance I would just look desparate and ridiculous.")
+					msg ("How does that he get into those jeans? Nobody has legs that thin &amp;mdash;  and those jeans look even thinner than his legs, somehow. It must take him hours to get into those. And the hair. If I put that much effort into my appearance I would just look desparate and ridiculous.")
 					msg ("")
 					msg ("I wonder if he's the type Heather goes for.")
 					msg ("")
