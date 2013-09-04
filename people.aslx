@@ -3,7 +3,7 @@
 		<object name="person1">
 			<title>a man</title>
 			<offtitle>the man</offtitle>
-			<desc>He is reading a biography of Kurt Cobain. The face on the cover is almost life size. If the man holds the book up in the right place, it will be like he lives among us again, albeit with the fixed expression of permanent {command:satisfaction:self satisfaction} that the photo on the book's cover gives him.</desc>
+			<desc>He is reading a biography of Kurt Cobain. The face on the cover is almost life size. If the man holds the book up in the right place, it will be like he lives among us again, albeit with the fixed expression of permanent {command:satisfaction:self-satisfaction} that the photo on the book's cover gives him.</desc>
 			<desc2>He is still reading his Kurt Cobain biography.</desc2>
 			<command>
 		      <pattern>satisfaction</pattern>
@@ -152,14 +152,14 @@
 		<object name="person14">
 			<title>a large man</title>
 			<offtitle>the large man</offtitle>
-			<desc>He is wearing a leather jacket, a wooly hat, and, bizarrely, shorts. He also has a massive
+			<desc>He is wearing a leather jacket, a woolly hat, and, bizarrely, shorts. He also has a massive
 				beard &amp;mdash;  the top half of him must be a lot warmer than the bottom half.</desc>
 			<desc2>He's still there in his leather jacket, beard and shorts.</desc2>
 		</object>
 		<object name="person15">
 			<title>a small woman</title>
 			<offtitle>the small woman</offtitle>
-			<desc>She is carrying a big bright yellow handbag &amp;mdash;  almost the same size as she is. I wonder
+			<desc>She is carrying a massive yellow handbag &amp;mdash; almost the same size as she is. I wonder
 				what she keeps in there. She could possibly live in it.</desc>
 			<desc2>She's still there with her enormous handbag.</desc2>
 		</object>
@@ -319,7 +319,7 @@
 		<object name="person32">
 			<title>a woman reading</title>
 			<disallowboarding/>
-			<desc>She is staring into her ebook reader. I wonder what she's reading. It used to be so much easier when you could see the book cover. Easier to judge. I wonder if it's erotic. Actually, she seems quite bored by whatever it is. Maybe it's some kind of textbook. Her eyelids are slowly drooping.</desc>
+			<desc>She is staring into her e-book reader. I wonder what she's reading. It used to be so much easier when you could see the book cover. Easier to judge. I wonder if it's erotic. Actually, she seems quite bored by whatever it is. Maybe it's some kind of textbook. Her eyelids are slowly drooping.</desc>
 			<desc2>Pretty sure she's asleep now, unless she can read with her eyes closed.</desc2>
 		</object>
 	</object>

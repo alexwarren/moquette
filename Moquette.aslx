@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4982.17428-->
+<!--Saved by Quest 5.5.4990.16562-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -20,7 +20,7 @@
     <custompaddingtop type="int">60</custompaddingtop>
     <custompaddingbottom type="int">60</custompaddingbottom>
     <author>Alex Warren</author>
-    <subtitle>(PRIVATE BETA &amp;mdash; please do not share this link yet!)</subtitle>
+    <subtitle><![CDATA[(PRIVATE BETA &mdash; please do not share this link yet!)]]></subtitle>
     <showtitle />
     <command_newline />
     <textsection type="int">0</textsection>
@@ -46,7 +46,7 @@
       </item>
       <item>
         <key>13</key>
-        <value type="string">Maybe I'm too hung over to handle the park today. Maybe I'll just stay down here. It feels safer &amp;mdash; no phone signal, so nobody from work can reach me. I could stay down here all day.</value>
+        <value type="string"><![CDATA[Maybe I'm too hung over to handle the park today. Maybe I'll just stay down here. It feels safer &mdash; no phone signal, so nobody from work can reach me. I could stay down here all day.]]></value>
       </item>
       <item>
         <key>17</key>
@@ -106,7 +106,7 @@
       </item>
       <item>
         <key>58</key>
-        <value type="string"><![CDATA[I don't want to be clay. Is that unusual? Nobody says they want to be clay. But we all want to feel like we belong. To fit in easily, not to stand out. Not to fight. To give in. So simple, so comfortable.<br/><br/> And suffocating.]]></value>
+        <value type="string"><![CDATA[I don't want to be clay. Is that unusual? Nobody says they want to be clay. But we all want to feel like we belong to something. To fit in easily, not to stand out. Not to fight. To give in. So simple, so comfortable.<br/><br/> And suffocating.]]></value>
       </item>
       <item>
         <key>70</key>
@@ -636,7 +636,7 @@
     <inherit name="editor_room" />
     <object name="Act 1 Vision 1">
       <inherit name="editor_room" />
-      <description><![CDATA[I can't see properly. My head is pounding. Thump, thump, thump.<br/><br/>I think I can smell cigarette smoke.<br/><br/>My fellow passengers have become murky. I can barely see them &mdash; just blurry, shadowy outlines.<br/><br/>The sound of tinny headphones has disappeared.<br/><br/>A silhouette with a hat walks past me.<br/><br/>Breathe, relax. It will pass.<br/><br/>I close my eyes.<br/><br/>I slowly {command:1:open them again}.]]></description>
+      <description><![CDATA[I can't see properly. My head is pounding.<br/><br/>I think I can smell cigarette smoke.<br/><br/>My fellow passengers have become murky. I can barely see them &mdash; just blurry, shadowy outlines.<br/><br/>The sound of tinny headphones has disappeared.<br/><br/>A silhouette with a hat walks past me.<br/><br/>Breathe, relax. It will pass.<br/><br/>I close my eyes.<br/><br/>I slowly {command:1:open them again}.]]></description>
       <command>
         <pattern>1</pattern>
         <script>
@@ -894,7 +894,7 @@
       <command>
         <pattern>1</pattern>
         <script><![CDATA[
-          msg ("I am aware once more of light and air. A physical body and a sense of isolation. No more peace.<br/><br/>I am inside the tube carriage again.<br/><br/>Things are coming into focus. I thought I saw another bowler hat out of the corner of my eye. But there was nobody there.")
+          msg ("Light and air. I cough violently to clear my lungs, but there is nothing inside them. I breathe.<br/><br/>I am inside the tube carriage again.<br/><br/>Things are coming into focus. I thought I saw another bowler hat out of the corner of my eye. But there was nobody there.")
           MoveObject (player, train)
           FinishVision
         ]]></script>
@@ -947,9 +947,9 @@
       </command>
       <command>
         <pattern>monitors</pattern>
-        <script>
-          msg ("The monitors show CCTV images &amp;mdash; some inside tube trains, some platforms. Most are in black and white, but a few are in colour.")
-        </script>
+        <script><![CDATA[
+          msg ("The monitors show CCTV images &mdash; some inside tube trains, some platforms. Most are in black and white, but a few are in colour.")
+        ]]></script>
       </command>
     </object>
     <object name="Act 4 Page 400">
@@ -1227,7 +1227,7 @@
       UpdateLinkCount
     }
   ]]></function>
-  <function name="InitTrainAtStation">
+  <function name="InitTrainAtStation"><![CDATA[
     if (not train.justboarded) {
       OutputTextNoBr ("This is " + GetDisplayAlias(train.location) + ". ")
       if (HasAttribute(train.location, "fact")) {
@@ -1246,7 +1246,7 @@
         lineend = "This is the end of the line. {command:unboard:All change}."
       }
       else if (train.location = Elephant Castle and train.line.code = "bakerloo") {
-        lineend = "This is the end of the line.{once: They are thinking about extending the Bakerloo into south-east London at some point &amp;mdash; but that won't be for a while. Certainly not today, anyway.} {command:unboard:All change}."
+        lineend = "This is the end of the line.{once: They are thinking about extending the Bakerloo into south-east London at some point &mdash; but that won't be for a while. Certainly not today, anyway.} {command:unboard:All change}."
       }
       msg (lineend)
     }
@@ -1255,7 +1255,7 @@
         msg ("I could {command:unboard:get off here}. Or {command:wait1:wait}.")
       }
     }
-  </function>
+  ]]></function>
   <function name="SetUpTrain"><![CDATA[
     foreach (obj, GetDirectChildren(train)) {
       if (obj <> player) {

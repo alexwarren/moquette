@@ -66,7 +66,7 @@
       <down>northbound</down>
       <facts type="scriptdictionary">
         <item key="102"><![CDATA[
-          msg ("We're passing through an{if game.abandonedstationcount>0:other} abandoned station here, City Road. It was shut in 1922 and there's very left of it.")
+          msg ("We're passing through an{if game.abandonedstationcount>0:other} abandoned station here, City Road. It was shut in 1922 and there's very little left of it.")
           game.abandonedstationcount = game.abandonedstationcount + 1
         ]]></item>
       </facts>
