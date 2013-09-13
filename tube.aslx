@@ -290,6 +290,24 @@
             </item>
           </value>
         </item>
+        <item>
+          <key>southbound Jubilee line</key>
+          <value type="dictionary">
+            <item>
+              <key>lines</key>
+              <value type="objectlist">Jubilee</value>
+            </item>
+            <item>
+              <key>directions</key>
+              <value type="stringdictionary">
+                <item>
+                  <key>jubilee</key>
+                  <value>1</value>
+                </item>
+              </value>
+            </item>
+          </value>
+        </item>
       </platforms>
     </object>
     <object name="Bank">
