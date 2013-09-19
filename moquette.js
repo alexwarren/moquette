@@ -292,7 +292,7 @@ function animateAct4Clear(duration, count) {
 		left: -($(window).width()/2 + $("#divOutput").width()/2)
 	}, duration, "linear", function() {
 		if (count == 0) {
-			duration = duration / 1.2;
+			duration = duration / 1.3;
 			if (duration < 500) {
 				count = 1;
 				$("#act4Fade").fadeIn(10000, function() {
