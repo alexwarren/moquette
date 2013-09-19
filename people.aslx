@@ -24,7 +24,6 @@
 		      	list add (game.interactedpeoplehistory, "the woman with the boy who was pulling faces")
 		        msg ("The child starts pulling faces at the other passengers. What a quandry. This child knows none of the rules. Are we supposed to smile back? Look annoyed? Just ignore him?")
 		      </script>
-		      <!-- those three should be options... -->
 		    </command>
 		</object>
 		<object name="person3">
