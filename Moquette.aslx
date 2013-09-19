@@ -1,4 +1,4 @@
-<!--Saved by Quest 5.5.4990.16562-->
+<!--Saved by Quest 5.5.5010.16575-->
 <asl version="550">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
@@ -20,11 +20,11 @@
     <custompaddingtop type="int">60</custompaddingtop>
     <custompaddingbottom type="int">60</custompaddingbottom>
     <author>Alex Warren</author>
-    <subtitle><![CDATA[(PRIVATE BETA &mdash; please do not share this link yet!)]]></subtitle>
     <showtitle />
     <command_newline />
     <textsection type="int">0</textsection>
     <triggeract2 type="boolean">false</triggeract2>
+    <triggeract2counter type="int">0</triggeract2counter>
     <triggeract4 type="boolean">false</triggeract4>
     <waitingfortimer type="boolean">false</waitingfortimer>
     <triggers type="dictionary">
@@ -1191,7 +1191,7 @@
     StartTextSection
     InitTrain
   </function>
-  <function name="MoveTrainToNextStation">
+  <function name="MoveTrainToNextStation"><![CDATA[
     next = GetNextStation(train.location, train.direction, train.line.code)
     if (next = null) {
       msg ("End of the line")
@@ -1200,13 +1200,24 @@
       train.location = next
       train.nextstopcount = 3
       train.counter = 0
-      InitTrainAtStation
+      if (game.triggeract2counter >= 3) {
+        JS.disableAllCommandLinks ()
+        msg ("This is " + GetDisplayAlias(train.location) + ".")
+        msg ("")
+        msg ("The drivers voice booms out. \"Apologies ladies and gentlemen, due to a fault with the doors, this train is now being taken out of service. Your next service is about one minute behind this one. All change please, all change. Once again, due to a fault with the doors this train is not in service. All change please.\"")
+        msg ("")
+        msg ("Well, all I can do is {command:unboard:get off}.")
+      }
+      else {
+        InitTrainAtStation
+      }
     }
-  </function>
+  ]]></function>
   <function name="InitTrain"><![CDATA[
     if (game.triggeract2) {
       player.parent = Act 2 Page 100
       game.triggeract2 = false
+      game.triggeract2counter = 0
       game.act2blackoutstation = GetNextStation(train.location, train.direction, train.line.code)
       game.act2blackoutstationname = GetDisplayAlias(game.act2blackoutstation)
     }
@@ -1536,6 +1547,24 @@
               script = DictionaryItem(train.line.facts, locationcode)
               invoke (script)
               dictionary remove (train.line.facts, locationcode)
+            }
+          }
+          if (game.triggeract2) {
+            game.triggeract2counter = game.triggeract2counter + 1
+            if (game.triggeract2counter = 1) {
+              msg ("The train slows down suddenly, then speeds up, then slows down suddenly again. Must be the emergency brake.")
+              msg ("")
+              msg ("The drivers voice crackles over the speakers. \"Please do not lean against the doors, stand away from the doors please.\"")
+            }
+            if (game.triggeract2counter = 2) {
+              msg ("")
+              msg ("The train slows down suddenly again, and speeds up and slows down once more. This merry dance.")
+              msg ("")
+              msg ("\"Once again, do not lean against the doors, stand away from the doors. If you keep leaning against the doors, this train will be taken out of service.\"")
+            }
+            if (game.triggeract2counter = 3) {
+              msg ("")
+              msg ("Great, once again we're stopping and starting. I can't see anybody on this carriage leaning against the doors though.")
             }
           }
         }
