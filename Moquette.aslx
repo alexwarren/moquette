@@ -1204,7 +1204,7 @@
         JS.disableAllCommandLinks ()
         msg ("This is " + GetDisplayAlias(train.location) + ".")
         msg ("")
-        msg ("The drivers voice booms out. \"Apologies ladies and gentlemen, due to a fault with the doors, this train is now being taken out of service. Your next service is about one minute behind this one. All change please, all change. Once again, due to a fault with the doors this train is not in service. All change please.\"")
+        msg ("The driver's voice booms out. \"Apologies ladies and gentlemen, due to a fault with the doors, this train is now being taken out of service. Your next service is about one minute behind this one. All change please, all change. Once again, due to a fault with the doors this train is not in service. All change please.\"")
         msg ("")
         msg ("Well, all I can do is {command:unboard:get off}.")
       }
