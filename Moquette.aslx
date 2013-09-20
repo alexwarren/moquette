@@ -1047,10 +1047,32 @@
     <inherit name="editor_room" />
     <object name="Epilogue Page 100">
       <inherit name="editor_room" />
-      <description><![CDATA[This station is Balham.<br/><br/>I step off the train and turn right, heading for the Way Out. It's entirely automatic. 11.54am. Almost time for lunch. Maybe I'll treat myself to a can of beer as well. Hair of the dog. Might shift this hangover at last.<br/><br/>I'll need to call the office. I don't know what to tell them. I'm not sure if I want to go back. I could just say I was really ill last night, and just woke up. I think I need a few more days to get my head together anyway. Food poisoning would be a perfect excuse.<br/><br/>Hey, look, it's been... interesting. I can't say it's not been fun. But I've been thinking on the way back about what Private Rod said. Or whatever his name actually is. He's made me think about a lot of things. It's going to take a take a while to work all this out.<br/><br/>But he's right. I need to do this on my own.<br/><br/>So I guess what I'm trying to say is, it's probably time for us to go our separate ways. I don't think it's healthy for me to listen to you any more. And I don't want to have to keep telling you everything. I don't even know who you are anyway. But it's clear to me that I don't actually need you now. I want to do my own thing. I don't want somebody watching over me the whole time, or telling me what to do. I want to figure all this out for myself.<br/><br/>And look, you must have your own problems anyway. You don't want me burdening you with mine as well.<br/><br/>The trouble is... I don't really know how to get rid of you. I have this feeling like you've been a constant presence, and there's nothing I can do to escape. I feel like you have the power to leave me at any time, but not the other way around. I need that freedom too &mdash; the freedom for me to leave you. I'm just not sure that you'd leave of your own accord otherwise. And even if you did, this needs to be my decision.<br/><br/>So, there is something I need to do. On my own.<br/><br/>If I don't do this, I will be stuck with you forever. There'd be nothing to stop you just coming back into my life. I need to make a very big decision, and I need to ask you to do one small thing.<br/><br/>I'm ready. Deep breath. I can hear that it's time. Now or never.<br/><br/>I can see the two white lights of a train approaching fast through the blackness of the tunnel. Seconds away. To my left, the stairs.<br/><br/>Right, quickly, here's the favour. Can you let me do one thing? One thing without looking.<br/><br/>Let me do one thing and promise you won't exert any control over my actions. You won't look. You won't ask.<br/><br/>Let me {command:1:do this}, and let me be free.]]></description>
+      <description><![CDATA[This station is Balham.<br/><br/>I step off the train and turn right, heading for the Way Out. It's entirely automatic. 11.54am. Almost time for lunch. Maybe I'll treat myself to a can of beer as well. Hair of the dog. Might shift this hangover at last.<br/><br/>I'll need to call the office. I don't know what to tell them. I'm not sure if I want to go back. I could just say I was really ill last night, and just woke up. I think I need a few more days to get my head together anyway. Food poisoning would be a perfect excuse.<br/><br/>Hey, look, it's been... interesting. I can't say it's not been fun. But I've been thinking on the way back about what Private Rod said. Or whatever his name actually is. He's made me think about a lot of things. It's going to take a take a while to work all this out.<br/><br/>But he's right. I need to do this {command:1:on my own}.]]></description>
+      <enter type="script">
+        JS.scrollFix ()
+      </enter>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Epilogue Page 200)
+        </script>
+      </command>
+    </object>
+    <object name="Epilogue Page 200">
+      <inherit name="editor_room" />
+      <description><![CDATA[I guess what I'm trying to say is, it's probably time for us to go our separate ways. I don't think it's healthy for me to listen to you any more. And I don't want to have to keep telling you everything. I don't know you, and it's clear I don't actually need you now. I want to do my own thing. I don't want somebody watching over me the whole time, or telling me what to do. I want to figure all this out for myself.<br/><br/>And look, you must have your own problems anyway. You don't want me burdening you with mine as well.<br/><br/>The trouble is... I don't really know how to get rid of you. I have this feeling like you've been a constant presence, and there's nothing I can do to escape. I feel like you have the power to leave me at any time, but not the other way around. I need that freedom too &mdash; the freedom for me to leave you. I'm just not sure that you'd leave of your own accord otherwise. And even if you did, this needs to be my decision.<br/><br/>So, there is something I need to do. I don't know if this stupid or what, but it's all I can think of. I need to do this. On my own. I need to make a very big decision, and I need to ask you to do {command:1:one small thing}.]]></description>
+      <command>
+        <pattern>1</pattern>
+        <script>
+          MoveObject (player, Epilogue Page 300)
+        </script>
+      </command>
+    </object>
+    <object name="Epilogue Page 300">
+      <inherit name="editor_room" />
+      <description><![CDATA[I'm ready. Deep breath. I can hear that it's time. It's coming. Now or never.<br/><br/>The two white lights of a train are approaching fast through the blackness of the tunnel. Seconds away. To my left, the stairs.<br/><br/>Right, quickly. Can you let me do one thing? One thing without looking.<br/><br/>Let me do one thing and promise you won't exert any control over my actions.<br/><br/>You won't look.<br/><br/>You won't ask.<br/><br/>Getting louder.<br/><br/>Let me {command:1:do this}, and let me be free.]]></description>
       <enter type="script">
         game.suppresshr = true
-        JS.scrollFix ()
       </enter>
       <command>
         <pattern>1</pattern>
