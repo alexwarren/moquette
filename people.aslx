@@ -305,10 +305,10 @@
 		<object name="person31">
 			<title>a middle-aged woman</title>
 			<offtitle>the middle-aged woman</offtitle>
-			<desc>She reminds me of a teacher I used to have at school. A French teacher, whose name I can't quite remember. Scary lady. Always telling us off for not revising hard enough for her vocab tests. Maybe it is her. Hard to tell. It's been a long time. I'm still slightly scared of her even now, even though she has no power over me, and it might not even be her anyway. Still, best not to risk {command:attention:attracting her attention}.</desc>
+			<desc>She reminds me of a teacher I used to have at school. A French teacher, whose name I can't quite remember. Scary lady. Always telling us off for not revising hard enough for her vocab tests. Maybe it is her. Hard to tell. It's been a long time. I'm still slightly scared of her even now, even though she has no power over me, and it might not even be her anyway. Still, best not to risk {command:attention2:attracting her attention}.</desc>
 			<desc2>Too scared to look too much in that direction.</desc2>
 			<command>
-				<pattern>attention</pattern>
+				<pattern>attention2</pattern>
 				<script>
 					list add (game.interactedpeoplehistory, "my old French teacher")
 					msg ("Why are you making me look? I think it is her. I think that's a mole on her right cheek &amp;mdash;  it's got to be. I'm not going to say anything. She wouldn't remember me anyway. And besides, I've pretty much forgotten all the French I once knew, and I don't want to get a bollocking. Je voudrais to just stay here quietly, merci beaucoup.")
