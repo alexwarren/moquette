@@ -243,13 +243,13 @@
 			<title>a man in sunglasses</title>
 			<offtitle>the man in sunglasses</offtitle>
 			<desc>Sunglasses, down here? And chewing gum, with his mouth wide open. All nonchalant and cool, like he doesn't need to be here, but hey, he just puts up with it, y'know, why complain? So many reasons to hate. He's really playing with that gum as well, like he's totally the boss of it. Everything's going his way &amp;mdash;  apart from his debilitating eye disorder which means his retinas will fall out if he's exposed to more than two photons at a time. What a colossal prick.</desc>
-			<desc2>Still not bright sunshine down here.</desc2>
+			<desc2>Still no bright sunshine down here.</desc2>
 		</object>
 		<object name="person26">
 			<title>a man</title>
 			<offtitle>the man</offtitle>
 			<desc>He's eating a steaming hot tub of porridge. It's pretty hot down here already &amp;mdash;  surely the last thing anybody needs is piping hot breakfast mush?</desc>
-			<desc2>He's got rid of his empty tub of porridge somewhere &amp;mdash;  probably left it somewhere where he can conveniently forget it.</desc2>
+			<desc2>He's got rid of his empty tub of porridge &amp;mdash;  probably left it somewhere he can conveniently forget it.</desc2>
 		</object>
 		<object name="person27">
 			<title>a man in a jumper</title>
@@ -347,6 +347,18 @@
 					msg ("I wonder if he is really sad inside.")
 				</script>
 			</command>
+		</object>
+		<object name="person302">
+			<title>a woman</title>
+			<offtitle>the woman</offtitle>
+			<desc>She is clearly not Heather. Her hair is all wrong. She is irrelevant.</desc>
+			<desc2>She is still not Heather.</desc2>
+		</object>
+		<object name="person303">
+			<title>a young woman</title>
+			<offtitle>the young woman</offtitle>
+			<desc>She doesn't look like Heather. Not even like a young Heather. Her face is too round. I have no interest in her.</desc>
+			<desc2>She still doesn't look like Heather.</desc2>
 		</object>
 	</object>
 </library>
