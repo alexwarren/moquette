@@ -340,7 +340,7 @@
 				<pattern>jeans</pattern>
 				<script>
 					list add (game.interactedpeoplehistory, "the man with the ridiculously tiny jeans")
-					msg ("How does that he get into those jeans? Nobody has legs that thin &amp;mdash;  and those jeans look even thinner than his legs, somehow. It must take him hours to get into those. And the hair. If I put that much effort into my appearance I would just look desparate and ridiculous.")
+					msg ("How does he get into those jeans? Nobody has legs that thin &amp;mdash;  and those jeans look even thinner than his legs, somehow. It must take him hours to get into those. And the hair. If I put that much effort into my appearance I would just look desparate and ridiculous.")
 					msg ("")
 					msg ("I wonder if he's the type Heather goes for.")
 					msg ("")
