@@ -39,12 +39,11 @@ I could change to {{embed "ways"}}.
 
 [[change]]:
 {{#if station = "Green Park" and (platform contains "Piccadilly") != (to contains "Piccadilly")}}
-{{inc "long_walks"}}
-{{#if long_walks = 1}}
+{{#once}}
 Such a rookie error, changing at Green Park. I follow the signs, walking through the interminably long tunnel, past the annoying busker. I wish there was one of those travelator things here.
 {{else}}
 Through the long tunnel again I go, following the signs.
-{{/if}}
+{{/once}}
 {{else}}
 I follow the signs.
 {{/if}}

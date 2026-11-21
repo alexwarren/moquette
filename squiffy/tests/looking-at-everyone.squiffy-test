@@ -674,7 +674,6 @@ went "Something is coming" "a woman reading"
 set station = "Elephant & Castle"
 set t = 56
 set been = ["Lambeth North","Waterloo","Embankment","Charing Cross","Piccadilly Circus","Oxford Circus","Regent's Park","Baker Street","Marylebone","Edgware Road","Paddington","Elephant & Castle"]
-set told = ["Bakerloo extension"]
 set next = ""
 set leg = -1
 set vision = ""

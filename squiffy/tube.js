@@ -346,9 +346,6 @@ squiffy.registerHelper("doors", () => {
 // call them: "a man", "another man"...
 squiffy.registerHelper("passengers", () => describe(list("aboard")));
 
-// {{#if (again)}} in a passenger's passage: have I looked at them before?
-squiffy.registerHelper("again", () => squiffy.story.visits(squiffy.get("_passage")) > 1);
-
 // ---- Trains ----
 
 // {{move}}: the train goes on to the next station

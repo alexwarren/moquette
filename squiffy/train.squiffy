@@ -128,7 +128,7 @@ This is {{station}}. {{embed "station facts"}} {{#if next}}I could [[get off her
 {{#if station = "Stockwell" and line = "northern1"}}
 I'm not going home just yet. [[Time to change trains]](get off here).
 {{else if station = "Elephant & Castle" and line = "bakerloo"}}
-This is the end of the line.{{#unless (contains "told" "Bakerloo extension")}}{{append "told" "Bakerloo extension"}} They are thinking about extending the Bakerloo into south-east London at some point — but that won't be for a while. Certainly not today, anyway.{{/unless}} [[All change]](get off here).
+This is the end of the line.{{#once}} They are thinking about extending the Bakerloo into south-east London at some point — but that won't be for a while. Certainly not today, anyway.{{/once}} [[All change]](get off here).
 {{else if line = "wc" or (station = "Aldgate" and line = "metropolitan") or (station = "Brixton" and line = "victoria") or (station = "Edgware Road" and (line = "circle" or line = "district1"))}}
 This is the end of the line. [[All change]](get off here).
 {{else}}
