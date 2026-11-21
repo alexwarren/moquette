@@ -64,7 +64,7 @@ Nobody gets on or off. The doors close.
 {{#if aboard.length}}
 I can see {{#each (passengers)}}{{#if @first}}{{else if @last}} and {{else}}, {{/if}}{{passage this.who text=this.as}}{{/each}}.
 {{else}}
-It's pretty empty. Nothing to do but {{passage "stare" text="Wait"}}.
+It's pretty empty. Nothing to do but [Wait](stare).
 {{/if}}
 
 {{!--
@@ -105,7 +105,7 @@ Great, once again we're stopping and starting. I can't see anybody on this carri
 {{#if leg >= stop}}
 {{embed "the next station"}}
 {{else if (nothing_to_click)}}
-{{passage "stare" text="Wait"}}. That's all I can do.
+[Wait](stare). That's all I can do.
 {{/if}}
 {{/if}}
 {{/if}}
