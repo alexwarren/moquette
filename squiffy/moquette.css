@@ -1,0 +1,112 @@
+/* How Moquette looks: a plain page of text, as it was in 2013. With squiffy.json, every .css file
+   in the story's folder is part of the story.
+
+   The story asks for the rest with classes and transitions:
+   - @class title-card and @class ending, around the two photographs
+   - @leave train and @transition train, for the way home
+   - @class heather-swarm, blackout and heather-tube, which effects.js watches for */
+
+:root {
+    --squiffy-font-family: Georgia, serif;
+    --squiffy-max-width: 40rem;
+}
+
+/* The two photographs fill the window, in front of everything */
+.title-card img,
+.ending img {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: contain;
+    background: var(--squiffy-background);
+}
+
+.title-card img {
+    animation: photograph-in 4s both;
+}
+
+/* The last photograph comes slowly, stays a few seconds, and takes a minute to go */
+.ending img {
+    animation: photograph-in 10s 2s both, photograph-out 60s 16s forwards;
+    pointer-events: none;
+}
+
+@keyframes photograph-in {
+    from { opacity: 0; }
+}
+
+@keyframes photograph-out {
+    to { opacity: 0; }
+}
+
+/* @leave train: the text pulls away to the left, then goes by again and again, faster each time,
+   like the windows of a train that isn't stopping */
+.squiffy-transition.squiffy-leave.train {
+    animation-name: train-leaves;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+
+@keyframes train-leaves {
+    0% { transform: translateX(0); animation-timing-function: ease-in; }
+    30% { transform: translateX(-100vw); }
+    30.01% { transform: translateX(100vw); }
+    52% { transform: translateX(-100vw); }
+    52.01% { transform: translateX(100vw); }
+    68% { transform: translateX(-100vw); opacity: 1; }
+    68.01% { transform: translateX(100vw); }
+    80% { transform: translateX(-100vw); }
+    80.01% { transform: translateX(100vw); }
+    89% { transform: translateX(-100vw); }
+    89.01% { transform: translateX(100vw); }
+    95% { transform: translateX(-100vw); }
+    95.01% { transform: translateX(100vw); }
+    100% { transform: translateX(-100vw); opacity: 0; }
+}
+
+/* @transition train: the next one pulls in from the right, and stops */
+.squiffy-transition.train {
+    animation-name: train-arrives;
+    animation-timing-function: ease-out;
+}
+
+@keyframes train-arrives {
+    from { transform: translateX(100vw); }
+}
+
+/* What effects.js draws, in front of the page: see that file */
+.moquette-effect {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    overflow: hidden;
+    pointer-events: none;
+    font-family: Georgia, serif;
+    color: var(--squiffy-text);
+}
+
+.moquette-effect > span {
+    position: absolute;
+    white-space: nowrap;
+}
+
+.moquette-effect.black {
+    background: black;
+}
+
+.moquette-effect.passing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .title-card img,
+    .ending img {
+        animation-duration: 1s, 1s;
+    }
+}

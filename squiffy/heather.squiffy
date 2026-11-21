@@ -1,0 +1,167 @@
+{{!--
+    Heather. Once the thought at t = 37 has set "heather_soon" (thoughts.squiffy), she's on the
+    next train Zoran gets on: see the "get on" link in platform.squiffy.
+
+    The train was about to take him to "next", so that's where he comes round.
+--}}
+
+[[Heather]]:
+@set heather_soon = false
+She is right there in front of me.
+
+[[Heather]](Heather Heather Heather).
+
+{{!-- Her name fills the screen for a few seconds (effects.js) --}}
+[[Heather Heather Heather]]:
+@class heather-swarm
+{{goto "Hello" after="3.5s"}}
+
+[[Hello]]:
+Heather. Heather. Heather. Butterflies. Don't throw up.
+
+It's been four months. She's probably forgotten me. I should have called. At least sent her an email. Or added her on Facebook. I was too scared. Anyway, I didn't have any contact details. Or even a surname. Should've asked Dave. But I didn't want to be too eager. I played it cool. I probably played it too cool. And now I'm starting from absolute zero.
+
+Her hair is different. I liked it before. Now it's even better.
+
+Her eyes. Captivating. They have swallowed me. I am powerless. I am unable to look anywhere else.
+
+I must have already massively overstepped the unwritten rules about eye contact.
+
+Can't back out now. Even if she doesn't remember me, she can't have failed to spot the man who has just been staring at her for too long already. How long has it been? It feels like forever. It can only have been a few seconds — the doors are still open.
+
+Must say something.
+
+Must be funny. Friendly. Charming. Not scary. Not creepy. Maybe I should apologise for staring. Don't want to apologise for staring — I want to look at her forever. Must think quickly. Must speak soon. Already left it a bit too long. Too much pressure. Must say something. Anything.
+
+[["Hello"]](Hi)
+
+[[Hi]]:
+Well, that word squeaked out like a rat's fart. I've fucked it up already.
+
+But then a smile bursts across her face, and her eyes sparkle, as if she has suddenly been reactivated.
+
+"Hi!..."
+
+She points at me and pauses, loading data from memory banks. Two seconds later — "Zoran! Dave's friend, isn't it? How are you doing?"
+
+I have been obsessing over you every night for months, even though there was a good chance I would never see you again.
+
+[["Fine. Good, actually. How's things with you?"]](Good)
+
+[[Good]]:
+"Good."
+
+Smile. Eye contact. Silence. Fuck!
+
+Quick, what did we talk about at Dave's party? Her job... er, some kind of Social Media Somebody.
+
+[["How's the world of social media then?"]](Oh fine)
+
+[[Oh fine]]:
+"Oh, fine."
+
+What? Is that it? OK, next item. Why is she making this difficult?
+
+For someone who is apparently a professional people person, she's really bad at holding a conversation.
+
+Is this some deliberate game? Let's play it then. Eye contact and silence. How long can we keep this up?
+
+One, two, three, four, [[five]].
+
+[[five]]:
+Damn you!
+
+[["So, er..."]](So er)
+
+[[So er]]:
+Think, think. God, this was a lot easier after mojitos.
+
+We talked for such a long time before, like it could never end. We got on the tube then, too — I was heading back to my place, she to hers — and we talked about the Underground most of the way. We talked about tube mice, abandoned stations, all that history, and just what is behind those doors you see on some platforms that just say "PRIVATE ROD"?
+
+Right, so social media is a dead end. Was she going anywhere on holiday?
+
+What am I, a fucking hairdresser? There's got to be something more interesting than that.
+
+[["How was Morocco?"]](Morocco)
+
+[[Morocco]]:
+"Oh, we haven't been yet, that's next month."
+
+Great. Serves me right for asking a boring question. And "we"? There was never a "we", was there? She was going on her own, wasn't she?
+
+The cat! She had just got a cat! Thank fuck.
+
+[["How's the cat doing?"]](the cat)
+
+[[the cat]]:
+"Settling in. Behaving herself. Had to take her to the vet last week."
+
+"Yeah?"
+
+"She wasn't eating much. Doesn't seem to be anything wrong with her though."
+
+OK, so it turns out I'm not the slightest bit interested in the cat. How is this so different to before, when conversation flowed so freely? Like we had always known each other somehow, and had just been reunited. We were about to start something big, something life-changing. There was a connection there. So much excitement, so many possibilites. That fire still burns within me. Did she just move on? Is she just really... nice?
+
+That's it, isn't it? Social Media job — completely worthless in the real world, but it's the kind of role they would give to someone who possessed no real skills other than being fucking lovely, just so they could get to hang around with her all the time.
+
+No. No. Wait. No need for pointless anger. Maybe she's just nervous too.
+
+[["Where are you off to then?"]](pale)
+
+[[pale]]:
+"Just on my way to work. What about you?"
+
+Ah. yes. What am I doing here? Playing truant, like a schoolboy? Not exactly sexy, is it?
+
+"Are you alright? You've gone very pale."
+
+I'm fine. I'm fine. My left arm has gone numb, but I'm fine. Slightly dizzy. Just need to breathe. More oxygen. Am I having a heart attack? Both arms numb now. My fingers tingle.
+
+[["I'm fine."]](Black speckles)
+
+{{!-- The screen fills with speckles and goes black, and comes back on the next page (effects.js) --}}
+[[Black speckles]]:
+@class blackout
+Black speckles.
+
+{{goto "water" after="12s"}}
+
+[[water]]:
+@clear
+"Are you OK? Do you want some water?"
+
+She looks like my aunt. I reach out and she hands me a water bottle. I sip. I don't want any more.
+
+[["I'm fine."]](bench)
+
+[[bench]]:
+I'm sitting on a bench at {{next}}. This woman is in her fifties. Opposite, an advert tells me how wonderful studying in the evening is. I can get my life on track apparently.
+
+[["Where's Heather?"]](orange jacket)
+
+[[orange jacket]]:
+"I'm sorry, I don't know who that is. Was there somebody with you? I didn't see them. Sorry. This man will look after you. Take care, hope everything's alright".
+
+She gets up. A man in a bright orange jacket is here.
+
+"Are you OK? Do you need anything?"
+
+[["I'm fine."]](paramedic)
+
+[[paramedic]]:
+{{!-- Now I'm at the station where I came round. After this, there are a few more people about --}}
+{{move}}
+{{append "strangers" "a man (not Heather)"}}
+{{append "strangers" "a man (pencil legs)"}}
+{{append "strangers" "a woman (not Heather)"}}
+{{append "strangers" "a young woman"}}
+"Are you sure? I can call a paramedic. You should probably be checked out."
+
+{{#if next}}
+No. Luckily, a [[train]](get on) has pulled in.
+{{else}}
+{{!-- The train I was on stopped here: it's the end of the line --}}
+No. It's time to get away from here.
+
+{{alight}}{{signs}}I could change to {{embed "ways"}}.
+{{/if}}

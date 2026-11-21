@@ -1,0 +1,51 @@
+{{!--
+    Platforms: waiting for a train, or changing to another line.
+
+    {{alight}}, {{signs}} and {{train}} come from tube.js. "platform" is the name on the signs, such
+    as "northbound Victoria line", and "ways" is a list of the other platforms at this station.
+--}}
+
+[[get off here]]:
+@clear
+@leave fade 1s
+{{alight}}{{goto "platform"}}
+
+[[platform]]:
+{{signs}}
+{{#if platform}}
+{{append "platforms" (add platform (add " at " station))}}
+I am standing on the platform for the {{platform}} at {{station}}.
+
+{{#if ways.length = 0}}
+I will [wait] for a train.
+{{else if ways.length = 1}}
+I could [wait] for a train here, or [[go the other way]](change, to = ways[0]).
+{{else}}
+I could [wait] for a train here, or [change] to another line.
+{{/if}}
+{{else}}
+{{!-- The end of the line: there are no more trains this way --}}
+I could change to {{embed "ways"}}.
+{{/if}}
+
+[wait]:
+{{train}}A {{line_name}} line train arrives. The doors open. I can {{#if heather_soon}}[[get on]](Heather){{else}}[[get on]]{{/if}}.{{#if other_trains}} Or I could [wait] for another train.{{/if}}
+
+[change]:
+I could change to {{embed "ways"}}.
+
+[[ways]]:
+{{#each ways}}{{#if @first}}{{else if @last}} or {{else}}, {{/if}}the [[{{this}}]](change, to = "{{this}}"){{/each}}
+
+[[change]]:
+{{#if station = "Green Park" and (platform contains "Piccadilly") != (to contains "Piccadilly")}}
+{{inc "long_walks"}}
+{{#if long_walks = 1}}
+Such a rookie error, changing at Green Park. I follow the signs, walking through the interminably long tunnel, past the annoying busker. I wish there was one of those travelator things here.
+{{else}}
+Through the long tunnel again I go, following the signs.
+{{/if}}
+{{else}}
+I follow the signs.
+{{/if}}
+{{set "platform" to}}{{goto "platform"}}

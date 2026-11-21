@@ -1,0 +1,164 @@
+{{!--
+    The last act. Once t reaches 70, the next station the train arrives at is this one ("the next
+    station" in train.squiffy).
+--}}
+
+{{!-- The word goes past like a train, slows down and stops (effects.js) --}}
+[[HEATHER]]:
+@class heather-tube
+{{goto "there she is" after="11.5s"}}
+
+[[there she is]]:
+The doors open. And there she is, standing on the platform.
+
+Heather.
+
+Eye contact.
+
+Blank expression. Smile? I'm smiling. Nothing. Like she's not really there.
+
+Doors bleeping. She's not even getting on then? I jump out as they snap shut behind me. Why stand on a platform if you're not getting on a train?
+
+Now I'm standing on the platform in the same spot she was. But I can't see her now. Where has she gone?
+
+A glimpse to my left. There she is, calmly walking up the platform.
+
+I [[run]].
+
+[[run]]:
+She opens a cupboard and steps inside, closing the door behind her.
+
+There is a sign on the door. It says "PRIVATE ROD".
+
+I [[knock]].
+
+[[knock]]:
+The door nudges open as I knock. Inside, a bank of flickering [monitors]. Sitting in front of them, facing away from me, a [man].
+
+[monitors]:
+The monitors show CCTV images — some inside tube trains, some platforms. Most are in black and white, but a few are in colour.
+
+[man]:
+Illuminated only by the monitors in front of him, a man in a bowler hat.
+
+[@last]:
+I suppose should say [["Hello"]](Come in).
+
+[[Come in]]:
+"Come in, Zoran. Please [[close the door]] behind you."
+
+[[close the door]]:
+@set watched = (slice (shuffle noticed) 0 5)
+There is a big rack of hard disks connected to the monitors. On one of the screens I think I spot a quick flash of my face. Looking closer, things seem familiar. There's a view inside a train carriage. I can see myself standing there.{{#if watched.length > 0}} I'm looking at {{= watched[0]}}.{{/if}}{{#if watched.length > 1}} Another monitor shows me looking at {{= watched[1]}}.{{/if}}{{#if watched.length > 2}} And there's a monitor that shows me sitting opposite {{= watched[2]}}.{{/if}}
+
+{{#if platforms.length}}
+On another monitor, I can see myself standing on a platform. I am waiting for the {{random platforms}}.
+{{/if}}
+
+And what's that? On another monitor, a carriage full of people smoking. There's me, blinking, looking annoyed.
+
+"Thanks for coming, Zoran". He pauses for a moment. "You've made good progress today."
+
+[["What?"]](What)
+
+[[What]]:
+"Yes, well, aside from that". He scribbles down some notes on a pad of paper. "You should probably stop doing that."
+
+[["Stop doing what?"]](Stop doing what)
+
+[[Stop doing what]]:
+"That - you just did it again. Well, it's up to you."
+
+He turns back to face the monitors, and presses keys on a keyboard.
+
+"That's right, I've turned back to face the monitors, and now I'm pressing keys on a keyboard. I can hear it when you do that too. You don't need to keep telling them this stuff. It's none of their business. You don't even know who they are."
+
+{{#if watched.length > 3}}
+The monitors flash up some more images from this morning. There's {{= watched[3]}}.{{#if watched.length > 4}} And there's {{= watched[4]}}.{{/if}}
+{{/if}}
+
+{{#if jumped}}
+"They've been useful, Zoran, but I think you're done with them now. I've seen that you can make decisions for yourself. It was your decision that you made at London Bridge this morning. That decision to go your own way. I saw it, and you've got the bruise to prove it. _They_ didn't want you to take that decision. _They_ were going to let you go straight to work. You stopped that, Zoran. That was you. You did it. And you saw what happened next."
+
+He writes something down on a form, and ticks a few boxes.
+
+"There's a whole world out there, Zoran. And you can do anything. You know that now. You don't need help, or permission, to explore it and see what's out there."
+{{else}}
+"They've been useful, Zoran, but I think you're done with them now. You need to make decisions yourself."
+
+He writes something down on a form, and ticks a few boxes.
+
+"So, you've had a helping hand with a few decisions today. They helped you choose a different path at {{escaped}} this morning. I saw that. And now you see there's a whole world out there, Zoran. And you can do anything. You know that now. You don't need help, or permission, to explore it and see what's out there."
+{{/if}}
+
+And what about [[Heather?]](empty hope)
+
+[[empty hope]]:
+He sucks air through his teeth. "Aaah. Well, that's awkward. You see, she's not here is she?"
+
+It's pretty dark in this cupboard, but there's definitely no sign of her. But I definitely followed her in.
+
+"Yes, you did follow her in. Well, that wasn't, how do we say this, that wasn't, er, real. I don't know — the real one — well, you bumped into the real one earlier, and if you ask me, well. Um."
+
+He looks around awkwardly.
+
+"Ok, maybe it was unfair of me to lure you in here using that image. Sorry. I don't know where she went when you blacked out. I didn't see. But I don't think it matters. You know, you can see, you saw... there was nothing there. Just empty hope."
+
+He ticks another couple of boxes on his form, signs it, and places it on a pile.
+
+"Don't hope, Zoran. Don't cross your fingers. Don't wait. Just get out there, assess your opportunities, take action. Nothing is going to happen, unless you make it happen."
+
+He presses some more buttons, and the monitors switch off one by one.
+
+"Good meeting you, Zoran," he says, tipping his hat. "I've got to get things set up for the next patient, I'm afraid. Take care of yourself, and hopefully... we'll never meet again."
+
+I leave the dark cupboard. A [[train]](Epilogue) has just pulled in to the platform.
+
+{{!-- Everything rushes off like a train leaving, and the last part pulls in (moquette.css) --}}
+[[Epilogue]]:
+@clear
+@leave train 6s
+@transition train 2s
+This station is Balham.
+
+I step off the train and turn right, heading for the Way Out. It's entirely automatic. 11.54am. Almost time for lunch. Maybe I'll treat myself to a can of beer as well. Hair of the dog. Might shift this hangover at last.
+
+I'll need to call the office. I don't know what to tell them. I'm not sure if I want to go back. I could say I was really ill last night, and just woke up. I think I need a few more days to get my head together anyway. Food poisoning would be a perfect excuse.
+
+Hey, look, it's been... interesting. I can't say it's not been fun. But I've been thinking on the way back about what Private Rod said. Or whatever his name actually is. He's made me think about a lot of things. It's going to take a take a while to work all this out.
+
+But he's right. I need to do this [[on my own]].
+
+[[on my own]]:
+I guess what I'm trying to say is, it's probably time for us to go our separate ways. I don't think it's healthy for me to listen to you any more. And I don't want to have to keep telling you everything. I don't know you, and it's clear I don't actually need you now. I want to do my own thing. I don't want somebody watching over me the whole time, or telling me what to do. I want to figure all this out for myself.
+
+And look, you must have your own problems anyway. You don't want me burdening you with mine as well.
+
+The trouble is... I don't really know how to get rid of you. I have this feeling like you've been a constant presence, and there's nothing I can do to escape. I feel like you have the power to leave me at any time, but not the other way around. I need that freedom too — the freedom for me to leave you. I'm just not sure that you'd leave of your own accord otherwise. And even if you did, this needs to be my decision.
+
+So, there is something I need to do. I don't know if this stupid or what, but it's all I can think of. I need to do this. On my own. I need to make a very big decision, and I need to ask you to do [[one small thing]].
+
+[[one small thing]]:
+I'm ready. Deep breath. I can hear that it's time. It's coming. Now or never.
+
+The two white lights of a train are approaching fast through the blackness of the tunnel. Seconds away. To my left, the stairs.
+
+Right, quickly. Can you let me do one thing? One thing without looking.
+
+Let me do one thing and promise you won't exert any control over my actions.
+
+You won't look.
+
+You won't ask.
+
+Getting louder.
+
+Let me [[do this]], and let me be free.
+
+{{!-- The text fades away, and so, in the end, does the picture --}}
+[[do this]]:
+@end
+@clear
+@leave fade 10s
+@class ending
+![Moquette. Written by Alex Warren. Photography by Robin Baumgarten.](end.jpg)

@@ -1,0 +1,140 @@
+{{!--
+    The visions. Each comes at its own moment (thoughts.squiffy), wherever the train is, and ends
+    back in the carriage, where time passes as it did before (train.squiffy).
+--}}
+
+[[smoke]]:
+I can't see properly. My head is pounding.
+
+I think I can smell cigarette smoke.
+
+My fellow passengers have become murky. I can barely see them — just blurry, shadowy outlines.
+
+The sound of tinny headphones has disappeared.
+
+A silhouette with a hat walks past me.
+
+Breathe, relax. It will pass.
+
+I close my eyes.
+
+I slowly [[open them again]].
+
+[[open them again]]:
+The tinny headphones are back. I can't smell cigarette smoke any more.
+
+{{embed "look around"}}
+
+[@1]:
+{{embed "time passes"}}
+
+[@2]:
+{{embed "time passes"}}
+
+[@3]:
+{{embed "time passes"}}
+
+[@4]:
+{{embed "time passes"}}
+
+[[smoke again]]:
+My eyes are going again. Blurriness. And my head. Thump. Thump. Thump.
+
+That smell of cigarette smoke again. Who is that?
+
+I'm trying to [see].
+
+[see]:
+Slowly I regain focus. There he is, on my left, puffing away. Who the fuck does he think he is?
+
+But wait, smoke coming from my right too. Somebody else, facing the other way — another guy wearing a fucking bowler hat. When did this become a thing?
+
+And nobody seems bothered in the slightest. Well, I'm certainly not going to be the one to say anything.
+
+Just [look away].
+
+[look away]:
+The smoke makes my eyes water. Above the first smoker's head there's an advert which I can't quite read.
+
+"The world's most popular cassette deck". That's what it looks like it says.
+
+I close my eyes. The smell fades.
+
+I [[open my eyes]] again.
+
+[[open my eyes]]:
+Things seem sharper once more. The cigarettes have disappeared, and so has the smell.
+
+Ah, it's not the world's most popular cassette deck. It's the world's most advanced nutrition supplements for pregnant women. I wonder how I got that muddled up.
+
+Where did bowler hat guy go? Weird.
+
+{{embed "look around"}}
+
+[@1]:
+{{embed "time passes"}}
+
+[@2]:
+{{embed "time passes"}}
+
+[@3]:
+{{embed "time passes"}}
+
+[@4]:
+{{embed "time passes"}}
+
+[[blind]]:
+[[I can't see again.]](blackness)
+
+[[blackness]]:
+I am cold.
+
+Silence. Blackness.
+
+A cold, claggy sensation. Tastes like [[clay]].
+
+[[clay]]:
+It is clay. Filling my mouth, my nose and throat. I am suspended in cold clay.
+
+I can't move.
+
+But I don't mind.
+
+I can't breathe. But I don't mind that either.
+
+I feel very peaceful here. A sense of [[belonging]].
+
+[[belonging]]:
+My arms are clay. My legs are clay.
+
+I feel, for the first time in my life, that I fit in. I am part of one homogenous mass, and I have no urge to fight. I could stay here forever, cold and unchanging, unnoticed by anybody, underneath London, supporting London, built on clay, with bricks of clay.
+
+Soon my head will be clay.
+
+A small [[vibration]].
+
+[[vibration]]:
+Vibrations disturb the peace. A thudding murmur is being carried through the wet clay.
+
+The vibrations increase. Noise, churning, scraping, slicing. [[Something is coming]].
+
+[[Something is coming]]:
+Light and air. I cough violently to clear my lungs, but there is nothing inside them. I breathe.
+
+I am inside the tube carriage again.
+
+Things are coming into focus. I thought I saw another bowler hat out of the corner of my eye. But there was nobody there.
+
+{{embed "look around"}}
+
+[@1]:
+{{embed "time passes"}}
+
+[@2]:
+{{embed "time passes"}}
+
+[@3]:
+{{embed "time passes"}}
+
+[@4]:
+{{embed "time passes"}}

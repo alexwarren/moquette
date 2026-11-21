@@ -1,0 +1,52 @@
+{{!--
+    What goes through Zoran's head. "t" is how long he's been riding trains: it goes up by one
+    each time something happens on a train (the doors close, the train is in the tunnel, the train
+    arrives), which makes three for each station.
+
+    Some of these moments start things off instead. "vision" is the section a vision starts in
+    (visions.squiffy), which whoever embedded this goes to, and "heather_soon" is for train.squiffy
+    and platform.squiffy.
+--}}
+
+[[thoughts]]:
+{{#unless heather_soon}}{{inc "t"}}{{/unless}}{{set "vision" ""}}
+{{#if t = 2}}
+Maybe I'll go to the park.
+{{else if t = 3}}
+Hyde Park would be nice today.
+{{else if t = 7}}
+This headache is creeping up on me. Coffee. Sweet coffee.
+{{else if t = 10}}
+Headache headache headache.
+{{else if t = 13}}
+Maybe I'm too hung over to handle the park today. Maybe I'll just stay down here. It feels safer — no phone signal, so nobody from work can reach me. I could stay down here all day.
+{{else if t = 17}}
+I'm sweating. This pain is like something tearing in the centre of my head.
+{{else if t = 20}}
+{{set "vision" "smoke"}}
+{{else if t = 30}}
+{{set "vision" "smoke again"}}
+{{else if t = 32}}
+Why would a hangover make me think I was surrounded by people smoking? That is fucked up. I don't want to think about it. If I don't think about it, maybe I can forget it happened.
+{{else if t = 33}}
+That must have been normal, once, sparking up on the tube. Puffing away out of habit. An unremarkable default setting. Yet fatal. The cool kids at school all smoked. Popular people lulling others into their deadly trap. All in the name of fitting in. Easier to copy than to think for yourself. I wonder if we're really any more grown up now? None of us in this carriage are smoking, but what other long term traps have we blundered into without thinking?
+{{else if t = 37}}
+{{!-- The train's doors start playing up, and whichever train I get on next, Heather is on it --}}
+{{set "heather_soon" true}}
+{{else if t = 38}}
+Where did Heather go then? Why wouldn't she stick around? Hardly a spark between us, but buggering off like that when a guy passes out?
+{{else if t = 39}}
+My head feels really weirdly fuzzy now. But it feels like it's aching a bit less. Maybe the brief period of unconsciousness helped the hangover.
+{{else if t = 40}}
+Did Heather just have somewhere important to be? A social media emergency?
+{{else if t = 45}}
+Wait, is that... no. The girl at the other end of the carriage is not Heather.
+{{else if t = 55}}
+{{set "vision" "blind"}}
+{{else if t = 57}}
+Just a dream. It must just have been a dream. A vivid, clay-filled dream.
+{{else if t = 58}}
+I don't want to be clay. Is that unusual? Nobody says they want to be clay. But we all want to feel like we belong to something. To fit in easily, not to stand out. Not to fight. To give in. So simple, so comfortable.
+
+And suffocating.
+{{/if}}

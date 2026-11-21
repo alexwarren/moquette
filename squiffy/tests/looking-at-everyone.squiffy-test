@@ -1,0 +1,857 @@
+# A playthrough of the story, recorded with --play --record.
+# Run it with --test, or record it again with --test --update.
+seed 5
+
+went "title"
+went "Balham"
+set strangers = ["a man (Kurt Cobain)","a woman and child","a male student","a fat man","a young pretty woman","a chubby couple","an old woman","a woman (familiar)","a woman (notebook)","two female friends","a man (muttering)","a smiling woman","a man in a suit (earbuds)","a large man","a small woman","a teenage girl","a man (MacBook)","a sleeping man","a woman (magazine)","a man (grey)","a woman drinking coffee","a man in a suit (earring)","a young guy","a man with a moustache","a man in sunglasses","a man (porridge)","a man in a jumper","a scruffy man","a trendy guy","a woman with a baby","a middle-aged woman","a woman reading"]
+set settled = ["a sleeping man","a woman with a baby","a woman reading"]
+
+> The train now arriving is for all stations to Edgware via Bank
+went "the doors open"
+
+> get on
+went "to Clapham South"
+
+> Clapham South
+went "to Clapham Common"
+
+> Clapham Common
+went "to Clapham North"
+
+> Clapham North
+went "to Stockwell"
+
+> stay on the train
+went "to Oval"
+
+> wait
+went "to Kennington"
+
+> stay on the train
+went "to Elephant and Castle"
+
+> change to the Bakerloo line
+went "escape at Elephant and Castle"
+set escaped = "Elephant and Castle"
+
+> get on
+went "Act 1"
+went "get on"
+set station = "Elephant & Castle"
+set line = "bakerloo"
+set direction = -1
+set t = 0
+set noticed = []
+set platforms = []
+set been = []
+set told = []
+set aboard = ["a man in sunglasses","an old woman","a man (grey)","a male student"]
+set next = "Lambeth North"
+set leg = 1
+set stop = 4
+
+> a man in sunglasses
+went "get on" "a man in sunglasses"
+set t = 1
+set leg = 2
+set vision = ""
+
+> an old woman
+went "get on" "an old woman"
+set t = 2
+set leg = 3
+
+> a man
+went "get on" "a man (grey)"
+set station = "Lambeth North"
+set t = 3
+set been = ["Lambeth North"]
+set next = "Waterloo"
+set leg = 0
+
+> a male student
+went "get on" "a male student"
+went "wait"
+set t = 4
+set leg = 1
+set stop = 3
+set leaving = ""
+set one_leaving = false
+set joining = ""
+set one_joining = false
+
+> a man in sunglasses
+went "wait" "a man in sunglasses"
+set t = 5
+set leg = 2
+
+> an old woman
+went "wait" "an old woman"
+set station = "Waterloo"
+set t = 6
+set been = ["Lambeth North","Waterloo"]
+set next = "Embankment"
+set leg = 0
+
+> a man
+went "wait" "a man (grey)"
+went "wait"
+set t = 7
+set aboard = ["a man in sunglasses","an old woman","a large man"]
+set leg = 1
+set leaving = "the male student and the man"
+set joining = "a large man"
+set one_joining = true
+
+> a man in sunglasses
+went "wait" "a man in sunglasses"
+set t = 8
+set leg = 2
+
+> an old woman
+went "wait" "an old woman"
+set station = "Embankment"
+set t = 9
+set been = ["Lambeth North","Waterloo","Embankment"]
+set next = "Charing Cross"
+set leg = 0
+
+> a large man
+went "wait" "a large man"
+went "wait"
+set t = 10
+set aboard = ["a man in sunglasses","a man (porridge)"]
+set leg = 1
+set leaving = "the large man and the old woman"
+set joining = "a man"
+
+> a man in sunglasses
+went "wait" "a man in sunglasses"
+set t = 11
+set leg = 2
+
+> a man
+went "wait" "a man (porridge)"
+set station = "Charing Cross"
+set t = 12
+set been = ["Lambeth North","Waterloo","Embankment","Charing Cross"]
+set next = "Piccadilly Circus"
+set leg = 0
+
+> wait
+went "wait"
+set t = 13
+set aboard = ["a man (porridge)","a woman and child","a man in a jumper"]
+set leg = 1
+set leaving = "the man in sunglasses"
+set one_leaving = true
+set joining = "a woman and child and a man in a jumper"
+set one_joining = false
+
+> a man
+went "wait" "a man (porridge)"
+set t = 14
+set leg = 2
+
+> a woman and child
+went "wait" "a woman and child"
+set station = "Piccadilly Circus"
+set t = 15
+set been = ["Lambeth North","Waterloo","Embankment","Charing Cross","Piccadilly Circus"]
+set next = "Oxford Circus"
+set leg = 0
+
+> a man in a jumper
+went "wait" "a man in a jumper"
+went "wait"
+set t = 16
+set aboard = ["a man (porridge)","a woman and child","a woman (familiar)"]
+set leg = 1
+set leaving = "the man in the jumper"
+set joining = "a woman"
+set one_joining = true
+
+> a man
+went "wait" "a man (porridge)"
+set t = 17
+set leg = 2
+
+> a woman and child
+went "wait" "a woman and child"
+set station = "Oxford Circus"
+set t = 18
+set been = ["Lambeth North","Waterloo","Embankment","Charing Cross","Piccadilly Circus","Oxford Circus"]
+set next = "Regent's Park"
+set leg = 0
+
+> a woman
+went "wait" "a woman (familiar)"
+went "wait"
+set t = 19
+set aboard = ["a trendy guy","a man (muttering)","a smiling woman"]
+set leg = 1
+set leaving = "the woman and child, the woman and the man"
+set one_leaving = false
+set joining = "a trendy guy, a man and a smiling woman"
+set one_joining = false
+
+> a trendy guy
+went "wait" "a trendy guy"
+went "smoke"
+set t = 20
+set vision = "smoke"
+
+> open them again
+went "open them again"
+
+> a trendy guy
+went "open them again" "a trendy guy"
+set t = 21
+set leg = 2
+set vision = ""
+
+> a man
+went "open them again" "a man (muttering)"
+set station = "Regent's Park"
+set t = 22
+set been = ["Lambeth North","Waterloo","Embankment","Charing Cross","Piccadilly Circus","Oxford Circus","Regent's Park"]
+set next = "Baker Street"
+set leg = 0
+
+> a smiling woman
+went "open them again" "a smiling woman"
+went "wait"
+set t = 23
+set aboard = ["a man (muttering)","a smiling woman","a middle-aged woman"]
+set leg = 1
+set leaving = "the trendy guy"
+set one_leaving = true
+set joining = "a middle-aged woman"
+set one_joining = true
+
+> a man
+went "wait" "a man (muttering)"
+set t = 24
+set leg = 2
+
+> a smiling woman
+went "wait" "a smiling woman"
+set station = "Baker Street"
+set t = 25
+set been = ["Lambeth North","Waterloo","Embankment","Charing Cross","Piccadilly Circus","Oxford Circus","Regent's Park","Baker Street"]
+set next = "Marylebone"
+set leg = 0
+
+> a middle-aged woman
+went "wait" "a middle-aged woman"
+went "wait"
+set t = 26
+set aboard = ["a man (muttering)","a smiling woman","a middle-aged woman","a woman (magazine)","a fat man"]
+set leg = 1
+set leaving = ""
+set one_leaving = false
+set joining = "a woman and a fat man"
+set one_joining = false
+
+> a man
+went "wait" "a man (muttering)"
+set t = 27
+set leg = 2
+
+> a smiling woman
+went "wait" "a smiling woman"
+set station = "Marylebone"
+set t = 28
+set been = ["Lambeth North","Waterloo","Embankment","Charing Cross","Piccadilly Circus","Oxford Circus","Regent's Park","Baker Street","Marylebone"]
+set next = "Edgware Road"
+set leg = 0
+
+> a middle-aged woman
+went "wait" "a middle-aged woman"
+went "wait"
+set t = 29
+set leg = 1
+set joining = ""
+
+> a man
+went "wait" "a man (muttering)"
+went "smoke again"
+set t = 30
+set vision = "smoke again"
+
+> see
+went "smoke again" "see"
+
+> look away
+went "smoke again" "look away"
+
+> open my eyes
+went "open my eyes"
+
+> a man
+went "open my eyes" "a man (muttering)"
+set t = 31
+set leg = 2
+set vision = ""
+
+> a smiling woman
+went "open my eyes" "a smiling woman"
+set station = "Edgware Road"
+set t = 32
+set been = ["Lambeth North","Waterloo","Embankment","Charing Cross","Piccadilly Circus","Oxford Circus","Regent's Park","Baker Street","Marylebone","Edgware Road"]
+set next = "Paddington"
+set leg = 0
+
+> a middle-aged woman
+went "open my eyes" "a middle-aged woman"
+went "wait"
+set t = 33
+set aboard = ["a man (muttering)","a smiling woman","a middle-aged woman","a fat man","a young guy","a man (MacBook)","a scruffy man"]
+set leg = 1
+set leaving = "the woman"
+set one_leaving = true
+set joining = "a young guy, a man and a scruffy man"
+
+> a man
+went "wait" "a man (muttering)"
+set t = 34
+set leg = 2
+
+> a smiling woman
+went "wait" "a smiling woman"
+set station = "Paddington"
+set t = 35
+set been = ["Lambeth North","Waterloo","Embankment","Charing Cross","Piccadilly Circus","Oxford Circus","Regent's Park","Baker Street","Marylebone","Edgware Road","Paddington"]
+set next = ""
+set leg = -1
+
+> a middle-aged woman
+went "wait" "a middle-aged woman"
+
+> a fat man
+went "wait" "a fat man"
+
+> a young guy
+went "wait" "a young guy"
+
+> another man
+went "wait" "a man (MacBook)"
+
+> a scruffy man
+went "wait" "a scruffy man"
+
+> eat that
+went "wait" "eat that"
+set noticed = ["the young guy who was picking his nose"]
+
+> scientific paper
+went "wait" "scientific paper"
+set noticed = ["the young guy who was picking his nose","the man who was chuckling at platelet function disorders"]
+
+> Time for me to get off this train
+went "get off here"
+went "platform"
+set platform = ""
+set ways = ["southbound Bakerloo line","eastbound Hammersmith & City/Circle lines"]
+
+> southbound Bakerloo line
+went "change"
+went "platform"
+set platforms = ["southbound Bakerloo line at Paddington"]
+set platform = "southbound Bakerloo line"
+set ways = ["eastbound Hammersmith & City/Circle lines"]
+set to = "southbound Bakerloo line"
+
+> wait
+went "platform" "wait"
+set direction = 1
+set next = "Edgware Road"
+set line_name = "Bakerloo"
+set other_trains = false
+
+> get on
+went "get on"
+set aboard = ["two female friends","a sleeping man"]
+set leg = 1
+set stop = 4
+
+> two female friends
+went "get on" "two female friends"
+set t = 36
+set leg = 2
+
+> a sleeping man
+went "get on" "a sleeping man"
+set t = 37
+set leg = 3
+set heather_soon = true
+
+> small talk
+went "get on" "small talk"
+set station = "Edgware Road"
+set noticed = ["the young guy who was picking his nose","the man who was chuckling at platelet function disorders","the two women who were having that inane conversation"]
+set next = "Marylebone"
+set leg = 0
+
+> wait
+went "wait"
+set aboard = ["a sleeping man","a woman (notebook)"]
+set leg = 1
+set stop = 3
+set leaving = "the two female friends"
+set joining = "a woman"
+set one_joining = true
+
+> a sleeping man
+went "wait" "a sleeping man"
+set leg = 2
+set door_faults = 1
+
+> a woman
+went "wait" "a woman (notebook)"
+set station = "Marylebone"
+set next = "Baker Street"
+set leg = 0
+
+> notes
+went "wait" "notes"
+went "wait"
+set noticed = ["the young guy who was picking his nose","the man who was chuckling at platelet function disorders","the two women who were having that inane conversation","the woman who was taking surreptitious notes"]
+set aboard = ["a sleeping man","a woman drinking coffee","a man with a moustache","a small woman","a man (Kurt Cobain)"]
+set leg = 1
+set leaving = "the woman"
+set joining = "a woman drinking coffee, a man with a moustache, a small woman and a man"
+set one_joining = false
+
+> a sleeping man
+went "wait" "a sleeping man"
+set leg = 2
+set door_faults = 2
+
+> a woman drinking coffee
+went "wait" "a woman drinking coffee"
+set station = "Baker Street"
+set next = "Regent's Park"
+set leg = 0
+
+> a man with a moustache
+went "wait" "a man with a moustache"
+went "wait"
+set aboard = ["a sleeping man","a woman drinking coffee","a small woman","a woman (magazine)","a man (Kurt Cobain)"]
+set leg = 1
+set leaving = "the man with the moustache and the man"
+set one_leaving = false
+set joining = "a woman and a man"
+
+> a sleeping man
+went "wait" "a sleeping man"
+set leg = 2
+set door_faults = 3
+
+> a woman drinking coffee
+went "wait" "a woman drinking coffee"
+set station = "Regent's Park"
+set next = "Oxford Circus"
+set leg = -1
+
+> a small woman
+went "wait" "a small woman"
+
+> a woman
+went "wait" "a woman (magazine)"
+
+> a man
+went "wait" "a man (Kurt Cobain)"
+
+> self-satisfaction
+went "wait" "self-satisfaction"
+set noticed = ["the young guy who was picking his nose","the man who was chuckling at platelet function disorders","the two women who were having that inane conversation","the woman who was taking surreptitious notes","the man with the Kurt Cobain biography"]
+
+> get off
+went "get off here"
+went "platform"
+set platforms = ["southbound Bakerloo line at Paddington","southbound Bakerloo line at Regent's Park"]
+set ways = ["northbound Bakerloo line"]
+
+> wait
+went "platform" "wait"
+
+> get on
+went "Heather"
+set heather_soon = false
+
+> Heather
+went "Heather Heather Heather"
+went "Hello"
+
+> "Hello"
+went "Hi"
+
+> "Fine. Good, actually. How's things with you?"
+went "Good"
+
+> "How's the world of social media then?"
+went "Oh fine"
+
+> five
+went "five"
+
+> "So, er..."
+went "So er"
+
+> "How was Morocco?"
+went "Morocco"
+
+> "How's the cat doing?"
+went "the cat"
+
+> "Where are you off to then?"
+went "pale"
+
+> "I'm fine."
+went "Black speckles"
+went "water"
+
+> "I'm fine."
+went "bench"
+
+> "Where's Heather?"
+went "orange jacket"
+
+> "I'm fine."
+went "paramedic"
+set strangers = ["a man (Kurt Cobain)","a woman and child","a male student","a fat man","a young pretty woman","a chubby couple","an old woman","a woman (familiar)","a woman (notebook)","two female friends","a man (muttering)","a smiling woman","a man in a suit (earbuds)","a large man","a small woman","a teenage girl","a man (MacBook)","a sleeping man","a woman (magazine)","a man (grey)","a woman drinking coffee","a man in a suit (earring)","a young guy","a man with a moustache","a man in sunglasses","a man (porridge)","a man in a jumper","a scruffy man","a trendy guy","a woman with a baby","a middle-aged woman","a woman reading","a man (not Heather)","a man (pencil legs)","a woman (not Heather)","a young woman"]
+set station = "Oxford Circus"
+set next = "Piccadilly Circus"
+
+> train
+went "get on"
+set aboard = ["a man in a suit (earbuds)","a woman reading","a young pretty woman","a man in a suit (earring)"]
+set leg = 1
+set stop = 4
+
+> a man in a suit
+went "get on" "a man in a suit (earbuds)"
+set t = 38
+set leg = 2
+
+> a woman reading
+went "get on" "a woman reading"
+set t = 39
+set leg = 3
+
+> a young pretty woman
+went "get on" "a young pretty woman"
+set station = "Piccadilly Circus"
+set t = 40
+set next = "Charing Cross"
+set leg = 0
+
+> another man in a suit
+went "get on" "a man in a suit (earring)"
+went "wait"
+set t = 41
+set aboard = ["a woman reading","a man in a suit (earring)","a man (pencil legs)","a woman (not Heather)","a chubby couple","a teenage girl"]
+set leg = 1
+set stop = 3
+set leaving = "the man in the suit and the young pretty woman"
+set joining = "a man, a woman, a chubby couple and a teenage girl"
+
+> a woman reading
+went "wait" "a woman reading"
+set t = 42
+set leg = 2
+
+> a man in a suit
+went "wait" "a man in a suit (earring)"
+set station = "Charing Cross"
+set t = 43
+set next = "Embankment"
+set leg = 0
+
+> a man
+went "wait" "a man (pencil legs)"
+went "wait"
+set t = 44
+set aboard = ["a woman reading","a man in a suit (earring)","a man (pencil legs)","a woman (not Heather)","a teenage girl"]
+set leg = 1
+set leaving = "the chubby couple"
+set one_leaving = true
+set joining = ""
+
+> a woman reading
+went "wait" "a woman reading"
+set t = 45
+set leg = 2
+
+> a man in a suit
+went "wait" "a man in a suit (earring)"
+set station = "Embankment"
+set t = 46
+set next = "Waterloo"
+set leg = 0
+
+> a man
+went "wait" "a man (pencil legs)"
+went "wait"
+set t = 47
+set leg = 1
+set leaving = ""
+set one_leaving = false
+
+> a woman reading
+went "wait" "a woman reading"
+set t = 48
+set leg = 2
+
+> a man in a suit
+went "wait" "a man in a suit (earring)"
+set station = "Waterloo"
+set t = 49
+set next = "Lambeth North"
+set leg = 0
+
+> a man
+went "wait" "a man (pencil legs)"
+went "wait"
+set t = 50
+set aboard = ["a woman reading","a man (pencil legs)","a woman (not Heather)","a young woman","a chubby couple","a teenage girl"]
+set leg = 1
+set leaving = "the man in the suit and the teenage girl"
+set joining = "a young woman, a chubby couple and a teenage girl"
+
+> a woman reading
+went "wait" "a woman reading"
+set t = 51
+set leg = 2
+
+> a man
+went "wait" "a man (pencil legs)"
+set station = "Lambeth North"
+set t = 52
+set next = "Elephant & Castle"
+set leg = 0
+
+> a woman
+went "wait" "a woman (not Heather)"
+went "wait"
+set t = 53
+set aboard = ["a woman reading","a man (pencil legs)","a young woman","a chubby couple","a teenage girl"]
+set leg = 1
+set leaving = "the woman"
+set one_leaving = true
+set joining = ""
+
+> a woman reading
+went "wait" "a woman reading"
+set t = 54
+set leg = 2
+
+> a man
+went "wait" "a man (pencil legs)"
+went "blind"
+set t = 55
+set vision = "blind"
+
+> I can't see again.
+went "blackness"
+
+> clay
+went "clay"
+
+> belonging
+went "belonging"
+
+> vibration
+went "vibration"
+
+> Something is coming
+went "Something is coming"
+
+> a woman reading
+went "Something is coming" "a woman reading"
+set station = "Elephant & Castle"
+set t = 56
+set been = ["Lambeth North","Waterloo","Embankment","Charing Cross","Piccadilly Circus","Oxford Circus","Regent's Park","Baker Street","Marylebone","Edgware Road","Paddington","Elephant & Castle"]
+set told = ["Bakerloo extension"]
+set next = ""
+set leg = -1
+set vision = ""
+
+> a man
+went "Something is coming" "a man (pencil legs)"
+
+> a young woman
+went "Something is coming" "a young woman"
+
+> a chubby couple
+went "Something is coming" "a chubby couple"
+
+> a teenage girl
+went "Something is coming" "a teenage girl"
+
+> All change
+went "get off here"
+went "platform"
+set platform = ""
+set ways = ["northbound Bakerloo line","northbound Northern line","southbound Northern line"]
+
+> northbound Bakerloo line
+went "change"
+went "platform"
+set platforms = ["southbound Bakerloo line at Paddington","southbound Bakerloo line at Regent's Park","northbound Bakerloo line at Elephant & Castle"]
+set platform = "northbound Bakerloo line"
+set ways = ["northbound Northern line","southbound Northern line"]
+set to = "northbound Bakerloo line"
+
+> wait
+went "platform" "wait"
+set direction = -1
+set next = "Lambeth North"
+
+> get on
+went "get on"
+set aboard = ["a woman with a baby","a man (not Heather)"]
+set leg = 1
+set stop = 4
+
+> a woman with a baby
+went "get on" "a woman with a baby"
+set t = 57
+set leg = 2
+
+> a man
+went "get on" "a man (not Heather)"
+set t = 58
+set leg = 3
+
+> looking at me
+went "get on" "looking at me"
+set station = "Lambeth North"
+set t = 59
+set noticed = ["the young guy who was picking his nose","the man who was chuckling at platelet function disorders","the two women who were having that inane conversation","the woman who was taking surreptitious notes","the man with the Kurt Cobain biography","the woman with the suspicious baby"]
+set next = "Waterloo"
+set leg = 0
+
+> keep staring
+went "get on" "keep staring"
+went "wait"
+set t = 60
+set leg = 1
+set stop = 3
+set leaving = ""
+set one_leaving = false
+
+> a woman with a baby
+went "wait" "a woman with a baby"
+set t = 61
+set leg = 2
+
+> a man
+went "wait" "a man (not Heather)"
+set station = "Waterloo"
+set t = 62
+set next = "Embankment"
+set leg = 0
+
+> wait
+went "wait"
+set t = 63
+set aboard = ["a woman with a baby"]
+set leg = 1
+set leaving = "the man"
+set one_leaving = true
+
+> a woman with a baby
+went "wait" "a woman with a baby"
+set t = 64
+set leg = 2
+
+> Wait
+went "wait" "stare"
+set station = "Embankment"
+set t = 65
+set next = "Charing Cross"
+set leg = 0
+set stares = 1
+
+> wait
+went "wait"
+set t = 66
+set leg = 1
+set leaving = ""
+set one_leaving = false
+
+> a woman with a baby
+went "wait" "a woman with a baby"
+set t = 67
+set leg = 2
+
+> Wait
+went "wait" "stare"
+set station = "Charing Cross"
+set t = 68
+set next = "Piccadilly Circus"
+set leg = 0
+set stares = 2
+
+> wait
+went "wait"
+set t = 69
+set leg = 1
+
+> a woman with a baby
+went "wait" "a woman with a baby"
+set t = 70
+set leg = 2
+
+> Wait
+went "wait" "stare"
+went "HEATHER"
+went "there she is"
+set station = "Piccadilly Circus"
+set t = 71
+set next = "Oxford Circus"
+set leg = 0
+set stares = 3
+
+> run
+went "run"
+
+> knock
+went "knock"
+
+> monitors
+went "knock" "monitors"
+
+> man
+went "knock" "man"
+
+> "Hello"
+went "Come in"
+
+> close the door
+went "close the door"
+set watched = ["the two women who were having that inane conversation","the man with the Kurt Cobain biography","the young guy who was picking his nose","the man who was chuckling at platelet function disorders","the woman with the suspicious baby"]
+
+> "What?"
+went "What"
+
+> "Stop doing what?"
+went "Stop doing what"
+
+> Heather?
+went "empty hope"
+
+> train
+went "Epilogue"
+
+> on my own
+went "on my own"
+
+> one small thing
+went "one small thing"
+
+> do this
+went "do this"

@@ -1,0 +1,184 @@
+{{!--
+    Riding the train. There's nothing to do on a train but look at the other passengers
+    (carriage.squiffy), and each look takes a moment: see "time passes". [@1], [@2]... are shown
+    after the first, second... passage link clicked in a section, whichever link it is.
+
+    {{board}}, {{doors}}, {{move}}, (passengers), (between) and (nothing_to_click) come from tube.js.
+--}}
+
+[[get on]]:
+{{board}}{{set "leg" 1}}{{set "stop" 4}}
+{{#if previous_section = "paramedic"}}
+I get up slowly. I don't want to fall over and smash my face into the platform. I get on the train and hang tightly onto the bar above the door.
+{{else}}
+I get on the train.
+{{/if}}
+
+{{embed "look around"}}
+
+The doors close.
+
+[@1]:
+{{embed "time passes"}}
+
+[@2]:
+{{embed "time passes"}}
+
+[@3]:
+{{embed "time passes"}}
+
+[@4]:
+{{embed "time passes"}}
+
+[[wait]]:
+{{embed "thoughts"}}
+
+{{#if vision}}
+{{goto vision}}
+{{else}}
+{{doors}}{{set "leg" 1}}{{set "stop" 3}}
+{{#if leaving or joining}}
+{{#if leaving}}{{capitalise leaving}} {{= one_leaving ? "gets" : "get"}} off the train. {{/if}}{{#if joining}}Getting on {{= one_joining ? "is" : "are"}} {{joining}}.{{/if}}
+
+The doors close.
+{{else}}
+Nobody gets on or off. The doors close.
+{{/if}}
+
+{{embed "look around"}}
+{{/if}}
+
+[@1]:
+{{embed "time passes"}}
+
+[@2]:
+{{embed "time passes"}}
+
+[@3]:
+{{embed "time passes"}}
+
+[@4]:
+{{embed "time passes"}}
+
+[[look around]]:
+{{#if aboard.length}}
+I can see {{#each (passengers)}}{{#if @first}}{{else if @last}} and {{else}}, {{/if}}{{passage this.who text=this.as}}{{/each}}.
+{{else}}
+It's pretty empty. Nothing to do but {{passage "stare" text="Wait"}}.
+{{/if}}
+
+{{!--
+    Every click in the carriage is a moment gone. While the train is at a station (leg is 0), it's
+    as good as waiting: the doors close. After that, the first moment is in the tunnel, and when
+    leg reaches stop, the train is at the next station. A train that isn't going any further has
+    a leg of -1, and all the time in the world.
+--}}
+[[time passes]]:
+{{#if leg = 0}}
+{{goto "wait"}}
+{{else if leg > 0}}
+{{embed "thoughts"}}
+
+{{#if vision}}
+{{goto vision}}
+{{else}}
+{{#if leg = 1}}
+{{embed "tunnel facts"}}
+
+{{#if heather_soon}}
+{{inc "door_faults"}}
+{{#if door_faults = 1}}
+The train slows down suddenly, then speeds up, then slows down suddenly again. Must be the emergency brake.
+
+The drivers voice crackles over the speakers. "Please do not lean against the doors, stand away from the doors please."
+{{else if door_faults = 2}}
+The train slows down suddenly again, and speeds up and slows down once more. This merry dance.
+
+"Once again, do not lean against the doors, stand away from the doors. If you keep leaning against the doors, this train will be taken out of service."
+{{else if door_faults = 3}}
+Great, once again we're stopping and starting. I can't see anybody on this carriage leaning against the doors though.
+{{/if}}
+{{/if}}
+{{/if}}
+
+{{inc "leg"}}
+{{#if leg >= stop}}
+{{embed "the next station"}}
+{{else if (nothing_to_click)}}
+{{passage "stare" text="Wait"}}. That's all I can do.
+{{/if}}
+{{/if}}
+{{/if}}
+
+[[the next station]]:
+{{move}}{{set "leg" 0}}
+{{#if t >= 70}}
+This is {{station}}.{{goto "HEATHER"}}
+{{else if heather_soon and door_faults >= 3}}
+{{set "leg" -1}}This is {{station}}.
+
+The driver's voice booms out. "Apologies ladies and gentlemen, due to a fault with the doors, this train is now being taken out of service. Your next service is about one minute behind this one. All change please, all change. Once again, due to a fault with the doors this train is not in service. All change please."
+
+Well, all I can do is [[get off]](get off here).
+{{else}}
+This is {{station}}. {{embed "station facts"}} {{#if next}}I could [[get off here]]. Or [[wait]].{{else}}{{set "leg" -1}}{{embed "the end of the line"}}{{/if}}
+{{/if}}
+
+[[the end of the line]]:
+{{#if station = "Stockwell" and line = "northern1"}}
+I'm not going home just yet. [[Time to change trains]](get off here).
+{{else if station = "Elephant & Castle" and line = "bakerloo"}}
+This is the end of the line.{{#unless (contains "told" "Bakerloo extension")}}{{append "told" "Bakerloo extension"}} They are thinking about extending the Bakerloo into south-east London at some point — but that won't be for a while. Certainly not today, anyway.{{/unless}} [[All change]](get off here).
+{{else if line = "wc" or (station = "Aldgate" and line = "metropolitan") or (station = "Brixton" and line = "victoria") or (station = "Edgware Road" and (line = "circle" or line = "district1"))}}
+This is the end of the line. [[All change]](get off here).
+{{else}}
+{{random (array "I don't want to go any further this way." "If I stay on this I'm going to end up in the middle of nowhere." "There's no need for me to travel to the darkest reaches of the outer zones.")}} [[Time for me to get off this train]](get off here).
+{{/if}}
+
+{{!-- Things I know about a station, which I think of the first time a train takes me there --}}
+[[station facts]]:
+{{#unless (contains "been" station)}}{{append "been" station}}
+{{#if station = "Aldgate"}}This station is built on the site of a plague pit. Yum yum.
+{{else if station = "Angel"}}Home of the longest escalators on the London Underground.
+{{else if station = "Barbican"}}This station used to be known as Aldersgate.
+{{else if station = "Charing Cross"}}You used to be able to change to the Jubilee line here, until the extension was built.
+{{else if station = "Earl's Court"}}This is where they installed the very first escalators on the tube, in 1911.
+{{else if station = "Euston Square"}}This used to be called Gower Street.
+{{else if station = "Holborn"}}There used to be a little shuttle branch of the Piccadilly line here that ran down to Aldwych. Pretty pointless really - by the time you'd waited for the train you could have probably just walked to Aldwych from Holborn as it's only about five minutes away. So hardly anybody used it and they shut it in 1994.
+{{else if station = "Mansion House"}}One of only two stations to feature all the vowels - the other is South Ealing.
+{{else if station = "Marylebone"}}When it opened, this station was called Great Central. Bit of a grand name considering it's only a small mainline station above.
+{{else if station = "Queensway"}}This station was called Queen's Road once upon a time.
+{{else if station = "Sloane Square"}}There is a pipe above the platform here that carries the River Westbourne.
+{{else if station = "Warren Street"}}This station was called Euston Road when it first opened. You can still see the old name in tiles at the end of the Northern line platforms.
+{{/if}}
+{{/unless}}
+
+{{!-- Things I know about the tunnels, which I think of the first time I go through them --}}
+[[tunnel facts]]:
+{{#if (between "Tottenham Court Road" "Holborn") and not (contains "told" "British Museum")}}
+{{append "told" "British Museum"}}
+We're passing through an{{#if abandoned > 0}}other{{/if}} abandoned station here, called British Museum. There's not very much left of it now, just some assorted railway junk where the platforms used to be. Most people never even know it's there.
+{{inc "abandoned"}}
+{{else if (between "Angel" "Old Street") and not (contains "told" "City Road")}}
+{{append "told" "City Road"}}
+We're passing through an{{#if abandoned > 0}}other{{/if}} abandoned station here, City Road. It was shut in 1922 and there's very little left of it.
+{{inc "abandoned"}}
+{{else if (between "Hyde Park Corner" "Green Park") and not (contains "told" "Down Street")}}
+{{append "told" "Down Street"}}
+There's an{{#if abandoned > 0}}other{{/if}} abandoned station around here, Down Street. I like to keep an eye on the window here as you can see the black tunnel change to beige bricks as we go through it. It closed in the 1930s and it was used by Winston Churchill as an underground bunker for government meetings. How cool is that?
+{{inc "abandoned"}}
+{{else if (between "South Kensington" "Knightsbridge") and not (contains "told" "Brompton Road")}}
+{{append "told" "Brompton Road"}}
+There used to be a station here called Brompton Road. You can still see it at surface level - if you look down a side street, there's a distinctive red-tiled building which is immediately recognisable as a tube station.
+{{inc "abandoned"}}
+{{else if (between "Leicester Square" "Covent Garden") and not (contains "told" "shortest")}}
+{{append "told" "shortest"}}
+This section of Piccadilly line between {{#if direction = 1}}Leicester Square and Covent Garden{{else}}Covent Garden and Leicester Square{{/if}} is the shortest distance between stations on the Underground. I think everybody knows that, except tourists.
+{{else if line = "jubilee" and (between "Green Park" "Westminster") and not (contains "told" "Jubilee")}}
+{{append "told" "Jubilee"}}{{append "been" "Charing Cross"}}
+{{#if direction = 1}}
+The Jubilee line used to go to Charing Cross from here, where it terminated. The short spur still exists, and they use the platforms at Charing Cross for filming sometimes. So we're now going from the older bit of the Jubilee line onto the newer extension, which opened in 1999.
+{{else}}
+We're now heading onto the "old" bit of the Jubilee line - it used to run from Charing Cross to Westminster and then up to Stanmore. You can't get to Charing Cross any more on the Jubilee, but the line from Green Park to there still exists, and they use the platforms at Charing Cross for filming sometimes.
+{{/if}}
+{{/if}}

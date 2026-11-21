@@ -1,0 +1,205 @@
+@title Moquette
+@start title
+@ui tube.js
+
+[[title]]:
+@class title-card
+{{!--
+    Moquette, by Alex Warren. An entry in IFComp 2013, written for Quest 5.5, and the reason
+    Squiffy exists. This is the Squiffy version.
+
+    This file is the title and the commute, up to the moment Zoran leaves his usual train.
+
+    train.squiffy       riding a train from station to station, and what there is to know on the way
+    platform.squiffy    waiting for trains, and changing lines
+    carriage.squiffy    the other passengers
+    thoughts.squiffy    what goes through Zoran's head as the morning goes on
+    visions.squiffy     smoke, and clay
+    heather.squiffy     Heather
+    private-rod.squiffy the cupboard, and the way home
+    tube.js             the Underground: the lines, the platforms, and who gets on and off
+    effects.js          the swarm of Heathers, the blackout, and the word that goes by like a train
+    moquette.css        how it looks
+--}}
+![Moquette, by Alex Warren. Photography by Robin Baumgarten.](intro.jpg)
+
+{{goto "Balham" after="7.5s"}}
+
+[[Balham]]:
+@clear
+@leave fade 3s
+@transition fade 3s
+Tuesday morning, 08:03. Waiting for the Northern line at Balham. 3 minutes to fill.
+
+"Muesli. A delicious way to make sure today isn't one of those days". Right. Who knew a horrible breakfast cereal could have so much power? Maybe it just sets your expectations suitably low for the rest of the day. If you start off with disappointment, things can only go up from there.
+
+"Become who you want to be. Get a place at Birkbeck". Good idea. Shame I don't know who I want to be.
+
+"Meet someone amazing". Sounds lovely. You have to meet a lot of strange people first, by the sound of it. One day I'll have to sign up though. Can't carry on like this forever.
+
+"Feeling unwell? Seek help at the next station. It's quicker to ask staff for help at a station than pull the passenger alarm between stops". Thanks, London Underground. Can your staff help me with this hangover?
+
+The platform is filling up. 1 minute. On my left, behind the yellow line, a guy in dreadlocks reads today's Metro — some tediousness about a report into child obesity. On my right, a woman checks her makeup in the camera of her phone. To her right, a guy in a bowler hat. What is this, the 1960s? Hipster twat. Shit, eye contact! I flick my head forward. Feels like he's still looking.
+
+At last. "[[The train now arriving is for all stations to Edgware via Bank]](the doors open)".
+
+[[the doors open]]:
+I glance to my right. I can't see the hipster at all now.
+
+The doors open. I [[get on]](to Clapham South).
+
+[[to Clapham South]]:
+@clear
+@leave slide-up 1s
+Pretty full as usual. No expectation of a seat, so I barely look for one. Space over by the opposite door though.
+
+No challenges here. I just glide to a pole and grab hold of it without a moment's thought. No decisions, no effort, no choice, no problem.
+
+Auto-pilot. It's almost a reflex reaction to the sound of the alarm clock, to get up, leave the flat, and catch the tube to work. Ten stops to Bank, change to the Central line, one stop to Liverpool Street. Turn left, up the escalator, left, through the barriers, right, up the stairs. Up the ramp and past the huge big rusty metal sculpture. Through the revolving doors. Rummage in pockets for security badge, and into the office. All automatic, and I'll barely notice a thing.
+
+"Morning, Zoran" the boss will say, and he'll hear a reply. But he only sees the body of Zoran Tharp, and my mind will be elsewhere.
+
+The day will pass, eventually, and I'll go home and heat up that second pizza I bought yesterday, then go to bed having hardly troubled my synapses in 16 hours.
+
+Possibly the most exciting thing I will do today is go for a shit. Sneak off from my desk for 10 minutes of unscheduled me-time. Like a mini holiday.
+
+The doors open. One person gets on.
+
+This station is [[Clapham South]](to Clapham Common).
+
+[[to Clapham Common]]:
+Beep-beep-beep-beep-beep.
+
+The doors close. The train lurches onward.
+
+Despite the clatter of the train, and the rocking motion, there is a peaceful stillness here. Many people in a small area, yet we are all alone. It is comfortable, in a strange way, even though I am standing up, having to hold on so I don't fall over the next time the train unexpectedly yanks left or right. Almost meditative. Almost soothing my hangover. Almost.
+
+Like water droplets coming together and flowing through a pipe, the Tube carries us along, we are swept through from home to the office. It's automatic. Water starts at one place and ends up at the other, and so do we. We are packed together and become indistinguishable from a general flow.
+
+This station is [[Clapham Common]](to Clapham North).
+
+[[to Clapham North]]:
+They'll have driverless trains down here eventually. In fact, the drivers are pretty much automatic already. One button to open the doors. One button to make the train go. That's all there is to it. I wonder what they think about up there. Their whole day just kind of happens for them. Not that different to mine really. An automatically guided train, taking automatically guided citizens to their workplaces, on schedule, like clockwork. Machines carrying machines. Is anybody conscious? Am I even really here?
+
+This station is [[Clapham North]](to Stockwell).
+
+[[to Stockwell]]:
+Sometimes the machine breaks. A spring snaps, and the clockwork mechanism seizes up. But we are not cogs, are we? Supposedly we have free will. I have free will. I don't need to be part of this.
+
+We have arrived at Stockwell.
+
+Normally I would [[stay on the train]](to Oval). But there is a sign pointing to the [[Victoria line]](escape at Stockwell). Dare I?
+
+[[to Oval]]:
+Fair enough. Better be sensible. I don't want to get fired.
+
+About 15 people get off the train. All the people standing between the seats took the free ones though, so there's still nowhere to sit. I'll carry on hanging here. At least it's not so packed, and I can breathe now.
+
+This station is Oval. The doors open.
+
+Well, even if I wanted to escape and do something different today, there's nowhere I can go — other than turn around and go south again. May as well stay on. The next station is Kennington — I could change there for the other branch of the Northern line.
+
+All I can do is [[wait]](to Kennington).
+
+[[to Kennington]]:
+One woman rushes on as the doors close, and we're off again.
+
+We come to a stop in the tunnel. Nobody says anything. Why would they? There are no thoughts to communicate at this moment in time. We know trains stop, and then they start. Barely worth noticing, let alone commenting on. Like so much in life. One minute later, on we go.
+
+Here we are now at Kennington.
+
+I could [[stay on the train]](to Elephant and Castle) again. Or I could [[change to the Charing Cross branch]](escape at Kennington). I could do that. There is nothing stopping me.
+
+[[to Elephant and Castle]]:
+Fine. I'll stay on for one more stop then.
+
+Five people get off, and I could have had a seat if I was quick enough. One man in a suit gets on, and the doors close.
+
+I'll just be a good boy and wait here, as the train takes me ever closer to yet another day, a day that will be almost exactly the same as yesterday.
+
+We stop in the tunnel again. After a minute, the driver's voice breaks the silence. "Sorry for the short hold up, we're just held at a red signal, we'll be on the move shortly". Well, that's useful information. Of course we're stopped because we're held at a red signal. Why is there a red signal though? "Once again, apologies for the delay, we're just being held at a red signal. We'll be on the move again very soon. When we do, this train will be calling at all stations to High Barnet via Bank". This guy clearly just loves the sound of his own voice. Maybe he really wants to be a breakfast radio DJ.
+
+Almost as soon as he stops speaking, we're on our way again, but mercifully he doesn't feel the need to come back and inform us all of this obvious fact.
+
+We have arrived at Elephant and Castle. I can [[change to the Bakerloo line]](escape at Elephant and Castle). I think I'd like that. I could also [[stay on the train]](to Borough) again.
+
+[[to Borough]]:
+Good self control there. I suppose I should feel pleased with myself. I do not feel pleased with myself. I am denying my true self in favour of being a nice compliant automaton. This is not what I want. It's what you want.
+
+Soon enough we're at Borough. I can't even make a choice here. All I can do is [[stay on the Northern line]](to London Bridge).
+
+[[to London Bridge]]:
+Nobody gets on at Borough. The doors close, then open, then close again.
+
+Onwards we go, and nobody is looking very happy. Maybe some people describe the inside of the tube as being like a cattle truck, not because of the crowded conditions but because we're piled in anonymously and simply awaiting the fate of whatever the day brings. I'm starting to feel the cows have an easier time of it — at least they get a quick bolt through their head at the other end.
+
+We are at London Bridge.
+
+I could [[change to the Jubilee line]](escape at London Bridge).
+
+I could do that. I should totally do that.
+
+It's either that or [[stay here]](Beep). With Daisy and Buttercup.
+
+[[Beep]]:
+Is that it? Just stand here? Don't complain, know my place? Don't choose life — choose not to choose?
+
+Why do you want me to do that? Who says you're in charge?
+
+Beep-Beep-Beep-Beep-Beep-Beep-Beep-Beep-[[Beep]](jump)
+
+[[jump]]:
+@set jumped
+I jump out of the train as the door closes onto me. Its rubber edge barges heavily into my right shoulder and knocks me off balance. Fortunately I avoid being crushed against the inside of the doorway and I spin out onto the platform.
+
+That's going to be a bruise.
+
+This way to the [[Jubilee line]](escape at London Bridge).
+
+{{!--
+    The four ways out. Each sets where the train I'm about to get on is, which line it's on, and
+    which way along the line it's going (see tube.js). "escaped" is where I left the Northern line,
+    which somebody will bring up later.
+--}}
+
+[[escape at Stockwell]]:
+@set escaped = "Stockwell"
+I follow the sign to the Victoria line. Down one small corridor, and there it is — a very quick interchange.
+
+Well, that was easy.
+
+A train pulls in and I can [[get on]](Act 1, station = "Stockwell", line = "victoria", direction = -1).
+
+[[escape at Kennington]]:
+@set escaped = "Kennington"
+I follow the signs to the Charing Cross branch. It doesn't take very long.
+
+Well, that was easy.
+
+A train pulls in and I can [[get on]](Act 1, station = "Kennington", line = "northern2", direction = -1).
+
+[[escape at Elephant and Castle]]:
+@set escaped = "Elephant and Castle"
+I follow the signs to the Bakerloo line. It's doesn't take long to reach the platform.
+
+Well, that was easy.
+
+A train pulls in and I can [[get on]](Act 1, station = "Elephant & Castle", line = "bakerloo", direction = -1).
+
+[[escape at London Bridge]]:
+@set escaped = "London Bridge"
+I follow the signs to the Jubilee line. It's not a very quick interchange — down some corridors and up and down some steps. But it doesn't take a huge amount of effort, and here I am on the platform, going somewhere else.
+
+That was pretty easy really.
+
+A train pulls in and I can [[get on]](Act 1, station = "London Bridge", line = "jubilee", direction = -1).
+
+[[Act 1]]:
+@clear
+@leave slide-left 1s
+@set t = 0
+@set noticed = []
+@set platforms = []
+@set been = []
+@set told = []
+{{goto "get on"}}
