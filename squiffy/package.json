@@ -1,0 +1,15 @@
+{
+  "name": "moquette",
+  "private": true,
+  "description": "Moquette, the Squiffy version",
+  "scripts": {
+    "build": "squiffy-packager moquette.squiffy",
+    "serve": "squiffy-packager moquette.squiffy -s",
+    "check": "squiffy-packager --check",
+    "random": "squiffy-packager --random 40 --steps 600",
+    "test": "squiffy-packager --test"
+  },
+  "devDependencies": {
+    "@textadventures/squiffy-cli": "7.0.0-beta.9"
+  }
+}
