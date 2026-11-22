@@ -26,7 +26,7 @@ He is still reading his Kurt Cobain biography.
 
 [self-satisfaction]:
 {{append "noticed" "the man with the Kurt Cobain biography"}}
-Although to be fair, if Kurt Cobain was riding in plain sight, on the tube, having faked his own death and then not noticably aged in any way, he'd have every right to look pleased with himself.
+Although to be fair, if Kurt Cobain was riding in plain sight, on the tube, having faked his own death and then not noticeably aged in any way, he'd have every right to look pleased with himself.
 
 [a woman and child]:
 @tag passenger
@@ -38,7 +38,7 @@ The child has calmed down a bit now, and is looking quietly at his reflection in
 
 [attention]:
 {{append "noticed" "the woman with the boy who was pulling faces"}}
-The child starts pulling faces at the other passengers. What a quandry. This child knows none of the rules. Are we supposed to smile back? Look annoyed? Just ignore him?
+The child starts pulling faces at the other passengers. What a quandary. This child knows none of the rules. Are we supposed to smile back? Look annoyed? Just ignore him?
 
 [a male student]:
 @tag passenger
@@ -81,7 +81,7 @@ They are still sat there in their beautifully matching way.
 {{#once}}
 She is sat in the priority seat. At least, I presume it's a she. There is a lot of wispy white hair around the chin area. I would think a man would keep his beard in better shape, and wear it with pride.
 {{else}}
-She is still that there, quite still — maybe so as not to disturb that beard.
+She is still sat there, quite still — maybe so as not to disturb that beard.
 {{/once}}
 
 [a woman (familiar)]:
@@ -279,7 +279,7 @@ He's got rid of his empty tub of porridge — probably left it somewhere he can 
 [a man in a jumper]:
 @tag passenger
 {{#once}}
-It's quite a big blue jumper — inappopriately warm for both the weather and the temperature down here on the tube, I should think. And what's that suspicious white stain at the bottom? Does he realise that's there? I hope that's yogurt, or the milk from his breakfast cereal.
+It's quite a big blue jumper — inappropriately warm for both the weather and the temperature down here on the tube, I should think. And what's that suspicious white stain at the bottom? Does he realise that's there? I hope that's yogurt, or the milk from his breakfast cereal.
 {{else}}
 Still not sure about that stain.
 {{/once}}
@@ -363,7 +363,7 @@ Still sat there with his pencil legs.
 
 [jeans]:
 {{append "noticed" "the man with the ridiculously tiny jeans"}}
-How does he get into those jeans? Nobody has legs that thin — and those jeans look even thinner than his legs, somehow. It must take him hours to get into those. And the hair. If I put that much effort into my appearance I would just look desparate and ridiculous.
+How does he get into those jeans? Nobody has legs that thin — and those jeans look even thinner than his legs, somehow. It must take him hours to get into those. And the hair. If I put that much effort into my appearance I would just look desperate and ridiculous.
 
 I wonder if he's the type Heather goes for.
 

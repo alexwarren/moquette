@@ -180,7 +180,7 @@ A train pulls in and I can [[get on]](Act 1, station = "Kennington", line = "nor
 
 [[escape at Elephant and Castle]]:
 @set escaped = "Elephant and Castle"
-I follow the signs to the Bakerloo line. It's doesn't take long to reach the platform.
+I follow the signs to the Bakerloo line. It doesn't take long to reach the platform.
 
 Well, that was easy.
 
