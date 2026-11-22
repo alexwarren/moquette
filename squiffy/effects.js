@@ -15,6 +15,8 @@
 (() => {
     const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
     const still = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // How many letters the blackout adds each time, for every million pixels of window
+    const PER_MEGAPIXEL = 50;
     const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     function layer(...classes) {
@@ -25,15 +27,35 @@
         return element;
     }
 
-    function scatter(element, text, size, colour, opacity) {
-        const span = document.createElement("span");
-        span.textContent = text;
-        span.style.left = randomInt(-100, window.innerWidth) + "px";
-        span.style.top = randomInt(-100, window.innerHeight) + "px";
-        span.style.fontSize = size + "px";
-        if (colour) span.style.color = colour;
-        if (opacity !== undefined) span.style.opacity = opacity;
-        element.appendChild(span);
+    // A canvas that fills a layer, to draw on in CSS pixels. Thousands of letters, some of them
+    // huge, are too many elements for a browser to add, or fade, at a steady speed.
+    function canvas(element) {
+        const canvas = document.createElement("canvas");
+        const scale = window.devicePixelRatio || 1;
+        const width = window.innerWidth, height = window.innerHeight;
+        canvas.width = width * scale;
+        canvas.height = height * scale;
+        element.appendChild(canvas);
+        const context = canvas.getContext("2d");
+        context.scale(scale, scale);
+        context.textBaseline = "top";
+        return { context, width, height };
+    }
+
+    // Waits for the page to finish scrolling to new text: half a second, and twenty frames, with
+    // no scrolling (frames, because a browser that's busy may not have started yet)
+    async function scrolled() {
+        const start = performance.now();
+        let at = window.scrollY, since = start, frames = 0;
+        while ((frames < 20 || performance.now() - since < 500) && performance.now() - start < 4000) {
+            await new Promise(resolve => requestAnimationFrame(resolve));
+            frames++;
+            if (window.scrollY != at) {
+                at = window.scrollY;
+                since = performance.now();
+                frames = 0;
+            }
+        }
     }
 
     async function fadeAway(element, ms) {
@@ -43,39 +65,71 @@
 
     // Each effect starts when the story reaches a section with its tag, and returns a function that ends it
     const effects = {
+        // By the time the screen is full of her name, nothing of the page can be seen: a layer
+        // of the page's own colour comes up behind the names, to fill the gaps between them. So
+        // the next text arrives, and the page scrolls to it, out of sight, and it's there when
+        // the names fade away.
         "heather-swarm"() {
+            const cover = layer("cover");
             const element = layer();
+            const { context, width, height } = canvas(element);
+            cover.animate({ opacity: [0, 1] }, { duration: 3000, easing: "ease-in", fill: "both" });
             let count = 0;
             const timer = setInterval(() => {
-                if (++count >= 150 || still()) clearInterval(timer);
                 for (let i = 0; i < 3; i++) {
                     const grey = randomInt(0, 255);
-                    scatter(element, "Heather", randomInt(8, 100), `rgb(${grey} ${grey} ${grey})`, Math.random());
+                    context.font = randomInt(8, 100) + "px Georgia, serif";
+                    context.fillStyle = `rgb(${grey} ${grey} ${grey})`;
+                    context.globalAlpha = Math.random();
+                    context.fillText("Heather", randomInt(-100, width), randomInt(-100, height));
                 }
+                if (++count >= 150 || still()) clearInterval(timer);
             }, 20);
-            return () => {
+            return async () => {
                 clearInterval(timer);
+                await scrolled();
+                fadeAway(cover, 2000);
                 fadeAway(element, 2000);
             };
         },
 
+        // Everything goes black, and it's the letters that do it: more of them on a bigger screen,
+        // and bigger all the time, until there's nothing between them. (The black behind them only
+        // comes at the end, for the last few specks of the page.)
         "blackout"() {
             const black = layer("black");
             const speckles = layer();
-            const fade = black.animate({ opacity: [0, 1] }, { duration: 10000, delay: 1000, easing: "ease-in", fill: "both" });
+            const { context, width, height } = canvas(speckles);
+            context.textBaseline = "middle";
+            context.textAlign = "center";
             const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-            let count = 0;
-            const timer = setInterval(() => {
-                if (++count >= 150 || still()) return clearInterval(timer);
-                for (let i = 0; i < 20; i++) {
-                    scatter(speckles, letters[randomInt(0, letters.length - 1)], randomInt(4, 10 + count));
+            // 200 lots of letters, one every 50ms: ten seconds, starting after one
+            const LOTS = 200, EACH = Math.max(4, Math.round(width * height / 1e6 * PER_MEGAPIXEL));
+            const reduced = still();
+            const fade = black.animate({ opacity: [0, 1] }, reduced
+                ? { duration: 10000, delay: 1000, easing: "ease-in", fill: "both" }
+                : { duration: 2000, delay: 9000, fill: "both" });
+            let count = 0, began, frame;
+            function draw(now) {
+                began ??= now;
+                // However often this is called, the letters keep time
+                const due = Math.min(LOTS, Math.floor((now - began - 1000) / 50));
+                for (; count < due; count++) {
+                    for (let i = 0; i < EACH; i++) {
+                        context.font = randomInt(4, 10 + count) + "px Georgia, serif";
+                        context.fillText(letters[randomInt(0, letters.length - 1)], randomInt(0, width), randomInt(0, height));
+                    }
                 }
-            }, 50);
+                if (count < LOTS) frame = requestAnimationFrame(draw);
+            }
+            if (!reduced) frame = requestAnimationFrame(draw);
             return () => {
-                clearInterval(timer);
+                cancelAnimationFrame(frame);
                 speckles.remove();
                 fade.finish();
-                fadeAway(black, 10000);
+                // It stays black for a second after the next page arrives underneath
+                black.animate({ opacity: [1, 0] }, { duration: 10000, delay: 1000, easing: "ease-in", fill: "forwards" })
+                    .finished.then(() => black.remove());
             };
         },
 
@@ -107,6 +161,8 @@
 
     const running = {};
     document.addEventListener("squiffy:ready", ({ detail: squiffy }) => {
+        // For testing: #shortcuts on the end of the address starts at the shortcuts (shortcuts.squiffy)
+        if (location.hash == "#shortcuts") squiffy.once("navigated", () => squiffy.story.go("shortcuts"));
         squiffy.on("navigated", ({ section }) => {
             const tags = squiffy.story.tags(section);
             for (const name of Object.keys(effects)) {

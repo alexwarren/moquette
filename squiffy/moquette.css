@@ -12,9 +12,11 @@
     --squiffy-max-width: 40rem;
 }
 
-/* The two photographs fill the window, in front of everything */
-.title-card img,
-.ending img {
+/* The two photographs fill the window, in front of everything. (The class is on the story's
+   element, and "div#squiffy" is to win over Squiffy's own height for images, which would make
+   them as wide as the window and cut off the bottom, where the credits are.) */
+div#squiffy.title-card img,
+div#squiffy.ending img {
     position: fixed;
     inset: 0;
     z-index: 100;
@@ -130,13 +132,18 @@
     color: var(--squiffy-text);
 }
 
-.moquette-effect > span {
-    position: absolute;
-    white-space: nowrap;
-}
-
 .moquette-effect.black {
     background: black;
+}
+
+/* Behind the swarm of Heathers, so the page can't be seen through the gaps between them */
+.moquette-effect.cover {
+    background: var(--squiffy-background);
+}
+
+.moquette-effect canvas {
+    width: 100%;
+    height: 100%;
 }
 
 .moquette-effect.passing {

@@ -1,0 +1,34 @@
+{{!--
+    Shortcuts, for testing: the player never sees these. Add #shortcuts to the address of the
+    published page (effects.js goes to this section), or use --start shortcuts on the command line.
+
+    Each one starts where a single click plays the moment, on a Victoria line train that has just
+    left Stockwell, with nothing else having happened.
+--}}
+
+[[shortcuts]]:
+@clear
+{{!-- squiffy-ignore squiffy/unreachable-section --}}
+Shortcuts:
+
+- [[Getting on at Balham]](shortcut, to = "Balham"): the page goes up, two clicks in
+- [[Leaving my usual train]](shortcut, to = "escape at Stockwell"): the page goes left
+- [[Meeting Heather]](shortcut, to = "Heather"): her name, everywhere
+- [[Blacking out]](shortcut, to = "pale"): speckles, and black
+- [[HEATHER]](shortcut, to = "HEATHER"): her name goes by like a train
+- [[The way home]](shortcut, to = "empty hope"): everything goes by like a train
+- [[The end]](shortcut, to = "one small thing"): the last photograph
+
+[[shortcut]]:
+@clear
+{{!-- squiffy-ignore squiffy/unreachable-section --}}
+@set escaped = "Stockwell"
+@set station = "Stockwell"
+@set line = "victoria"
+@set direction = -1
+@set t = 40
+@set noticed = []
+@set platforms = []
+@set been = []
+@set told = []
+{{board}}{{goto to}}
