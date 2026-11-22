@@ -7,7 +7,7 @@ Moquette
 
 This repo has both versions:
 
-- `squiffy/`: the Squiffy version, the one to play now.
+- `squiffy/`: the Squiffy version, the one to play now. [Play it at moquette.squiffystory.com](https://moquette.squiffystory.com/).
 - `quest/`: the original Quest version, as entered in IFComp 2013. You can still [play it at textadventures.co.uk](https://textadventures.co.uk/games/view/zbzfpcnknu_vdjog-cbihw/moquette).
 
 ## The Squiffy version
@@ -24,7 +24,7 @@ npm run serve
 
 ### Hosting
 
-It's hosted on Cloudflare Pages, in a project connected to this repo:
+It's hosted at [moquette.squiffystory.com](https://moquette.squiffystory.com/) by Cloudflare Pages, in a project connected to this repo:
 
 - Production branch: `main`
 - Root directory: `squiffy`
