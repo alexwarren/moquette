@@ -1,7 +1,7 @@
 {{!--
     Riding the train. There's nothing to do on a train but look at the other passengers
-    (carriage.squiffy), and each look takes a moment: see "time passes". [@1], [@2]... are shown
-    after the first, second... passage link clicked in a section, whichever link it is.
+    (carriage.squiffy), and each look takes a moment: see "time passes". [@after] is shown after
+    every passage link clicked in its section, whichever link it is.
 
     {{board}}, {{doors}}, {{move}}, (passengers), (between) and (nothing_to_click) come from tube.js.
 --}}
@@ -18,16 +18,7 @@ I get on the train.
 
 The doors close.
 
-[@1]:
-{{embed "time passes"}}
-
-[@2]:
-{{embed "time passes"}}
-
-[@3]:
-{{embed "time passes"}}
-
-[@4]:
+[@after]:
 {{embed "time passes"}}
 
 [[wait]]:
@@ -48,21 +39,12 @@ Nobody gets on or off. The doors close.
 {{embed "look around"}}
 {{/if}}
 
-[@1]:
-{{embed "time passes"}}
-
-[@2]:
-{{embed "time passes"}}
-
-[@3]:
-{{embed "time passes"}}
-
-[@4]:
+[@after]:
 {{embed "time passes"}}
 
 [[look around]]:
 {{#if aboard.length}}
-I can see {{#each (passengers)}}{{#if @first}}{{else if @last}} and {{else}}, {{/if}}{{passage this.who text=this.as}}{{/each}}.
+I can see {{#join (passengers) ", " " and "}}{{passage this.who text=this.as}}{{/join}}.
 {{else}}
 It's pretty empty. Nothing to do but [Wait](stare).
 {{/if}}
@@ -119,20 +101,20 @@ This is {{station}}.{{goto "HEATHER"}}
 
 The driver's voice booms out. "Apologies ladies and gentlemen, due to a fault with the doors, this train is now being taken out of service. Your next service is about one minute behind this one. All change please, all change. Once again, due to a fault with the doors this train is not in service. All change please."
 
-Well, all I can do is [[get off]](get off here).
+Well, all I can do is [[get off]](platform).
 {{else}}
-This is {{station}}. {{embed "station facts"}} {{#if next}}I could [[get off here]]. Or [[wait]].{{else}}{{set "leg" -1}}{{embed "the end of the line"}}{{/if}}
+This is {{station}}. {{embed "station facts"}} {{#if next}}I could [[get off here]](platform). Or [[wait]].{{else}}{{set "leg" -1}}{{embed "the end of the line"}}{{/if}}
 {{/if}}
 
 [[the end of the line]]:
 {{#if station = "Stockwell" and line = "northern1"}}
-I'm not going home just yet. [[Time to change trains]](get off here).
+I'm not going home just yet. [[Time to change trains]](platform).
 {{else if station = "Elephant & Castle" and line = "bakerloo"}}
-This is the end of the line.{{#once}} They are thinking about extending the Bakerloo into south-east London at some point — but that won't be for a while. Certainly not today, anyway.{{/once}} [[All change]](get off here).
+This is the end of the line.{{#once}} They are thinking about extending the Bakerloo into south-east London at some point — but that won't be for a while. Certainly not today, anyway.{{/once}} [[All change]](platform).
 {{else if line = "wc" or (station = "Aldgate" and line = "metropolitan") or (station = "Brixton" and line = "victoria") or (station = "Edgware Road" and (line = "circle" or line = "district1"))}}
-This is the end of the line. [[All change]](get off here).
+This is the end of the line. [[All change]](platform).
 {{else}}
-{{random (array "I don't want to go any further this way." "If I stay on this I'm going to end up in the middle of nowhere." "There's no need for me to travel to the darkest reaches of the outer zones.")}} [[Time for me to get off this train]](get off here).
+{{random (array "I don't want to go any further this way." "If I stay on this I'm going to end up in the middle of nowhere." "There's no need for me to travel to the darkest reaches of the outer zones.")}} [[Time for me to get off this train]](platform).
 {{/if}}
 
 {{!-- Things I know about a station, which I think of the first time a train takes me there --}}

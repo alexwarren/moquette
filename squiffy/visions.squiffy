@@ -25,16 +25,7 @@ The tinny headphones are back. I can't smell cigarette smoke any more.
 
 {{embed "look around"}}
 
-[@1]:
-{{embed "time passes"}}
-
-[@2]:
-{{embed "time passes"}}
-
-[@3]:
-{{embed "time passes"}}
-
-[@4]:
+[@after]:
 {{embed "time passes"}}
 
 [[smoke again]]:
@@ -71,16 +62,7 @@ Where did bowler hat guy go? Weird.
 
 {{embed "look around"}}
 
-[@1]:
-{{embed "time passes"}}
-
-[@2]:
-{{embed "time passes"}}
-
-[@3]:
-{{embed "time passes"}}
-
-[@4]:
+[@after]:
 {{embed "time passes"}}
 
 [[blind]]:
@@ -127,14 +109,5 @@ Things are coming into focus. I thought I saw another bowler hat out of the corn
 
 {{embed "look around"}}
 
-[@1]:
-{{embed "time passes"}}
-
-[@2]:
-{{embed "time passes"}}
-
-[@3]:
-{{embed "time passes"}}
-
-[@4]:
+[@after]:
 {{embed "time passes"}}

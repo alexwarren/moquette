@@ -1,9 +1,10 @@
 // Moquette's three moving pictures. With squiffy.json, a .js file in the story's folder is added to
 // the published page, like this one. (tube.js isn't, as the story reads it with @ui instead.)
 //
-// The story asks for each of them by putting a class on itself with @class, and moves on by
-// itself with {{goto ... after=}}, so nothing here changes the story: it only draws in front of it.
-// When the story moves on, the class goes, and so does the effect.
+// A section asks for one of them with @tag, and moves on by itself with {{goto ... after=}}, so
+// nothing here changes the story: it only draws in front of it. The story says when the player
+// has moved to a section (also when they go back, restart, or load a saved game), and when
+// that's a section without the tag, the effect ends.
 //
 //   heather-swarm   her name, all over the screen, in every size
 //   blackout        speckles of letters that grow, as everything goes black
@@ -40,7 +41,7 @@
         element.remove();
     }
 
-    // Each effect starts when its class appears, and returns a function that ends it
+    // Each effect starts when the story reaches a section with its tag, and returns a function that ends it
     const effects = {
         "heather-swarm"() {
             const element = layer();
@@ -105,16 +106,17 @@
     };
 
     const running = {};
-    const check = () => {
-        for (const name of Object.keys(effects)) {
-            const now = !!document.querySelector("." + name);
-            if (now && !running[name]) running[name] = effects[name]();
-            if (!now && running[name]) {
-                running[name]();
-                delete running[name];
+    document.addEventListener("squiffy:ready", ({ detail: squiffy }) => {
+        squiffy.on("navigated", ({ section }) => {
+            const tags = squiffy.story.tags(section);
+            for (const name of Object.keys(effects)) {
+                const now = tags.includes(name);
+                if (now && !running[name]) running[name] = effects[name]();
+                if (!now && running[name]) {
+                    running[name]();
+                    delete running[name];
+                }
             }
-        }
-    };
-    new MutationObserver(check).observe(document.documentElement, { attributes: true, attributeFilter: ["class"], subtree: true });
-    check();
+        });
+    });
 })();

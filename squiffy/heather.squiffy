@@ -13,7 +13,7 @@ She is right there in front of me.
 
 {{!-- Her name fills the screen for a few seconds (effects.js) --}}
 [[Heather Heather Heather]]:
-@class heather-swarm
+@tag heather-swarm
 {{goto "Hello" after="3.5s"}}
 
 [[Hello]]:
@@ -121,7 +121,7 @@ I'm fine. I'm fine. My left arm has gone numb, but I'm fine. Slightly dizzy. Jus
 
 {{!-- The screen fills with speckles and goes black, and comes back on the next page (effects.js) --}}
 [[Black speckles]]:
-@class blackout
+@tag blackout
 Black speckles.
 
 {{goto "water" after="12s"}}
@@ -149,12 +149,11 @@ She gets up. A man in a bright orange jacket is here.
 [["I'm fine."]](paramedic)
 
 [[paramedic]]:
-{{!-- Now I'm at the station where I came round. After this, there are a few more people about --}}
+{{!--
+    Now I'm at the station where I came round. Once I've been here, there are a few more people
+    about: the passengers with "@tag later" in carriage.squiffy.
+--}}
 {{move}}
-{{append "strangers" "a man (not Heather)"}}
-{{append "strangers" "a man (pencil legs)"}}
-{{append "strangers" "a woman (not Heather)"}}
-{{append "strangers" "a young woman"}}
 "Are you sure? I can call a paramedic. You should probably be checked out."
 
 {{#if next}}

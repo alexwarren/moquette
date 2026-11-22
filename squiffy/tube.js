@@ -6,7 +6,7 @@
 //
 //   line, direction     the train I'm on, or about to get on: a line below, and 1 or -1 along it
 //   station, next       where the train is (or was last), and where it stops next ("" at the end)
-//   aboard              the passengers in the carriage: names of passages in people.squiffy
+//   aboard              the passengers in the carriage: names of passages in carriage.squiffy
 //   platform, ways      the platform I'm standing on, and the others I could change to
 
 // Each line's stations in order. A train going in direction 1 is going towards the end of the
@@ -277,17 +277,24 @@ function pick(list, count) {
 
 // ---- Passengers ----
 //
-// A passenger is a passage in people.squiffy, such as "a man (Kurt Cobain)". Before I look at
-// them, all I know is what the name says before the brackets: "a man".
+// A passenger is a passage in carriage.squiffy with "@tag passenger", such as "a man (Kurt
+// Cobain)". Before I look at them, all I know is what the name says before the brackets: "a man".
 
 const list = (name) => squiffy.get(name) || [];
 const title = (who) => who.replace(/ \(.*\)$/, "");
 // "a man in a suit" gets off as "the man in the suit"
 const the = (who) => title(who).replace(/^(an? )?/, "the ").replace(/ an? /g, " the ");
-const settled = (who) => list("settled").includes(who);
+// "@tag passenger settled": here for the whole journey, so they don't get on or off at stations
+const settled = (who) => squiffy.story.tags(who).includes("settled");
+
+// Everybody who might be travelling. The "later" ones only do once I've come round ("paramedic").
+const travelling = () => squiffy.story.passages("", {
+    tagged: "passenger",
+    untagged: squiffy.story.seen("paramedic") ? "" : "later",
+});
 
 // Once I've looked at somebody and they've left the carriage, I don't see them again
-const strangers = () => list("strangers").filter(who => !list("aboard").includes(who) && !squiffy.story.seen(who));
+const strangers = () => travelling().filter(who => !list("aboard").includes(who) && !squiffy.story.seen(who));
 
 // "a man, a woman and another man"
 function describe(people) {

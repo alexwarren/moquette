@@ -4,8 +4,6 @@ seed 5
 
 went "title"
 went "Balham"
-set strangers = ["a man (Kurt Cobain)","a woman and child","a male student","a fat man","a young pretty woman","a chubby couple","an old woman","a woman (familiar)","a woman (notebook)","two female friends","a man (muttering)","a smiling woman","a man in a suit (earbuds)","a large man","a small woman","a teenage girl","a man (MacBook)","a sleeping man","a woman (magazine)","a man (grey)","a woman drinking coffee","a man in a suit (earring)","a young guy","a man with a moustache","a man in sunglasses","a man (porridge)","a man in a jumper","a scruffy man","a trendy guy","a woman with a baby","a middle-aged woman","a woman reading"]
-set settled = ["a sleeping man","a woman with a baby","a woman reading"]
 
 > The train now arriving is for all stations to Edgware via Bank
 went "the doors open"
@@ -350,7 +348,6 @@ went "wait" "scientific paper"
 set noticed = ["the young guy who was picking his nose","the man who was chuckling at platelet function disorders"]
 
 > Time for me to get off this train
-went "get off here"
 went "platform"
 set platform = ""
 set ways = ["southbound Bakerloo line","eastbound Hammersmith & City/Circle lines"]
@@ -469,7 +466,6 @@ went "wait" "self-satisfaction"
 set noticed = ["the young guy who was picking his nose","the man who was chuckling at platelet function disorders","the two women who were having that inane conversation","the woman who was taking surreptitious notes","the man with the Kurt Cobain biography"]
 
 > get off
-went "get off here"
 went "platform"
 set platforms = ["southbound Bakerloo line at Paddington","southbound Bakerloo line at Regent's Park"]
 set ways = ["northbound Bakerloo line"]
@@ -521,7 +517,6 @@ went "orange jacket"
 
 > "I'm fine."
 went "paramedic"
-set strangers = ["a man (Kurt Cobain)","a woman and child","a male student","a fat man","a young pretty woman","a chubby couple","an old woman","a woman (familiar)","a woman (notebook)","two female friends","a man (muttering)","a smiling woman","a man in a suit (earbuds)","a large man","a small woman","a teenage girl","a man (MacBook)","a sleeping man","a woman (magazine)","a man (grey)","a woman drinking coffee","a man in a suit (earring)","a young guy","a man with a moustache","a man in sunglasses","a man (porridge)","a man in a jumper","a scruffy man","a trendy guy","a woman with a baby","a middle-aged woman","a woman reading","a man (not Heather)","a man (pencil legs)","a woman (not Heather)","a young woman"]
 set station = "Oxford Circus"
 set next = "Piccadilly Circus"
 
@@ -691,7 +686,6 @@ went "Something is coming" "a chubby couple"
 went "Something is coming" "a teenage girl"
 
 > All change
-went "get off here"
 went "platform"
 set platform = ""
 set ways = ["northbound Bakerloo line","northbound Northern line","southbound Northern line"]

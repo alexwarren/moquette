@@ -5,7 +5,7 @@
 
 {{!-- The word goes past like a train, slows down and stops (effects.js) --}}
 [[HEATHER]]:
-@class heather-tube
+@tag heather-tube
 {{goto "there she is" after="11.5s"}}
 
 [[there she is]]:

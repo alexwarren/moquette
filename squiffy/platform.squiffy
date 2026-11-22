@@ -5,12 +5,10 @@
     as "northbound Victoria line", and "ways" is a list of the other platforms at this station.
 --}}
 
-[[get off here]]:
-@clear
-@leave fade 1s
-{{alight}}{{goto "platform"}}
-
+{{!-- Getting off a train clears the screen. Changing platforms carries on down the page --}}
 [[platform]]:
+@leave fade 1s
+{{#if previous_section != "change"}}{{clear}}{{alight}}{{/if}}
 {{signs}}
 {{#if platform}}
 {{append "platforms" (add platform (add " at " station))}}
@@ -35,7 +33,7 @@ I could change to {{embed "ways"}}.
 I could change to {{embed "ways"}}.
 
 [[ways]]:
-{{#each ways}}{{#if @first}}{{else if @last}} or {{else}}, {{/if}}the [[{{this}}]](change, to = "{{this}}"){{/each}}
+{{#join ways ", " " or "}}the [[{{this}}]](change, to = "{{this}}"){{/join}}
 
 [[change]]:
 {{#if station = "Green Park" and (platform contains "Piccadilly") != (to contains "Piccadilly")}}

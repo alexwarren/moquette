@@ -4,7 +4,7 @@
    The story asks for the rest with classes and transitions:
    - @class title-card and @class ending, around the two photographs
    - @leave train and @transition train, for the way home
-   - @class heather-swarm, blackout and heather-tube, which effects.js watches for */
+   - @tag heather-swarm, blackout and heather-tube aren't classes: they ask effects.js for an effect */
 
 :root {
     --squiffy-font-family: Georgia, serif;
