@@ -161,8 +161,6 @@
 
     const running = {};
     document.addEventListener("squiffy:ready", ({ detail: squiffy }) => {
-        // For testing: #shortcuts on the end of the address starts at the shortcuts (shortcuts.squiffy)
-        if (location.hash == "#shortcuts") squiffy.once("navigated", () => squiffy.story.go("shortcuts"));
         squiffy.on("navigated", ({ section }) => {
             const tags = squiffy.story.tags(section);
             for (const name of Object.keys(effects)) {

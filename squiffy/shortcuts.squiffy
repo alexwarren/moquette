@@ -1,27 +1,57 @@
 {{!--
-    Shortcuts, for testing: the player never sees these. Add #shortcuts to the address of the
-    published page (effects.js goes to this section), or use --start shortcuts on the command line.
+    Shortcuts, for testing. They're marked @test, so they're left out of the published story, and
+    the Start at menu of the story served by "npm run serve" lists them first (or add
+    ?start=The end, say, to its address). From the command line, use --start.
 
     Each one starts where a single click plays the moment, on a Victoria line train that has just
     left Stockwell, with nothing else having happened.
 --}}
 
-[[shortcuts]]:
-@clear
-{{!-- squiffy-ignore squiffy/unreachable-section --}}
-Shortcuts:
+[[Getting on at Balham]]:
+@test
+{{!-- The page goes up, two clicks in --}}
+@set to = "Balham"
+{{goto "shortcut"}}
 
-- [[Getting on at Balham]](shortcut, to = "Balham"): the page goes up, two clicks in
-- [[Leaving my usual train]](shortcut, to = "escape at Stockwell"): the page goes left
-- [[Meeting Heather]](shortcut, to = "Heather"): her name, everywhere
-- [[Blacking out]](shortcut, to = "pale"): speckles, and black
-- [[HEATHER]](shortcut, to = "HEATHER"): her name goes by like a train
-- [[The way home]](shortcut, to = "empty hope"): everything goes by like a train
-- [[The end]](shortcut, to = "one small thing"): the last photograph
+[[Leaving my usual train]]:
+@test
+{{!-- The page goes left --}}
+@set to = "escape at Stockwell"
+{{goto "shortcut"}}
+
+[[Meeting Heather]]:
+@test
+{{!-- Her name, everywhere --}}
+@set to = "Heather"
+{{goto "shortcut"}}
+
+[[Blacking out]]:
+@test
+{{!-- Speckles, and black --}}
+@set to = "pale"
+{{goto "shortcut"}}
+
+[[HEATHER goes by]]:
+@test
+{{!-- Her name goes by like a train --}}
+@set to = "HEATHER"
+{{goto "shortcut"}}
+
+[[The way home]]:
+@test
+{{!-- Everything goes by like a train --}}
+@set to = "empty hope"
+{{goto "shortcut"}}
+
+[[The end]]:
+@test
+{{!-- The last photograph --}}
+@set to = "one small thing"
+{{goto "shortcut"}}
 
 [[shortcut]]:
+@test
 @clear
-{{!-- squiffy-ignore squiffy/unreachable-section --}}
 @set escaped = "Stockwell"
 @set station = "Stockwell"
 @set line = "victoria"
