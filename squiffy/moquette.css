@@ -3,6 +3,7 @@
 
    The story asks for the rest with classes and transitions:
    - @class title-card and @class ending, around the two photographs
+   - @leave drop-up and @leave drop-left, as Zoran gets on a train
    - @leave train and @transition train, for the way home
    - @tag heather-swarm, blackout and heather-tube aren't classes: they ask effects.js for an effect */
 
@@ -40,6 +41,47 @@
 
 @keyframes photograph-out {
     to { opacity: 0; }
+}
+
+/* The title, above the first page only */
+.masthead {
+    margin: 2em 0 4em;
+    text-align: center;
+}
+
+.masthead h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: normal;
+}
+
+.masthead p {
+    margin: 0.5em 0 0;
+    font-size: 1.45em;
+}
+
+/* @leave drop-up and drop-left: the page goes up, or to the left, as it fades, as jQuery UI's
+   "drop" took it in 2013. It goes a long way (the built-in slides only go a couple of lines),
+   and then the screen stays empty for half a second, which is the last third of the time. */
+.squiffy-transition.squiffy-leave:is(.drop-up, .drop-left) {
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+}
+
+.squiffy-transition.squiffy-leave.drop-up {
+    animation-name: drop-up;
+}
+
+.squiffy-transition.squiffy-leave.drop-left {
+    animation-name: drop-left;
+}
+
+@keyframes drop-up {
+    67%, 100% { opacity: 0; transform: translateY(-50vh); }
+}
+
+@keyframes drop-left {
+    67%, 100% { opacity: 0; transform: translateX(-50%); }
 }
 
 /* @leave train: the text pulls away to the left, then goes by again and again, faster each time,
@@ -105,6 +147,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+    /* Squiffy makes every transition its plain fade, which fades in: so play it backwards to leave */
+    .squiffy-transition.squiffy-leave:is(.drop-up, .drop-left) {
+        animation-direction: reverse;
+    }
+
     .title-card img,
     .ending img {
         animation-duration: 1s, 1s;

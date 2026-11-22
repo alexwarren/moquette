@@ -29,6 +29,8 @@
 @clear
 @leave fade 3s
 @transition fade 3s
+<header class="masthead"><h1>Moquette</h1><p>by Alex Warren</p></header>
+
 Tuesday morning, 08:03. Waiting for the Northern line at Balham. 3 minutes to fill.
 
 "Muesli. A delicious way to make sure today isn't one of those days". Right. Who knew a horrible breakfast cereal could have so much power? Maybe it just sets your expectations suitably low for the rest of the day. If you start off with disappointment, things can only go up from there.
@@ -50,7 +52,7 @@ The doors open. I [[get on]](to Clapham South).
 
 [[to Clapham South]]:
 @clear
-@leave slide-up 1s
+@leave drop-up 1.5s
 Pretty full as usual. No expectation of a seat, so I barely look for one. Space over by the opposite door though.
 
 No challenges here. I just glide to a pole and grab hold of it without a moment's thought. No decisions, no effort, no choice, no problem.
@@ -196,7 +198,7 @@ A train pulls in and I can [[get on]](Act 1, station = "London Bridge", line = "
 
 [[Act 1]]:
 @clear
-@leave slide-left 1s
+@leave drop-left 1.5s
 @set t = 0
 @set noticed = []
 @set platforms = []
