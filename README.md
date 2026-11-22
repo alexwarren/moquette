@@ -26,7 +26,7 @@ npm run serve
 
 It's hosted on Cloudflare Pages, in a project connected to this repo:
 
-- Production branch: `master`
+- Production branch: `main`
 - Root directory: `squiffy`
 - Build command: `npm run build`
 - Build output directory: `build`
